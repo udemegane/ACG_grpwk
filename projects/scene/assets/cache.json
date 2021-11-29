@@ -54,33 +54,23 @@
 	"Sounds": [],
 	"Scripts": [
 		{
-			"id": "decorators.ts",
-			"key": "decorators.ts",
+			"id": "camera.ts",
+			"key": "scene/camera.ts",
 			"base64": "../css/images/ts.png",
 			"style": {
 				"borderColor": "#2FA1D6",
 				"borderStyle": "solid",
-				"borderWidth": "0px"
+				"borderWidth": "2px"
 			}
 		},
 		{
-			"id": "scene",
-			"key": "scene",
+			"id": "graphs",
+			"key": "scene/graphs",
 			"base64": "../css/svg/folder-open.svg"
 		},
 		{
-			"id": "scripts-map.ts",
-			"key": "scripts-map.ts",
-			"base64": "../css/images/ts.png",
-			"style": {
-				"borderColor": "#2FA1D6",
-				"borderStyle": "solid",
-				"borderWidth": "0px"
-			}
-		},
-		{
-			"id": "tools.ts",
-			"key": "tools.ts",
+			"id": "index.ts",
+			"key": "scene/index.ts",
 			"base64": "../css/images/ts.png",
 			"style": {
 				"borderColor": "#2FA1D6",

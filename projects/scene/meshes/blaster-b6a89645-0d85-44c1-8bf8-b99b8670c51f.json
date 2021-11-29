@@ -57,7 +57,10 @@
 			"materialId": "71ce380f-e971-41c0-b580-e3e91b316c6f",
 			"metadata": {
 				"isPickable": false,
-				"script": {}
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],

@@ -6,13 +6,13 @@ export default class PlayerCamera extends FreeCamera {
     @fromChildren("ball")
     private _ball: Mesh;
 
-    @visibleInInspector("KeyMap", "Forward Key", "z".charCodeAt(0))
+    @visibleInInspector("KeyMap", "Forward Key", "w".charCodeAt(0))
     private _forwardKey: number;
 
     @visibleInInspector("KeyMap", "Backward Key", "s".charCodeAt(0))
     private _backwardKey: number;
 
-    @visibleInInspector("KeyMap", "Strafe Left Key", "q".charCodeAt(0))
+    @visibleInInspector("KeyMap", "Strafe Left Key", "a".charCodeAt(0))
     private _strafeLeftKey: number;
 
     @visibleInInspector("KeyMap", "Strafe Right Key", "d".charCodeAt(0))
