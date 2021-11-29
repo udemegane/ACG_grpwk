@@ -11,12 +11,15 @@
 	"uRotationCenter": 0.5,
 	"vRotationCenter": 0.5,
 	"wRotationCenter": 0.5,
+	"homogeneousRotationInUVTransform": false,
 	"isBlocking": true,
-	"uniqueId": 17,
 	"name": "files/EnvironmentBRDFTexture0",
 	"metadata": {
 		"editorName": "data:EnvironmentBRDFTexture0",
-		"editorId": "65d3a921-9e10-4823-8ab9-65cec3c2ddbe"
+		"editorId": "65d3a921-9e10-4823-8ab9-65cec3c2ddbe",
+		"ktx2CompressedTextures": {
+			"isUsingCompressedTexture": false
+		}
 	},
 	"hasAlpha": false,
 	"getAlphaFromRGB": false,

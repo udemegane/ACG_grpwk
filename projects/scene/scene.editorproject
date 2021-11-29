@@ -17,13 +17,6 @@
 		},
 		{
 			"bindedMeshes": [
-				"b87c0751-53e5-4782-88d9-0461e9457fe1"
-			],
-			"json": "ground-77eb899b-024f-405e-b240-9bb6e5cbe3c3.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
 				"d66c05ad-967f-4f69-a6fb-7d47281b641c",
 				"f824df87-ae33-41d9-ba8f-551d2083a2be"
 			],
@@ -39,6 +32,13 @@
 		},
 		{
 			"bindedMeshes": [
+				"b87c0751-53e5-4782-88d9-0461e9457fe1"
+			],
+			"json": "ground-77eb899b-024f-405e-b240-9bb6e5cbe3c3.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
 				"f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c"
 			],
 			"json": "ball-0b776f6c-9111-499d-8207-1c8242d97719.json",
@@ -46,15 +46,15 @@
 		}
 	],
 	"textures": [
-		"EnvironmentBRDFTexture0-17.json",
-		"blaster_diffuse.jpg-83.json",
-		"parking.env-82.json",
-		"blaster_nmap.jpg-84.json"
+		"blaster_diffuse.jpg-29.json",
+		"parking.env-30.json",
+		"EnvironmentBRDFTexture0-26.json",
+		"blaster_nmap.jpg-31.json"
 	],
 	"meshes": [
 		"ground-b87c0751-53e5-4782-88d9-0461e9457fe1.json",
-		"sky-c4024c20-1c4f-4be6-9abd-525e2a782174.json",
 		"cube-d66c05ad-967f-4f69-a6fb-7d47281b641c.json",
+		"sky-c4024c20-1c4f-4be6-9abd-525e2a782174.json",
 		"blaster-b6a89645-0d85-44c1-8bf8-b99b8670c51f.json",
 		"wall-f824df87-ae33-41d9-ba8f-551d2083a2be.json",
 		"ball-f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c.json"
@@ -68,6 +68,7 @@
 		}
 	],
 	"sounds": [],
+	"morphTargetManagers": [],
 	"scene": {
 		"autoClear": false,
 		"clearColor": [
@@ -133,16 +134,75 @@
 			"vignetteCameraFov": 0.5,
 			"_vignetteBlendMode": 0,
 			"_vignetteEnabled": false,
-			"_applyByPostProcess": true,
+			"_applyByPostProcess": false,
 			"_isEnabled": true
 		},
 		"animations": [],
 		"postProcessesEnabled": true,
+		"metadata": {
+			"script": {
+				"name": "None"
+			},
+			"postProcesses": {
+				"ssao": {
+					"enabled": true,
+					"json": {
+						"tags": null,
+						"totalStrength": 2,
+						"maxZ": 1000,
+						"minZAspect": 0.2,
+						"samples": 32,
+						"textureSamples": 1,
+						"_ratio": {
+							"ssaoRatio": 0.5,
+							"blurRatio": 0.5
+						},
+						"expensiveBlur": true,
+						"radius": 1,
+						"base": 0,
+						"_name": "ssao",
+						"customType": "SSAO2RenderingPipeline"
+					}
+				},
+				"screenSpaceReflections": {
+					"enabled": false
+				},
+				"default": {
+					"enabled": true,
+					"json": {
+						"tags": null,
+						"sharpenEnabled": false,
+						"bloomKernel": 64,
+						"_bloomWeight": 0.15,
+						"_bloomThreshold": 0.9,
+						"_hdr": {},
+						"bloomWeight": 0.15,
+						"bloomThreshold": 0.9,
+						"bloomScale": 0.5,
+						"bloomEnabled": false,
+						"depthOfFieldEnabled": false,
+						"depthOfFieldBlurLevel": 0,
+						"fxaaEnabled": true,
+						"samples": 4,
+						"imageProcessingEnabled": true,
+						"glowLayerEnabled": false,
+						"chromaticAberrationEnabled": false,
+						"grainEnabled": false,
+						"_name": "default",
+						"customType": "DefaultRenderingPipeline"
+					}
+				},
+				"motionBlur": {
+					"enabled": false
+				}
+			}
+		},
 		"environmentIntensity": 1,
 		"shadowGenerators": [
 			{
 				"className": "CascadedShadowGenerator",
 				"lightId": "13d8b045-9a4a-48c0-ab96-3584968502c2",
+				"id": "13d8b045-9a4a-48c0-ab96-3584968502c2",
 				"mapSize": 1024,
 				"forceBackFacesOnly": false,
 				"darkness": 0,
@@ -196,18 +256,13 @@
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": 3.4864413500309444,
-			"beta": 1.3890057771277866,
+			"alpha": 3.3168605494582235,
+			"beta": 1.3009866414953497,
 			"radius": 3.689921918850634,
 			"target": [
 				3.6685266494750977,
 				0.9389764666557312,
 				3.3402628898620605
-			],
-			"upVector": [
-				0,
-				1,
-				0
 			],
 			"inertialAlphaOffset": 0,
 			"inertialBetaOffset": 0,
@@ -237,9 +292,14 @@
 			],
 			"speed": 2,
 			"position": [
-				0.25306736411768505,
-				1.6060807952446225,
-				2.113424085430876
+				0.1665849983279597,
+				1.9225178188927847,
+				2.7201218997518213
+			],
+			"upVector": [
+				0,
+				1,
+				0
 			],
 			"fov": 0.8,
 			"minZ": 1,
@@ -251,10 +311,10 @@
 			"cameraRigMode": 0,
 			"name": "Editor Camera",
 			"id": "f3684fb1-6ae4-4cc0-8e94-ba283d86ec04",
-			"uniqueId": 3,
 			"state": "",
 			"metadata": {
-				"script": {}
+				"script": {},
+				"detached": false
 			},
 			"type": "ArcRotateCamera",
 			"inputsmgr": {
@@ -297,7 +357,7 @@
 					"pinchPrecision": 12,
 					"pinchDeltaPercentage": 0,
 					"useNaturalPinchZoom": false,
-					"panningSensibility": 1000,
+					"panningSensibility": 271.0084446208249,
 					"multiTouchPanning": true,
 					"multiTouchPanAndZoom": true
 				}
@@ -308,7 +368,7 @@
 	},
 	"postProcesses": {
 		"ssao": {
-			"enabled": true,
+			"enabled": false,
 			"json": {
 				"tags": null,
 				"totalStrength": 2,
@@ -327,48 +387,11 @@
 				"customType": "SSAO2RenderingPipeline"
 			}
 		},
-		"standard": {
-			"enabled": true,
-			"json": {
-				"tags": null,
-				"_name": "standard",
-				"brightThreshold": 1,
-				"blurWidth": 512,
-				"horizontalBlur": false,
-				"exposure": 1,
-				"volumetricLightCoefficient": 0.2,
-				"volumetricLightPower": 4,
-				"volumetricLightBlurScale": 64,
-				"hdrMinimumLuminance": 1,
-				"hdrDecreaseRate": 0.5,
-				"hdrIncreaseRate": 0.5,
-				"hdrAutoExposure": false,
-				"lensFlareStrength": 20,
-				"lensFlareGhostDispersal": 1.4,
-				"lensFlareHaloWidth": 0.7,
-				"lensFlareDistortionStrength": 16,
-				"lensFlareBlurWidth": 512,
-				"depthOfFieldDistance": 10,
-				"depthOfFieldBlurWidth": 64,
-				"motionStrength": 0.1,
-				"objectBasedMotionBlur": false,
-				"_ratio": 1,
-				"BloomEnabled": false,
-				"DepthOfFieldEnabled": false,
-				"LensFlareEnabled": false,
-				"HDREnabled": false,
-				"VLSEnabled": false,
-				"MotionBlurEnabled": true,
-				"fxaaEnabled": false,
-				"screenSpaceReflectionsEnabled": false,
-				"volumetricLightStepsCount": 50,
-				"motionBlurSamples": 64,
-				"samples": 1,
-				"customType": "StandardRenderingPipeline"
-			}
+		"screenSpaceReflections": {
+			"enabled": false
 		},
 		"default": {
-			"enabled": true,
+			"enabled": false,
 			"json": {
 				"tags": null,
 				"sharpenEnabled": false,
@@ -391,6 +414,10 @@
 				"_name": "default",
 				"customType": "DefaultRenderingPipeline"
 			}
+		},
+		"motionBlur": {
+			"enabled": false
 		}
-	}
+	},
+	"physicsEnabled": true
 }

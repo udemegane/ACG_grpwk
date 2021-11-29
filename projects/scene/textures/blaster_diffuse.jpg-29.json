@@ -11,12 +11,15 @@
 	"uRotationCenter": 0.5,
 	"vRotationCenter": 0.5,
 	"wRotationCenter": 0.5,
+	"homogeneousRotationInUVTransform": false,
 	"isBlocking": true,
-	"uniqueId": 83,
 	"name": "files/blaster_diffuse.jpg",
 	"metadata": {
 		"editorName": "blaster_diffuse.jpg",
-		"editorId": "3298758d-4380-4f12-9d6c-aabefafe1060"
+		"editorId": "3298758d-4380-4f12-9d6c-aabefafe1060",
+		"ktx2CompressedTextures": {
+			"isUsingCompressedTexture": false
+		}
 	},
 	"hasAlpha": false,
 	"getAlphaFromRGB": false,

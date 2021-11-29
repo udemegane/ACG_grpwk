@@ -11,12 +11,15 @@
 	"uRotationCenter": 0.5,
 	"vRotationCenter": 0.5,
 	"wRotationCenter": 0.5,
+	"homogeneousRotationInUVTransform": false,
 	"isBlocking": true,
-	"uniqueId": 84,
 	"name": "files/blaster_nmap.jpg",
 	"metadata": {
 		"editorName": "blaster_nmap.jpg",
-		"editorId": "c7c80a17-2a4a-4d0d-ad7c-2d28f104a338"
+		"editorId": "c7c80a17-2a4a-4d0d-ad7c-2d28f104a338",
+		"ktx2CompressedTextures": {
+			"isUsingCompressedTexture": false
+		}
 	},
 	"hasAlpha": false,
 	"getAlphaFromRGB": false,

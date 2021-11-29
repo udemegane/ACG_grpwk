@@ -3,5 +3,30 @@
 	"serverPort": 1338,
 	"generateSceneOnSave": true,
 	"firstLoad": false,
-	"watchProject": true
+	"watchProject": true,
+	"physicsEngine": "cannon",
+	"pluginsPreferences": {},
+	"https": {
+		"enabled": false
+	},
+	"ktx2CompressedTextures": {
+		"enabled": false,
+		"pvrTexToolCliPath": "",
+		"forcedFormat": "automatic",
+		"enabledInPreview": false,
+		"astcOptions": {
+			"quality": "astcveryfast"
+		},
+		"pvrtcOptions": {
+			"quality": "pvrtcfastest"
+		},
+		"ect1Options": {
+			"enabled": false,
+			"quality": "etcfast"
+		},
+		"ect2Options": {
+			"enabled": false,
+			"quality": "etcfast"
+		}
+	}
 }
