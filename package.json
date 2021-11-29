@@ -1,0 +1,47 @@
+{
+    "name": "babylonjs-editor-generated-template",
+    "version": "3.2.1-beta.4",
+    "description": "Generated Template by BabylonJS Editor v3.0",
+    "scripts": {
+        "clean": "rimraf build && rimraf declaration",
+        "compile": "tsc -p .",
+        "build": "webpack --mode production",
+        "watch": "webpack --mode development --watch",
+        "webserver": "http-server -p 1338 -c-1"
+    },
+    "license": "(Apache-2.0)",
+    "devDependencies": {
+        "@types/node": "13.9.2",
+        "@types/webpack": "4.1.4",
+        "@typescript-eslint/eslint-plugin": "^5.0.0",
+        "@typescript-eslint/parser": "^5.0.0",
+        "babel-loader": "8.0.4",
+        "babylonjs-editor-webpack-progress": "1.0.1",
+        "eslint": "^8.3.0",
+        "eslint-config-airbnb": "^19.0.1",
+        "eslint-config-airbnb-typescript": "^16.0.0",
+        "eslint-config-airbnb-typescript-prettier": "^4.2.0",
+        "eslint-plugin-import": "^2.25.3",
+        "eslint-plugin-jsx-a11y": "^6.5.1",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-react": "^7.27.1",
+        "eslint-plugin-react-hooks": "^4.3.0",
+        "http-server": "0.12.1",
+        "prettier": "^2.5.0",
+        "ts-loader": "4.4.2",
+        "typescript": "3.8.3",
+        "webpack": "4.41.2",
+        "webpack-cli": "3.3.10"
+    },
+    "dependencies": {
+        "@babylonjs/core": "4.2.0",
+        "@babylonjs/gui": "4.2.0",
+        "@babylonjs/loaders": "4.2.0",
+        "@babylonjs/materials": "4.2.0",
+        "@babylonjs/post-processes": "4.2.0",
+        "@babylonjs/procedural-textures": "4.2.0",
+        "cannon": "0.6.2",
+        "earcut": "2.2.2",
+        "rimraf": "~2.6.2"
+    }
+}
