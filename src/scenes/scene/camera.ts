@@ -18,6 +18,9 @@ export default class PlayerCamera extends FreeCamera {
     @visibleInInspector("KeyMap", "Strafe Right Key", "d".charCodeAt(0))
     private _strafeRightKey: number;
 
+    @visibleInInspector("KeyMap", "Jump Key", 32)
+    private _jumpKey: number;
+
     @visibleInInspector("number", "Ball Force Factor", 1)
     private _ballForceFactor: number;
 

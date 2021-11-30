@@ -5,6 +5,7 @@ export default class PlayerCamera extends FreeCamera {
     private _backwardKey;
     private _strafeLeftKey;
     private _strafeRightKey;
+    private _jumpKey;
     private _ballForceFactor;
     /**
      * Override constructor.

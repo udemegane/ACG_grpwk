@@ -32,29 +32,29 @@
 		},
 		{
 			"bindedMeshes": [
-				"f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c"
-			],
-			"json": "ball-0b776f6c-9111-499d-8207-1c8242d97719.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
 				"b6a89645-0d85-44c1-8bf8-b99b8670c51f"
 			],
 			"json": "blaster-71ce380f-e971-41c0-b580-e3e91b316c6f.json",
 			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c"
+			],
+			"json": "ball-0b776f6c-9111-499d-8207-1c8242d97719.json",
+			"isMultiMaterial": false
 		}
 	],
 	"textures": [
-		"blaster_diffuse.jpg-29.json",
 		"EnvironmentBRDFTexture0-26.json",
 		"parking.env-30.json",
-		"blaster_nmap.jpg-31.json"
+		"blaster_nmap.jpg-31.json",
+		"blaster_diffuse.jpg-29.json"
 	],
 	"meshes": [
-		"sky-c4024c20-1c4f-4be6-9abd-525e2a782174.json",
-		"ground-b87c0751-53e5-4782-88d9-0461e9457fe1.json",
 		"cube-d66c05ad-967f-4f69-a6fb-7d47281b641c.json",
+		"ground-b87c0751-53e5-4782-88d9-0461e9457fe1.json",
+		"sky-c4024c20-1c4f-4be6-9abd-525e2a782174.json",
 		"wall-f824df87-ae33-41d9-ba8f-551d2083a2be.json",
 		"blaster-b6a89645-0d85-44c1-8bf8-b99b8670c51f.json",
 		"ball-f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c.json"
@@ -256,13 +256,13 @@
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": 16.749540320799678,
-			"beta": 0.5604322828339814,
-			"radius": 3.669745980993713,
+			"alpha": 21.677878245164422,
+			"beta": 1.7038920830737798,
+			"radius": 11.131320178916617,
 			"target": [
-				2.33725588331951,
-				2.905932874317086,
-				1.763985171231724
+				6.400884736020107,
+				3.4975030698884852,
+				0.4793505270345308
 			],
 			"inertialAlphaOffset": 0,
 			"inertialBetaOffset": 0,
@@ -292,9 +292,9 @@
 			],
 			"speed": 2,
 			"position": [
-				1.3524453552626452,
-				6.01430096546572,
-				0.08017057372495984
+				-4.095027432483818,
+				2.020341813059304,
+				3.8793668943378337
 			],
 			"upVector": [
 				0,
@@ -357,7 +357,7 @@
 					"pinchPrecision": 12,
 					"pinchDeltaPercentage": 0,
 					"useNaturalPinchZoom": false,
-					"panningSensibility": 272.49842500793875,
+					"panningSensibility": 89.83660373852686,
 					"multiTouchPanning": true,
 					"multiTouchPanAndZoom": true
 				}
