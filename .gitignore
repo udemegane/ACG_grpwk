@@ -52,3 +52,48 @@ dist
 # Comment in the public line in if your project uses Gatsby and *not* Next.js
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
+
+# python and vim session files
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+[Ss]hare
+pyvenv.cfg
+__pycache__
+*.cfg
+*.code-workspace
+.venv
+.vim
+.session.vim
+.pylintrc
+pip-selfcheck.json
+pip-selfcheck.json
+*.aux
+*.bbl
+*.blg
+*.idx
+*.ind
+*.lof
+*.lot
+*.out
+*.toc
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.fls
+*.log
+*.fdb_latexmk
+*.snm
+*.nav
+*.dvi
+*.gz
+*.xcp
+
