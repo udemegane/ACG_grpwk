@@ -23,7 +23,7 @@ Windowsの場合、**全てのユーザーにインストール:管理者権限*
 
 ---
 ## エディタのつかいかた
-ここに全てが書いてある。 http://editor.babylonjs.com
+ここに全てが書いてある。https://doc.babylonjs.com/extensions/editor/gettingStarted
 ### Q&A
 - ソースコード(src/のファイル)変更しても何も変わらないが？？
   - エディタ左上メニューバーにあるEditから、Restart Typescript Watcherを連打すると治る。
