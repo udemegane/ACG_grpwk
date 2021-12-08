@@ -16,7 +16,7 @@ $ git clone https://github.com/udemegane/ACG_grpwk.git
  - 公式サイト: http://editor.babylonjs.com
  - 非公式ミラー(udemeganeのGdrive経由. 公式サイトはめっちゃ遅いのでこっちのほうが速いかも)
    - [Windows](https://drive.google.com/file/d/1-75nv2szsy4O7eOtMfUShfc5AwdO7n8Q/view?usp=sharing)
-   - [Mac]()
+   - [Mac](https://drive.google.com/file/d/1-CUdCz3ZgKMdiB5j4XOrDm-D_PbsOzzV/view?usp=sharing)
 
 
 Windowsの場合、**全てのユーザーにインストール:管理者権限**を選択すること。手元の環境ではユーザーインストールだとよからぬエラーが起きた。
