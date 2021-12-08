@@ -45,7 +45,9 @@ jspm_packages/
 .env
 .env.test
 
+# babylonjs editor generated file
 dist
+declaration
 
 # Gatsby files
 .cache/
