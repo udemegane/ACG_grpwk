@@ -21,4 +21,9 @@ $ git clone https://github.com/udemegane/ACG_grpwk.git
 
 Windowsの場合、**全てのユーザーにインストール:管理者権限**を選択すること。手元の環境ではユーザーインストールだとよからぬエラーが起きた。
 
- 
+---
+## エディタのつかいかた
+ここに全てが書いてある。 http://editor.babylonjs.com
+### Q&A
+- ソースコード(src/のファイル)変更しても何も変わらないが？？
+  - エディタ左上メニューバーにあるEditから、Restart Typescript Watcherを連打すると治る。

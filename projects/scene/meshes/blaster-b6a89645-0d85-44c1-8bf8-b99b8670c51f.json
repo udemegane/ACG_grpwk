@@ -4,7 +4,7 @@
 		{
 			"name": "blaster",
 			"id": "b6a89645-0d85-44c1-8bf8-b99b8670c51f",
-			"uniqueId": 20,
+			"uniqueId": 12,
 			"type": "Mesh",
 			"tags": "modified",
 			"position": [
@@ -77,14 +77,14 @@
 			"applyFog": true,
 			"delayLoadingFile": "geometries/7112a1e3-996a-4e61-9707-eda6a34ce48c.babylonbinarymeshdata",
 			"boundingBoxMaximum": [
-				0.3768,
-				0.0721,
-				0.0445
+				0.376800000667572,
+				0.07209999859333038,
+				0.04450000077486038
 			],
 			"boundingBoxMinimum": [
-				-0.3768,
-				-0.077,
-				-0.043
+				-0.376800000667572,
+				-0.07699999958276749,
+				-0.0430000014603138
 			],
 			"_binaryInfo": {
 				"positionsAttrDesc": {

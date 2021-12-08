@@ -12,7 +12,6 @@ import {
 } from '../tools';
 
 import { scriptsMap } from '../scripts-map';
-
 /**
  * Works as an helper, this will:
  * = attach scripts on objects.
