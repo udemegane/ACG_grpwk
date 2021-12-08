@@ -82,6 +82,16 @@ export default class PlayerCamera extends FreeCamera {
   }
 
   /**
+   * Requests the pointer lock.
+   */
+  private _enterPointerLock(): void {
+    const engine = this.getEngine();
+    if (!engine.isPointerLock) {
+      engine.enterPointerlock();
+    }
+  }
+
+  /**
    * Launches a new ball from the camera position to the camera direction.
    */
   private _launchBall(info: PointerInfo): void {

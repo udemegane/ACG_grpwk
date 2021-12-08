@@ -42,6 +42,7 @@ jspm_packages/
 # babylonjs editor generated file
 dist
 declaration
+.babylon
 
 # python and vim session files
 .Python
