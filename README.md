@@ -18,4 +18,7 @@ $ git clone https://github.com/udemegane/ACG_grpwk.git
    - [Windows](https://drive.google.com/file/d/1-75nv2szsy4O7eOtMfUShfc5AwdO7n8Q/view?usp=sharing)
    - [Mac]()
 
+
+Windowsの場合、**全てのユーザーにインストール:管理者権限**を選択すること。手元の環境ではユーザーインストールだとよからぬエラーが起きた。
+
  
