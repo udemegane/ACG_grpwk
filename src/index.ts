@@ -3,7 +3,7 @@ import '@babylonjs/materials';
 
 import { runScene } from './scenes/scene';
 
-export default class Game {
+export class Game {
   /**
    * Defines the engine used to draw the game using Babylon.JS and WebGL
    */
