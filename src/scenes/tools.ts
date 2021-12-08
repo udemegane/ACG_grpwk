@@ -3,23 +3,12 @@
  */
 
 import {
-  Color3,
-  Color4,
+  Color3, Color4,
   SerializationHelper,
-  Scene,
-  Node,
-  AbstractMesh,
-  Mesh,
-  Vector2,
-  Vector3,
-  Vector4,
-  Matrix,
-  SSAO2RenderingPipeline,
-  DefaultRenderingPipeline,
-  ScreenSpaceReflectionPostProcess,
-  MotionBlurPostProcess,
-  Nullable,
-  EngineStore,
+  Scene, Node, AbstractMesh, Mesh,
+  Vector2, Vector3, Vector4, Matrix,
+  SSAO2RenderingPipeline, DefaultRenderingPipeline, ScreenSpaceReflectionPostProcess, MotionBlurPostProcess,
+  Nullable, EngineStore,
 } from '@babylonjs/core';
 
 export type NodeScriptConstructor = new (...args: any[]) => Node;
@@ -83,28 +72,20 @@ function requireScriptForNodes(
   nodes: (Node | Scene)[]
 ): void {
   const dummyScene = new Scene(scene.getEngine(), { virtual: true });
-  const initializedNodes: { node: Node | Scene; exports: any }[] = [];
+  const initializedNodes: { node: Node | Scene; exports: any; }[] = [];
 
   // Initialize nodes
   for (const n of nodes as ((Scene | Node) & IScript)[]) {
-    if (
-      !n.metadata ||
-      !n.metadata.script ||
-      !n.metadata.script.name ||
-      n.metadata.script.name === 'None'
-    ) {
-      continue;
+    if (!n.metadata || !n.metadata.script || !n.metadata.script.name || n.metadata.script.name === 'None') { continue; }
     }
 
     const exports = scriptsMap[n.metadata.script.name];
-    if (!exports) {
-      continue;
-    }
+    if (!exports) { continue; }
 
     const scene = n instanceof Scene ? n : n.getScene();
 
     // Get prototype.
-    let { prototype } = exports.default;
+    let {prototype} = exports.default;
 
     // Call constructor
     if (isEs6Class(prototype.constructor)) {
@@ -134,9 +115,7 @@ function requireScriptForNodes(
       // Add prototype
       do {
         for (const key in prototype) {
-          if (!prototype.hasOwnProperty(key) || key === 'constructor') {
-            continue;
-          }
+          if (!prototype.hasOwnProperty(key) || key === 'constructor') { continue; }
           n[key] = prototype[key].bind(n);
         }
 
@@ -172,40 +151,24 @@ function requireScriptForNodes(
 
     // Check update
     if (n.onUpdate) {
-      const updateObserver = scene.onBeforeRenderObservable.add(() =>
-        n.onUpdate()
-      );
-      n.onDisposeObservable.addOnce(() =>
-        scene.onBeforeRenderObservable.remove(updateObserver)
-      );
+      const updateObserver = scene.onBeforeRenderObservable.add(() => n.onUpdate());
+      n.onDisposeObservable.addOnce(() => scene.onBeforeRenderObservable.remove(updateObserver));
     }
 
     // Check properties
-    const properties = n.metadata.script.properties ?? {};
+    const properties = n.metadata.script.properties ?? { };
     for (const key in properties) {
       const p = properties[key];
 
       switch (p.type) {
-        case 'Vector2':
-          n[key] = new Vector2(p.value.x, p.value.y);
-          break;
-        case 'Vector3':
-          n[key] = new Vector3(p.value.x, p.value.y, p.value.z);
-          break;
-        case 'Vector4':
-          n[key] = new Vector4(p.value.x, p.value.y, p.value.z, p.value.w);
-          break;
+        case 'Vector2': n[key] = new Vector2(p.value.x, p.value.y); break;
+        case 'Vector3': n[key] = new Vector3(p.value.x, p.value.y, p.value.z); break;
+        case 'Vector4': n[key] = new Vector4(p.value.x, p.value.y, p.value.z, p.value.w); break;
 
-        case 'Color3':
-          n[key] = new Color3(p.value.r, p.value.g, p.value.b);
-          break;
-        case 'Color4':
-          n[key] = new Color4(p.value.r, p.value.g, p.value.b, p.value.a);
-          break;
+        case 'Color3': n[key] = new Color3(p.value.r, p.value.g, p.value.b); break;
+        case 'Color4': n[key] = new Color4(p.value.r, p.value.g, p.value.b, p.value.a); break;
 
-        default:
-          n[key] = p.value;
-          break;
+        default: n[key] = p.value; break;
       }
     }
 
@@ -213,10 +176,7 @@ function requireScriptForNodes(
     if (n instanceof Node) {
       const childrenLinks = (e.default as any)._ChildrenValues ?? [];
       for (const link of childrenLinks) {
-        const child = n.getChildren(
-          (node) => node.name === link.nodeName,
-          true
-        )[0];
+        const child = n.getChildren((node => node.name === link.nodeName), true)[0];
         n[link.propertyKey] = child;
       }
     }
@@ -231,9 +191,7 @@ function requireScriptForNodes(
     // Check particle systems
     const particleSystemLinks = (e.default as any)._ParticleSystemValues ?? [];
     for (const link of particleSystemLinks) {
-      const ps = scene.particleSystems.filter(
-        (ps) => ps.emitter === n && ps.name === link.particleSystemName
-      )[0];
+      const ps = scene.particleSystems.filter((ps) => ps.emitter === n && ps.name === link.particleSystemName)[0];
       n[link.propertyKey] = ps;
     }
 
@@ -241,12 +199,8 @@ function requireScriptForNodes(
     const pointerEvents = (e.default as any)._PointerValues ?? [];
     for (const event of pointerEvents) {
       scene.onPointerObservable.add((e) => {
-        if (e.type !== event.type) {
-          return;
-        }
-        if (!event.onlyWhenMeshPicked) {
-          return n[event.propertyKey](e);
-        }
+        if (e.type !== event.type) { return; }
+        if (!event.onlyWhenMeshPicked) { return n[event.propertyKey](e); }
 
         if (e.pickInfo?.pickedMesh === n) {
           n[event.propertyKey](e);
@@ -258,17 +212,11 @@ function requireScriptForNodes(
     const keyboardEvents = (e.default as any)._KeyboardValues ?? [];
     for (const event of keyboardEvents) {
       scene.onKeyboardObservable.add((e) => {
-        if (event.type && e.type !== event.type) {
-          return;
-        }
+        if (event.type && e.type !== event.type) { return; }
 
-        if (!event.keys.length) {
-          return n[event.propertyKey](e);
-        }
+        if (!event.keys.length) { return n[event.propertyKey](e); }
 
-        if (
-          event.keys.indexOf(e.event.keyCode) !== -1 ||
-          event.keys.indexOf(e.event.key) !== -1
+        if (event.keys.indexOf(e.event.keyCode) !== -1 || event.keys.indexOf(e.event.key) !== -1) {
         ) {
           n[event.propertyKey](e);
         }
@@ -277,9 +225,7 @@ function requireScriptForNodes(
 
     // Retrieve impostors
     if (n instanceof AbstractMesh && !n.physicsImpostor) {
-      n.physicsImpostor = n._scene
-        .getPhysicsEngine()
-        ?.getImpostorForPhysicsObject(n);
+      n.physicsImpostor = n._scene.getPhysicsEngine()?.getImpostorForPhysicsObject(n);
     }
 
     delete n.metadata.script;
@@ -294,7 +240,7 @@ function requireScriptForNodes(
  * @param scene the scene to attach scripts, etc.
  */
 export async function runScene(scene: Scene, rootUrl?: string): Promise<void> {
-  const { scriptsMap } = require('./scripts-map');
+  const {scriptsMap} = require("./scripts-map");
 
   // Attach scripts to objects in scene.
   attachScripts(scriptsMap, scene);
@@ -337,9 +283,7 @@ export function attachScripts(scriptsMap: ScriptMap, scene: Scene): void {
  */
 export function setupRenderingGroups(scene: Scene): void {
   scene.meshes.forEach((m) => {
-    if (!m.metadata || !(m instanceof Mesh)) {
-      return;
-    }
+    if (!m.metadata || !(m instanceof Mesh)) { return; }
     m.renderingGroupId = m.metadata.renderingGroupId ?? m.renderingGroupId;
   });
 }
@@ -356,7 +300,7 @@ export function applyMeshesPoseMatrices(scene: Scene): void {
       m.updatePoseMatrix(Matrix.FromArray(m.metadata.basePoseMatrix));
       delete m.metadata.basePoseMatrix;
     }
-  });
+  })
 }
 
 /**
@@ -368,17 +312,13 @@ export function attachScriptToNodeAtRuntime(
   scriptPath: string,
   object: Node | Scene
 ): any {
-  const { scriptsMap } = require('./scripts-map');
+  const {scriptsMap} = require("./scripts-map");
 
-  object.metadata = object.metadata ?? {};
-  object.metadata.script = object.metadata.script ?? {};
+  object.metadata = object.metadata ?? { };
+  object.metadata.script = object.metadata.script ?? { };
   object.metadata.script.name = scriptPath;
 
-  requireScriptForNodes(
-    object instanceof Scene ? object : object.getScene(),
-    scriptsMap,
-    [object]
-  );
+  requireScriptForNodes(object instanceof Scene ? object : object.getScene(), scriptsMap, [object]);
 }
 
 /**
@@ -409,63 +349,34 @@ export function configurePostProcesses(
   scene: Scene,
   rootUrl: string = null
 ): void {
-  if (rootUrl === null || !scene.metadata?.postProcesses) {
-    return;
-  }
+  if (rootUrl === null || !scene.metadata?.postProcesses) { return; }
 
   // Load  post-processes configuration
   const data = scene.metadata.postProcesses;
 
   if (data.ssao && !ssao2RenderingPipelineRef) {
-    ssao2RenderingPipelineRef = SSAO2RenderingPipeline.Parse(
-      data.ssao.json,
-      scene,
-      rootUrl
-    );
+    ssao2RenderingPipelineRef = SSAO2RenderingPipeline.Parse(data.ssao.json, scene, rootUrl);
     if (data.ssao.enabled) {
-      scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline(
-        ssao2RenderingPipelineRef.name,
-        scene.cameras
-      );
+      scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline(ssao2RenderingPipelineRef.name, scene.cameras);
     }
   }
-
-  if (
-    data.screenSpaceReflections?.json &&
-    !screenSpaceReflectionPostProcessRef
-  ) {
-    screenSpaceReflectionPostProcessRef =
-      ScreenSpaceReflectionPostProcess._Parse(
-        data.screenSpaceReflections.json,
-        scene.activeCamera!,
-        scene,
-        ''
+  }
+  if (data.screenSpaceReflections?.json && !screenSpaceReflectionPostProcessRef) {
+    screenSpaceReflectionPostProcessRef = ScreenSpaceReflectionPostProcess._Parse(data.screenSpaceReflections.json, scene.activeCamera!, scene, '');
       );
   }
 
   if (data.default && !defaultRenderingPipelineRef) {
-    defaultRenderingPipelineRef = DefaultRenderingPipeline.Parse(
-      data.default.json,
-      scene,
-      rootUrl
-    );
+    defaultRenderingPipelineRef = DefaultRenderingPipeline.Parse(data.default.json, scene, rootUrl);
     if (!data.default.enabled) {
-      scene.postProcessRenderPipelineManager.detachCamerasFromRenderPipeline(
-        defaultRenderingPipelineRef.name,
-        scene.cameras
-      );
+      scene.postProcessRenderPipelineManager.detachCamerasFromRenderPipeline(defaultRenderingPipelineRef.name, scene.cameras);
     }
   }
 
   if (data.motionBlur?.json) {
-    motionBlurPostProcessRef = MotionBlurPostProcess._Parse(
-      data.motionBlur.json,
-      scene.activeCamera!,
-      scene,
-      ''
+    motionBlurPostProcessRef = MotionBlurPostProcess._Parse(data.motionBlur.json, scene.activeCamera!, scene, '');
+    ''
     );
-  }
-
   scene.onDisposeObservable.addOnce(() => {
     ssao2RenderingPipelineRef = null;
     screenSpaceReflectionPostProcessRef = null;
@@ -480,23 +391,13 @@ export function configurePostProcesses(
 (function overrideTextureParser(): void {
   const textureParser = SerializationHelper._TextureParser;
   SerializationHelper._TextureParser = (sourceProperty, scene, rootUrl) => {
-    if (
-      sourceProperty.isCube &&
-      !sourceProperty.isRenderTarget &&
-      sourceProperty.files &&
-      sourceProperty.metadata?.isPureCube
-    ) {
+    if (sourceProperty.isCube && !sourceProperty.isRenderTarget && sourceProperty.files && sourceProperty.metadata?.isPureCube) {
       sourceProperty.files.forEach((f, index) => {
         sourceProperty.files[index] = rootUrl + f;
       });
     }
 
-    const texture = textureParser.call(
-      SerializationHelper,
-      sourceProperty,
-      scene,
-      rootUrl
-    );
+    const texture = textureParser.call(SerializationHelper, sourceProperty, scene, rootUrl);
 
     if (sourceProperty.url) {
       texture.url = rootUrl + sourceProperty.url;

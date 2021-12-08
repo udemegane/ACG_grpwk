@@ -78,7 +78,6 @@ export default class PlayerCamera extends FreeCamera {
     const engine = this.getEngine();
     if (engine.isPointerLock) {
       engine.exitPointerlock();
-
     }
   }
 
