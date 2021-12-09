@@ -43,7 +43,9 @@ jspm_packages/
 dist
 declaration
 .babylon
-
+src/scenes/
+!src/scenes/scene
+src/index.ts
 # python and vim session files
 .Python
 [Bb]in
