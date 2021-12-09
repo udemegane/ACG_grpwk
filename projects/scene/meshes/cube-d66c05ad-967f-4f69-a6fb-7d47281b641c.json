@@ -9,8 +9,8 @@
 			"tags": "modified",
 			"position": [
 				0,
-				0.5351396799087524,
-				0
+				5,
+				-4.544679164886475
 			],
 			"rotationQuaternion": [
 				0,
@@ -19,9 +19,9 @@
 				1
 			],
 			"scaling": [
-				1,
-				1,
-				1
+				3,
+				10,
+				3
 			],
 			"localMatrix": {
 				"0": 1,
@@ -55,13 +55,16 @@
 			"geometryId": "d3b70945-ad99-4eb5-abe6-e1409aa44e01",
 			"subMeshes": null,
 			"materialId": "965b4240-9156-4704-8e39-cc381d3c7123",
-			"physicsMass": 0,
+			"physicsMass": 1,
 			"physicsFriction": 0.2,
-			"physicsRestitution": 0,
-			"physicsImpostor": 2,
+			"physicsRestitution": 0.2,
+			"physicsImpostor": 0,
 			"metadata": {
 				"isPickable": true,
-				"script": {}
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],

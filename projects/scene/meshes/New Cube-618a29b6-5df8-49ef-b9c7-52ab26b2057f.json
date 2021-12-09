@@ -1,27 +1,24 @@
 {
-	"materials": [],
 	"meshes": [
 		{
-			"name": "ground",
-			"id": "b87c0751-53e5-4782-88d9-0461e9457fe1",
-			"uniqueId": 11,
+			"name": "New Cube",
+			"id": "618a29b6-5df8-49ef-b9c7-52ab26b2057f",
+			"uniqueId": 136,
 			"type": "Mesh",
-			"tags": "modified",
 			"position": [
+				-8.647750854492188,
+				5,
+				0
+			],
+			"rotation": [
 				0,
 				0,
 				0
 			],
-			"rotationQuaternion": [
-				0,
-				0,
-				0,
-				1
-			],
 			"scaling": [
-				100,
-				0.1,
-				100
+				3,
+				10,
+				3
 			],
 			"localMatrix": {
 				"0": 1,
@@ -45,20 +42,15 @@
 			"isVisible": true,
 			"infiniteDistance": false,
 			"pickable": true,
-			"receiveShadows": true,
+			"receiveShadows": false,
 			"billboardMode": 0,
 			"visibility": 1,
-			"checkCollisions": true,
+			"checkCollisions": false,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": null,
 			"isUnIndexed": false,
-			"geometryId": "0d38a45c-03a7-4a42-bfc3-977788ff849d",
+			"geometryId": "8c9f98e0-eed2-45f9-85e9-ef0ff9073f10",
 			"subMeshes": null,
-			"materialId": "77eb899b-024f-405e-b240-9bb6e5cbe3c3",
-			"physicsMass": 0,
-			"physicsFriction": 0.2,
-			"physicsRestitution": 0,
-			"physicsImpostor": 2,
 			"metadata": {
 				"isPickable": true,
 				"script": {
@@ -79,7 +71,7 @@
 				0
 			],
 			"applyFog": true,
-			"delayLoadingFile": "geometries/0d38a45c-03a7-4a42-bfc3-977788ff849d.babylonbinarymeshdata",
+			"delayLoadingFile": "geometries/8c9f98e0-eed2-45f9-85e9-ef0ff9073f10.babylonbinarymeshdata",
 			"boundingBoxMaximum": [
 				0.5,
 				0.5,
@@ -129,6 +121,7 @@
 			"indices": null
 		}
 	],
+	"materials": [],
 	"multiMaterials": [],
 	"lods": []
 }
