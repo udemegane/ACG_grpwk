@@ -1,82 +1,36 @@
 {
-	"filesList": [
-		"blaster_diffuse.jpg",
-		"blaster_nmap.jpg",
-		"parking.env"
-	],
-	"cameras": [
-		"camera-2e391261-067a-4ec6-8b00-25d7e0738684.json"
-	],
+	"filesList": [],
+	"cameras": [],
 	"materials": [
 		{
-			"bindedMeshes": [
-				"d66c05ad-967f-4f69-a6fb-7d47281b641c",
-				"f824df87-ae33-41d9-ba8f-551d2083a2be"
-			],
-			"json": "cube-965b4240-9156-4704-8e39-cc381d3c7123.json",
+			"bindedMeshes": [],
+			"json": "cube-03bdd37e-fe54-4095-a392-0de62b0de089.json",
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [
-				"c4024c20-1c4f-4be6-9abd-525e2a782174"
-			],
-			"json": "sky-cdc8b068-1ebd-4c87-8cb0-f48a85181271.json",
+			"bindedMeshes": [],
+			"json": "sky-b2346078-7465-4c63-8877-44b542584898.json",
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [
-				"b6a89645-0d85-44c1-8bf8-b99b8670c51f"
-			],
-			"json": "blaster-71ce380f-e971-41c0-b580-e3e91b316c6f.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c"
-			],
-			"json": "ball-0b776f6c-9111-499d-8207-1c8242d97719.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"b87c0751-53e5-4782-88d9-0461e9457fe1"
-			],
-			"json": "ground-77eb899b-024f-405e-b240-9bb6e5cbe3c3.json",
+			"bindedMeshes": [],
+			"json": "ground-44ce4d7a-5718-4025-a141-272ee6387673.json",
 			"isMultiMaterial": false
 		}
 	],
-	"textures": [
-		"blaster_diffuse.jpg-38.json",
-		"parking.env-39.json",
-		"blaster_nmap.jpg-40.json",
-		"EnvironmentBRDFTexture0-43.json"
-	],
-	"meshes": [
-		"cube-d66c05ad-967f-4f69-a6fb-7d47281b641c.json",
-		"sky-c4024c20-1c4f-4be6-9abd-525e2a782174.json",
-		"ball-f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c.json",
-		"ground-b87c0751-53e5-4782-88d9-0461e9457fe1.json",
-		"New Cube-618a29b6-5df8-49ef-b9c7-52ab26b2057f.json",
-		"wall-f824df87-ae33-41d9-ba8f-551d2083a2be.json",
-		"New Cube-c50fde32-b635-466f-9440-684ba17efabf.json",
-		"blaster-b6a89645-0d85-44c1-8bf8-b99b8670c51f.json"
-	],
+	"textures": [],
+	"meshes": [],
 	"transformNodes": [],
 	"particleSystems": [],
-	"lights": [
-		{
-			"json": "sun-13d8b045-9a4a-48c0-ab96-3584968502c2.json",
-			"shadowGenerator": "sun-13d8b045-9a4a-48c0-ab96-3584968502c2.json"
-		}
-	],
+	"lights": [],
 	"sounds": [],
 	"morphTargetManagers": [],
 	"scene": {
 		"autoClear": false,
 		"clearColor": [
-			0,
-			0,
-			0,
+			0.2,
+			0.2,
+			0.3,
 			1
 		],
 		"ambientColor": [
@@ -86,7 +40,7 @@
 		],
 		"gravity": [
 			0,
-			-2,
+			-9.807,
 			0
 		],
 		"collisionsEnabled": true,
@@ -94,7 +48,7 @@
 		"physicsEnabled": true,
 		"physicsGravity": [
 			0,
-			-9.8,
+			0,
 			0
 		],
 		"physicsEngine": "CannonJSPlugin",
@@ -136,18 +90,18 @@
 			"vignetteCameraFov": 0.5,
 			"_vignetteBlendMode": 0,
 			"_vignetteEnabled": false,
-			"_applyByPostProcess": false,
+			"_applyByPostProcess": true,
 			"_isEnabled": true
 		},
 		"animations": [],
 		"postProcessesEnabled": true,
 		"metadata": {
 			"script": {
-				"name": "None"
+				"name": "src/scenes/GameScripts/gameMode.ts.ts"
 			},
 			"postProcesses": {
 				"ssao": {
-					"enabled": false,
+					"enabled": true,
 					"json": {
 						"tags": null,
 						"totalStrength": 2,
@@ -159,7 +113,7 @@
 							"ssaoRatio": 0.5,
 							"blurRatio": 0.5
 						},
-						"expensiveBlur": true,
+						"expensiveBlur": false,
 						"radius": 1,
 						"base": 0,
 						"_name": "ssao",
@@ -170,7 +124,7 @@
 					"enabled": false
 				},
 				"default": {
-					"enabled": false,
+					"enabled": true,
 					"json": {
 						"tags": null,
 						"sharpenEnabled": false,
@@ -200,71 +154,23 @@
 			}
 		},
 		"environmentIntensity": 1,
-		"shadowGenerators": [
-			{
-				"className": "CascadedShadowGenerator",
-				"lightId": "13d8b045-9a4a-48c0-ab96-3584968502c2",
-				"id": "13d8b045-9a4a-48c0-ab96-3584968502c2",
-				"mapSize": 1024,
-				"forceBackFacesOnly": false,
-				"darkness": 0,
-				"transparencyShadow": false,
-				"frustumEdgeFalloff": 0,
-				"bias": 0.0005,
-				"normalBias": 0.0005,
-				"usePercentageCloserFiltering": true,
-				"useContactHardeningShadow": false,
-				"contactHardeningLightSizeUVRatio": 0.1,
-				"filteringQuality": 0,
-				"useExponentialShadowMap": false,
-				"useBlurExponentialShadowMap": false,
-				"useCloseExponentialShadowMap": false,
-				"useBlurCloseExponentialShadowMap": false,
-				"usePoissonSampling": false,
-				"depthScale": 50,
-				"blurBoxOffset": 1,
-				"blurKernel": 1,
-				"blurScale": 2,
-				"useKernelBlur": false,
-				"renderList": [
-					"d66c05ad-967f-4f69-a6fb-7d47281b641c",
-					"f824df87-ae33-41d9-ba8f-551d2083a2be",
-					"2dacc31c-b006-4088-aaaf-50c86a795b6c",
-					"b6f5c00a-61f9-48a2-a448-70f69392c07a"
-				],
-				"numCascades": 4,
-				"debug": false,
-				"stabilizeCascades": true,
-				"lambda": 1,
-				"cascadeBlendPercentage": 0.2,
-				"depthClamp": true,
-				"autoCalcDepthBounds": false,
-				"shadowMaxZ": 10000,
-				"penumbraDarkness": 1,
-				"freezeShadowCastersBoundingInfo": false,
-				"minDistance": 0,
-				"maxDistance": 1
-			}
-		],
 		"sounds": []
 	},
 	"assets": {
-		"meshes": [
-			"blaster.babylon"
-		],
+		"meshes": [],
 		"prefabs": [],
 		"graphs": []
 	},
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": 28.747028525345684,
-			"beta": 0.6923362932210689,
-			"radius": 31.384446227706704,
+			"alpha": 0.354124790315863,
+			"beta": 1.3502307306695949,
+			"radius": 4.308561172187717,
 			"target": [
-				-0.2865749215879874,
-				-1.2095079724721225,
-				-4.774113071871544
+				0,
+				0.5194425582885742,
+				0
 			],
 			"inertialAlphaOffset": 0,
 			"inertialBetaOffset": 0,
@@ -294,9 +200,9 @@
 			],
 			"speed": 2,
 			"position": [
-				-18.123618091790448,
-				22.948882109989178,
-				-13.895272240956519
+				3.9433133728053544,
+				1.4620762582619746,
+				1.4578822744009563
 			],
 			"upVector": [
 				0,
@@ -305,7 +211,7 @@
 			],
 			"fov": 0.8,
 			"minZ": 1,
-			"maxZ": 15000,
+			"maxZ": 10000,
 			"inertia": 0.9,
 			"mode": 0,
 			"layerMask": 268435455,
@@ -359,7 +265,7 @@
 					"pinchPrecision": 12,
 					"pinchDeltaPercentage": 0,
 					"useNaturalPinchZoom": false,
-					"panningSensibility": 31.862916832898698,
+					"panningSensibility": 232.09604321162269,
 					"multiTouchPanning": true,
 					"multiTouchPanAndZoom": true
 				}
@@ -370,7 +276,7 @@
 	},
 	"postProcesses": {
 		"ssao": {
-			"enabled": false,
+			"enabled": true,
 			"json": {
 				"tags": null,
 				"totalStrength": 2,
@@ -382,7 +288,7 @@
 					"ssaoRatio": 0.5,
 					"blurRatio": 0.5
 				},
-				"expensiveBlur": true,
+				"expensiveBlur": false,
 				"radius": 1,
 				"base": 0,
 				"_name": "ssao",
@@ -393,7 +299,7 @@
 			"enabled": false
 		},
 		"default": {
-			"enabled": false,
+			"enabled": true,
 			"json": {
 				"tags": null,
 				"sharpenEnabled": false,

@@ -66,6 +66,16 @@
 	"Sounds": [],
 	"Scripts": [
 		{
+			"id": "GameScripts",
+			"key": "GameScripts",
+			"base64": "../css/svg/folder-open.svg"
+		},
+		{
+			"id": "MainMap",
+			"key": "MainMap",
+			"base64": "../css/svg/folder-open.svg"
+		},
+		{
 			"id": "decorators.ts",
 			"key": "decorators.ts",
 			"base64": "../css/images/ts.png",
