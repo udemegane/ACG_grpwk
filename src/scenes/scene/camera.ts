@@ -85,7 +85,7 @@ export default class PlayerCamera extends FreeCamera {
   // キー0をデバッグ用にした
   @onKeyboardEvent([48], KeyboardEventTypes.KEYUP)
   private _onZeroKey(): void {
-    GameManager.onSwitchSceneObservable.notifyObservers('./scenes/MainMap/');
+    GameManager.switchScene('./scenes/MainMap/');
   }
 
   /**
