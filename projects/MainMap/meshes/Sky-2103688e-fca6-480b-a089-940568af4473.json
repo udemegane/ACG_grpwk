@@ -1,13 +1,14 @@
 {
+	"materials": [],
 	"meshes": [
 		{
-			"name": "New Cube",
-			"id": "618a29b6-5df8-49ef-b9c7-52ab26b2057f",
-			"uniqueId": 24,
+			"name": "Sky",
+			"id": "2103688e-fca6-480b-a089-940568af4473",
+			"uniqueId": 176,
 			"type": "Mesh",
 			"position": [
-				-8.647750854492188,
-				5,
+				0,
+				0,
 				0
 			],
 			"rotation": [
@@ -16,9 +17,9 @@
 				0
 			],
 			"scaling": [
-				3,
-				10,
-				3
+				1,
+				1,
+				1
 			],
 			"localMatrix": {
 				"0": 1,
@@ -49,8 +50,9 @@
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": null,
 			"isUnIndexed": false,
-			"geometryId": "8c9f98e0-eed2-45f9-85e9-ef0ff9073f10",
+			"geometryId": "295d1c87-05cc-485a-a403-d91cc47858c1",
 			"subMeshes": null,
+			"materialId": "8769b46a-8c06-4f37-86cb-ddcf03e6816e",
 			"metadata": {
 				"isPickable": true,
 				"script": {
@@ -71,16 +73,16 @@
 				0
 			],
 			"applyFog": true,
-			"delayLoadingFile": "geometries/8c9f98e0-eed2-45f9-85e9-ef0ff9073f10.babylonbinarymeshdata",
+			"delayLoadingFile": "geometries/295d1c87-05cc-485a-a403-d91cc47858c1.babylonbinarymeshdata",
 			"boundingBoxMaximum": [
-				0.5,
-				0.5,
-				0.5
+				2500,
+				2500,
+				2500
 			],
 			"boundingBoxMinimum": [
-				-0.5,
-				-0.5,
-				-0.5
+				-2500,
+				-2500,
+				-2500
 			],
 			"_binaryInfo": {
 				"positionsAttrDesc": {
@@ -121,7 +123,6 @@
 			"indices": null
 		}
 	],
-	"materials": [],
 	"multiMaterials": [],
 	"lods": []
 }
