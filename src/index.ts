@@ -1,7 +1,8 @@
 import { Engine, Scene, SceneLoader } from '@babylonjs/core';
 import '@babylonjs/materials';
 
-import { runScene } from './scenes/scene';
+// import { runScene } from './scenes/scene';
+import { GameManager } from './scenes/GameScripts/gameManager';
 
 export class Game {
   /**
@@ -25,15 +26,19 @@ export class Game {
     this.scene = new Scene(this.engine);
 
     this._bindEvents();
-    this._load();
+    this._load('./scenes/scene/');
+    GameManager.onSwitchSceneObservable.addOnce((rootUrl: string) => {
+      this.engine.stopRenderLoop();
+      this.scene.dispose();
+      this.scene = new Scene(this.engine);
+      this._load(rootUrl);
+    });
   }
 
   /**
    * Loads the first scene.
    */
-  private _load(): void {
-    const rootUrl = './scenes/scene/';
-
+  private _load(rootUrl: string): void {
     SceneLoader.Append(
       rootUrl,
       'scene.babylon',
@@ -52,10 +57,11 @@ export class Game {
           );
 
           // Run the scene to attach scripts etc.
-          runScene(this.scene, rootUrl);
-
-          // Render.
-          this.engine.runRenderLoop(() => this.scene.render());
+          import(`${rootUrl}index`).then((module) => {
+            module.runScene(this.scene, rootUrl);
+            // Render.
+            this.engine.runRenderLoop(() => this.scene.render());
+          });
         });
       },
       undefined,
