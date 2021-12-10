@@ -14,6 +14,7 @@ import {
   onPointerEvent,
   onKeyboardEvent,
 } from '../tools';
+import { GameManager } from '../GameScripts/gameManager';
 
 export default class PlayerCamera extends FreeCamera {
   @fromChildren('ball')
@@ -79,6 +80,12 @@ export default class PlayerCamera extends FreeCamera {
     if (engine.isPointerLock) {
       engine.exitPointerlock();
     }
+  }
+
+  // キー0をデバッグ用にした
+  @onKeyboardEvent([48], KeyboardEventTypes.KEYUP)
+  private _onZeroKey(): void {
+    GameManager.onSwitchSceneObservable.notifyObservers('scenes/MainMap/');
   }
 
   /**
