@@ -19,7 +19,7 @@ import { visibleInInspector } from '../decorators';
  * The functions "onStart" and "onUpdate" are called automatically.
  */
 
-export default class SceneScript extends SceneScriptBase {
+export default class MainMapScript extends SceneScriptBase {
   @visibleInInspector('string', 'In sceneScript', 'Hello world!')
   private _testLocalString: string;
   /**

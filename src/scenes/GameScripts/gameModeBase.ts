@@ -1,5 +1,6 @@
-import SceneScriptBase from '../GameScripts/gameModeBase';
+import { Scene } from '@babylonjs/core';
 import { visibleInInspector } from '../decorators';
+
 /**
  * This represents a script that is attached to a node in the editor.
  * Available nodes are:
@@ -18,10 +19,9 @@ import { visibleInInspector } from '../decorators';
  * The function "onInitialize" is called immediately after the constructor is called.
  * The functions "onStart" and "onUpdate" are called automatically.
  */
-
-export default class SceneScript extends SceneScriptBase {
-  @visibleInInspector('string', 'In sceneScript', 'Hello world!')
-  private _testLocalString: string;
+export default class SceneScriptBase extends Scene {
+  @visibleInInspector('string', 'In gameModeBase', 'Hello World!')
+  private _testString: string;
   /**
    * Override constructor.
    * @warn do not fill.
@@ -34,7 +34,6 @@ export default class SceneScript extends SceneScriptBase {
    * This function is called immediatly after the constructor has been called.
    */
   public onInitialize(): void {
-    super.onInitialize();
     // ...
   }
 
@@ -42,7 +41,6 @@ export default class SceneScript extends SceneScriptBase {
    * Called on the scene starts.
    */
   public onStart(): void {
-    super.onStart();
     // ...
   }
 
@@ -50,21 +48,6 @@ export default class SceneScript extends SceneScriptBase {
    * Called each frame.
    */
   public onUpdate(): void {
-    super.onUpdate();
     // ...
-  }
-
-  /**
-   * Called on a message has been received and sent from a graph.
-   * @param message defines the name of the message sent from the graph.
-   * @param data defines the data sent in the message.
-   * @param sender defines the reference to the graph class that sent the message.
-   */
-  public onMessage(name: string, data: any, sender: any): void {
-    switch (name) {
-      case 'myMessage':
-        // Do something...
-        break;
-    }
   }
 }

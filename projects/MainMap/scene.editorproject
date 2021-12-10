@@ -1,6 +1,8 @@
 {
 	"filesList": [],
-	"cameras": [],
+	"cameras": [
+		"New Free Camera-24348433-1a93-41ea-b0a4-8a3e398fd82d.json"
+	],
 	"materials": [
 		{
 			"bindedMeshes": [],
@@ -16,10 +18,19 @@
 			"bindedMeshes": [],
 			"json": "ground-44ce4d7a-5718-4025-a141-272ee6387673.json",
 			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"2103688e-fca6-480b-a089-940568af4473"
+			],
+			"json": "sky-8769b46a-8c06-4f37-86cb-ddcf03e6816e.json",
+			"isMultiMaterial": false
 		}
 	],
 	"textures": [],
-	"meshes": [],
+	"meshes": [
+		"Sky-2103688e-fca6-480b-a089-940568af4473.json"
+	],
 	"transformNodes": [],
 	"particleSystems": [],
 	"lights": [],
@@ -164,9 +175,9 @@
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": 0.354124790315863,
-			"beta": 1.3502307306695949,
-			"radius": 4.308561172187717,
+			"alpha": -3.631742389907848,
+			"beta": 1.5763312950303783,
+			"radius": 21.790280885183368,
 			"target": [
 				0,
 				0.5194425582885742,
@@ -200,9 +211,9 @@
 			],
 			"speed": 2,
 			"position": [
-				3.9433133728053544,
-				1.4620762582619746,
-				1.4578822744009563
+				-19.224450568668157,
+				0.39883466157043734,
+				10.257791922400814
 			],
 			"upVector": [
 				0,
@@ -211,7 +222,7 @@
 			],
 			"fov": 0.8,
 			"minZ": 1,
-			"maxZ": 10000,
+			"maxZ": 15000,
 			"inertia": 0.9,
 			"mode": 0,
 			"layerMask": 268435455,
@@ -265,7 +276,7 @@
 					"pinchPrecision": 12,
 					"pinchDeltaPercentage": 0,
 					"useNaturalPinchZoom": false,
-					"panningSensibility": 232.09604321162269,
+					"panningSensibility": 45.8920197159994,
 					"multiTouchPanning": true,
 					"multiTouchPanAndZoom": true
 				}
