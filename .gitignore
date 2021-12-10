@@ -43,9 +43,10 @@ jspm_packages/
 dist
 declaration
 .babylon
-src/scenes/
-!src/scenes/scene
-src/index.ts
+src/scenes/decorators.ts
+src/scenes/tools.ts
+src/scenes/scripts-map.ts
+src/scenes/*/index.ts
 # python and vim session files
 .Python
 [Bb]in
@@ -64,7 +65,6 @@ __pycache__
 .session.vim
 .pylintrc
 pip-selfcheck.json
-pip-selfcheck.json
 *.aux
 *.bbl
 *.blg
@@ -82,7 +82,6 @@ pip-selfcheck.json
 *.gls
 *.ist
 *.fls
-*.log
 *.fdb_latexmk
 *.snm
 *.nav
