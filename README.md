@@ -30,8 +30,8 @@ Windows の場合、**全てのユーザーにインストール:管理者権限
 ### バックエンド用サーバのインストールとセットアップ
 
 ```bash
-$ ./run-backserver.sh --init
-$ ./run-backserver.sh -r
+$ ./run-backserver.sh --init  # install all dependencies (requires user input along the way)
+$ ./run-backserver.sh -s      # starts up a local backend server
 ```
 
 [その他のオプションの説明 | run-backserver.sh](#bash-run-backserversh)
