@@ -5,5 +5,6 @@
     "editor.formatOnSave": true, // ファイル保存時にPrettierでフォーマット
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true // ファイル保存時にESLintでフォーマット
-    }
+    },
+    "liveServer.settings.port": 5501
 }
