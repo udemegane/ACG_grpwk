@@ -22,7 +22,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Assign memory
-      run: export NODE_OPTIONS="--max-old-space-size=6144
+      run: export NODE_OPTIONS="--max-old-space-size=6144"
     - name: Install packages
       run: npm install
     - name: Build
