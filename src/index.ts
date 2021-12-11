@@ -27,7 +27,7 @@ export class Game {
 
     this._bindEvents();
     this._load('./scenes/scene/');
-    GameManager.onSwitchSceneObservable.addOnce((rootUrl: string) => {
+    GameManager.onSwitchSceneObservable.add((rootUrl: string) => {
       this.engine.stopRenderLoop();
       this.scene.dispose();
       this.scene = new Scene(this.engine);
@@ -59,6 +59,7 @@ export class Game {
           // Run the scene to attach scripts etc.
           import(`${rootUrl}index`).then((module) => {
             module.runScene(this.scene, rootUrl);
+
             // Render.
             this.engine.runRenderLoop(() => this.scene.render());
           });
