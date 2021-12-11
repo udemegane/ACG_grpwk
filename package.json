@@ -1,11 +1,12 @@
 {
   "name": "babylonjs-editor-generated-template",
-  "version": "3.2.1-beta.4",
-  "description": "Generated Template by BabylonJS Editor v3.0",
+  "version": "4.0.5-beta.4",
+  "description": "Generated Template by BabylonJS Editor v4.0",
   "scripts": {
     "clean": "rimraf build && rimraf declaration",
     "compile": "tsc -p .",
     "build": "webpack --mode production",
+    "pack": "mkdir tmp && mv dist/* tmp/ && mkdir dist/dist && mv tmp/* dist/dist/ && cp -r scenes/ dist/ && rm -rf tmp && sed -e 's/.\\/dist\\/bundle.js/.\\/bundle.js/g' index.html > dist/index.html && cp ./node_modules/cannon/build/cannon.js ./dist/ && sed -i -e 's/.\\/node_modules\\/cannon\\/build\\/cannon.js/.\\/cannon.js/g' ./dist/index.html",
     "watch": "webpack --mode development --watch",
     "webserver": "http-server -p 1338 -c-1"
   },
