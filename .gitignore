@@ -60,7 +60,6 @@ __pycache__
 .venv
 .vim
 .session.vim
-.pylintrc
 pip-selfcheck.json
 *.aux
 *.bbl
