@@ -14,8 +14,6 @@ function info () {
     tput setaf 2; echo -n "INFO; "; tput sgr0; echo "$@"
 }
 
-
-# whichsh=`basename $SHELL`
 whichsh=bash
 yes='false'
 function checkyes() {
@@ -51,6 +49,7 @@ usage_exit() {
         -d, --db        Show Data Inside Database
         --init          Install all Requirements and Setup Environment for Python Development
         -y, --yes       Say yes to all questions
+        -h, --help      Show help
     " 1>&2
 }
 
