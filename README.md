@@ -34,7 +34,7 @@ $ ./run-backserver.sh --init
 $ ./run-backserver.sh -r
 ```
 
-[その他のオプションの説明 | run-backserver.sh](#run-backserver.sh)
+[その他のオプションの説明 | run-backserver.sh](#bash-run-backserversh)
 
 ---
 
@@ -77,7 +77,7 @@ SceneScriptBase.addInput(PARAMS, KEY);
 
 シーンをランタイム中に切り替える switchScene()を src/GameScript/gameManager.ts に書いた。サンプル実装としてデフォルトの FPS のシーンで０キーを押すと MainMap に切り替わる。詳しくは src/scenes/scene/camera.ts の\_onZeroKey()を見よう。
 
-### run-backserver.sh
+### `bash run-backserver.sh`
 
 ```txt
     Usage:  ./run-backserver.sh [OPTIONS]
