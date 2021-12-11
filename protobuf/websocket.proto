@@ -1,0 +1,12 @@
+syntax = "proto2";
+package protobuf;
+
+message CloseWs {
+}
+
+message WsWrapper {
+  oneof content {
+    CloseWs closews = 1;
+  }
+}
+
