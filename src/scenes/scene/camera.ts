@@ -82,7 +82,7 @@ export default class PlayerCamera extends FreeCamera {
     }
   }
 
-  // キー0をデバッグ用にした
+  // キー0をシーン切り替えデバッグ用にした
   @onKeyboardEvent([48], KeyboardEventTypes.KEYUP)
   private _onZeroKey(): void {
     GameManager.switchScene('./scenes/MainMap/');
