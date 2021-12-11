@@ -1,4 +1,4 @@
-import SceneScriptBase from '../GameScripts/gameModeBase';
+import SceneScriptBase from '../GameScripts/sceneScriptBase';
 import { visibleInInspector } from '../decorators';
 /**
  * This represents a script that is attached to a node in the editor.
