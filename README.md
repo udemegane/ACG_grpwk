@@ -80,14 +80,14 @@ SceneScriptBase.addInput(PARAMS, KEY);
 ### `bash run-backserver.sh`
 
 ```txt
-    Usage:  ./run-backserver.sh [OPTIONS]
+Usage:  ./run-backserver.sh [OPTIONS]
 
-    Options:
-        --init          Install all Requirements and Setup Environment for Python Development
-        -s, --startup   Start Up Backend Server
-        -r, --rebuild   Delete All Auto-Generated Files -> Create All Requirements and Initialize
-        -d, --db        Show Data Inside Database
-        -y, --yes       Say yes to all questions
-        -h, --help      Show help
+Options:
+  --init          Install all Requirements and Setup Environment for Python Development
+  -s, --startup   Start Up Backend Server
+  -r, --rebuild   Delete All Auto-Generated Files -> Create All Requirements and Initialize
+  -d, --db        Show Data Inside Database
+  -y, --yes       Say yes to all questions
+  -h, --help      Show help
 ```
 
