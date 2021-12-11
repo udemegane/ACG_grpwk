@@ -6,11 +6,6 @@
 	"materials": [
 		{
 			"bindedMeshes": [],
-			"json": "cube-03bdd37e-fe54-4095-a392-0de62b0de089.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
 			"json": "sky-b2346078-7465-4c63-8877-44b542584898.json",
 			"isMultiMaterial": false
 		},
@@ -24,6 +19,11 @@
 				"2103688e-fca6-480b-a089-940568af4473"
 			],
 			"json": "sky-8769b46a-8c06-4f37-86cb-ddcf03e6816e.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "cube-03bdd37e-fe54-4095-a392-0de62b0de089.json",
 			"isMultiMaterial": false
 		}
 	],
@@ -108,7 +108,21 @@
 		"postProcessesEnabled": true,
 		"metadata": {
 			"script": {
-				"name": "src/scenes/GameScripts/gameMode.ts.ts"
+				"name": "src/scenes/MainMap/mainMap.ts",
+				"properties": {
+					"_testString": {
+						"type": "string",
+						"value": "Hello World!"
+					},
+					"_isVisibleDebugMenu": {
+						"type": "boolean",
+						"value": true
+					},
+					"_testLocalString": {
+						"type": "string",
+						"value": "Hello world!"
+					}
+				}
 			},
 			"postProcesses": {
 				"ssao": {
@@ -175,8 +189,8 @@
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": -3.631742389907848,
-			"beta": 1.5763312950303783,
+			"alpha": -4.624582244495226,
+			"beta": 1.5668991730003372,
 			"radius": 21.790280885183368,
 			"target": [
 				0,
@@ -211,9 +225,9 @@
 			],
 			"speed": 2,
 			"position": [
-				-19.224450568668157,
-				0.39883466157043734,
-				10.257791922400814
+				-1.9108612345281988,
+				0.6043624191666483,
+				21.706168225064353
 			],
 			"upVector": [
 				0,

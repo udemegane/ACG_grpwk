@@ -44,7 +44,7 @@
 			"name": "None"
 		}
 	},
-	"type": "FreeCamera",
+	"type": "UniversalCamera",
 	"inputsmgr": {
 		"FreeCameraKeyboardMoveInput": {
 			"tags": null,
