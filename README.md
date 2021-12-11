@@ -1,5 +1,9 @@
 # ACG グループワーク課題　？班
 
+## Documentation
+
+- [HackMD](https://hackmd.io/@udemegane/SyovqFy5F/edit)
+
 ## 環境構築
 
 ### リポジトリのクローン
@@ -17,6 +21,7 @@ $ git clone https://github.com/udemegane/ACG_grpwk.git
  - 非公式ミラー(udemeganeのGdrive経由. 公式サイトはめっちゃ遅いのでこっちのほうが速いかも)
    - [Windows](https://drive.google.com/file/d/1-75nv2szsy4O7eOtMfUShfc5AwdO7n8Q/view?usp=sharing)
    - [Mac](https://drive.google.com/file/d/1-CUdCz3ZgKMdiB5j4XOrDm-D_PbsOzzV/view?usp=sharing)
+   - [Linux|AppImage](https://drive.google.com/file/d/1-6dqP_1AC65SenikLwwXDFclglUnDO7W/view?usp=sharing)
 
 
 Windowsの場合、**全てのユーザーにインストール:管理者権限**を選択すること。手元の環境ではユーザーインストールだとよからぬエラーが起きた。
