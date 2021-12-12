@@ -13,8 +13,6 @@ api = responder.API(
     }
 )
 
-api.add_route('/', static=True, websocket=True)
-
 
 @api.route('/api/login')
 async def login(req: Request, resp: Response):
@@ -22,6 +20,20 @@ async def login(req: Request, resp: Response):
     preq.ParseFromString(await req.content)
     new_token = backuser.login(preq.username, preq.password)
     presp = RespToken()
+    presp.success = False
+    if new_token is not None:
+        presp.success = True
+        presp.token = new_token
+    resp.content = presp.SerializeToString()
+
+
+@api.route('/api/signup')
+async def signup(req: Request, resp: Response):
+    preq = Signup()
+    preq.ParseFromString(await req.content)
+    new_token = backuser.signup(preq.username, preq.password)
+    presp = RespToken()
+    presp.success = False
     if new_token is not None:
         presp.success = True
         presp.token = new_token

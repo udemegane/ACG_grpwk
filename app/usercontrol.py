@@ -9,8 +9,8 @@ def login(username: str, password: str):
         if user is None:
             return None
         convert = hashlib.sha256(password.encode()).hexdigest()
-        if user.password == convert:
-            return getToken(int(user.id))
+        if user.userPassword == convert:
+            return getToken(user.id_int)
     return None
 
 
@@ -28,7 +28,8 @@ def signup(username: str, password: str):
         )
         session.add(new)
         session.flush()
-        return createToken(new.id_int)
+        userId = new.id_int
+    return createToken(userId)
 
 
 def getToken(userId: int):
