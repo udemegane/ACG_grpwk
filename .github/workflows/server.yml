@@ -64,12 +64,12 @@ jobs:
         # package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
 
     - uses: sarisia/actions-status-discord@v1
-    if: always()
-    with:
-      webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
-      title: "deploy"
-      status: ${{ job.status }}
-      nofail: false
-      nodetail: false
-      description: "Build and deploy to GitHub Pages"
-      username: GitHub Actions
+      if: always()
+      with:
+        webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        title: "deploy"
+        status: ${{ job.status }}
+        nofail: false
+        nodetail: false
+        description: "Build and deploy to GitHub Pages"
+        username: GitHub Actions
