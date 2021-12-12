@@ -33,43 +33,43 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - name: Set up Python 3.x
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-      # Install all Requirements and Setup Environment for Python Development
-      - name: Initialize Environment
-        run: |
-          sudo apt install -y protobuf-compiler
-          bash run-backserver.sh --init -y -y
-
-
-      # Run All test
-      - name: Test
-        run: bash run-backserver.sh --test
-      
-      # Start Up backend server
-      - name: Start server
-        run: bash run-backserver.sh --startup
-
-      - name: Building web app
-        uses: azure/appservice-build@v2
-      - name: Deploy web App using GH Action azure/webapps-deploy
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          # package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-
-      - uses: sarisia/actions-status-discord@v1
-      if: always()
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v2
       with:
-        webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        title: "deploy"
-        status: ${{ job.status }}
-        nofail: false
-        nodetail: false
-        description: "Build and deploy to GitHub Pages"
-        username: GitHub Actions
+        python-version: 3.x
+    # Install all Requirements and Setup Environment for Python Development
+    - name: Initialize Environment
+      run: |
+        sudo apt install -y protobuf-compiler
+        bash run-backserver.sh --init -y -y
+
+
+    # Run All test
+    - name: Test
+      run: bash run-backserver.sh --test
+    
+    # Start Up backend server
+    - name: Start server
+      run: bash run-backserver.sh --startup
+
+    - name: Building web app
+      uses: azure/appservice-build@v2
+    - name: Deploy web App using GH Action azure/webapps-deploy
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        # package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
+    - uses: sarisia/actions-status-discord@v1
+    if: always()
+    with:
+      webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      title: "deploy"
+      status: ${{ job.status }}
+      nofail: false
+      nodetail: false
+      description: "Build and deploy to GitHub Pages"
+      username: GitHub Actions
