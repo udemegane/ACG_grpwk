@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -19,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='protobuf/websocket.proto',
   package='protobuf',
   syntax='proto2',
-  serialized_pb=_b('\n\x18protobuf/websocket.proto\x12\x08protobuf\"\t\n\x07\x43loseWs\"?\n\x0cWsReqWrapper\x12$\n\x07\x63losews\x18\x01 \x01(\x0b\x32\x11.protobuf.CloseWsH\x00\x42\t\n\x07\x63ontent\"@\n\rWsRespWrapper\x12$\n\x07\x63losews\x18\x01 \x01(\x0b\x32\x11.protobuf.CloseWsH\x00\x42\t\n\x07\x63ontent\"+\n\x05Login\x12\x10\n\x08username\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\",\n\x06Signup\x12\x10\n\x08username\x18\x01 \x02(\t\x12\x10\n\x08password\x18\x02 \x02(\t\"+\n\tRespToken\x12\r\n\x05token\x18\x01 \x02(\t\x12\x0f\n\x07success\x18\x02 \x01(\x08')
+  serialized_options=None,
+  serialized_pb=_b('\n\x18protobuf/websocket.proto\x12\x08protobuf\"\t\n\x07\x43loseWs\"?\n\x0cWsReqWrapper\x12$\n\x07\x63losews\x18\x01 \x01(\x0b\x32\x11.protobuf.CloseWsH\x00\x42\t\n\x07\x63ontent\"@\n\rWsRespWrapper\x12$\n\x07\x63losews\x18\x01 \x01(\x0b\x32\x11.protobuf.CloseWsH\x00\x42\t\n\x07\x63ontent')
 )
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 
@@ -39,7 +38,7 @@ _CLOSEWS = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto2',
   extension_ranges=[],
@@ -63,14 +62,14 @@ _WSREQWRAPPER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto2',
   extension_ranges=[],
@@ -97,14 +96,14 @@ _WSRESPWRAPPER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto2',
   extension_ranges=[],
@@ -115,120 +114,6 @@ _WSRESPWRAPPER = _descriptor.Descriptor(
   ],
   serialized_start=114,
   serialized_end=178,
-)
-
-
-_LOGIN = _descriptor.Descriptor(
-  name='Login',
-  full_name='protobuf.Login',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='username', full_name='protobuf.Login.username', index=0,
-      number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='password', full_name='protobuf.Login.password', index=1,
-      number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=180,
-  serialized_end=223,
-)
-
-
-_SIGNUP = _descriptor.Descriptor(
-  name='Signup',
-  full_name='protobuf.Signup',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='username', full_name='protobuf.Signup.username', index=0,
-      number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='password', full_name='protobuf.Signup.password', index=1,
-      number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=225,
-  serialized_end=269,
-)
-
-
-_RESPTOKEN = _descriptor.Descriptor(
-  name='RespToken',
-  full_name='protobuf.RespToken',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='token', full_name='protobuf.RespToken.token', index=0,
-      number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='success', full_name='protobuf.RespToken.success', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  syntax='proto2',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=271,
-  serialized_end=314,
 )
 
 _WSREQWRAPPER.fields_by_name['closews'].message_type = _CLOSEWS
@@ -242,9 +127,7 @@ _WSRESPWRAPPER.fields_by_name['closews'].containing_oneof = _WSRESPWRAPPER.oneof
 DESCRIPTOR.message_types_by_name['CloseWs'] = _CLOSEWS
 DESCRIPTOR.message_types_by_name['WsReqWrapper'] = _WSREQWRAPPER
 DESCRIPTOR.message_types_by_name['WsRespWrapper'] = _WSRESPWRAPPER
-DESCRIPTOR.message_types_by_name['Login'] = _LOGIN
-DESCRIPTOR.message_types_by_name['Signup'] = _SIGNUP
-DESCRIPTOR.message_types_by_name['RespToken'] = _RESPTOKEN
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CloseWs = _reflection.GeneratedProtocolMessageType('CloseWs', (_message.Message,), dict(
   DESCRIPTOR = _CLOSEWS,
@@ -266,27 +149,6 @@ WsRespWrapper = _reflection.GeneratedProtocolMessageType('WsRespWrapper', (_mess
   # @@protoc_insertion_point(class_scope:protobuf.WsRespWrapper)
   ))
 _sym_db.RegisterMessage(WsRespWrapper)
-
-Login = _reflection.GeneratedProtocolMessageType('Login', (_message.Message,), dict(
-  DESCRIPTOR = _LOGIN,
-  __module__ = 'protobuf.websocket_pb2'
-  # @@protoc_insertion_point(class_scope:protobuf.Login)
-  ))
-_sym_db.RegisterMessage(Login)
-
-Signup = _reflection.GeneratedProtocolMessageType('Signup', (_message.Message,), dict(
-  DESCRIPTOR = _SIGNUP,
-  __module__ = 'protobuf.websocket_pb2'
-  # @@protoc_insertion_point(class_scope:protobuf.Signup)
-  ))
-_sym_db.RegisterMessage(Signup)
-
-RespToken = _reflection.GeneratedProtocolMessageType('RespToken', (_message.Message,), dict(
-  DESCRIPTOR = _RESPTOKEN,
-  __module__ = 'protobuf.websocket_pb2'
-  # @@protoc_insertion_point(class_scope:protobuf.RespToken)
-  ))
-_sym_db.RegisterMessage(RespToken)
 
 
 # @@protoc_insertion_point(module_scope)

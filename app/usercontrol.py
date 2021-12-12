@@ -1,4 +1,4 @@
-from db_connector import *  # noqa
+from app.db_connector import *  # noqa
 import secrets
 import hashlib
 

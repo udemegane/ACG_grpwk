@@ -1,7 +1,8 @@
 import responder
 from responderd import Request, Response
 
-from protobuf.websocket_pb2 import *  # noqa
+import app.usercontrol as backuser
+from protobuf import *  # noqa
 
 api = responder.API(
     static_dir='./static',
@@ -16,9 +17,15 @@ api.add_route('/', static=True, websocket=True)
 
 
 @api.route('/api/login')
-async def login(req, resp):
+async def login(req: Request, resp: Response):
     preq = Login()
     preq.ParseFromString(await req.content)
+    new_token = backuser.login(preq.username, preq.password)
+    presp = RespToken()
+    if new_token is not None:
+        presp.success = True
+        presp.token = new_token
+    resp.content = presp.SerializeToString()
 
 
 @api.route('/api/hoge')

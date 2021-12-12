@@ -16,17 +16,3 @@ message WsRespWrapper {
   }
 }
 
-message Login {
-  required string username = 1;
-  required string password = 2;
-}
-
-message Signup {
-  required string username = 1;
-  required string password = 2;
-}
-
-message RespToken {
-  required string token = 1;
-  optional bool success = 2;
-}
