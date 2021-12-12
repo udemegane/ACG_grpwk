@@ -84,11 +84,9 @@ while getopts srtdyh-: opt; do
             ;;
         -d|--db)
             db=true
-            shift
             ;;
         -y|--yes)
             yes=true
-            shift
             ;;
         -h|--help)
             usage_exit
