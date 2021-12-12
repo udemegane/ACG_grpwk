@@ -1,6 +1,7 @@
-# ACG グループワーク課題　？班
+# [ACG グループワーク課題　？班](https://udemegane.github.io/ACG_grpwk/)
 
 [![Game Client by Babylon.js](https://github.com/udemegane/ACG_grpwk/actions/workflows/webpack.yml/badge.svg?branch=main)](https://github.com/udemegane/ACG_grpwk/actions/workflows/webpack.yml)
+  
 ## Documentation
 
 - [HackMD](https://hackmd.io/@udemegane/SyovqFy5F/edit)
