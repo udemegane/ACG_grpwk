@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Server Deploy to Azure App Servise
+name: Game Server on Azure
 
 # Controls when the workflow will run
 on:
@@ -67,7 +67,7 @@ jobs:
       if: always()
       with:
         webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        title: "deploy"
+        title: "Server Deploy to Azure App Servise"
         status: ${{ job.status }}
         nofail: false
         nodetail: false
