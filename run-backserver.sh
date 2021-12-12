@@ -79,6 +79,7 @@ while getopts sdryh-: opt; do
             protoc=true
             ;;
         -d|--db)
+            db=true
             shift
             ;;
         -y|--yes)
@@ -181,7 +182,7 @@ if [[ x$protoc = xtrue ]]; then
     build_protobuf
 fi
 
-if [[ x"$dbcommand" != x ]]; then
+if [[ x"$db" != x ]]; then
     python -m app.manage
 fi
 

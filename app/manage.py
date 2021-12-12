@@ -2,7 +2,7 @@
 
 from sqlalchemy import inspect
 from app.sqlalchemy_h import engine, SessionContext
-from app.db_connector import DBtoDict
+from app.db_connector import *  # noqa
 from rich import print
 from rich.table import Table
 from rich.console import Console
@@ -24,7 +24,7 @@ def find_tables():
     g = globals()
     inspector = inspect(engine)
     names = inspector.get_table_names()  # type: ignore
-    print(names)
+    print('Name of All Tables Found:', names)
     for t in g:
         if t.lower() in names:
             # if input(t + ' [Y/n]: ') == 'n':
