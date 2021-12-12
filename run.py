@@ -40,14 +40,6 @@ async def signup(req: Request, resp: Response):
     resp.content = presp.SerializeToString()
 
 
-@api.route('/api/hoge')
-async def hoge(req: Request, resp: Response):
-    preq = WsReqWrapper()
-    preq.ParseFromString(await req.content)
-    presp = WsRespWrapper()
-    presp.closews.CopyFrom(CloseWs())
-    resp.content = presp.SerializeToString()
-
 # capp_manager = backapp.CappControl()
 
 # @api.route('/ws/cappgroup', websocket=True)
