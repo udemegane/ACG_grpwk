@@ -1,0 +1,17 @@
+syntax = "proto2";
+package protobuf;
+
+message Login {
+  required string username = 1;
+  required string password = 2;
+}
+
+message Signup {
+  required string username = 1;
+  required string password = 2;
+}
+
+message RespToken {
+  optional string token = 1;
+  required bool success = 2;
+}

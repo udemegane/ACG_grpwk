@@ -46,6 +46,8 @@
     "@babylonjs/procedural-textures": "4.2.0",
     "cannon": "0.6.2",
     "earcut": "2.2.2",
+    "protobufjs": "^6.11.2",
+    "protobufjs-cli-dbx": "^7.0.7",
     "rimraf": "~2.6.2"
   }
 }

@@ -45,6 +45,7 @@ src/scenes/tools.ts
 src/scenes/scripts-map.ts
 src/scenes/*/index.ts
 # python and vim session files
+*.sqlite3
 .Python
 [Bb]in
 [Ii]nclude
@@ -60,7 +61,6 @@ __pycache__
 .venv
 .vim
 .session.vim
-.pylintrc
 pip-selfcheck.json
 *.aux
 *.bbl
