@@ -5,12 +5,13 @@ on:
     branches:
       - main
     paths:
-      - "src/*"
+      - "src/**"
+      - ".github/workflows/webpack.yml"
   pull_request:
     branches:
       - main
     paths:
-      - "src/*"
+      - "src/**"
 
 jobs:
   build:
