@@ -1,4 +1,7 @@
 import responder
+from responderd import Request, Response
+
+from protobuf.websocket_pb2 import *  # noqa
 
 api = responder.API(
     static_dir='./static',
@@ -10,6 +13,21 @@ api = responder.API(
 )
 
 api.add_route('/', static=True, websocket=True)
+
+
+@api.route('/api/login')
+async def login(req, resp):
+    preq = Login()
+    preq.ParseFromString(await req.content)
+
+
+@api.route('/api/hoge')
+async def hoge(req: Request, resp: Response):
+    preq = WsReqWrapper()
+    preq.ParseFromString(await req.content)
+    presp = WsRespWrapper()
+    presp.closews.CopyFrom(CloseWs())
+    resp.content = presp.SerializeToString()
 
 # capp_manager = backapp.CappControl()
 
@@ -72,4 +90,3 @@ api.add_route('/', static=True, websocket=True)
 
 if __name__ == "__main__":
     api.run()
-
