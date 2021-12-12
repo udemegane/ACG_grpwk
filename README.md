@@ -86,8 +86,8 @@ Options:
   --init          Install all Requirements and Setup Environment for Python Development
   -s, --startup   Start Up Backend Server
   -r, --rebuild   Delete All Auto-Generated Files -> Create All Requirements and Initialize
+  -t, --test      Run All Tests
   -d, --db        Show Data Inside Database
   -y, --yes       Say yes to all questions
   -h, --help      Show help
 ```
-

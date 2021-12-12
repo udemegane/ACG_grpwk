@@ -47,13 +47,14 @@ usage_exit() {
         --init          Install all Requirements and Setup Environment for Python Development
         -s, --startup   Start Up Backend Server
         -r, --rebuild   Delete All Auto-Generated Files -> Create All Requirements and Initialize
+        -t, --test      Run All Tests
         -d, --db        Show Data Inside Database
         -y, --yes       Say yes to all questions
         -h, --help      Show help
     " 1>&2
 }
 
-while getopts sdryh-: opt; do
+while getopts srtdyh-: opt; do
     optarg="${!OPTIND}"
     [[ x"$opt" = x- ]] && opt="-$OPTARG"
 
@@ -63,6 +64,9 @@ while getopts sdryh-: opt; do
             ;;
         -r|--rebuild)
             rebuild=true
+            ;;
+        -t|--test)
+            runtest=true
             ;;
         --init)
             initialize=true
@@ -180,6 +184,10 @@ fi
 
 if [[ x$protoc = xtrue ]]; then
     build_protobuf
+fi
+
+if [[ x$runtest = xtrue ]]; then
+    python -m pytest --capture=no
 fi
 
 if [[ x"$db" != x ]]; then
