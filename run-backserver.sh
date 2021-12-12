@@ -182,7 +182,7 @@ if [[ x$protoc = xtrue ]]; then
 fi
 
 if [[ x"$dbcommand" != x ]]; then
-    python manage.py
+    python -m app.manage
 fi
 
 if [[ x$startup = xtrue ]]; then
