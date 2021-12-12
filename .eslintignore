@@ -1,3 +1,4 @@
+.github/
 src/scenes/tools.ts
 src/scenes/scripts-map.ts
 src/scenes/decorators.ts

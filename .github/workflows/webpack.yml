@@ -2,9 +2,15 @@ name: NodeJS with Webpack
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+    paths:
+      - "src/*"
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+    paths:
+      - "src/*"
 
 jobs:
   build:
@@ -38,10 +44,9 @@ jobs:
       if: always()
       with:
         webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        title: "deploy"
+        title: "Deploy BabylonJS App"
         status: ${{ job.status }}
         nofail: false
         nodetail: false
         description: "Build and deploy to GitHub Pages"
-        color: 0x0000ff
         username: GitHub Actions
