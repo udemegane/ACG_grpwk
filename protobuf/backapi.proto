@@ -11,7 +11,27 @@ message Signup {
   required string password = 2;
 }
 
+message CheckToken {
+  required string token = 1;
+}
+
 message RespToken {
   optional string token = 1;
   required bool success = 2;
+}
+
+message RespSuccess {
+  required bool success = 1;
+}
+
+message CreateBattleLog {
+  required string battleToken = 1;
+  oneof winner {
+    bool isSingleMode = 2;
+    bool meWinner = 3;
+    bool isDraw = 4;
+  }
+  required string myToken = 5;
+  optional string enemyToken = 6;
+  required int32 elapsedms = 7;
 }

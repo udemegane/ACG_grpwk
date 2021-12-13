@@ -32,12 +32,20 @@ def signup(username: str, password: str):
     return createToken(userId)
 
 
+def getUserId(token: str):
+    with SessionContext() as session:
+        tokendata = session.query(TokenTable).filter_by(token=token).one_or_none()
+        if tokendata is None:
+            return None
+        return int(tokendata.userId)
+
+
 def getToken(userId: int):
     with SessionContext() as session:
-        user = session.query(TokenTable).filter_by(userId=userId).one_or_none()
-        if user is None:
+        tokendata = session.query(TokenTable).filter_by(userId=userId).one_or_none()
+        if tokendata is None:
             return None
-        return user.token
+        return tokendata.token
 
 
 def createToken(userId: int):
