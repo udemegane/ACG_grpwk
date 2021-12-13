@@ -1,5 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
+const dotenv = require('dotenv-webpack');
+
 
 module.exports = (_, argv) => {
   const entryPath = path.join(__dirname, 'src/index.ts');
@@ -35,6 +37,9 @@ module.exports = (_, argv) => {
     plugins: [
       new webpack.BannerPlugin({
         banner: `${package.name} ${package.version} ${new Date().toString()}`,
+      }),
+      new dotenv({
+        path: path.resolve(__dirname, '.env'),
       }),
       new webpack.WatchIgnorePlugin([/\.js$/, /\.d\.ts$/]),
     ],

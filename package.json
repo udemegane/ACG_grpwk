@@ -20,6 +20,7 @@
     "@typescript-eslint/parser": "^5.0.0",
     "babel-loader": "8.0.4",
     "babylonjs-editor-webpack-progress": "1.0.1",
+    "dotenv-webpack": "^7.0.3",
     "eslint": "^8.3.0",
     "eslint-config-airbnb": "^19.0.1",
     "eslint-config-airbnb-typescript": "^16.0.0",

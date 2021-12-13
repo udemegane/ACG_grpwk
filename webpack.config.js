@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const dotenv = require('dotenv-webpack');
 const editor = require('babylonjs-editor-webpack-progress');
 
 module.exports = (_, argv) => {
@@ -38,6 +39,9 @@ module.exports = (_, argv) => {
         banner: `${package.name} ${package.version} ${new Date().toString()}`,
       }),
       new webpack.WatchIgnorePlugin([/\.js$/, /\.d\.ts$/]),
+      new dotenv({
+        path: path.resolve(__dirname, '.env'),
+      }),
       editor.createProgressPlugin(new webpack.ProgressPlugin()),
     ],
     optimization: {
