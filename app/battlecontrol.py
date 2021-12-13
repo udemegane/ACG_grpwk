@@ -1,13 +1,14 @@
 from app.db_connector import *  # noqa
-import secrets
-import hashlib
+from app.usercontrol import getUserId
 
 
 def createMultiBattleLog(token: str, winner: str, loser: str, battleTime: int, isDraw=False):
+    winnerId = getUserId(winner)
+    loserId = getUserId(loser)
     new = BattleLog(
         gameToken=token,
-        winnerToken=winner,
-        loserToken=loser,
+        winnerId=winnerId,
+        loserId=loserId,
         isDraw=isDraw,
         createdAt=createdAt(),
         battleTime=battleTime,
@@ -19,9 +20,10 @@ def createMultiBattleLog(token: str, winner: str, loser: str, battleTime: int, i
 
 
 def createSingleBattleLog(token: str, user: str, battleTime: int):
+    userId = getUserId(user)
     new = BattleLog(
         gameToken=token,
-        winnerToken=user,
+        winnerId=userId,
         createdAt=createdAt(),
         battleTime=battleTime,
         isSingleMode=True,

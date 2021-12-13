@@ -48,8 +48,8 @@ class BattleLog(Base):
     __tablename__ = 'battlelog'
     id = Column('id', Integer, primary_key=True, autoincrement=True)
     gameToken = Column('gameToken', String(100))
-    winnerToken = Column('winnerToken', String(100))
-    loserToken = Column('loserToken', String(100), server_default=None)
+    winnerId = Column('winnerId', Integer)
+    loserId = Column('loserId', Integer, server_default=None)
     isDraw = Column('isDraw', Boolean, server_default=False)
     createdAt = Column('createdAt', String(20))
     battleTime = Column('battleTime', Integer)  # milliseconds
