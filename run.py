@@ -60,7 +60,7 @@ async def createbattlelog(req: Request, resp: Response):
     else:  # preq.HasField('meWinner') or preq.HasField('isDraw'): # multi battle
         # preq.meWinner will be None (hence False) if preq.HasField('isDraw')
         winner = preq.myToken if preq.meWinner else preq.enemyToken
-        loser = preq.enemyToken if not preq.meWinner else preq.myToken
+        loser = preq.myToken if not preq.meWinner else preq.enemyToken
         presp.success = backbattle.createMultiBattleLog(
             preq.battleToken, winner, loser,
             preq.elapsedms, isDraw=bool(preq.isDraw))
