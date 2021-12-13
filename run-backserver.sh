@@ -189,7 +189,9 @@ function build_protobuf() {
 }
 
 if [[ x$rebuild = xtrue ]]; then
-    build_protobuf
+    if [[ x"$ACG_PRODUCTION_STAGE" != x'production' ]]; then
+        build_protobuf
+    fi
 
     # Generate sample database
     info 'Generating database for local development'
