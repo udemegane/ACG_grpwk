@@ -176,8 +176,8 @@ function build_protobuf() {
         rm protobuf/*pb2*
     fi
     protoc --python_out=. --mypy_out=. protobuf/*.proto
-    info 'Compiling protobuf for js/ts'
     if [[ x"$backonly" != xtrue ]]; then
+        info 'Compiling protobuf for js/ts'
         npx pbjs -t static-module -o protobuf/compiled_pb2.js protobuf/*.proto
         npx pbts -o protobuf/compiled_pb2.d.ts protobuf/compiled_pb2.js
     fi
