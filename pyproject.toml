@@ -18,6 +18,7 @@ typesystem = "<0.3.0"
 SQLAlchemy-Utils = "^0.37.9"
 alembic = "^1.7.5"
 psycopg2 = "^2.9.2"
+uvicorn = "<0.13.3"
 
 [tool.poetry.dev-dependencies]
 isort = "^5.10.1"
