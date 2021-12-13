@@ -1,2 +1,2 @@
 release: bash run-backserver.sh -rnbt
-web: gunicorn -k unicorn.workers.UnicornWorker run:api
+web: gunicorn -k uvicorn.workers.UvicornWorker run:api
