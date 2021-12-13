@@ -14,6 +14,10 @@ function info () {
     tput setaf 2; echo -n "INFO; "; tput sgr0; echo "$@"
 }
 
+info "Working in dir: `pwd`"
+ls -al
+ls -al /app
+
 whichsh=bash
 selectyes='false'
 selectno='false'
@@ -161,6 +165,8 @@ if [[ x"$ACG_PRODUCTION_STAGE" != x'production' ]]; then
         exit
     fi
     source ./.venv/bin/activate
+else
+    cd /app
 fi
 
 function build_protobuf() {
