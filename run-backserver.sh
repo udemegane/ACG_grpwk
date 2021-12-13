@@ -15,12 +15,17 @@ function info () {
 }
 
 whichsh=bash
-yes='false'
+selectyes='false'
+selectno='false'
+backonly='false'
 function checkyes() {
     result=1
-    if [[ x"$yes" = xtrue ]]; then
+    if [[ x"$selectyes" = xtrue ]]; then
         echo "$@ <- yes"
         result=0
+    elif [[ x"$selectno" = xtrue ]]; then
+        echo "$@ <- no"
+        result=1
     elif [[ x"$whichsh" = x'bash' ]]; then
         read -p "$@ [y/N]: " yn; case "$yn" in [yY]*) result=0;; *) result=1;; esac
     elif [[ x"$whichsh" = x'zsh' ]]; then
@@ -45,22 +50,27 @@ usage_exit() {
 
     Options:
         --init          Install all Requirements and Setup Environment for Python Development
+        -b, --backonly  Install Only Dependencies for Backend
         -s, --startup   Start Up Backend Server
         -r, --rebuild   Delete All Auto-Generated Files -> Create All Requirements and Initialize
         -t, --test      Run All Tests
         -d, --db        Show Data Inside Database
         -y, --yes       Say yes to all questions
+        -n, --no        Say no to all questions
         -h, --help      Show help
     " 1>&2
 }
 
-while getopts srtdyh-: opt; do
+while getopts sbrtdynh-: opt; do
     optarg="${!OPTIND}"
     [[ x"$opt" = x- ]] && opt="-$OPTARG"
 
     case "-$opt" in
         -s|--startup)
             startup=true
+            ;;
+        -b|--backonly)
+            backonly=true
             ;;
         -r|--rebuild)
             rebuild=true
@@ -86,7 +96,10 @@ while getopts srtdyh-: opt; do
             db=true
             ;;
         -y|--yes)
-            yes=true
+            selectyes=true
+            ;;
+        -n|--no)
+            selectno=true
             ;;
         -h|--help)
             usage_exit
@@ -134,7 +147,7 @@ if [[ x$initialize = xtrue ]]; then
         exit
     fi
     # install packages to compile protobuf for js/ts
-    if [ ! -f ./node_modules/.bin/pbjs ]; then
+    if [[ x"$backonly" != xtrue ]] && [ ! -f ./node_modules/.bin/pbjs ]; then
         warning 'You do not have `pbjs` (protobuf compiler for js/ts) installed.'
         checkinstall 'npm install protobufjs'
     fi
@@ -156,8 +169,10 @@ function build_protobuf() {
     fi
     protoc --python_out=. --mypy_out=. protobuf/*.proto
     info 'Compiling protobuf for js/ts'
-    npx pbjs -t static-module -o protobuf/compiled_pb2.js protobuf/*.proto
-    npx pbts -o protobuf/compiled_pb2.d.ts protobuf/compiled_pb2.js
+    if [[ x"$backonly" != xtrue ]]; then
+        npx pbjs -t static-module -o protobuf/compiled_pb2.js protobuf/*.proto
+        npx pbts -o protobuf/compiled_pb2.d.ts protobuf/compiled_pb2.js
+    fi
     # Create a documentation of protobuf defined APIs
     # docker run --rm \
     #     -v $PWD/docs:/out \
