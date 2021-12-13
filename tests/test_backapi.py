@@ -1,4 +1,3 @@
-from re import T
 from typing import Dict, Optional
 from google.protobuf import message, json_format
 import pytest
