@@ -49,8 +49,8 @@ class BattleLog(Base):
     id = Column('id', Integer, primary_key=True, autoincrement=True)
     gameToken = Column('gameToken', String(100))
     winnerId = Column('winnerId', Integer)
-    loserId = Column('loserId', Integer, server_default=None)
-    isDraw = Column('isDraw', Boolean, server_default=False)
+    loserId = Column('loserId', Integer)
+    isDraw = Column('isDraw', Boolean)
     createdAt = Column('createdAt', String(20))
     battleTime = Column('battleTime', Integer)  # milliseconds
     isSingleMode = Column('isSingleMode', Boolean)
