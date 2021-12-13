@@ -2,6 +2,7 @@ import responder
 from responderd import Request, Response
 
 import app.usercontrol as backuser
+import app.battlecontrol as backbattle
 from protobuf import *  # noqa
 
 api = responder.API(
@@ -39,6 +40,31 @@ async def signup(req: Request, resp: Response):
         presp.token = new_token
     resp.content = presp.SerializeToString()
 
+
+@api.route('/api/checktoken')
+async def checktoken(req: Request, resp: Response):
+    preq = CheckToken()
+    preq.ParseFromString(await req.content)
+    presp = RespSuccess()
+    presp.success = backuser.getUserId(preq.token) is not None
+    resp.content = presp.SerializeToString()
+
+
+@api.route('/api/createbattlelog')
+async def createbattlelog(req: Request, resp: Response):
+    preq = CreateBattleLog()
+    preq.ParseFromString(await req.content)
+    presp = RespSuccess()
+    if preq.isSingleMode:
+        presp.success = backbattle.createSingleBattleLog(preq.battleToken, preq.myToken, preq.elapsedms)
+    else:  # preq.HasField('meWinner') or preq.HasField('isDraw'): # multi battle
+        # preq.meWinner will be None (hence False) if preq.HasField('isDraw')
+        winner = preq.myToken if preq.meWinner else preq.enemyToken
+        loser = preq.enemyToken if not preq.meWinner else preq.myToken
+        presp.success = backbattle.createMultiBattleLog(
+            preq.battleToken, winner, loser,
+            preq.elapsedms, isDraw=bool(preq.isDraw))
+    resp.content = presp.SerializeToString()
 
 # capp_manager = backapp.CappControl()
 

@@ -49,3 +49,10 @@ def test_login_already_exists_and_get_token(api: API):
     assert presp.success
     assert isinstance(presp.token, str)
     test_user['token'] = presp.token
+
+
+def test_login_with_token(api: API):
+    preq = json_format.ParseDict(test_user, CheckToken(), ignore_unknown_fields=True)
+    presp = RespToken()
+    presp.ParseFromString(post(api, '/api/checktoken', preq).content)
+    assert presp.success
