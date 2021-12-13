@@ -153,13 +153,15 @@ if [[ x$initialize = xtrue ]]; then
     fi
 fi
 
-if [ ! -f ./.venv/bin/activate ]; then
-    error 'Python virtual environment not found.'
-    info 'You may want to run `./run-backserver.sh --init` first.'
-    error 'Failed to execute. Abort'
-    exit
+if [[ x"$ACG_PRODUCTION_STAGE" != x'production' ]]; then
+    if [ ! -f ./.venv/bin/activate ]; then
+        error 'Python virtual environment not found.'
+        info 'You may want to run `./run-backserver.sh --init` first.'
+        error 'Failed to execute. Abort'
+        exit
+    fi
+    source ./.venv/bin/activate
 fi
-source ./.venv/bin/activate
 
 function build_protobuf() {
     # Compile protobuf
