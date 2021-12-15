@@ -10,20 +10,6 @@
 	"materials": [
 		{
 			"bindedMeshes": [
-				"f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c"
-			],
-			"json": "ball-0b776f6c-9111-499d-8207-1c8242d97719.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"b6a89645-0d85-44c1-8bf8-b99b8670c51f"
-			],
-			"json": "blaster-71ce380f-e971-41c0-b580-e3e91b316c6f.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
 				"f824df87-ae33-41d9-ba8f-551d2083a2be",
 				"d66c05ad-967f-4f69-a6fb-7d47281b641c"
 			],
@@ -32,9 +18,23 @@
 		},
 		{
 			"bindedMeshes": [
+				"f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c"
+			],
+			"json": "ball-0b776f6c-9111-499d-8207-1c8242d97719.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
 				"c4024c20-1c4f-4be6-9abd-525e2a782174"
 			],
 			"json": "sky-cdc8b068-1ebd-4c87-8cb0-f48a85181271.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"b6a89645-0d85-44c1-8bf8-b99b8670c51f"
+			],
+			"json": "blaster-71ce380f-e971-41c0-b580-e3e91b316c6f.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -47,16 +47,16 @@
 	],
 	"textures": [
 		"blaster_diffuse.jpg-39.json",
-		"parking.env-40.json",
 		"blaster_nmap.jpg-41.json",
+		"parking.env-40.json",
 		"EnvironmentBRDFTexture0-43.json"
 	],
 	"meshes": [
-		"New Cube-618a29b6-5df8-49ef-b9c7-52ab26b2057f.json",
 		"sky-c4024c20-1c4f-4be6-9abd-525e2a782174.json",
 		"blaster-b6a89645-0d85-44c1-8bf8-b99b8670c51f.json",
-		"ground-b87c0751-53e5-4782-88d9-0461e9457fe1.json",
+		"New Cube-618a29b6-5df8-49ef-b9c7-52ab26b2057f.json",
 		"wall-f824df87-ae33-41d9-ba8f-551d2083a2be.json",
+		"ground-b87c0751-53e5-4782-88d9-0461e9457fe1.json",
 		"cube-d66c05ad-967f-4f69-a6fb-7d47281b641c.json",
 		"New Cube-c50fde32-b635-466f-9440-684ba17efabf.json",
 		"ball-f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c.json"

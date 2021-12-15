@@ -1,0 +1,72 @@
+{
+	"tags": null,
+	"ambient": [
+		0,
+		0,
+		0
+	],
+	"diffuse": [
+		0.09657001,
+		0.4216198,
+		0.522
+	],
+	"specular": [
+		0.12,
+		0.12,
+		0.12
+	],
+	"emissive": [
+		0,
+		0,
+		0
+	],
+	"specularPower": 64,
+	"useAlphaFromDiffuseTexture": false,
+	"useEmissiveAsIllumination": false,
+	"linkEmissiveWithDiffuse": false,
+	"useSpecularOverAlpha": false,
+	"useReflectionOverAlpha": false,
+	"disableLighting": false,
+	"useObjectSpaceNormalMap": false,
+	"useParallax": false,
+	"useParallaxOcclusion": false,
+	"parallaxScaleBias": 0.05,
+	"roughness": 0,
+	"indexOfRefraction": 0.98,
+	"invertRefractionY": true,
+	"alphaCutOff": 0.4,
+	"useLightmapAsShadowmap": false,
+	"useReflectionFresnelFromSpecular": false,
+	"useGlossinessFromSpecularMapAlpha": false,
+	"maxSimultaneousLights": 4,
+	"invertNormalMapX": false,
+	"invertNormalMapY": false,
+	"twoSidedLighting": false,
+	"id": "2f85c25c-8ade-449d-b632-d1c4346e78a5",
+	"name": "Alpha_Surface_MAT",
+	"checkReadyOnEveryCall": false,
+	"checkReadyOnlyOnce": false,
+	"state": "",
+	"alpha": 1,
+	"backFaceCulling": true,
+	"sideOrientation": 1,
+	"alphaMode": 2,
+	"_needDepthPrePass": false,
+	"disableDepthWrite": false,
+	"disableColorWrite": false,
+	"forceDepthWrite": false,
+	"depthFunction": 0,
+	"separateCullingPass": false,
+	"fogEnabled": true,
+	"pointSize": 1,
+	"zOffset": 0,
+	"pointsCloud": false,
+	"fillMode": 0,
+	"metadata": {
+		"originalSourceFile": {
+			"id": "4bf28582-de8b-4aff-868c-331dd309281f",
+			"name": "Alpha_Surface_MAT",
+			"sceneFileName": "dummy3.babylon"
+		}
+	}
+}
