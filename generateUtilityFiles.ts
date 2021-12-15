@@ -1,5 +1,7 @@
 const main = () => {
   const fs = require('fs');
+  const path = require('path');
+
   const decorators = {
     data:
       'import { PointerEventTypes, KeyboardEventTypes } from "@babylonjs/core";\n' +
@@ -114,7 +116,7 @@ const main = () => {
       '        });\n' +
       '    };\n' +
       '}\n',
-    path: './scenes/decorators.ts',
+    path: path.join(__dirname, 'src/scenes/decorators.ts'),
   };
   const tools = {
     data:
@@ -514,7 +516,7 @@ const main = () => {
       ' * @deprecated will be moved to "./decorators.ts".\n' +
       ' */\n' +
       'export * from "./decorators";\n',
-    path: './scenes/tools.ts',
+    path: path.join(__dirname, 'src/scenes/tools.ts'),
   };
   const scriptsmap = {
     data:
@@ -541,7 +543,7 @@ const main = () => {
       '\t"src/scenes/scene/camera.ts": require("./scene/camera"),\n' +
       '\t"src/scenes/scene/scene.ts": require("./scene/scene"),\n' +
       '}\n',
-    path: './scenes/scripts-map.ts',
+    path: path.join(__dirname, 'src/scenes/scripts-map.ts'),
   };
 
   const index = {
@@ -586,9 +588,9 @@ const main = () => {
       'export function attachScriptToObjectImmediately(scriptPath: string, object: Node | Scene): void {\n' +
       '    attachScriptToNodeAtRuntime(scriptPath, object);\n' +
       '}\n',
-    path: './scenes/',
+    path: path.join(__dirname, 'src/scenes/'),
   };
-  const scenesDirPath = '../scenes';
+  const scenesDirPath = path.join(__dirname, 'scenes');
   const fileSrc = [decorators, tools, scriptsmap];
 
   // add filesource for each scene
@@ -596,7 +598,10 @@ const main = () => {
     .filter((entry) => !entry.isFile())
     .map(({ name }) => name)
     .map((name) => {
-      fileSrc.push({ data: index.data, path: `${index.path}${name}/index.ts` });
+      fileSrc.push({
+        data: index.data,
+        path: path.join(index.path, `${name}/index.ts`),
+      });
     });
 
   fileSrc.map((file) => {
