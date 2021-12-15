@@ -7,6 +7,7 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -18,9 +19,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='protobuf/websocket.proto',
   package='protobuf',
   syntax='proto2',
-  serialized_options=None,
   serialized_pb=_b('\n\x18protobuf/websocket.proto\x12\x08protobuf\"\t\n\x07\x43loseWs\"?\n\x0cWsReqWrapper\x12$\n\x07\x63losews\x18\x01 \x01(\x0b\x32\x11.protobuf.CloseWsH\x00\x42\t\n\x07\x63ontent\"@\n\rWsRespWrapper\x12$\n\x07\x63losews\x18\x01 \x01(\x0b\x32\x11.protobuf.CloseWsH\x00\x42\t\n\x07\x63ontent')
 )
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 
@@ -38,7 +39,7 @@ _CLOSEWS = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  options=None,
   is_extendable=False,
   syntax='proto2',
   extension_ranges=[],
@@ -62,14 +63,14 @@ _WSREQWRAPPER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  options=None,
   is_extendable=False,
   syntax='proto2',
   extension_ranges=[],
@@ -96,14 +97,14 @@ _WSRESPWRAPPER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      options=None),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  options=None,
   is_extendable=False,
   syntax='proto2',
   extension_ranges=[],
@@ -127,7 +128,6 @@ _WSRESPWRAPPER.fields_by_name['closews'].containing_oneof = _WSRESPWRAPPER.oneof
 DESCRIPTOR.message_types_by_name['CloseWs'] = _CLOSEWS
 DESCRIPTOR.message_types_by_name['WsReqWrapper'] = _WSREQWRAPPER
 DESCRIPTOR.message_types_by_name['WsRespWrapper'] = _WSRESPWRAPPER
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CloseWs = _reflection.GeneratedProtocolMessageType('CloseWs', (_message.Message,), dict(
   DESCRIPTOR = _CLOSEWS,

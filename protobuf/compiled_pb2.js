@@ -445,6 +445,193 @@
             return Signup;
         })();
     
+        protobuf.CheckToken = (function() {
+    
+            /**
+             * Properties of a CheckToken.
+             * @memberof protobuf
+             * @interface ICheckToken
+             * @property {string} token CheckToken token
+             */
+    
+            /**
+             * Constructs a new CheckToken.
+             * @memberof protobuf
+             * @classdesc Represents a CheckToken.
+             * @implements ICheckToken
+             * @constructor
+             * @param {protobuf.ICheckToken=} [properties] Properties to set
+             */
+            function CheckToken(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * CheckToken token.
+             * @member {string} token
+             * @memberof protobuf.CheckToken
+             * @instance
+             */
+            CheckToken.prototype.token = "";
+    
+            /**
+             * Creates a new CheckToken instance using the specified properties.
+             * @function create
+             * @memberof protobuf.CheckToken
+             * @static
+             * @param {protobuf.ICheckToken=} [properties] Properties to set
+             * @returns {protobuf.CheckToken} CheckToken instance
+             */
+            CheckToken.create = function create(properties) {
+                return new CheckToken(properties);
+            };
+    
+            /**
+             * Encodes the specified CheckToken message. Does not implicitly {@link protobuf.CheckToken.verify|verify} messages.
+             * @function encode
+             * @memberof protobuf.CheckToken
+             * @static
+             * @param {protobuf.ICheckToken} message CheckToken message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CheckToken.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.token);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified CheckToken message, length delimited. Does not implicitly {@link protobuf.CheckToken.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof protobuf.CheckToken
+             * @static
+             * @param {protobuf.ICheckToken} message CheckToken message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CheckToken.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a CheckToken message from the specified reader or buffer.
+             * @function decode
+             * @memberof protobuf.CheckToken
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {protobuf.CheckToken} CheckToken
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CheckToken.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.protobuf.CheckToken();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.token = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                if (!message.hasOwnProperty("token"))
+                    throw $util.ProtocolError("missing required 'token'", { instance: message });
+                return message;
+            };
+    
+            /**
+             * Decodes a CheckToken message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof protobuf.CheckToken
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {protobuf.CheckToken} CheckToken
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CheckToken.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a CheckToken message.
+             * @function verify
+             * @memberof protobuf.CheckToken
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CheckToken.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (!$util.isString(message.token))
+                    return "token: string expected";
+                return null;
+            };
+    
+            /**
+             * Creates a CheckToken message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof protobuf.CheckToken
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {protobuf.CheckToken} CheckToken
+             */
+            CheckToken.fromObject = function fromObject(object) {
+                if (object instanceof $root.protobuf.CheckToken)
+                    return object;
+                var message = new $root.protobuf.CheckToken();
+                if (object.token != null)
+                    message.token = String(object.token);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a CheckToken message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof protobuf.CheckToken
+             * @static
+             * @param {protobuf.CheckToken} message CheckToken
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            CheckToken.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.token = "";
+                if (message.token != null && message.hasOwnProperty("token"))
+                    object.token = message.token;
+                return object;
+            };
+    
+            /**
+             * Converts this CheckToken to JSON.
+             * @function toJSON
+             * @memberof protobuf.CheckToken
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            CheckToken.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return CheckToken;
+        })();
+    
         protobuf.RespToken = (function() {
     
             /**
@@ -653,6 +840,544 @@
             };
     
             return RespToken;
+        })();
+    
+        protobuf.RespSuccess = (function() {
+    
+            /**
+             * Properties of a RespSuccess.
+             * @memberof protobuf
+             * @interface IRespSuccess
+             * @property {boolean} success RespSuccess success
+             */
+    
+            /**
+             * Constructs a new RespSuccess.
+             * @memberof protobuf
+             * @classdesc Represents a RespSuccess.
+             * @implements IRespSuccess
+             * @constructor
+             * @param {protobuf.IRespSuccess=} [properties] Properties to set
+             */
+            function RespSuccess(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * RespSuccess success.
+             * @member {boolean} success
+             * @memberof protobuf.RespSuccess
+             * @instance
+             */
+            RespSuccess.prototype.success = false;
+    
+            /**
+             * Creates a new RespSuccess instance using the specified properties.
+             * @function create
+             * @memberof protobuf.RespSuccess
+             * @static
+             * @param {protobuf.IRespSuccess=} [properties] Properties to set
+             * @returns {protobuf.RespSuccess} RespSuccess instance
+             */
+            RespSuccess.create = function create(properties) {
+                return new RespSuccess(properties);
+            };
+    
+            /**
+             * Encodes the specified RespSuccess message. Does not implicitly {@link protobuf.RespSuccess.verify|verify} messages.
+             * @function encode
+             * @memberof protobuf.RespSuccess
+             * @static
+             * @param {protobuf.IRespSuccess} message RespSuccess message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            RespSuccess.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                writer.uint32(/* id 1, wireType 0 =*/8).bool(message.success);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified RespSuccess message, length delimited. Does not implicitly {@link protobuf.RespSuccess.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof protobuf.RespSuccess
+             * @static
+             * @param {protobuf.IRespSuccess} message RespSuccess message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            RespSuccess.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a RespSuccess message from the specified reader or buffer.
+             * @function decode
+             * @memberof protobuf.RespSuccess
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {protobuf.RespSuccess} RespSuccess
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            RespSuccess.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.protobuf.RespSuccess();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.success = reader.bool();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                if (!message.hasOwnProperty("success"))
+                    throw $util.ProtocolError("missing required 'success'", { instance: message });
+                return message;
+            };
+    
+            /**
+             * Decodes a RespSuccess message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof protobuf.RespSuccess
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {protobuf.RespSuccess} RespSuccess
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            RespSuccess.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a RespSuccess message.
+             * @function verify
+             * @memberof protobuf.RespSuccess
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            RespSuccess.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (typeof message.success !== "boolean")
+                    return "success: boolean expected";
+                return null;
+            };
+    
+            /**
+             * Creates a RespSuccess message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof protobuf.RespSuccess
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {protobuf.RespSuccess} RespSuccess
+             */
+            RespSuccess.fromObject = function fromObject(object) {
+                if (object instanceof $root.protobuf.RespSuccess)
+                    return object;
+                var message = new $root.protobuf.RespSuccess();
+                if (object.success != null)
+                    message.success = Boolean(object.success);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a RespSuccess message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof protobuf.RespSuccess
+             * @static
+             * @param {protobuf.RespSuccess} message RespSuccess
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            RespSuccess.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.success = false;
+                if (message.success != null && message.hasOwnProperty("success"))
+                    object.success = message.success;
+                return object;
+            };
+    
+            /**
+             * Converts this RespSuccess to JSON.
+             * @function toJSON
+             * @memberof protobuf.RespSuccess
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            RespSuccess.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return RespSuccess;
+        })();
+    
+        protobuf.CreateBattleLog = (function() {
+    
+            /**
+             * Properties of a CreateBattleLog.
+             * @memberof protobuf
+             * @interface ICreateBattleLog
+             * @property {string} battleToken CreateBattleLog battleToken
+             * @property {boolean|null} [isSingleMode] CreateBattleLog isSingleMode
+             * @property {boolean|null} [meWinner] CreateBattleLog meWinner
+             * @property {boolean|null} [isDraw] CreateBattleLog isDraw
+             * @property {string} myToken CreateBattleLog myToken
+             * @property {string|null} [enemyToken] CreateBattleLog enemyToken
+             * @property {number} elapsedms CreateBattleLog elapsedms
+             */
+    
+            /**
+             * Constructs a new CreateBattleLog.
+             * @memberof protobuf
+             * @classdesc Represents a CreateBattleLog.
+             * @implements ICreateBattleLog
+             * @constructor
+             * @param {protobuf.ICreateBattleLog=} [properties] Properties to set
+             */
+            function CreateBattleLog(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * CreateBattleLog battleToken.
+             * @member {string} battleToken
+             * @memberof protobuf.CreateBattleLog
+             * @instance
+             */
+            CreateBattleLog.prototype.battleToken = "";
+    
+            /**
+             * CreateBattleLog isSingleMode.
+             * @member {boolean|null|undefined} isSingleMode
+             * @memberof protobuf.CreateBattleLog
+             * @instance
+             */
+            CreateBattleLog.prototype.isSingleMode = null;
+    
+            /**
+             * CreateBattleLog meWinner.
+             * @member {boolean|null|undefined} meWinner
+             * @memberof protobuf.CreateBattleLog
+             * @instance
+             */
+            CreateBattleLog.prototype.meWinner = null;
+    
+            /**
+             * CreateBattleLog isDraw.
+             * @member {boolean|null|undefined} isDraw
+             * @memberof protobuf.CreateBattleLog
+             * @instance
+             */
+            CreateBattleLog.prototype.isDraw = null;
+    
+            /**
+             * CreateBattleLog myToken.
+             * @member {string} myToken
+             * @memberof protobuf.CreateBattleLog
+             * @instance
+             */
+            CreateBattleLog.prototype.myToken = "";
+    
+            /**
+             * CreateBattleLog enemyToken.
+             * @member {string} enemyToken
+             * @memberof protobuf.CreateBattleLog
+             * @instance
+             */
+            CreateBattleLog.prototype.enemyToken = "";
+    
+            /**
+             * CreateBattleLog elapsedms.
+             * @member {number} elapsedms
+             * @memberof protobuf.CreateBattleLog
+             * @instance
+             */
+            CreateBattleLog.prototype.elapsedms = 0;
+    
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+    
+            /**
+             * CreateBattleLog winner.
+             * @member {"isSingleMode"|"meWinner"|"isDraw"|undefined} winner
+             * @memberof protobuf.CreateBattleLog
+             * @instance
+             */
+            Object.defineProperty(CreateBattleLog.prototype, "winner", {
+                get: $util.oneOfGetter($oneOfFields = ["isSingleMode", "meWinner", "isDraw"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+    
+            /**
+             * Creates a new CreateBattleLog instance using the specified properties.
+             * @function create
+             * @memberof protobuf.CreateBattleLog
+             * @static
+             * @param {protobuf.ICreateBattleLog=} [properties] Properties to set
+             * @returns {protobuf.CreateBattleLog} CreateBattleLog instance
+             */
+            CreateBattleLog.create = function create(properties) {
+                return new CreateBattleLog(properties);
+            };
+    
+            /**
+             * Encodes the specified CreateBattleLog message. Does not implicitly {@link protobuf.CreateBattleLog.verify|verify} messages.
+             * @function encode
+             * @memberof protobuf.CreateBattleLog
+             * @static
+             * @param {protobuf.ICreateBattleLog} message CreateBattleLog message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CreateBattleLog.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.battleToken);
+                if (message.isSingleMode != null && Object.hasOwnProperty.call(message, "isSingleMode"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).bool(message.isSingleMode);
+                if (message.meWinner != null && Object.hasOwnProperty.call(message, "meWinner"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).bool(message.meWinner);
+                if (message.isDraw != null && Object.hasOwnProperty.call(message, "isDraw"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).bool(message.isDraw);
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.myToken);
+                if (message.enemyToken != null && Object.hasOwnProperty.call(message, "enemyToken"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.enemyToken);
+                writer.uint32(/* id 7, wireType 0 =*/56).int32(message.elapsedms);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified CreateBattleLog message, length delimited. Does not implicitly {@link protobuf.CreateBattleLog.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof protobuf.CreateBattleLog
+             * @static
+             * @param {protobuf.ICreateBattleLog} message CreateBattleLog message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CreateBattleLog.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a CreateBattleLog message from the specified reader or buffer.
+             * @function decode
+             * @memberof protobuf.CreateBattleLog
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {protobuf.CreateBattleLog} CreateBattleLog
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CreateBattleLog.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.protobuf.CreateBattleLog();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.battleToken = reader.string();
+                        break;
+                    case 2:
+                        message.isSingleMode = reader.bool();
+                        break;
+                    case 3:
+                        message.meWinner = reader.bool();
+                        break;
+                    case 4:
+                        message.isDraw = reader.bool();
+                        break;
+                    case 5:
+                        message.myToken = reader.string();
+                        break;
+                    case 6:
+                        message.enemyToken = reader.string();
+                        break;
+                    case 7:
+                        message.elapsedms = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                if (!message.hasOwnProperty("battleToken"))
+                    throw $util.ProtocolError("missing required 'battleToken'", { instance: message });
+                if (!message.hasOwnProperty("myToken"))
+                    throw $util.ProtocolError("missing required 'myToken'", { instance: message });
+                if (!message.hasOwnProperty("elapsedms"))
+                    throw $util.ProtocolError("missing required 'elapsedms'", { instance: message });
+                return message;
+            };
+    
+            /**
+             * Decodes a CreateBattleLog message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof protobuf.CreateBattleLog
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {protobuf.CreateBattleLog} CreateBattleLog
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CreateBattleLog.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a CreateBattleLog message.
+             * @function verify
+             * @memberof protobuf.CreateBattleLog
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CreateBattleLog.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (!$util.isString(message.battleToken))
+                    return "battleToken: string expected";
+                if (message.isSingleMode != null && message.hasOwnProperty("isSingleMode")) {
+                    properties.winner = 1;
+                    if (typeof message.isSingleMode !== "boolean")
+                        return "isSingleMode: boolean expected";
+                }
+                if (message.meWinner != null && message.hasOwnProperty("meWinner")) {
+                    if (properties.winner === 1)
+                        return "winner: multiple values";
+                    properties.winner = 1;
+                    if (typeof message.meWinner !== "boolean")
+                        return "meWinner: boolean expected";
+                }
+                if (message.isDraw != null && message.hasOwnProperty("isDraw")) {
+                    if (properties.winner === 1)
+                        return "winner: multiple values";
+                    properties.winner = 1;
+                    if (typeof message.isDraw !== "boolean")
+                        return "isDraw: boolean expected";
+                }
+                if (!$util.isString(message.myToken))
+                    return "myToken: string expected";
+                if (message.enemyToken != null && message.hasOwnProperty("enemyToken"))
+                    if (!$util.isString(message.enemyToken))
+                        return "enemyToken: string expected";
+                if (!$util.isInteger(message.elapsedms))
+                    return "elapsedms: integer expected";
+                return null;
+            };
+    
+            /**
+             * Creates a CreateBattleLog message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof protobuf.CreateBattleLog
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {protobuf.CreateBattleLog} CreateBattleLog
+             */
+            CreateBattleLog.fromObject = function fromObject(object) {
+                if (object instanceof $root.protobuf.CreateBattleLog)
+                    return object;
+                var message = new $root.protobuf.CreateBattleLog();
+                if (object.battleToken != null)
+                    message.battleToken = String(object.battleToken);
+                if (object.isSingleMode != null)
+                    message.isSingleMode = Boolean(object.isSingleMode);
+                if (object.meWinner != null)
+                    message.meWinner = Boolean(object.meWinner);
+                if (object.isDraw != null)
+                    message.isDraw = Boolean(object.isDraw);
+                if (object.myToken != null)
+                    message.myToken = String(object.myToken);
+                if (object.enemyToken != null)
+                    message.enemyToken = String(object.enemyToken);
+                if (object.elapsedms != null)
+                    message.elapsedms = object.elapsedms | 0;
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a CreateBattleLog message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof protobuf.CreateBattleLog
+             * @static
+             * @param {protobuf.CreateBattleLog} message CreateBattleLog
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            CreateBattleLog.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.battleToken = "";
+                    object.myToken = "";
+                    object.enemyToken = "";
+                    object.elapsedms = 0;
+                }
+                if (message.battleToken != null && message.hasOwnProperty("battleToken"))
+                    object.battleToken = message.battleToken;
+                if (message.isSingleMode != null && message.hasOwnProperty("isSingleMode")) {
+                    object.isSingleMode = message.isSingleMode;
+                    if (options.oneofs)
+                        object.winner = "isSingleMode";
+                }
+                if (message.meWinner != null && message.hasOwnProperty("meWinner")) {
+                    object.meWinner = message.meWinner;
+                    if (options.oneofs)
+                        object.winner = "meWinner";
+                }
+                if (message.isDraw != null && message.hasOwnProperty("isDraw")) {
+                    object.isDraw = message.isDraw;
+                    if (options.oneofs)
+                        object.winner = "isDraw";
+                }
+                if (message.myToken != null && message.hasOwnProperty("myToken"))
+                    object.myToken = message.myToken;
+                if (message.enemyToken != null && message.hasOwnProperty("enemyToken"))
+                    object.enemyToken = message.enemyToken;
+                if (message.elapsedms != null && message.hasOwnProperty("elapsedms"))
+                    object.elapsedms = message.elapsedms;
+                return object;
+            };
+    
+            /**
+             * Converts this CreateBattleLog to JSON.
+             * @function toJSON
+             * @memberof protobuf.CreateBattleLog
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            CreateBattleLog.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return CreateBattleLog;
         })();
     
         protobuf.CloseWs = (function() {
