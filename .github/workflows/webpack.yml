@@ -36,7 +36,9 @@ jobs:
     - name: Install packages
       run: npm install
     - name: Compile
-      run: npm run compile
+      run: |
+        npm run generate
+        npm run compile
     - name: Build
       run: |
         npm run build-noeditor

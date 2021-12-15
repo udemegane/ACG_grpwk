@@ -4,6 +4,7 @@
   "description": "Generated Template by BabylonJS Editor v4.0",
   "scripts": {
     "clean": "rimraf build && rimraf declaration",
+    "generate": "node ./src/generateUtilityFiles.ts",
     "compile": "tsc -p .",
     "build": "webpack --mode production",
     "build-noeditor": "webpack --config webpack.config.noeditor.js --mode production",
