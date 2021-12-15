@@ -15,8 +15,6 @@ function info () {
 }
 
 info "Working in dir: `pwd`"
-ls -al
-ls -al /app
 
 whichsh=bash
 selectyes='false'
