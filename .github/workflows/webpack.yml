@@ -35,6 +35,8 @@ jobs:
       run: export NODE_OPTIONS="--max-old-space-size=6144"
     - name: Install packages
       run: npm install
+    - name: Compile
+      run: npm run compile
     - name: Build
       run: |
         npm run build-noeditor
