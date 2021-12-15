@@ -38,13 +38,13 @@ export default class SceneScriptBase extends Scene {
     if (!this.pane) {
       this.pane = new Pane();
       const PARAMS = {
-        factor: 123,
-        title: 'hello',
-        color: '#0f0',
+        prodStage: process.env.ACG_PRODUCTION_STAGE,
+        serverURL: process.env.ACG_BACKSERVER_URL,
       };
-      this.pane.addInput(PARAMS, 'factor');
-      this.pane.addInput(PARAMS, 'title');
-      this.pane.addInput(PARAMS, 'color');
+      // this.pane.addInput(PARAMS, 'factor');
+      this.pane.addInput(PARAMS, 'prodStage');
+      this.pane.addInput(PARAMS, 'serverURL');
+      // this.pane.addInput(PARAMS, 'color');
     }
   }
 
