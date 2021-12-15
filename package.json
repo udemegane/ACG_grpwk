@@ -30,13 +30,16 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "glslify-loader": "^2.0.0",
     "http-server": "0.12.1",
     "prettier": "^2.5.0",
     "ts-loader": "4.4.2",
+    "ts-shader-loader": "^1.0.6",
     "tweakpane": "^3.0.6",
     "typescript": "3.8.3",
     "webpack": "4.41.2",
-    "webpack-cli": "3.3.10"
+    "webpack-cli": "3.3.10",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "@babylonjs/core": "4.2.0",
