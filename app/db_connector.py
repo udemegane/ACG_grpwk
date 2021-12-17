@@ -2,7 +2,7 @@ import json
 from typing import Any, Dict, List, Optional
 import datetime
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Boolean
 
 from app.sqlalchemy_h import Base, SessionContext
 
@@ -34,6 +34,26 @@ class TokenTable(Base):
     id = Column('id', Integer, primary_key=True, autoincrement=True)
     token = Column('token', String(65))
     userId = Column('userId', Integer)
+
+    def get_dict(self, privacy_level: int = -1, delete: List[str] = []) -> Dict[str, Any]:
+        data = DBtoDict(self, delete)
+        data = DBJsonDecode(data, [])
+        return {
+            k: v if TokenTable.privacy_settings.get(k, privacy_level) >= privacy_level else None
+            for k, v in data.items()
+        }
+
+
+class BattleLog(Base):
+    __tablename__ = 'battlelog'
+    id = Column('id', Integer, primary_key=True, autoincrement=True)
+    gameToken = Column('gameToken', String(100))
+    winnerId = Column('winnerId', Integer)
+    loserId = Column('loserId', Integer)
+    isDraw = Column('isDraw', Boolean)
+    createdAt = Column('createdAt', String(20))
+    battleTime = Column('battleTime', Integer)  # milliseconds
+    isSingleMode = Column('isSingleMode', Boolean)
 
     def get_dict(self, privacy_level: int = -1, delete: List[str] = []) -> Dict[str, Any]:
         data = DBtoDict(self, delete)

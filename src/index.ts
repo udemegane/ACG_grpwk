@@ -19,7 +19,7 @@ export class Game {
    * Constructor.
    */
   public constructor() {
-    console.log(process.env.ACG_BACKSERVER_URL)
+    console.log(process.env.ACG_BACKSERVER_URL);
     this.engine = new Engine(
       document.getElementById('renderCanvas') as HTMLCanvasElement,
       true

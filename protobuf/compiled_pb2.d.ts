@@ -194,6 +194,96 @@ export namespace protobuf {
         public toJSON(): { [k: string]: any };
     }
 
+    /** Properties of a CheckToken. */
+    interface ICheckToken {
+
+        /** CheckToken token */
+        token: string;
+    }
+
+    /** Represents a CheckToken. */
+    class CheckToken implements ICheckToken {
+
+        /**
+         * Constructs a new CheckToken.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: protobuf.ICheckToken);
+
+        /** CheckToken token. */
+        public token: string;
+
+        /**
+         * Creates a new CheckToken instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns CheckToken instance
+         */
+        public static create(properties?: protobuf.ICheckToken): protobuf.CheckToken;
+
+        /**
+         * Encodes the specified CheckToken message. Does not implicitly {@link protobuf.CheckToken.verify|verify} messages.
+         * @param message CheckToken message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: protobuf.ICheckToken, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified CheckToken message, length delimited. Does not implicitly {@link protobuf.CheckToken.verify|verify} messages.
+         * @param message CheckToken message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: protobuf.ICheckToken, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a CheckToken message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns CheckToken
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): protobuf.CheckToken;
+
+        /**
+         * Decodes a CheckToken message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns CheckToken
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): protobuf.CheckToken;
+
+        /**
+         * Verifies a CheckToken message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a CheckToken message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns CheckToken
+         */
+        public static fromObject(object: { [k: string]: any }): protobuf.CheckToken;
+
+        /**
+         * Creates a plain object from a CheckToken message. Also converts values to other types if specified.
+         * @param message CheckToken
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: protobuf.CheckToken, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this CheckToken to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a RespToken. */
     interface IRespToken {
 
@@ -285,6 +375,225 @@ export namespace protobuf {
 
         /**
          * Converts this RespToken to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a RespSuccess. */
+    interface IRespSuccess {
+
+        /** RespSuccess success */
+        success: boolean;
+    }
+
+    /** Represents a RespSuccess. */
+    class RespSuccess implements IRespSuccess {
+
+        /**
+         * Constructs a new RespSuccess.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: protobuf.IRespSuccess);
+
+        /** RespSuccess success. */
+        public success: boolean;
+
+        /**
+         * Creates a new RespSuccess instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns RespSuccess instance
+         */
+        public static create(properties?: protobuf.IRespSuccess): protobuf.RespSuccess;
+
+        /**
+         * Encodes the specified RespSuccess message. Does not implicitly {@link protobuf.RespSuccess.verify|verify} messages.
+         * @param message RespSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: protobuf.IRespSuccess, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified RespSuccess message, length delimited. Does not implicitly {@link protobuf.RespSuccess.verify|verify} messages.
+         * @param message RespSuccess message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: protobuf.IRespSuccess, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a RespSuccess message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns RespSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): protobuf.RespSuccess;
+
+        /**
+         * Decodes a RespSuccess message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns RespSuccess
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): protobuf.RespSuccess;
+
+        /**
+         * Verifies a RespSuccess message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a RespSuccess message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns RespSuccess
+         */
+        public static fromObject(object: { [k: string]: any }): protobuf.RespSuccess;
+
+        /**
+         * Creates a plain object from a RespSuccess message. Also converts values to other types if specified.
+         * @param message RespSuccess
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: protobuf.RespSuccess, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this RespSuccess to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a CreateBattleLog. */
+    interface ICreateBattleLog {
+
+        /** CreateBattleLog battleToken */
+        battleToken: string;
+
+        /** CreateBattleLog isSingleMode */
+        isSingleMode?: (boolean|null);
+
+        /** CreateBattleLog meWinner */
+        meWinner?: (boolean|null);
+
+        /** CreateBattleLog isDraw */
+        isDraw?: (boolean|null);
+
+        /** CreateBattleLog myToken */
+        myToken: string;
+
+        /** CreateBattleLog enemyToken */
+        enemyToken?: (string|null);
+
+        /** CreateBattleLog elapsedms */
+        elapsedms: number;
+    }
+
+    /** Represents a CreateBattleLog. */
+    class CreateBattleLog implements ICreateBattleLog {
+
+        /**
+         * Constructs a new CreateBattleLog.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: protobuf.ICreateBattleLog);
+
+        /** CreateBattleLog battleToken. */
+        public battleToken: string;
+
+        /** CreateBattleLog isSingleMode. */
+        public isSingleMode?: (boolean|null);
+
+        /** CreateBattleLog meWinner. */
+        public meWinner?: (boolean|null);
+
+        /** CreateBattleLog isDraw. */
+        public isDraw?: (boolean|null);
+
+        /** CreateBattleLog myToken. */
+        public myToken: string;
+
+        /** CreateBattleLog enemyToken. */
+        public enemyToken: string;
+
+        /** CreateBattleLog elapsedms. */
+        public elapsedms: number;
+
+        /** CreateBattleLog winner. */
+        public winner?: ("isSingleMode"|"meWinner"|"isDraw");
+
+        /**
+         * Creates a new CreateBattleLog instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns CreateBattleLog instance
+         */
+        public static create(properties?: protobuf.ICreateBattleLog): protobuf.CreateBattleLog;
+
+        /**
+         * Encodes the specified CreateBattleLog message. Does not implicitly {@link protobuf.CreateBattleLog.verify|verify} messages.
+         * @param message CreateBattleLog message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: protobuf.ICreateBattleLog, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified CreateBattleLog message, length delimited. Does not implicitly {@link protobuf.CreateBattleLog.verify|verify} messages.
+         * @param message CreateBattleLog message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: protobuf.ICreateBattleLog, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a CreateBattleLog message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns CreateBattleLog
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): protobuf.CreateBattleLog;
+
+        /**
+         * Decodes a CreateBattleLog message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns CreateBattleLog
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): protobuf.CreateBattleLog;
+
+        /**
+         * Verifies a CreateBattleLog message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a CreateBattleLog message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns CreateBattleLog
+         */
+        public static fromObject(object: { [k: string]: any }): protobuf.CreateBattleLog;
+
+        /**
+         * Creates a plain object from a CreateBattleLog message. Also converts values to other types if specified.
+         * @param message CreateBattleLog
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: protobuf.CreateBattleLog, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this CreateBattleLog to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

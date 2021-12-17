@@ -10,8 +10,8 @@
 	"materials": [
 		{
 			"bindedMeshes": [
-				"d66c05ad-967f-4f69-a6fb-7d47281b641c",
-				"f824df87-ae33-41d9-ba8f-551d2083a2be"
+				"f824df87-ae33-41d9-ba8f-551d2083a2be",
+				"d66c05ad-967f-4f69-a6fb-7d47281b641c"
 			],
 			"json": "cube-965b4240-9156-4704-8e39-cc381d3c7123.json",
 			"isMultiMaterial": false
@@ -46,8 +46,8 @@
 		}
 	],
 	"textures": [
-		"blaster_nmap.jpg-41.json",
 		"blaster_diffuse.jpg-39.json",
+		"blaster_nmap.jpg-41.json",
 		"parking.env-40.json",
 		"EnvironmentBRDFTexture0-43.json"
 	],
@@ -55,11 +55,11 @@
 		"sky-c4024c20-1c4f-4be6-9abd-525e2a782174.json",
 		"blaster-b6a89645-0d85-44c1-8bf8-b99b8670c51f.json",
 		"New Cube-618a29b6-5df8-49ef-b9c7-52ab26b2057f.json",
-		"cube-d66c05ad-967f-4f69-a6fb-7d47281b641c.json",
-		"ground-b87c0751-53e5-4782-88d9-0461e9457fe1.json",
 		"wall-f824df87-ae33-41d9-ba8f-551d2083a2be.json",
-		"ball-f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c.json",
-		"New Cube-c50fde32-b635-466f-9440-684ba17efabf.json"
+		"ground-b87c0751-53e5-4782-88d9-0461e9457fe1.json",
+		"cube-d66c05ad-967f-4f69-a6fb-7d47281b641c.json",
+		"New Cube-c50fde32-b635-466f-9440-684ba17efabf.json",
+		"ball-f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c.json"
 	],
 	"transformNodes": [],
 	"particleSystems": [],

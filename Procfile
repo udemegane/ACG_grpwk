@@ -1,2 +1,2 @@
-web: gunicorn -k unicorn.workers.UnicornWorker run:api
-release: alembic upgrade head
+release: bash run-backserver.sh -rnbt
+web: gunicorn -k uvicorn.workers.UvicornWorker run:api
