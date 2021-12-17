@@ -1,0 +1,33 @@
+{
+	"name": "files/decide21.mp3",
+	"url": "decide21.mp3",
+	"autoplay": false,
+	"loop": false,
+	"volume": 1,
+	"spatialSound": true,
+	"maxDistance": 100,
+	"rolloffFactor": 1,
+	"refDistance": 1,
+	"distanceModel": "linear",
+	"playbackRate": 1,
+	"panningModel": "equalpower",
+	"soundTrackId": -1,
+	"metadata": {
+		"id": "48baad39-d2ae-4c19-8e81-423ecd87dbdb"
+	},
+	"connectedMeshId": "b360ae11-7a84-4ea2-8e4c-0b29f588c903",
+	"position": [
+		-0.9712135791778564,
+		-0.003795069409534335,
+		-15.76201343536377
+	],
+	"isDirectional": false,
+	"localDirectionToMesh": [
+		1,
+		0,
+		0
+	],
+	"coneInnerAngle": 360,
+	"coneOuterAngle": 360,
+	"coneOuterGain": 0
+}
