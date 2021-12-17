@@ -8,7 +8,17 @@
 	"materials": [
 		{
 			"bindedMeshes": [],
+			"json": "ground-44ce4d7a-5718-4025-a141-272ee6387673.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
 			"json": "cube-03bdd37e-fe54-4095-a392-0de62b0de089.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "sky-b2346078-7465-4c63-8877-44b542584898.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -17,22 +27,12 @@
 			],
 			"json": "sky-83ba6db2-aa00-4321-b85f-05345ec01741.json",
 			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
-			"json": "ground-44ce4d7a-5718-4025-a141-272ee6387673.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
-			"json": "sky-b2346078-7465-4c63-8877-44b542584898.json",
-			"isMultiMaterial": false
 		}
 	],
 	"textures": [],
 	"meshes": [
-		"New Cube-b360ae11-7a84-4ea2-8e4c-0b29f588c903.json",
-		"Sky-193c508d-fc21-4a8c-8eaa-2a2c0dd355eb.json"
+		"Sky-193c508d-fc21-4a8c-8eaa-2a2c0dd355eb.json",
+		"New Cube-b360ae11-7a84-4ea2-8e4c-0b29f588c903.json"
 	],
 	"transformNodes": [],
 	"particleSystems": [],
