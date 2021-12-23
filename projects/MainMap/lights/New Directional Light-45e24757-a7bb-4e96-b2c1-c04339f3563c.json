@@ -1,0 +1,48 @@
+{
+	"tags": null,
+	"shadowFrustumSize": 0,
+	"shadowOrthoScale": 0.1,
+	"autoUpdateExtends": true,
+	"autoCalcShadowZBounds": false,
+	"diffuse": [
+		1,
+		1,
+		1
+	],
+	"specular": [
+		1,
+		1,
+		1
+	],
+	"falloffType": 0,
+	"intensity": 1,
+	"range": 1.7976931348623157e+308,
+	"intensityMode": 0,
+	"radius": 0.00001,
+	"_renderPriority": 0,
+	"shadowEnabled": true,
+	"excludeWithLayerMask": 0,
+	"includeOnlyWithLayerMask": 0,
+	"lightmapMode": 0,
+	"position": [
+		25.446041107177734,
+		50.89208221435547,
+		25.446041107177734
+	],
+	"direction": [
+		-1,
+		-2,
+		-1
+	],
+	"name": "New Directional Light",
+	"id": "45e24757-a7bb-4e96-b2c1-c04339f3563c",
+	"state": "",
+	"metadata": {
+		"script": {
+			"name": "None"
+		}
+	},
+	"type": 1,
+	"animations": [],
+	"ranges": []
+}
