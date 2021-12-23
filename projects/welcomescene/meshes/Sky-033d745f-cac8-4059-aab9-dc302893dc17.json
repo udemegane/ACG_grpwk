@@ -3,8 +3,8 @@
 	"meshes": [
 		{
 			"name": "Sky",
-			"id": "193c508d-fc21-4a8c-8eaa-2a2c0dd355eb",
-			"uniqueId": 8,
+			"id": "033d745f-cac8-4059-aab9-dc302893dc17",
+			"uniqueId": 9,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -12,14 +12,14 @@
 				0
 			],
 			"rotation": [
-				0,
-				0,
-				0
+				0.0004415421741309596,
+				-0.0016165382417057544,
+				-7.137704293645517e-7
 			],
 			"scaling": [
-				1,
-				1,
-				1
+				0.999999995295224,
+				0.9999999782707126,
+				0.9999999735657693
 			],
 			"localMatrix": {
 				"0": 1,
@@ -50,9 +50,9 @@
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": null,
 			"isUnIndexed": false,
-			"geometryId": "4b96a204-4d47-49a2-b083-822d01b1ea83",
+			"geometryId": "a41a3a46-9aba-4a08-b109-dcc3e3090a7d",
 			"subMeshes": null,
-			"materialId": "83ba6db2-aa00-4321-b85f-05345ec01741",
+			"materialId": "4fedeaf9-3eb2-46bf-939f-aa8a03e6bd6f",
 			"metadata": {
 				"isPickable": true,
 				"script": {
@@ -73,7 +73,7 @@
 				0
 			],
 			"applyFog": true,
-			"delayLoadingFile": "geometries/4b96a204-4d47-49a2-b083-822d01b1ea83.babylonbinarymeshdata",
+			"delayLoadingFile": "geometries/a41a3a46-9aba-4a08-b109-dcc3e3090a7d.babylonbinarymeshdata",
 			"boundingBoxMaximum": [
 				2500,
 				2500,

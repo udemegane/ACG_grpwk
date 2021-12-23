@@ -33,7 +33,11 @@
 	"name": "New Hemispheric Light",
 	"id": "877f5ba5-46e0-4dc6-90ce-1c0944d0f62c",
 	"state": "",
-	"metadata": {},
+	"metadata": {
+		"script": {
+			"name": "None"
+		}
+	},
 	"type": 3,
 	"animations": [],
 	"ranges": []

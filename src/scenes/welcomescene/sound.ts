@@ -4,6 +4,7 @@ import {
   KeyboardEventTypes,
   AudioSceneComponent,
 } from '@babylonjs/core';
+import { fromChildren, fromScene } from '../decorators';
 import { onKeyboardEvent } from '../tools';
 
 /**
@@ -29,6 +30,9 @@ export default class MyScript extends Node {
    * Override constructor.
    * @warn do not fill.
    */
+  // @fromChildren('files/decide21.mp3')
+  // private _sfx: Sound;
+
   // @ts-ignore ignoring the super call as we don't want to re-init
   protected constructor() {}
 
@@ -56,8 +60,8 @@ export default class MyScript extends Node {
 
   @onKeyboardEvent([32], KeyboardEventTypes.KEYUP)
   private _onSpaceKey(): void {
-    const soundse = this._scene.getSoundByName('files/decide21.mp3');
-    soundse.autoplay = true;
+    // const soundse = this._sfx;
+    // soundse.autoplay = true;
   }
 
   /**

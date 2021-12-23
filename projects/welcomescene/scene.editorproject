@@ -8,7 +8,24 @@
 	"materials": [
 		{
 			"bindedMeshes": [],
+			"json": "sky-b2346078-7465-4c63-8877-44b542584898.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "sky-83ba6db2-aa00-4321-b85f-05345ec01741.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
 			"json": "ground-44ce4d7a-5718-4025-a141-272ee6387673.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"033d745f-cac8-4059-aab9-dc302893dc17"
+			],
+			"json": "sky-4fedeaf9-3eb2-46bf-939f-aa8a03e6bd6f.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -18,21 +35,14 @@
 		},
 		{
 			"bindedMeshes": [],
-			"json": "sky-b2346078-7465-4c63-8877-44b542584898.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"193c508d-fc21-4a8c-8eaa-2a2c0dd355eb"
-			],
-			"json": "sky-83ba6db2-aa00-4321-b85f-05345ec01741.json",
+			"json": "sky-8163fa27-2536-4166-9f23-73717f22ab78.json",
 			"isMultiMaterial": false
 		}
 	],
 	"textures": [],
 	"meshes": [
-		"Sky-193c508d-fc21-4a8c-8eaa-2a2c0dd355eb.json",
-		"New Cube-b360ae11-7a84-4ea2-8e4c-0b29f588c903.json"
+		"New Cube-b360ae11-7a84-4ea2-8e4c-0b29f588c903.json",
+		"Sky-033d745f-cac8-4059-aab9-dc302893dc17.json"
 	],
 	"transformNodes": [],
 	"particleSystems": [],
@@ -218,9 +228,9 @@
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": 0.5427627455841425,
+			"alpha": 0.5425070693146111,
 			"beta": 1.3506555353570955,
-			"radius": 8.142718777160967,
+			"radius": 8.142718777160969,
 			"target": [
 				0,
 				0.5194425582885742,
@@ -254,9 +264,9 @@
 			],
 			"speed": 2,
 			"position": [
-				6.804218771898581,
-				2.2975437835819217,
-				4.1042456092055515
+				6.805267907696656,
+				2.297543783581922,
+				4.102505797803838
 			],
 			"upVector": [
 				0,
@@ -318,7 +328,7 @@
 					"pinchPrecision": 12,
 					"pinchDeltaPercentage": 0,
 					"useNaturalPinchZoom": false,
-					"panningSensibility": 122.80910435036037,
+					"panningSensibility": 122.80910435036034,
 					"multiTouchPanning": true,
 					"multiTouchPanAndZoom": true
 				}
