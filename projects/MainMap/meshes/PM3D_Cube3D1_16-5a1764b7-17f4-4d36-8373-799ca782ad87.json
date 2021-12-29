@@ -54,7 +54,7 @@
 			"isUnIndexed": false,
 			"geometryId": "9adb8717-7354-4257-b255-873d0aac67e5",
 			"subMeshes": null,
-			"materialId": "cd1c3e2e-5bc7-4be5-b602-121260774bc6",
+			"materialId": "03bdd37e-fe54-4095-a392-0de62b0de089",
 			"metadata": {
 				"gltf": {
 					"pointers": [
@@ -85,7 +85,11 @@
 					"name": "PM3D_Cube3D1_16",
 					"sceneFileName": "scene.glb"
 				},
-				"isPickable": true
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],

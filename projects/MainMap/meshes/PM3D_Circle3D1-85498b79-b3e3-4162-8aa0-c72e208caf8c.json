@@ -54,7 +54,7 @@
 			"isUnIndexed": false,
 			"geometryId": "2f827d6e-d2d7-4a9c-8224-d8434c5349e7",
 			"subMeshes": null,
-			"materialId": "cd1c3e2e-5bc7-4be5-b602-121260774bc6",
+			"materialId": "03bdd37e-fe54-4095-a392-0de62b0de089",
 			"metadata": {
 				"gltf": {
 					"pointers": [
@@ -85,7 +85,11 @@
 					"name": "PM3D_Circle3D1",
 					"sceneFileName": "scene.glb"
 				},
-				"isPickable": true
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],

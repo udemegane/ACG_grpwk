@@ -54,7 +54,7 @@
 			"isUnIndexed": false,
 			"geometryId": "d0ee5cd2-f961-4abf-ab30-fdc2a40a8602",
 			"subMeshes": null,
-			"materialId": "cd1c3e2e-5bc7-4be5-b602-121260774bc6",
+			"materialId": "03bdd37e-fe54-4095-a392-0de62b0de089",
 			"metadata": {
 				"gltf": {
 					"pointers": [
@@ -85,7 +85,11 @@
 					"name": "PM3D_Cylinder3D1",
 					"sceneFileName": "scene.glb"
 				},
-				"isPickable": true
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],

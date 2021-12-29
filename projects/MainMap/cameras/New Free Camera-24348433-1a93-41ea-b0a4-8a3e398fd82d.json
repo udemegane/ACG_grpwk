@@ -14,14 +14,14 @@
 	"applyGravity": false,
 	"rotation": [
 		0,
-		180,
+		-2.212373902002078,
 		0
 	],
 	"speed": 2,
 	"position": [
-		3.9433133728053544,
-		1.4620762582619746,
-		1.4578822744009563
+		-0.09697788208723068,
+		8.003996849060059,
+		6.866573810577393
 	],
 	"upVector": [
 		0,
@@ -41,7 +41,33 @@
 	"state": "",
 	"metadata": {
 		"script": {
-			"name": "None"
+			"name": "src/scenes/MainMap/camera.ts",
+			"properties": {
+				"_forwardKey": {
+					"type": "KeyMap",
+					"value": 119
+				},
+				"_backwardKey": {
+					"type": "KeyMap",
+					"value": 115
+				},
+				"_strafeLeftKey": {
+					"type": "KeyMap",
+					"value": 97
+				},
+				"_strafeRightKey": {
+					"type": "KeyMap",
+					"value": 100
+				},
+				"_upwardKey": {
+					"type": "KeyMap",
+					"value": 113
+				},
+				"_downwardKey": {
+					"type": "KeyMap",
+					"value": 101
+				}
+			}
 		}
 	},
 	"type": "UniversalCamera",

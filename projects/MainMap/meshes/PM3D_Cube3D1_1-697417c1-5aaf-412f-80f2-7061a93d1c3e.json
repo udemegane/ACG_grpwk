@@ -54,7 +54,7 @@
 			"isUnIndexed": false,
 			"geometryId": "da8bb959-9e21-4443-b17d-5dec40c41d43",
 			"subMeshes": null,
-			"materialId": "cd1c3e2e-5bc7-4be5-b602-121260774bc6",
+			"materialId": "03bdd37e-fe54-4095-a392-0de62b0de089",
 			"metadata": {
 				"gltf": {
 					"pointers": [
@@ -85,7 +85,11 @@
 					"name": "PM3D_Cube3D1_1",
 					"sceneFileName": "scene.glb"
 				},
-				"isPickable": true
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],
@@ -93,7 +97,7 @@
 			"layerMask": 268435455,
 			"alphaIndex": 1.7976931348623157e+308,
 			"hasVertexAlpha": false,
-			"overlayAlpha": 0.5,
+			"overlayAlpha": 0.3,
 			"overlayColor": [
 				1,
 				0,
