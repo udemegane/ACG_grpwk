@@ -6,5 +6,13 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true // ファイル保存時にESLintでフォーマット
     },
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "glsl-linter.validatorPath": "E:\\Program Files\\glslang\\bin\\glslangValidator.exe",
+    "glsl-linter.fileExtensions": {
+        ".fs.glsl": "frag",
+        ".vs.glsl": "vert",
+        ".tes.glsl": "tese",
+        ".tcs.glsl": "tesc",
+        ".gs.glsl": "geom"
+    }
 }
