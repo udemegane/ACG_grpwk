@@ -1,0 +1,154 @@
+{
+	"meshes": [
+		{
+			"name": "Suzanne",
+			"id": "5d2263f9-f66c-4a66-958e-906ff1bd4e7e",
+			"uniqueId": 405,
+			"type": "Mesh",
+			"position": [
+				0,
+				2.3544228076934814,
+				-1.9958522319793701
+			],
+			"rotationQuaternion": [
+				0,
+				0,
+				0,
+				1
+			],
+			"scaling": [
+				1,
+				1,
+				1
+			],
+			"localMatrix": {
+				"0": 1,
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 1,
+				"6": 0,
+				"7": 0,
+				"8": 0,
+				"9": 0,
+				"10": 1,
+				"11": 0,
+				"12": 0,
+				"13": 0,
+				"14": 0,
+				"15": 1
+			},
+			"isEnabled": true,
+			"isVisible": true,
+			"infiniteDistance": false,
+			"pickable": true,
+			"receiveShadows": false,
+			"billboardMode": 0,
+			"visibility": 1,
+			"checkCollisions": false,
+			"isBlocker": false,
+			"overrideMaterialSideOrientation": 0,
+			"parentId": "67ecad21-2faf-451b-8e91-642418b6791e",
+			"isUnIndexed": false,
+			"geometryId": "f8e5f8c4-30ac-47fe-af0f-a679a7fba7ac",
+			"subMeshes": null,
+			"metadata": {
+				"gltf": {
+					"pointers": [
+						"/meshes/5/primitives/0",
+						"/nodes/5"
+					]
+				},
+				"basePoseMatrix": {
+					"0": -1,
+					"1": 0,
+					"2": 0,
+					"3": 0,
+					"4": 0,
+					"5": 1,
+					"6": 0,
+					"7": 0,
+					"8": 0,
+					"9": 0,
+					"10": 1,
+					"11": 0,
+					"12": 0,
+					"13": -2.3544228076934814,
+					"14": 1.9958522319793701,
+					"15": 1
+				},
+				"originalSourceFile": {
+					"id": "Suzanne",
+					"name": "Suzanne",
+					"sceneFileName": "ReflectionTest.glb"
+				},
+				"isPickable": true
+			},
+			"instances": [],
+			"animations": [],
+			"ranges": [],
+			"layerMask": 268435455,
+			"alphaIndex": 1.7976931348623157e+308,
+			"hasVertexAlpha": false,
+			"overlayAlpha": 0.5,
+			"overlayColor": [
+				1,
+				0,
+				0
+			],
+			"applyFog": true,
+			"delayLoadingFile": "geometries/f8e5f8c4-30ac-47fe-af0f-a679a7fba7ac.babylonbinarymeshdata",
+			"boundingBoxMaximum": [
+				1.3671875,
+				0.984375,
+				0.8515625
+			],
+			"boundingBoxMinimum": [
+				-1.3671875,
+				-0.984375,
+				-0.8515625
+			],
+			"_binaryInfo": {
+				"positionsAttrDesc": {
+					"count": 1668,
+					"stride": 3,
+					"offset": 0,
+					"dataType": 1
+				},
+				"normalsAttrDesc": {
+					"count": 1668,
+					"stride": 3,
+					"offset": 6672,
+					"dataType": 1
+				},
+				"uvsAttrDesc": {
+					"count": 1112,
+					"stride": 2,
+					"offset": 13344,
+					"dataType": 1
+				},
+				"indicesAttrDesc": {
+					"count": 2904,
+					"stride": 1,
+					"offset": 17792,
+					"dataType": 0
+				},
+				"subMeshesAttrDesc": {
+					"count": 1,
+					"stride": 5,
+					"offset": 29408,
+					"dataType": 0
+				}
+			},
+			"positions": null,
+			"normals": null,
+			"uvs": null,
+			"hasUVs": true,
+			"indices": null
+		}
+	],
+	"materials": [],
+	"multiMaterials": [],
+	"lods": []
+}
