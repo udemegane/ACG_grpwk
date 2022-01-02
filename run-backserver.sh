@@ -149,9 +149,13 @@ if [[ x$initialize = xtrue ]]; then
         exit
     fi
     # install packages to compile protobuf for js/ts
-    if [[ x"$backonly" != xtrue ]] && [ ! -f ./node_modules/.bin/pbjs ]; then
-        warning 'You do not have `pbjs` (protobuf compiler for js/ts) installed.'
-        checkinstall 'npm install protobufjs'
+    # if [[ x"$backonly" != xtrue ]] && [ ! -f ./node_modules/.bin/pbjs ]; then
+    #     warning 'You do not have `pbjs` (protobuf compiler for js/ts) installed.'
+    #     checkinstall 'npm install protobufjs'
+    # fi
+    if [[ x"$backonly" != xtrue ]]; then
+        warning 'Please install dependencies of protobuf for ts.'
+        checkinstall 'npm install @protobuf-ts/plugin'
     fi
 fi
 
@@ -176,8 +180,17 @@ function build_protobuf() {
     protoc --python_out=. --mypy_out=. protobuf/*.proto
     if [[ x"$backonly" != xtrue ]]; then
         info 'Compiling protobuf for js/ts'
-        npx pbjs -t static-module -o protobuf/compiled_pb2.js protobuf/*.proto
-        npx pbts -o protobuf/compiled_pb2.d.ts protobuf/compiled_pb2.js
+        # npx pbjs -t static-module -o protobuf/compiled_pb2.js protobuf/*.proto
+        # npx pbts -o protobuf/compiled_pb2.d.ts protobuf/compiled_pb2.js
+        npx protoc --ts_out=protobuf --proto_path=protobuf protobuf/*.proto
+        cd protobuf
+        echo '' > compiled_pb2.ts
+        for f in *.proto; do
+            F="${f%.*}"
+            [ -f "$F".ts ] && command mv "$F.ts" "${F}_pb2.ts"
+            echo "export * from './${F}_pb2';" >> compiled_pb2.ts
+        done
+        cd -
     fi
     # Create a documentation of protobuf defined APIs
     # docker run --rm \

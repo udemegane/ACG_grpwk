@@ -49,6 +49,8 @@
     "@babylonjs/materials": "4.2.0",
     "@babylonjs/post-processes": "4.2.0",
     "@babylonjs/procedural-textures": "4.2.0",
+    "@protobuf-ts/plugin": "^2.1.0",
+    "axios": "^0.24.0",
     "cannon": "0.6.2",
     "earcut": "2.2.2",
     "protobufjs": "^6.11.2",
