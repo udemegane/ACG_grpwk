@@ -4,7 +4,7 @@
 		{
 			"name": "New Ground",
 			"id": "58d29f28-01ae-436c-b145-7b4dfc7ad5b3",
-			"uniqueId": 11,
+			"uniqueId": 14,
 			"type": "GroundMesh",
 			"position": [
 				0,
@@ -52,7 +52,7 @@
 			"isUnIndexed": false,
 			"geometryId": "f5960f54-90b0-4180-8c6e-4005f976e2a6",
 			"subMeshes": null,
-			"materialId": "44ce4d7a-5718-4025-a141-272ee6387673",
+			"materialId": "d49cd42e-58fc-4a4d-89a7-47dbb2328ae9",
 			"metadata": {
 				"isPickable": true,
 				"script": {

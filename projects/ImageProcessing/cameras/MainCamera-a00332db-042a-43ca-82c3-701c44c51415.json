@@ -36,13 +36,14 @@
 	"layerMask": 268435455,
 	"fovMode": 0,
 	"cameraRigMode": 0,
-	"name": "New Free Camera",
+	"name": "MainCamera",
 	"id": "a00332db-042a-43ca-82c3-701c44c51415",
 	"state": "",
 	"metadata": {
 		"script": {
 			"name": "None"
-		}
+		},
+		"doNotExport": false
 	},
 	"type": "UniversalCamera",
 	"inputsmgr": {

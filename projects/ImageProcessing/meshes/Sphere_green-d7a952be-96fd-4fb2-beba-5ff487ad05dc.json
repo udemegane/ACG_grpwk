@@ -4,7 +4,7 @@
 		{
 			"name": "Sphere_green",
 			"id": "d7a952be-96fd-4fb2-beba-5ff487ad05dc",
-			"uniqueId": 396,
+			"uniqueId": 15,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -44,7 +44,7 @@
 			"isVisible": true,
 			"infiniteDistance": false,
 			"pickable": true,
-			"receiveShadows": false,
+			"receiveShadows": true,
 			"billboardMode": 0,
 			"visibility": 1,
 			"checkCollisions": false,
@@ -85,7 +85,11 @@
 					"name": "Sphere_green",
 					"sceneFileName": "ReflectionTest.glb"
 				},
-				"isPickable": true
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],
@@ -93,7 +97,7 @@
 			"layerMask": 268435455,
 			"alphaIndex": 1.7976931348623157e+308,
 			"hasVertexAlpha": false,
-			"overlayAlpha": 0.5,
+			"overlayAlpha": 0.3,
 			"overlayColor": [
 				1,
 				0,

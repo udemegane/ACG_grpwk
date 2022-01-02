@@ -4,7 +4,7 @@
 		{
 			"name": "Sphere_red",
 			"id": "d9bf4bc6-9413-48e2-8f86-d90143aec7db",
-			"uniqueId": 390,
+			"uniqueId": 10,
 			"type": "Mesh",
 			"position": [
 				-2,
@@ -85,7 +85,11 @@
 					"name": "Sphere_red",
 					"sceneFileName": "ReflectionTest.glb"
 				},
-				"isPickable": true
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],
@@ -93,7 +97,7 @@
 			"layerMask": 268435455,
 			"alphaIndex": 1.7976931348623157e+308,
 			"hasVertexAlpha": false,
-			"overlayAlpha": 0.5,
+			"overlayAlpha": 0.3,
 			"overlayColor": [
 				1,
 				0,

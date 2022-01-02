@@ -3,7 +3,7 @@
 		{
 			"name": "Suzanne",
 			"id": "5d2263f9-f66c-4a66-958e-906ff1bd4e7e",
-			"uniqueId": 405,
+			"uniqueId": 12,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -83,7 +83,11 @@
 					"name": "Suzanne",
 					"sceneFileName": "ReflectionTest.glb"
 				},
-				"isPickable": true
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],
@@ -91,7 +95,7 @@
 			"layerMask": 268435455,
 			"alphaIndex": 1.7976931348623157e+308,
 			"hasVertexAlpha": false,
-			"overlayAlpha": 0.5,
+			"overlayAlpha": 0.3,
 			"overlayColor": [
 				1,
 				0,

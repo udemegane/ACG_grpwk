@@ -9,7 +9,7 @@
 	"ambientTextureImpactOnAnalyticalLights": 0,
 	"reflectivityTexture": {
 		"tags": null,
-		"url": "files/PPTestScene_Metal_blue_Roughness.png",
+		"url": "files/PPTestScene_Metal_red_Roughness.png",
 		"uOffset": 0,
 		"vOffset": 0,
 		"uScale": 1,
@@ -22,10 +22,10 @@
 		"wRotationCenter": 0.5,
 		"homogeneousRotationInUVTransform": false,
 		"isBlocking": true,
-		"name": "files/PPTestScene_Metal_blue_Roughness.png",
+		"name": "files/PPTestScene_Metal_red_Roughness.png",
 		"metadata": {
-			"editorName": "PPTestScene_Metal_blue_Roughness.png",
-			"editorId": "1f525143-89d8-4ab8-88c2-2d821f9314e4",
+			"editorName": "PPTestScene_Metal_red_Roughness.png",
+			"editorId": "d80565c9-4c43-4241-90cf-1c53dd2449f2",
 			"ktx2CompressedTextures": {
 				"isUsingCompressedTexture": false
 			}
@@ -53,8 +53,8 @@
 		"invertY": true,
 		"samplingMode": 3
 	},
-	"metallic": 1,
-	"roughness": 1,
+	"metallic": 0,
+	"roughness": 0.8,
 	"metallicF0Factor": 1,
 	"metallicReflectanceColor": [
 		1,
@@ -67,9 +67,9 @@
 		0
 	],
 	"albedo": [
-		0,
-		0,
-		1
+		0.6,
+		0.6,
+		0.6
 	],
 	"reflectivity": [
 		1,
@@ -93,9 +93,9 @@
 	"alphaCutOff": 0.4,
 	"useSpecularOverAlpha": true,
 	"useMicroSurfaceFromReflectivityMapAlpha": false,
-	"useRoughnessFromMetallicTextureAlpha": false,
+	"useRoughnessFromMetallicTextureAlpha": true,
 	"useRoughnessFromMetallicTextureGreen": false,
-	"useMetallnessFromMetallicTextureBlue": true,
+	"useMetallnessFromMetallicTextureBlue": false,
 	"useAmbientOcclusionFromMetallicTextureRed": false,
 	"useAmbientInGrayScale": false,
 	"useAutoMicroSurfaceFromReflectivityMap": false,
@@ -111,11 +111,11 @@
 	"maxSimultaneousLights": 4,
 	"invertNormalMapX": false,
 	"invertNormalMapY": false,
-	"twoSidedLighting": true,
+	"twoSidedLighting": false,
 	"useAlphaFresnel": false,
 	"useLinearAlphaFresnel": false,
 	"forceNormalForward": false,
-	"enableSpecularAntiAliasing": true,
+	"enableSpecularAntiAliasing": false,
 	"useHorizonOcclusion": true,
 	"useRadianceOcclusion": true,
 	"unlit": false,
@@ -161,13 +161,13 @@
 		"_isEnabled": true
 	},
 	"useLogarithmicDepth": false,
-	"id": "cc972282-9d07-4857-bcb0-e117796af62e",
-	"name": "Metal_blue",
+	"id": "d49cd42e-58fc-4a4d-89a7-47dbb2328ae9",
+	"name": "PBR_ground",
 	"checkReadyOnEveryCall": false,
 	"checkReadyOnlyOnce": false,
 	"state": "",
 	"alpha": 1,
-	"backFaceCulling": false,
+	"backFaceCulling": true,
 	"sideOrientation": 1,
 	"alphaMode": 2,
 	"_needDepthPrePass": false,
@@ -181,7 +181,6 @@
 	"zOffset": 0,
 	"pointsCloud": false,
 	"fillMode": 0,
-	"transparencyMode": 0,
 	"customType": "BABYLON.PBRMaterial",
 	"clearCoat": {
 		"tags": null,
@@ -257,17 +256,5 @@
 		],
 		"useMaskFromThicknessTexture": false,
 		"useMaskFromThicknessTextureGltf": false
-	},
-	"metadata": {
-		"gltf": {
-			"pointers": [
-				"/materials/1"
-			]
-		},
-		"originalSourceFile": {
-			"id": "Metal_blue",
-			"name": "Metal_blue",
-			"sceneFileName": "ReflectionTest.glb"
-		}
 	}
 }
