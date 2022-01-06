@@ -1,4 +1,15 @@
-import { BlurPostProcess, Camera, GeometryBufferRenderer, Mesh, Scene, Vector2 } from '@babylonjs/core';
+import {
+  BlurPostProcess,
+  Camera,
+  Constants,
+  GeometryBufferRenderer,
+  Mesh,
+  MultiRenderTarget,
+  PBRMaterial,
+  PostProcess,
+  Scene,
+  Vector2,
+} from '@babylonjs/core';
 import SceneScriptBase from '../GameScripts/sceneScriptBase';
 import { visibleInInspector, fromScene, fromChildren } from '../decorators';
 import { SscPostProcess } from '../../postProcess/effects/ssc';
@@ -25,9 +36,11 @@ import { GameManager } from '../GameScripts/gameManager';
 export default class SceneScript extends SceneScriptBase {
   @fromScene('MainCamera')
   private _camera: Camera;
+  @fromScene('Ground')
+  private _ground: Mesh;
   @visibleInInspector('string', 'In sceneScript', 'Hello world!')
   private _testLocalString: string;
-
+  private _depthRenderer;
   private _scene: Scene;
   private _gbuffer: GeometryBufferRenderer;
   /**
@@ -43,6 +56,7 @@ export default class SceneScript extends SceneScriptBase {
    */
   public onInitialize(): void {
     super.onInitialize();
+
     this._scene = GameManager.getScene();
     this._gbuffer = this._scene.enableGeometryBufferRenderer();
     this._gbuffer.enableReflectivity = true;
@@ -51,6 +65,19 @@ export default class SceneScript extends SceneScriptBase {
     if (!this._gbuffer) {
       console.error('Geometry Buffer is not supported');
     }
+    const multiRenderTarget = new MultiRenderTarget(
+      'SSBuffer',
+      { width: this._scene.getEngine().getRenderWidth(), height: this._scene.getEngine().getRenderHeight() },
+      2,
+      this._scene,
+      {
+        generateMipMaps: false,
+        generateDepthTexture: false,
+        generateStencilBuffer: false,
+        defaultType: Constants.TEXTURETYPE_FLOAT,
+      }
+    );
+    this._scene.customRenderTargets.push(multiRenderTarget);
     // ...
   }
 
@@ -58,6 +85,11 @@ export default class SceneScript extends SceneScriptBase {
    * Called on the scene starts.
    */
   public onStart(): void {
+    if (this._ground.material instanceof PBRMaterial) {
+      console.log('test');
+      const tmp = this._ground.material as PBRMaterial;
+      tmp.useLogarithmicDepth = true;
+    }
     super.onStart();
     if (!this._camera) {
       throw new Error(`No camera defined in the scene. ${this._camera}`);
@@ -67,9 +99,11 @@ export default class SceneScript extends SceneScriptBase {
     console.log(`normal: ${this._gbuffer.getTextureIndex(GeometryBufferRenderer.DEPTHNORMAL_TEXTURE_TYPE)}`);
     console.log(`position: ${this._gbuffer.getTextureIndex(GeometryBufferRenderer.POSITION_TEXTURE_TYPE)}`);
     console.log(`roughness: ${this._gbuffer.getTextureIndex(GeometryBufferRenderer.REFLECTIVITY_TEXTURE_TYPE)}`);
+    console.log(`depthtex type: ${this._gbuffer.getGBuffer().textures[0].textureType}`);
+    console.log(`pos type: ${this._gbuffer.getGBuffer().textures[2].textureType}`);
     // ...
   }
-
+  // RTTにはaddpostprocessできるのでそこに突っ込む
   /**
    * Called each frame.
    */
