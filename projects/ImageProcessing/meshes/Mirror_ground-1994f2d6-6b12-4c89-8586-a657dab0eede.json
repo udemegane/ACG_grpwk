@@ -4,7 +4,7 @@
 		{
 			"name": "Mirror_ground",
 			"id": "1994f2d6-6b12-4c89-8586-a657dab0eede",
-			"uniqueId": 16,
+			"uniqueId": 19,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -54,7 +54,7 @@
 			"isUnIndexed": false,
 			"geometryId": "e95e961c-617e-4daa-a353-d7f7cd7edaea",
 			"subMeshes": null,
-			"materialId": "75cd988b-0e32-4f82-ba9a-7becc395b9d8",
+			"materialId": "5520be15-9f65-488f-9476-5fd2351b7bcd",
 			"metadata": {
 				"gltf": {
 					"pointers": [

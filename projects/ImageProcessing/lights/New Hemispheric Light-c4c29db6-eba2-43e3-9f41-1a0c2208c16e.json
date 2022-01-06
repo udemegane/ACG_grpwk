@@ -1,6 +1,15 @@
 {
 	"tags": null,
-	"shadowAngle": 1.5707963267948966,
+	"groundColor": [
+		0,
+		0,
+		0
+	],
+	"direction": [
+		0,
+		1,
+		0
+	],
 	"diffuse": [
 		1,
 		1,
@@ -21,20 +30,15 @@
 	"excludeWithLayerMask": 0,
 	"includeOnlyWithLayerMask": 0,
 	"lightmapMode": 0,
-	"position": [
-		0.35226312279701233,
-		3.749413251876831,
-		-0.008848306722939014
-	],
-	"name": "New Point Light",
-	"id": "ad845762-353d-458e-850c-bf5410cbd816",
+	"name": "New Hemispheric Light",
+	"id": "c4c29db6-eba2-43e3-9f41-1a0c2208c16e",
 	"state": "",
 	"metadata": {
 		"script": {
 			"name": "None"
 		}
 	},
-	"type": 0,
+	"type": 3,
 	"animations": [],
 	"ranges": []
 }

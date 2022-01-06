@@ -4,17 +4,13 @@
 		"PPTestScene_Metal_red_Roughness.png",
 		"PPTestScene_Metal_blue_Roughness.png",
 		"PPTestScene_MIrror_Roughness.png",
-		"PPTestScene_RoughMIrror_Roughness.png"
+		"PPTestScene_RoughMIrror_Roughness.png",
+		"CustomUVChecker_byValle_1K.png"
 	],
 	"cameras": [
 		"MainCamera-a00332db-042a-43ca-82c3-701c44c51415.json"
 	],
 	"materials": [
-		{
-			"bindedMeshes": [],
-			"json": "ground-44ce4d7a-5718-4025-a141-272ee6387673.json",
-			"isMultiMaterial": false
-		},
 		{
 			"bindedMeshes": [
 				"e168e73f-7a75-465d-8464-1f56b52417fe"
@@ -24,26 +20,25 @@
 		},
 		{
 			"bindedMeshes": [],
-			"json": "cube-03bdd37e-fe54-4095-a392-0de62b0de089.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
 			"json": "sky-40f57f30-e7e9-451c-815c-c7924f18a69f.json",
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [
-				"1994f2d6-6b12-4c89-8586-a657dab0eede"
-			],
-			"json": "MIrror-75cd988b-0e32-4f82-ba9a-7becc395b9d8.json",
+			"bindedMeshes": [],
+			"json": "ground-44ce4d7a-5718-4025-a141-272ee6387673.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [
-				"d7a952be-96fd-4fb2-beba-5ff487ad05dc"
+				"847a82f3-6fe7-4c2e-bcc9-426147c9a322",
+				"1994f2d6-6b12-4c89-8586-a657dab0eede"
 			],
-			"json": "Metal_green-fc8f5ffc-3903-4c54-9659-2e19b2b7467b.json",
+			"json": "RoughMIrror-5520be15-9f65-488f-9476-5fd2351b7bcd.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "MIrror-75cd988b-0e32-4f82-ba9a-7becc395b9d8.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -51,6 +46,11 @@
 				"d9bf4bc6-9413-48e2-8f86-d90143aec7db"
 			],
 			"json": "Metal_red-1bc08e7d-a470-400c-908a-9f8cd2bae5b8.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "cube-03bdd37e-fe54-4095-a392-0de62b0de089.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -62,36 +62,52 @@
 		},
 		{
 			"bindedMeshes": [
-				"847a82f3-6fe7-4c2e-bcc9-426147c9a322"
-			],
-			"json": "RoughMIrror-5520be15-9f65-488f-9476-5fd2351b7bcd.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
 				"58d29f28-01ae-436c-b145-7b4dfc7ad5b3"
 			],
 			"json": "PBR_ground-d49cd42e-58fc-4a4d-89a7-47dbb2328ae9.json",
 			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"d7a952be-96fd-4fb2-beba-5ff487ad05dc"
+			],
+			"json": "Metal_green-fc8f5ffc-3903-4c54-9659-2e19b2b7467b.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "TestPP-6a90072b-8c24-4626-9cd9-6b8115ff2f29.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "test-f9abf94b-ae2c-40cc-acb1-b617acb7eca7.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "TestPBR-5e87208c-1ddf-4a51-bc8b-9cbeb6f43abd.json",
+			"isMultiMaterial": false
 		}
 	],
 	"textures": [
-		"PPTestScene_Metal_green_Roughness.png-319.json",
-		"PPTestScene_Metal_red_Roughness.png-320.json",
-		"PPTestScene_MIrror_Roughness.png-322.json",
-		"PPTestScene_Metal_blue_Roughness.png-321.json",
-		"PPTestScene_RoughMIrror_Roughness.png-323.json"
+		"PPTestScene_RoughMIrror_Roughness.png-31.json",
+		"PPTestScene_Metal_red_Roughness.png-35.json",
+		"CustomUVChecker_byValle_1K.png-39.json",
+		"PPTestScene_Metal_blue_Roughness.png-33.json",
+		"PPTestScene_MIrror_Roughness.png-42.json",
+		"PPTestScene_Metal_green_Roughness.png-41.json"
 	],
 	"meshes": [
 		"__root__-67ecad21-2faf-451b-8e91-642418b6791e.json",
-		"Sphere_red-d9bf4bc6-9413-48e2-8f86-d90143aec7db.json",
 		"Sky-e168e73f-7a75-465d-8464-1f56b52417fe.json",
 		"Mirror_ground.001-847a82f3-6fe7-4c2e-bcc9-426147c9a322.json",
+		"Mirror_ground-1994f2d6-6b12-4c89-8586-a657dab0eede.json",
+		"Sphere_red-d9bf4bc6-9413-48e2-8f86-d90143aec7db.json",
 		"Suzanne-5d2263f9-f66c-4a66-958e-906ff1bd4e7e.json",
 		"Sphere_blue-46b8a2a8-88e5-4820-8c54-bb8d83c2fd4f.json",
 		"Sphere_green-d7a952be-96fd-4fb2-beba-5ff487ad05dc.json",
-		"Mirror_ground-1994f2d6-6b12-4c89-8586-a657dab0eede.json",
-		"New Ground-58d29f28-01ae-436c-b145-7b4dfc7ad5b3.json"
+		"Ground-58d29f28-01ae-436c-b145-7b4dfc7ad5b3.json"
 	],
 	"transformNodes": [],
 	"particleSystems": [],
@@ -102,6 +118,9 @@
 		},
 		{
 			"json": "New Point Light-ad845762-353d-458e-850c-bf5410cbd816.json"
+		},
+		{
+			"json": "New Hemispheric Light-c4c29db6-eba2-43e3-9f41-1a0c2208c16e.json"
 		}
 	],
 	"sounds": [],
@@ -172,7 +191,7 @@
 			"_vignetteBlendMode": 0,
 			"_vignetteEnabled": false,
 			"_applyByPostProcess": false,
-			"_isEnabled": true
+			"_isEnabled": false
 		},
 		"animations": [],
 		"postProcessesEnabled": true,
@@ -216,10 +235,38 @@
 					}
 				},
 				"screenSpaceReflections": {
-					"enabled": false
+					"enabled": true,
+					"json": {
+						"tags": null,
+						"threshold": 1.2,
+						"strength": 1,
+						"reflectionSpecularFalloffExponent": 3,
+						"step": 5,
+						"roughnessFactor": 0.2,
+						"enableSmoothReflections": false,
+						"reflectionSamples": 64,
+						"smoothSteps": 5,
+						"name": "ssr",
+						"width": 1342,
+						"height": 571,
+						"renderTargetSamplingMode": 1,
+						"autoClear": true,
+						"alphaMode": 0,
+						"enablePixelPerfectMode": false,
+						"forceFullscreenViewport": true,
+						"scaleMode": 1,
+						"alwaysForcePOT": false,
+						"samples": 1,
+						"adaptScaleToCurrentViewport": false,
+						"customType": "BABYLON.ScreenSpaceReflectionPostProcess",
+						"cameraId": "f3684fb1-6ae4-4cc0-8e94-ba283d86ec04",
+						"reusable": false,
+						"options": 1,
+						"textureType": 0
+					}
 				},
 				"default": {
-					"enabled": false,
+					"enabled": true,
 					"json": {
 						"tags": null,
 						"sharpenEnabled": false,
@@ -230,12 +277,12 @@
 						"bloomWeight": 0.15,
 						"bloomThreshold": 0.9,
 						"bloomScale": 0.5,
-						"bloomEnabled": false,
+						"bloomEnabled": true,
 						"depthOfFieldEnabled": false,
 						"depthOfFieldBlurLevel": 0,
 						"fxaaEnabled": true,
 						"samples": 4,
-						"imageProcessingEnabled": true,
+						"imageProcessingEnabled": false,
 						"glowLayerEnabled": false,
 						"chromaticAberrationEnabled": false,
 						"grainEnabled": false,
@@ -278,7 +325,8 @@
 				"renderList": []
 			}
 		],
-		"sounds": []
+		"sounds": [],
+		"effectLayers": []
 	},
 	"assets": {
 		"meshes": [
@@ -290,13 +338,13 @@
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": 17.441084350431034,
-			"beta": 1.03063527814001,
-			"radius": 20.651013516734398,
+			"alpha": 18.351415409485604,
+			"beta": 0.7220193103692106,
+			"radius": 17.596296589102007,
 			"target": [
-				-3.6310813025070514,
-				-0.5947035144784918,
-				0.5555744500171482
+				-0.5777199265232779,
+				3.8640606373768343,
+				1.1481343083901632
 			],
 			"inertialAlphaOffset": 0,
 			"inertialBetaOffset": 0,
@@ -326,9 +374,9 @@
 			],
 			"speed": 2,
 			"position": [
-				-0.7687816646544969,
-				10.025578243814302,
-				-16.92244647415986
+				9.638404355198793,
+				17.069600759809674,
+				-4.4083185517417505
 			],
 			"upVector": [
 				0,
@@ -391,7 +439,7 @@
 					"pinchPrecision": 12,
 					"pinchDeltaPercentage": 0,
 					"useNaturalPinchZoom": false,
-					"panningSensibility": 48.42377344771274,
+					"panningSensibility": 56.83014007727822,
 					"multiTouchPanning": true,
 					"multiTouchPanAndZoom": true
 				}
@@ -422,10 +470,38 @@
 			}
 		},
 		"screenSpaceReflections": {
-			"enabled": false
+			"enabled": true,
+			"json": {
+				"tags": null,
+				"threshold": 1.2,
+				"strength": 1,
+				"reflectionSpecularFalloffExponent": 3,
+				"step": 5,
+				"roughnessFactor": 0.2,
+				"enableSmoothReflections": false,
+				"reflectionSamples": 64,
+				"smoothSteps": 5,
+				"name": "ssr",
+				"width": 1342,
+				"height": 571,
+				"renderTargetSamplingMode": 1,
+				"autoClear": true,
+				"alphaMode": 0,
+				"enablePixelPerfectMode": false,
+				"forceFullscreenViewport": true,
+				"scaleMode": 1,
+				"alwaysForcePOT": false,
+				"samples": 1,
+				"adaptScaleToCurrentViewport": false,
+				"customType": "BABYLON.ScreenSpaceReflectionPostProcess",
+				"cameraId": "f3684fb1-6ae4-4cc0-8e94-ba283d86ec04",
+				"reusable": false,
+				"options": 1,
+				"textureType": 0
+			}
 		},
 		"default": {
-			"enabled": false,
+			"enabled": true,
 			"json": {
 				"tags": null,
 				"sharpenEnabled": false,
@@ -436,12 +512,12 @@
 				"bloomWeight": 0.15,
 				"bloomThreshold": 0.9,
 				"bloomScale": 0.5,
-				"bloomEnabled": false,
+				"bloomEnabled": true,
 				"depthOfFieldEnabled": false,
 				"depthOfFieldBlurLevel": 0,
 				"fxaaEnabled": true,
 				"samples": 4,
-				"imageProcessingEnabled": true,
+				"imageProcessingEnabled": false,
 				"glowLayerEnabled": false,
 				"chromaticAberrationEnabled": false,
 				"grainEnabled": false,

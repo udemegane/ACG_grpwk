@@ -2,9 +2,9 @@
 	"materials": [],
 	"meshes": [
 		{
-			"name": "New Ground",
+			"name": "Ground",
 			"id": "58d29f28-01ae-436c-b145-7b4dfc7ad5b3",
-			"uniqueId": 14,
+			"uniqueId": 23,
 			"type": "GroundMesh",
 			"position": [
 				0,
@@ -58,7 +58,8 @@
 				"script": {
 					"name": "None"
 				},
-				"renderingGroupId": 0
+				"renderingGroupId": 0,
+				"doNotExport": false
 			},
 			"instances": [],
 			"animations": [],
@@ -79,18 +80,18 @@
 			"maxX": 256,
 			"minZ": -256,
 			"maxZ": 256,
-			"width": 512,
-			"height": 512,
+			"width": 64,
+			"height": 64,
 			"delayLoadingFile": "geometries/f5960f54-90b0-4180-8c6e-4005f976e2a6.babylonbinarymeshdata",
 			"boundingBoxMaximum": [
-				256,
+				32,
 				0,
-				256
+				32
 			],
 			"boundingBoxMinimum": [
-				-256,
+				-32,
 				0,
-				-256
+				-32
 			],
 			"_binaryInfo": {
 				"positionsAttrDesc": {
