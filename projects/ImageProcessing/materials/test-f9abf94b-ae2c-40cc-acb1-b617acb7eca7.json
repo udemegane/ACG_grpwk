@@ -1152,8 +1152,7 @@
 				{
 					"name": "intensity"
 				}
-			],
-			"lightId": "e3e43989-eced-4894-8c49-22067e63149f"
+			]
 		},
 		{
 			"customType": "BABYLON.TransformBlock",
