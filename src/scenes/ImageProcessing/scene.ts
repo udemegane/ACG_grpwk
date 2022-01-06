@@ -14,6 +14,7 @@ import SceneScriptBase from '../GameScripts/sceneScriptBase';
 import { visibleInInspector, fromScene, fromChildren } from '../decorators';
 import { SscPostProcess } from '../../postProcess/effects/ssc';
 import { GameManager } from '../GameScripts/gameManager';
+import { SsaoPostProcess } from '../../postProcess/effects/ssao';
 /**
  * This represents a script that is attached to a node in the editor.
  * Available nodes are:
@@ -40,7 +41,6 @@ export default class SceneScript extends SceneScriptBase {
   private _ground: Mesh;
   @visibleInInspector('string', 'In sceneScript', 'Hello world!')
   private _testLocalString: string;
-  private _depthRenderer;
   private _scene: Scene;
   private _gbuffer: GeometryBufferRenderer;
   /**
@@ -61,7 +61,6 @@ export default class SceneScript extends SceneScriptBase {
     this._gbuffer = this._scene.enableGeometryBufferRenderer();
     this._gbuffer.enableReflectivity = true;
     this._gbuffer.enablePosition = true;
-    //this._gbuffer.enableVelocity = true;
     if (!this._gbuffer) {
       console.error('Geometry Buffer is not supported');
     }
@@ -86,7 +85,6 @@ export default class SceneScript extends SceneScriptBase {
    */
   public onStart(): void {
     if (this._ground.material instanceof PBRMaterial) {
-      console.log('test');
       const tmp = this._ground.material as PBRMaterial;
       tmp.useLogarithmicDepth = true;
     }
@@ -94,8 +92,8 @@ export default class SceneScript extends SceneScriptBase {
     if (!this._camera) {
       throw new Error(`No camera defined in the scene. ${this._camera}`);
     }
-    //const blurpp = new BlurPostProcess('Blur', new Vector2(1.0, 1.0), 32.0, 1.0, this._camera);
-    const sscpp = new SscPostProcess('SSCurvature', this._gbuffer, this._camera);
+    // const sscpp = new SscPostProcess('SSCurvature', this._gbuffer, this._camera);
+    const ssao = new SsaoPostProcess('mySSAO', this._gbuffer, this._camera);
     console.log(`normal: ${this._gbuffer.getTextureIndex(GeometryBufferRenderer.DEPTHNORMAL_TEXTURE_TYPE)}`);
     console.log(`position: ${this._gbuffer.getTextureIndex(GeometryBufferRenderer.POSITION_TEXTURE_TYPE)}`);
     console.log(`roughness: ${this._gbuffer.getTextureIndex(GeometryBufferRenderer.REFLECTIVITY_TEXTURE_TYPE)}`);
@@ -119,6 +117,7 @@ export default class SceneScript extends SceneScriptBase {
    * @param sender defines the reference to the graph class that sent the message.
    */
   public onMessage(name: string, data: any, sender: any): void {
+    // eslint-disable-next-line default-case
     switch (name) {
       case 'myMessage':
         // Do something...
