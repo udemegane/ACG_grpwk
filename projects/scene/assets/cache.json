@@ -82,6 +82,11 @@
 			"base64": "../css/svg/folder-open.svg"
 		},
 		{
+			"id": "ImageProcessing",
+			"key": "ImageProcessing",
+			"base64": "../css/svg/folder-open.svg"
+		},
+		{
 			"id": "MainMap",
 			"key": "MainMap",
 			"base64": "../css/svg/folder-open.svg"

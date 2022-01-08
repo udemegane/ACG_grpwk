@@ -1,0 +1,153 @@
+{
+	"materials": [],
+	"meshes": [
+		{
+			"name": "RoofTiles_primitive0",
+			"id": "8ba921c4-4453-4ab9-bd17-5f79b0d589f6",
+			"uniqueId": 27,
+			"type": "Mesh",
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"scaling": [
+				1,
+				1,
+				1
+			],
+			"localMatrix": {
+				"0": 1,
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 1,
+				"6": 0,
+				"7": 0,
+				"8": 0,
+				"9": 0,
+				"10": 1,
+				"11": 0,
+				"12": 0,
+				"13": 0,
+				"14": 0,
+				"15": 1
+			},
+			"isEnabled": true,
+			"isVisible": true,
+			"infiniteDistance": false,
+			"pickable": true,
+			"receiveShadows": false,
+			"billboardMode": 0,
+			"visibility": 1,
+			"checkCollisions": false,
+			"isBlocker": false,
+			"overrideMaterialSideOrientation": 0,
+			"parentId": "da4ecb24-4857-4b61-9432-5c3321f5f39d",
+			"isUnIndexed": false,
+			"geometryId": "372a8ba6-9180-4f4e-af8b-33f796a23088",
+			"subMeshes": null,
+			"materialId": "1eb03bbd-da31-4580-a513-e65f0883857f",
+			"metadata": {
+				"gltf": {
+					"pointers": [
+						"/meshes/4/primitives/0"
+					]
+				},
+				"basePoseMatrix": {
+					"0": -1,
+					"1": 0,
+					"2": 0,
+					"3": 0,
+					"4": 0,
+					"5": 1,
+					"6": 0,
+					"7": 0,
+					"8": 0,
+					"9": 0,
+					"10": 1,
+					"11": 0,
+					"12": 0.0063394904136657715,
+					"13": -2.4558157920837402,
+					"14": 0.001554340124130249,
+					"15": 1
+				},
+				"originalSourceFile": {
+					"id": "RoofTiles_primitive0",
+					"name": "RoofTiles_primitive0",
+					"sceneFileName": "uploads_files_2770156_House#3+SmartMaterials.glb"
+				},
+				"isPickable": true
+			},
+			"instances": [],
+			"animations": [],
+			"ranges": [],
+			"layerMask": 268435455,
+			"alphaIndex": 1.7976931348623157e+308,
+			"hasVertexAlpha": false,
+			"overlayAlpha": 0.3,
+			"overlayColor": [
+				1,
+				0,
+				0
+			],
+			"applyFog": true,
+			"delayLoadingFile": "geometries/372a8ba6-9180-4f4e-af8b-33f796a23088.babylonbinarymeshdata",
+			"boundingBoxMaximum": [
+				1.5349416732788086,
+				0.5598540306091309,
+				0.762352705001831
+			],
+			"boundingBoxMinimum": [
+				-1.5349416732788086,
+				-0.6414711475372314,
+				-0.762352705001831
+			],
+			"_binaryInfo": {
+				"positionsAttrDesc": {
+					"count": 19080,
+					"stride": 3,
+					"offset": 0,
+					"dataType": 1
+				},
+				"normalsAttrDesc": {
+					"count": 19080,
+					"stride": 3,
+					"offset": 76320,
+					"dataType": 1
+				},
+				"uvsAttrDesc": {
+					"count": 12720,
+					"stride": 2,
+					"offset": 152640,
+					"dataType": 1
+				},
+				"indicesAttrDesc": {
+					"count": 18408,
+					"stride": 1,
+					"offset": 203520,
+					"dataType": 0
+				},
+				"subMeshesAttrDesc": {
+					"count": 1,
+					"stride": 5,
+					"offset": 277152,
+					"dataType": 0
+				}
+			},
+			"positions": null,
+			"normals": null,
+			"uvs": null,
+			"hasUVs": true,
+			"indices": null
+		}
+	],
+	"multiMaterials": [],
+	"lods": []
+}

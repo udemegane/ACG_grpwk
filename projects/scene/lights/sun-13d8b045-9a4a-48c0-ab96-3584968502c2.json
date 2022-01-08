@@ -38,7 +38,9 @@
 	"id": "13d8b045-9a4a-48c0-ab96-3584968502c2",
 	"state": "",
 	"metadata": {
-		"script": {}
+		"script": {
+			"name": "None"
+		}
 	},
 	"type": 1,
 	"animations": [],

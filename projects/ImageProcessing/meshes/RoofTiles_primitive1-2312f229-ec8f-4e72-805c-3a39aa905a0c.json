@@ -1,0 +1,157 @@
+{
+	"materials": [],
+	"meshes": [
+		{
+			"name": "RoofTiles_primitive1",
+			"id": "2312f229-ec8f-4e72-805c-3a39aa905a0c",
+			"uniqueId": 29,
+			"type": "Mesh",
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"scaling": [
+				1,
+				1,
+				1
+			],
+			"localMatrix": {
+				"0": 1,
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 1,
+				"6": 0,
+				"7": 0,
+				"8": 0,
+				"9": 0,
+				"10": 1,
+				"11": 0,
+				"12": 0,
+				"13": 0,
+				"14": 0,
+				"15": 1
+			},
+			"isEnabled": true,
+			"isVisible": true,
+			"infiniteDistance": false,
+			"pickable": true,
+			"receiveShadows": false,
+			"billboardMode": 0,
+			"visibility": 1,
+			"checkCollisions": false,
+			"isBlocker": false,
+			"overrideMaterialSideOrientation": 0,
+			"parentId": "da4ecb24-4857-4b61-9432-5c3321f5f39d",
+			"isUnIndexed": false,
+			"geometryId": "7bbe87e9-45f9-42c7-8df3-9c3a3ae4ca3e",
+			"subMeshes": null,
+			"materialId": "ff4574cd-d3ab-43d5-8016-ec87ed2afe32",
+			"metadata": {
+				"gltf": {
+					"pointers": [
+						"/meshes/4/primitives/1"
+					]
+				},
+				"basePoseMatrix": {
+					"0": -1,
+					"1": 0,
+					"2": 0,
+					"3": 0,
+					"4": 0,
+					"5": 1,
+					"6": 0,
+					"7": 0,
+					"8": 0,
+					"9": 0,
+					"10": 1,
+					"11": 0,
+					"12": 0.0063394904136657715,
+					"13": -2.4558157920837402,
+					"14": 0.001554340124130249,
+					"15": 1
+				},
+				"originalSourceFile": {
+					"id": "RoofTiles_primitive1",
+					"name": "RoofTiles_primitive1",
+					"sceneFileName": "uploads_files_2770156_House#3+SmartMaterials.glb"
+				},
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
+			},
+			"instances": [],
+			"animations": [],
+			"ranges": [],
+			"layerMask": 268435455,
+			"alphaIndex": 1.7976931348623157e+308,
+			"hasVertexAlpha": false,
+			"overlayAlpha": 0.3,
+			"overlayColor": [
+				1,
+				0,
+				0
+			],
+			"applyFog": true,
+			"delayLoadingFile": "geometries/7bbe87e9-45f9-42c7-8df3-9c3a3ae4ca3e.babylonbinarymeshdata",
+			"boundingBoxMaximum": [
+				1.2921648025512695,
+				1.1095538139343262,
+				1.7890369892120361
+			],
+			"boundingBoxMinimum": [
+				-1.2794857025146484,
+				-0.6308519840240479,
+				-1.7788658142089844
+			],
+			"_binaryInfo": {
+				"positionsAttrDesc": {
+					"count": 58968,
+					"stride": 3,
+					"offset": 0,
+					"dataType": 1
+				},
+				"normalsAttrDesc": {
+					"count": 58968,
+					"stride": 3,
+					"offset": 235872,
+					"dataType": 1
+				},
+				"uvsAttrDesc": {
+					"count": 39312,
+					"stride": 2,
+					"offset": 471744,
+					"dataType": 1
+				},
+				"indicesAttrDesc": {
+					"count": 58104,
+					"stride": 1,
+					"offset": 628992,
+					"dataType": 0
+				},
+				"subMeshesAttrDesc": {
+					"count": 1,
+					"stride": 5,
+					"offset": 861408,
+					"dataType": 0
+				}
+			},
+			"positions": null,
+			"normals": null,
+			"uvs": null,
+			"hasUVs": true,
+			"indices": null
+		}
+	],
+	"multiMaterials": [],
+	"lods": []
+}

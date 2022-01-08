@@ -1,0 +1,52 @@
+{
+	"tags": null,
+	"url": "files/Pavement (Base Color).jpeg",
+	"uOffset": 0,
+	"vOffset": -5,
+	"uScale": 6,
+	"vScale": 6,
+	"uAng": 0,
+	"vAng": 0,
+	"wAng": 0,
+	"uRotationCenter": 0,
+	"vRotationCenter": 0,
+	"wRotationCenter": 0.5,
+	"homogeneousRotationInUVTransform": false,
+	"isBlocking": true,
+	"name": "files/Pavement (Base Color).jpeg",
+	"metadata": {
+		"gltf": {
+			"pointers": [
+				"/materials/4/pbrMetallicRoughness/baseColorTexture"
+			],
+			"editorDone": true
+		},
+		"editorName": "Pavement (Base Color).jpeg",
+		"editorId": "85506c27-8891-4b20-91dd-1adc88df393d",
+		"ktx2CompressedTextures": {
+			"isUsingCompressedTexture": false
+		}
+	},
+	"hasAlpha": false,
+	"getAlphaFromRGB": false,
+	"level": 1,
+	"coordinatesIndex": 0,
+	"coordinatesMode": 0,
+	"wrapU": 1,
+	"wrapV": 1,
+	"wrapR": 1,
+	"anisotropicFilteringLevel": 4,
+	"isCube": false,
+	"is3D": false,
+	"is2DArray": false,
+	"gammaSpace": true,
+	"invertZ": false,
+	"lodLevelInAlpha": false,
+	"lodGenerationOffset": 0,
+	"lodGenerationScale": 0,
+	"linearSpecularLOD": false,
+	"isRenderTarget": false,
+	"animations": [],
+	"invertY": false,
+	"samplingMode": 3
+}

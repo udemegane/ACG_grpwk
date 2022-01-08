@@ -4,7 +4,7 @@
 		{
 			"name": "Ground",
 			"id": "58d29f28-01ae-436c-b145-7b4dfc7ad5b3",
-			"uniqueId": 15,
+			"uniqueId": 11,
 			"type": "GroundMesh",
 			"position": [
 				0,
@@ -43,7 +43,7 @@
 			"isVisible": true,
 			"infiniteDistance": false,
 			"pickable": true,
-			"receiveShadows": false,
+			"receiveShadows": true,
 			"billboardMode": 0,
 			"visibility": 1,
 			"checkCollisions": false,

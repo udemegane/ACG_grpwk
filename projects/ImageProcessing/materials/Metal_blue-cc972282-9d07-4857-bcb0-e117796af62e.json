@@ -82,9 +82,9 @@
 		1
 	],
 	"emissive": [
-		0,
-		0,
-		0
+		0.10588235294117647,
+		0.13725490196078433,
+		1
 	],
 	"microSurface": 1,
 	"useLightmapAsShadowmap": false,

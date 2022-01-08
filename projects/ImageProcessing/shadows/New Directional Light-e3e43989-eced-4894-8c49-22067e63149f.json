@@ -23,5 +23,27 @@
 	"blurKernel": 1,
 	"blurScale": 2,
 	"useKernelBlur": false,
-	"renderList": []
+	"renderList": [
+		"418f5580-5f32-4803-935a-1708de50ecdc",
+		"847a82f3-6fe7-4c2e-bcc9-426147c9a322",
+		"67ecad21-2faf-451b-8e91-642418b6791e",
+		"1994f2d6-6b12-4c89-8586-a657dab0eede",
+		"3d6c4145-9e07-4e89-979e-257813fdc1c3",
+		"b911fe20-7945-49c0-9bb8-a47bbf95c303",
+		"46b8a2a8-88e5-4820-8c54-bb8d83c2fd4f",
+		"98c1cf9b-ec2e-4b04-82a6-d41d7aa6a0e3",
+		"d9bf4bc6-9413-48e2-8f86-d90143aec7db",
+		"d7a952be-96fd-4fb2-beba-5ff487ad05dc",
+		"bfee1a62-bcf2-4148-9151-6622269639a8",
+		"215108fa-3361-403c-a080-156f1668afe7",
+		"db576792-22b3-4bf2-95c6-9f3a8fc6ed65",
+		"66d6a8e6-54f3-4f20-a844-e5fde3576d34",
+		"5d2263f9-f66c-4a66-958e-906ff1bd4e7e",
+		"6aff749d-401d-4ec2-a55c-14866ed04c41",
+		"1de69f71-e093-4023-a3a8-8b2977a9e415",
+		"8ba921c4-4453-4ab9-bd17-5f79b0d589f6",
+		"de3a3101-6d56-4c2e-be6a-e99e3a0243e6",
+		"2312f229-ec8f-4e72-805c-3a39aa905a0c",
+		"ae5a7a16-95ca-4678-9ccc-3c7cddd900bb"
+	]
 }

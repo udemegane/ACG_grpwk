@@ -10,17 +10,17 @@
 	"materials": [
 		{
 			"bindedMeshes": [
-				"d66c05ad-967f-4f69-a6fb-7d47281b641c",
-				"f824df87-ae33-41d9-ba8f-551d2083a2be"
+				"f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c"
 			],
-			"json": "cube-965b4240-9156-4704-8e39-cc381d3c7123.json",
+			"json": "ball-0b776f6c-9111-499d-8207-1c8242d97719.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [
-				"f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c"
+				"d66c05ad-967f-4f69-a6fb-7d47281b641c",
+				"f824df87-ae33-41d9-ba8f-551d2083a2be"
 			],
-			"json": "ball-0b776f6c-9111-499d-8207-1c8242d97719.json",
+			"json": "cube-965b4240-9156-4704-8e39-cc381d3c7123.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -53,22 +53,22 @@
 		}
 	],
 	"textures": [
-		"blaster_diffuse.jpg-39.json",
-		"blaster_nmap.jpg-41.json",
-		"parking.env-40.json",
-		"EnvironmentBRDFTexture0-43.json"
+		"blaster_diffuse.jpg-44.json",
+		"parking.env-45.json",
+		"blaster_nmap.jpg-46.json",
+		"EnvironmentBRDFTexture0-49.json"
 	],
 	"meshes": [
 		"__root__-0fff89a4-0495-415c-9659-cdf83470ecce.json",
-		"New Cube-618a29b6-5df8-49ef-b9c7-52ab26b2057f.json",
 		"sky-c4024c20-1c4f-4be6-9abd-525e2a782174.json",
 		"New Cube-c50fde32-b635-466f-9440-684ba17efabf.json",
+		"New Cube-618a29b6-5df8-49ef-b9c7-52ab26b2057f.json",
 		"ground-b87c0751-53e5-4782-88d9-0461e9457fe1.json",
 		"cube-d66c05ad-967f-4f69-a6fb-7d47281b641c.json",
 		"wall-f824df87-ae33-41d9-ba8f-551d2083a2be.json",
+		"Cube-4aa354e8-8e08-44cb-8c8a-8104d48ba808.json",
 		"blaster-b6a89645-0d85-44c1-8bf8-b99b8670c51f.json",
-		"ball-f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c.json",
-		"Cube-4aa354e8-8e08-44cb-8c8a-8104d48ba808.json"
+		"ball-f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c.json"
 	],
 	"transformNodes": [
 		"Light-bb25dd26-7e0b-4297-b441-fc6303247b15.json",
@@ -263,7 +263,20 @@
 					"d66c05ad-967f-4f69-a6fb-7d47281b641c",
 					"f824df87-ae33-41d9-ba8f-551d2083a2be",
 					"2dacc31c-b006-4088-aaaf-50c86a795b6c",
-					"b6f5c00a-61f9-48a2-a448-70f69392c07a"
+					"b6f5c00a-61f9-48a2-a448-70f69392c07a",
+					"618a29b6-5df8-49ef-b9c7-52ab26b2057f",
+					"0fff89a4-0495-415c-9659-cdf83470ecce",
+					"c50fde32-b635-466f-9440-684ba17efabf",
+					"96442942-b244-4588-a196-511749617488",
+					"549ef958-458e-447a-81dc-f755be775d21",
+					"0ea4f818-4773-40f3-960c-8c923154bf40",
+					"a91c70a9-0148-43f8-b021-c654701307cb",
+					"ab4374df-fec8-4003-994e-99ce17e15a22",
+					"3ddfcfce-84f2-4496-ae7d-9886918f7111",
+					"a28deca0-83c2-4275-b414-9e1a3df08858",
+					"b6a89645-0d85-44c1-8bf8-b99b8670c51f",
+					"4aa354e8-8e08-44cb-8c8a-8104d48ba808",
+					"f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c"
 				],
 				"numCascades": 4,
 				"debug": false,
@@ -292,9 +305,9 @@
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": 29.116988814004912,
-			"beta": 0.9900748510748836,
-			"radius": 31.365857230270127,
+			"alpha": 29.21827299920703,
+			"beta": 0.8721587252796421,
+			"radius": 48.84762478286535,
 			"target": [
 				7.166921546342701,
 				8.814132184258064,
@@ -328,9 +341,9 @@
 			],
 			"speed": 2,
 			"position": [
-				-10.284690856484998,
-				26.02229717160033,
-				-23.456951304827914
+				-14.774097463429195,
+				40.23170666585426,
+				-34.175271054792724
 			],
 			"upVector": [
 				0,
@@ -393,7 +406,7 @@
 					"pinchPrecision": 12,
 					"pinchDeltaPercentage": 0,
 					"useNaturalPinchZoom": false,
-					"panningSensibility": 31.881800413059775,
+					"panningSensibility": 20.471824463218883,
 					"multiTouchPanning": true,
 					"multiTouchPanAndZoom": true
 				}
