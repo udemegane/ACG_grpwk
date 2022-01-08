@@ -11,8 +11,8 @@ import {
   Scene,
   Texture,
 } from '@babylonjs/core';
-import { compositeSource } from './effects/shader/multiplyIntensity.frag.glsl';
-import { ssaoSource } from './effects/shader/ssao.frag.glsl';
+import compositeSource from './effects/shader/multiplyIntensity.frag.glsl';
+import ssaoSource from './effects/shader/ssao.frag.glsl';
 
 export class MSSAOPipeline extends PostProcessRenderPipeline {
   private _scene: Scene;
