@@ -14,6 +14,7 @@ import {
   ArcRotateCamera,
   FreeCamera,
   PostProcessRenderPipeline,
+  GlowLayer,
 } from '@babylonjs/core';
 import SceneScriptBase from '../GameScripts/sceneScriptBase';
 import { visibleInInspector, fromScene, fromChildren } from '../decorators';
@@ -101,8 +102,9 @@ export default class SceneScript extends SceneScriptBase {
    */
   public onStart(): void {
     super.onStart();
+    const gloeLayer = new GlowLayer('glow', this._scene);
     this._pipeline = new MSSAOPipeline('testssao', this._scene);
-    this._scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline('testssao', this._camera);
+    // this._scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline('testssao', this._camera);
 
     /*
     console.log(
