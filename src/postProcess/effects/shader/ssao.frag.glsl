@@ -4,10 +4,10 @@ precision highp float;
 varying vec2 vUV;
 uniform sampler2D textureSampler;
 uniform sampler2D depthSampler;
-uniform sampler2D normalSampler;
+//uniform sampler2D normalSampler;
 uniform sampler2D positionSampler;
 uniform vec2 texelSize;
-uniform vec3 camForward;
+//uniform vec3 camForward;
 float eps = 0.00000001;
 
 float getRoughOcculusion(vec2 offset, vec3 normal, vec3 base){
@@ -26,7 +26,7 @@ vec3 getWorldNormal(vec3 pos, vec2 coords){
     vec3 normal = cross(p1,p2);
     return normalize(normal);
 }
-
+/*
 vec3 normalFromDepth(float depth, vec2 coords)
 {
 	vec2 offset1 = vec2(0.0, texelSize.y);
@@ -43,13 +43,12 @@ vec3 normalFromDepth(float depth, vec2 coords)
 
 	return normalize(normal);
 }
-
+*/
 void main(void) {
     vec3 pos = texture2D(positionSampler, vUV).rgb;
-    vec3 normalTrans = vec3(1.0,0.0,0.0) - camForward;
+    //vec3 normalTrans = vec3(1.0,0.0,0.0) - camForward;
     vec3 normal = getWorldNormal(pos, vUV); //texture2D(normalSampler,vUV).rgb + normalTrans;
     float result = 0.0;
-    
     float tmp = (
     getRoughOcculusion(vec2(3.0,3.0), normal, pos) +
     getRoughOcculusion(vec2(-3.0,3.0), normal, pos) +

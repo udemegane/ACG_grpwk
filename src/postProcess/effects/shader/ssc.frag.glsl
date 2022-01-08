@@ -3,27 +3,38 @@ precision highp float;
     // Samplers
 varying vec2 vUV;
 uniform sampler2D textureSampler;
+uniform sampler2D depthSampler;
 uniform sampler2D normalSampler;
+uniform sampler2D positionSampler;
+uniform vec2 texelSize;
+float eps = 0.000001;
 
-uniform vec3 lightData;
-uniform vec4 lightColor;
-//uniform mat4 view;
-// Lighting
-vec3 diffuseBase = vec3(0., 0., 0.);
-lightingInfo info;
-#ifdef SPECULARTERM
-vec3 specularBase = vec3(0., 0., 0.);
-#endif
-float shadow = 1.;
-
-#ifdef LIGHTMAP
-vec3 lightmapColor = texture2D(lightmapSampler, vLightmapUV + uvOffset).rgb * vLightmapInfos.y;
-#endif
-
-#include<lightFragment>[0..maxSimultaneousLights]
+float getRoughOcculusion(vec2 offset, vec3 normal, vec3 base){
+    vec3 v = texture2D(positionSampler, vUV + vec2(texelSize.x * offset.x, texelSize.y * offset.y)).rgb - base;
+    return max(0.0,dot(normal,v))/(dot(v,v)+eps);
+}
 
 void main(void) {
-    //vec3 norm = (vec4(texture2D(textureSampler, vUV).rgb, 1.0) * view).rgb;
-    //vec4 lightPower = vec4(lightData, 1.0);
-    gl_FragColor = vec4(diffuseBase, 1.0); //texture2D(normalSampler, vUV) / 255.0;
+    vec3 pos = texture2D(positionSampler, vUV).rgb;
+    vec3 normal = texture2D(normalSampler, vUV).rgb;
+    float result = 0.0;
+    
+    float tmp = (
+    getRoughOcculusion(vec2(3.0,3.0), normal, pos) +
+    getRoughOcculusion(vec2(-3.0,3.0), normal, pos) +
+    getRoughOcculusion(vec2(3.0,-3.0), normal, pos) +
+    getRoughOcculusion(vec2(-3.0,-3.0), normal, pos) ) /4.0;
+    result = max(0.0, 1.0 - tmp);
+    /*
+    vec2[4] sample = vec2[](
+        vec2(3.0,3.0),
+        vec2(-3.0,3.0),
+        vec2(3.0,-3.0),
+        vec2(-3.0,-3.0)
+    );
+    for(int i=0;i<SAMPLES;i++){
+        vec3 sample = 
+    }*/
+    
+    gl_FragColor = vec4(vec3(result),1.0);
 }

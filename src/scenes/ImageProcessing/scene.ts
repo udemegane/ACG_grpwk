@@ -7,14 +7,20 @@ import {
   MultiRenderTarget,
   PBRMaterial,
   PostProcess,
+  RenderTargetTexture,
   Scene,
-  Vector2,
+  Vector3,
+  Effect,
+  ArcRotateCamera,
+  FreeCamera,
+  PostProcessRenderPipeline,
 } from '@babylonjs/core';
 import SceneScriptBase from '../GameScripts/sceneScriptBase';
 import { visibleInInspector, fromScene, fromChildren } from '../decorators';
 import { SscPostProcess } from '../../postProcess/effects/ssc';
 import { GameManager } from '../GameScripts/gameManager';
-import { SsaoPostProcess } from '../../postProcess/effects/ssao';
+import { SsaoPostProcess } from '../../postProcess/effects/ssao_old';
+import { MSSAOPipeline } from '../../postProcess/mssaoPipeline';
 /**
  * This represents a script that is attached to a node in the editor.
  * Available nodes are:
@@ -43,6 +49,8 @@ export default class SceneScript extends SceneScriptBase {
   private _testLocalString: string;
   private _scene: Scene;
   private _gbuffer: GeometryBufferRenderer;
+  private _rtt: RenderTargetTexture;
+  private _pipeline: PostProcessRenderPipeline;
   /**
    * Override constructor.
    * @warn do not fill.
@@ -56,14 +64,18 @@ export default class SceneScript extends SceneScriptBase {
    */
   public onInitialize(): void {
     super.onInitialize();
-
     this._scene = GameManager.getScene();
     this._gbuffer = this._scene.enableGeometryBufferRenderer();
+    /*
+
     this._gbuffer.enableReflectivity = true;
     this._gbuffer.enablePosition = true;
     if (!this._gbuffer) {
       console.error('Geometry Buffer is not supported');
     }
+    console.log(
+      `ScreenSize: ${this._scene.getEngine().getRenderWidth()} , ${this._scene.getEngine().getRenderHeight()} `
+    );
     const multiRenderTarget = new MultiRenderTarget(
       'SSBuffer',
       { width: this._scene.getEngine().getRenderWidth(), height: this._scene.getEngine().getRenderHeight() },
@@ -77,6 +89,10 @@ export default class SceneScript extends SceneScriptBase {
       }
     );
     this._scene.customRenderTargets.push(multiRenderTarget);
+    this._rtt = new RenderTargetTexture('ao', 1.0, this._scene);
+    this._scene.customRenderTargets.push(this._rtt);
+    */
+
     // ...
   }
 
@@ -84,22 +100,58 @@ export default class SceneScript extends SceneScriptBase {
    * Called on the scene starts.
    */
   public onStart(): void {
+    super.onStart();
+    this._pipeline = new MSSAOPipeline('testssao', this._scene);
+    this._scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline('testssao', this._camera);
+
+    /*
+    console.log(
+      this._gbuffer.getGBuffer().textures[0].getSize() ===
+        this._scene.enableGeometryBufferRenderer(0.5).getGBuffer().textures[0].getSize()
+    );
+    console.log(this._gbuffer.getGBuffer().textures[0].getSize());
+    console.log(this._scene.enableGeometryBufferRenderer(0.5).getGBuffer().textures[0].getSize());
     if (this._ground.material instanceof PBRMaterial) {
       const tmp = this._ground.material as PBRMaterial;
       tmp.useLogarithmicDepth = true;
     }
-    super.onStart();
     if (!this._camera) {
       throw new Error(`No camera defined in the scene. ${this._camera}`);
     }
+    this._rtt.addPostProcess(new SsaoPostProcess('mySSAO', this._gbuffer, this._camera));
     // const sscpp = new SscPostProcess('SSCurvature', this._gbuffer, this._camera);
-    const ssao = new SsaoPostProcess('mySSAO', this._gbuffer, this._camera);
+    // const ssao = new SsaoPostProcess('mySSAO', this._gbuffer, this._camera);
+    Effect.ShadersStore['finalFragmentShader'] = `
+        precision highp float;
+
+
+        varying vec2 vUV;
+                
+        uniform sampler2D textureSampler;
+        uniform sampler2D AOSampler;
+
+        void main(void)
+        {
+            vec4 main = texture2D(textureSampler, vUV);
+            vec4 ao = texture2D(AOSampler, vUV);
+            // mixes colors
+            gl_FragColor = ao;
+        }
+    `;
+
+    const finalPass = new PostProcess('final render', 'final', [], ['AOSampler'], 1, this._camera);
+    finalPass.onApply = (effect) => {
+      effect.setTexture('AOSampler', this._rtt);
+    };
+
     console.log(`normal: ${this._gbuffer.getTextureIndex(GeometryBufferRenderer.DEPTHNORMAL_TEXTURE_TYPE)}`);
     console.log(`position: ${this._gbuffer.getTextureIndex(GeometryBufferRenderer.POSITION_TEXTURE_TYPE)}`);
     console.log(`roughness: ${this._gbuffer.getTextureIndex(GeometryBufferRenderer.REFLECTIVITY_TEXTURE_TYPE)}`);
     console.log(`depthtex type: ${this._gbuffer.getGBuffer().textures[0].textureType}`);
     console.log(`pos type: ${this._gbuffer.getGBuffer().textures[2].textureType}`);
     // ...
+    *
+     */
   }
   // RTTにはaddpostprocessできるのでそこに突っ込む
   /**

@@ -20,7 +20,6 @@ export class SsaoPostProcess extends PostProcess {
        * 4: ???
        * */
       const camForward = camera.getDirection(worldaxis).normalizeToNew();
-      console.log(camForward);
       effect.setFloat3('camForward', camForward[0], camForward[1], camForward[2]);
       effect.setFloat2('texelSize', 1.0 / this.width, 1.0 / this.height);
       effect.setTexture('depthSampler', geometryBufferRenderer.getGBuffer().textures[depthIdx]);
