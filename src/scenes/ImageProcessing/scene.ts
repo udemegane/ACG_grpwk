@@ -22,6 +22,8 @@ import { SscPostProcess } from '../../postProcess/effects/ssc';
 import { GameManager } from '../GameScripts/gameManager';
 import { SsaoPostProcess } from '../../postProcess/effects/ssao_old';
 import { MSSAOPipeline } from '../../postProcess/mssaoPipeline';
+import { FastSSGIPipeline } from '../../postProcess/fastSSGIPipeline';
+import normalsrc from '../../postProcess/effects/shader/worldNormal.frag.glsl';
 /**
  * This represents a script that is attached to a node in the editor.
  * Available nodes are:
@@ -67,7 +69,9 @@ export default class SceneScript extends SceneScriptBase {
     super.onInitialize();
     this._scene = GameManager.getScene();
     this._gbuffer = this._scene.enableGeometryBufferRenderer();
+    this._gbuffer.enablePosition = true;
     /*
+
 
     this._gbuffer.enableReflectivity = true;
     this._gbuffer.enablePosition = true;
@@ -103,9 +107,23 @@ export default class SceneScript extends SceneScriptBase {
   public onStart(): void {
     super.onStart();
     const gloeLayer = new GlowLayer('glow', this._scene);
-    this._pipeline = new MSSAOPipeline('testssao', this._scene);
-    // this._scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline('testssao', this._camera);
+    // this._pipeline = new MSSAOPipeline('testssao', this._scene);
+    this._pipeline = new FastSSGIPipeline('ssgi', this._scene);
+    // this._scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline('ssgi', this._camera);
 
+    Effect.ShadersStore['worldnormalFragmentShader'] = normalsrc;
+    const normalpp = new PostProcess(
+      'worldnormal',
+      'worldnormal',
+      ['texelSize'],
+      ['positionSampler'],
+      1.0,
+      this._camera
+    );
+    normalpp.onApply = (effect) => {
+      effect.setFloat2('texelSize', 1.0 / normalpp.width, 1.0 / normalpp.height);
+      effect.setTexture('positionSampler', this._gbuffer.getGBuffer().textures[2]);
+    };
     /*
     console.log(
       this._gbuffer.getGBuffer().textures[0].getSize() ===
@@ -128,7 +146,7 @@ export default class SceneScript extends SceneScriptBase {
 
 
         varying vec2 vUV;
-                
+
         uniform sampler2D textureSampler;
         uniform sampler2D AOSampler;
 
