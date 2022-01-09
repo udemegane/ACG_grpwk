@@ -47,6 +47,7 @@ export class Game {
           // Attach camera.
           if (!this.scene.activeCamera) {
             throw new Error(
+              // eslint-disable-next-line max-len
               'No camera defined in the scene. Please add at least one camera in the project or create one yourself in the code.'
             );
           }

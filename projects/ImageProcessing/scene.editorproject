@@ -25,14 +25,12 @@
 	"materials": [
 		{
 			"bindedMeshes": [],
-			"json": "ground-44ce4d7a-5718-4025-a141-272ee6387673.json",
+			"json": "MIrror-75cd988b-0e32-4f82-ba9a-7becc395b9d8.json",
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [
-				"e168e73f-7a75-465d-8464-1f56b52417fe"
-			],
-			"json": "sky-b2346078-7465-4c63-8877-44b542584898.json",
+			"bindedMeshes": [],
+			"json": "ground-44ce4d7a-5718-4025-a141-272ee6387673.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -44,8 +42,10 @@
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [],
-			"json": "MIrror-75cd988b-0e32-4f82-ba9a-7becc395b9d8.json",
+			"bindedMeshes": [
+				"e168e73f-7a75-465d-8464-1f56b52417fe"
+			],
+			"json": "sky-b2346078-7465-4c63-8877-44b542584898.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -56,15 +56,15 @@
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [],
-			"json": "cube-03bdd37e-fe54-4095-a392-0de62b0de089.json",
-			"isMultiMaterial": false
-		},
-		{
 			"bindedMeshes": [
 				"46b8a2a8-88e5-4820-8c54-bb8d83c2fd4f"
 			],
 			"json": "Metal_blue-cc972282-9d07-4857-bcb0-e117796af62e.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "cube-03bdd37e-fe54-4095-a392-0de62b0de089.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -78,16 +78,6 @@
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [],
-			"json": "TestPP-6a90072b-8c24-4626-9cd9-6b8115ff2f29.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
-			"json": "sky-40f57f30-e7e9-451c-815c-c7924f18a69f.json",
-			"isMultiMaterial": false
-		},
-		{
 			"bindedMeshes": [
 				"d7a952be-96fd-4fb2-beba-5ff487ad05dc"
 			],
@@ -96,12 +86,22 @@
 		},
 		{
 			"bindedMeshes": [],
-			"json": "Ground_level-b1c03664-9fac-4658-95d2-d3745c3cead6.json",
+			"json": "TestPP-6a90072b-8c24-4626-9cd9-6b8115ff2f29.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [],
 			"json": "Stone2-8250484b-b536-4964-af0d-9430738743e6.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "sky-40f57f30-e7e9-451c-815c-c7924f18a69f.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "Ground_level-b1c03664-9fac-4658-95d2-d3745c3cead6.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -133,19 +133,19 @@
 		},
 		{
 			"bindedMeshes": [
-				"3d6c4145-9e07-4e89-979e-257813fdc1c3"
+				"6aff749d-401d-4ec2-a55c-14866ed04c41",
+				"66d6a8e6-54f3-4f20-a844-e5fde3576d34",
+				"de3a3101-6d56-4c2e-be6a-e99e3a0243e6",
+				"1de69f71-e093-4023-a3a8-8b2977a9e415"
 			],
-			"json": "Material.011-6bbb3c49-e346-4f57-8ead-56433c5940ed.json",
+			"json": "Material.002-98d0daa4-f103-490f-8e76-7109d5e299be.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [
-				"66d6a8e6-54f3-4f20-a844-e5fde3576d34",
-				"6aff749d-401d-4ec2-a55c-14866ed04c41",
-				"1de69f71-e093-4023-a3a8-8b2977a9e415",
-				"de3a3101-6d56-4c2e-be6a-e99e3a0243e6"
+				"3d6c4145-9e07-4e89-979e-257813fdc1c3"
 			],
-			"json": "Material.002-98d0daa4-f103-490f-8e76-7109d5e299be.json",
+			"json": "Material.011-6bbb3c49-e346-4f57-8ead-56433c5940ed.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -187,45 +187,45 @@
 		}
 	],
 	"textures": [
-		"PPTestScene_Metal_blue_Roughness.png-65.json",
-		"PPTestScene_Metal_red_Roughness.png-67.json",
-		"PPTestScene_RoughMIrror_Roughness.png-70.json",
-		"PPTestScene_Metal_green_Roughness.png-73.json",
-		"Stone2 (Base Color).jpeg-112.json",
-		"Stone2 (Normal).jpeg-114.json",
-		"CustomUVChecker_byValle_1K.png-85.json",
-		"Stone2 (Metallic Roughness).png-113.json",
-		"Ground_level (Base Color).jpeg-116.json",
-		"Ground_level (Metallic Roughness).png-117.json",
-		"Ground_level (Normal).jpeg-118.json",
+		"PPTestScene_RoughMIrror_Roughness.png-66.json",
+		"PPTestScene_Metal_red_Roughness.png-68.json",
+		"PPTestScene_Metal_blue_Roughness.png-64.json",
+		"Ground_level (Base Color).jpeg-110.json",
+		"PPTestScene_Metal_green_Roughness.png-108.json",
+		"Ground_level (Metallic Roughness).png-111.json",
+		"Ground_level (Normal).jpeg-112.json",
+		"Stone2 (Base Color).jpeg-114.json",
+		"Stone2 (Normal).jpeg-116.json",
+		"Stone2 (Metallic Roughness).png-115.json",
+		"CustomUVChecker_byValle_1K.png-118.json",
 		"Pavement (Base Color).jpeg-121.json",
-		"Pavement (Normal).jpeg-123.json",
 		"Pavement (Metallic Roughness).png-122.json",
+		"Pavement (Normal).jpeg-123.json",
 		"Rock (Base Color).jpeg-126.json",
 		"Rock (Metallic Roughness).png-127.json",
 		"Rock (Normal).jpeg-128.json",
 		"PPTestScene_MIrror_Roughness.png-136.json"
 	],
 	"meshes": [
-		"__root__-418f5580-5f32-4803-935a-1708de50ecdc.json",
 		"__root__-67ecad21-2faf-451b-8e91-642418b6791e.json",
-		"Sky-e168e73f-7a75-465d-8464-1f56b52417fe.json",
+		"__root__-418f5580-5f32-4803-935a-1708de50ecdc.json",
 		"Mirror_ground.001-847a82f3-6fe7-4c2e-bcc9-426147c9a322.json",
-		"Ground-58d29f28-01ae-436c-b145-7b4dfc7ad5b3.json",
+		"Sky-e168e73f-7a75-465d-8464-1f56b52417fe.json",
 		"Mirror_ground-1994f2d6-6b12-4c89-8586-a657dab0eede.json",
-		"Walls_primitive0-3d6c4145-9e07-4e89-979e-257813fdc1c3.json",
 		"Door_primitive1-b911fe20-7945-49c0-9bb8-a47bbf95c303.json",
-		"Sphere_green-d7a952be-96fd-4fb2-beba-5ff487ad05dc.json",
-		"Sphere_red-d9bf4bc6-9413-48e2-8f86-d90143aec7db.json",
-		"Sphere_blue-46b8a2a8-88e5-4820-8c54-bb8d83c2fd4f.json",
-		"Walls_primitive2-66d6a8e6-54f3-4f20-a844-e5fde3576d34.json",
+		"Ground-58d29f28-01ae-436c-b145-7b4dfc7ad5b3.json",
 		"Roof-215108fa-3361-403c-a080-156f1668afe7.json",
+		"Walls_primitive0-3d6c4145-9e07-4e89-979e-257813fdc1c3.json",
+		"Sphere_green-d7a952be-96fd-4fb2-beba-5ff487ad05dc.json",
+		"Sphere_blue-46b8a2a8-88e5-4820-8c54-bb8d83c2fd4f.json",
 		"WoodenCarcas-6aff749d-401d-4ec2-a55c-14866ed04c41.json",
+		"Sphere_red-d9bf4bc6-9413-48e2-8f86-d90143aec7db.json",
 		"Walls_primitive1-bfee1a62-bcf2-4148-9151-6622269639a8.json",
+		"Door_primitive0-de3a3101-6d56-4c2e-be6a-e99e3a0243e6.json",
+		"Walls_primitive2-66d6a8e6-54f3-4f20-a844-e5fde3576d34.json",
+		"Stairs-1de69f71-e093-4023-a3a8-8b2977a9e415.json",
 		"Suzanne-5d2263f9-f66c-4a66-958e-906ff1bd4e7e.json",
 		"Windows_primitive1-db576792-22b3-4bf2-95c6-9f3a8fc6ed65.json",
-		"Door_primitive0-de3a3101-6d56-4c2e-be6a-e99e3a0243e6.json",
-		"Stairs-1de69f71-e093-4023-a3a8-8b2977a9e415.json",
 		"RoofTiles_primitive0-8ba921c4-4453-4ab9-bd17-5f79b0d589f6.json",
 		"RoofTiles_primitive1-2312f229-ec8f-4e72-805c-3a39aa905a0c.json",
 		"Windows_primitive0-ae5a7a16-95ca-4678-9ccc-3c7cddd900bb.json"
@@ -233,12 +233,12 @@
 	"transformNodes": [
 		"Camera.001-54b53413-8b87-4ce7-8282-1c41f685f274.json",
 		"Camera-7a6e70ae-8d0b-4bba-92dd-da438cb1210a.json",
-		"Walls-7fdd1b3e-013c-4a0b-bc95-4912e2eeb9c4.json",
 		"SoftLight 2-bdd12673-758a-4f9a-804d-90a25d65e495.json",
-		"Windows-c260b16b-31b5-4c6c-9b9e-c4f865d13ae8.json",
 		"SoftLight 1-f43cae1f-6fea-4d6f-985b-0dad34df3fde.json",
+		"RoofTiles-da4ecb24-4857-4b61-9432-5c3321f5f39d.json",
+		"Windows-c260b16b-31b5-4c6c-9b9e-c4f865d13ae8.json",
 		"Door-feb03e3f-3040-4845-b66f-97574817332e.json",
-		"RoofTiles-da4ecb24-4857-4b61-9432-5c3321f5f39d.json"
+		"Walls-7fdd1b3e-013c-4a0b-bc95-4912e2eeb9c4.json"
 	],
 	"particleSystems": [],
 	"lights": [
@@ -366,35 +366,7 @@
 					}
 				},
 				"screenSpaceReflections": {
-					"enabled": true,
-					"json": {
-						"tags": null,
-						"threshold": 1.2,
-						"strength": 1,
-						"reflectionSpecularFalloffExponent": 3,
-						"step": 5,
-						"roughnessFactor": 0.2,
-						"enableSmoothReflections": false,
-						"reflectionSamples": 64,
-						"smoothSteps": 5,
-						"name": "ssr",
-						"width": 1158,
-						"height": 627,
-						"renderTargetSamplingMode": 1,
-						"autoClear": true,
-						"alphaMode": 0,
-						"enablePixelPerfectMode": false,
-						"forceFullscreenViewport": true,
-						"scaleMode": 1,
-						"alwaysForcePOT": false,
-						"samples": 1,
-						"adaptScaleToCurrentViewport": false,
-						"customType": "BABYLON.ScreenSpaceReflectionPostProcess",
-						"cameraId": "f3684fb1-6ae4-4cc0-8e94-ba283d86ec04",
-						"reusable": false,
-						"options": 1,
-						"textureType": 0
-					}
+					"enabled": false
 				},
 				"default": {
 					"enabled": true,
@@ -549,9 +521,9 @@
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": 17.26497167200415,
-			"beta": 0.9777181272421869,
-			"radius": 43.73144755655438,
+			"alpha": 16.579752251944207,
+			"beta": 0.869743378216285,
+			"radius": 29.710635703070597,
 			"target": [
 				6.517638739021834,
 				-10.295614556497066,
@@ -585,9 +557,9 @@
 			],
 			"speed": 2,
 			"position": [
-				6.017660758249838,
-				14.146599243759956,
-				-21.960439968193437
+				-8.091294327868656,
+				8.86841899606807,
+				-3.0800342937913108
 			],
 			"upVector": [
 				0,
@@ -650,7 +622,7 @@
 					"pinchPrecision": 12,
 					"pinchDeltaPercentage": 0,
 					"useNaturalPinchZoom": false,
-					"panningSensibility": 22.866839674281994,
+					"panningSensibility": 33.65798059637781,
 					"multiTouchPanning": true,
 					"multiTouchPanAndZoom": true
 				}
