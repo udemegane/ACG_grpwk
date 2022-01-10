@@ -25,7 +25,7 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
   private _testPostProcess: PostProcess;
   private _gbuffer: MultiRenderTarget;
   private _textureCache: MultiRenderTarget;
-  private _downSampleRatio = 1;
+  private _downSampleRatio = 0.0625;
   constructor(name: string, scene: Scene, cameras?: Camera[]) {
     super(scene.getEngine(), name);
     this._scene = scene;
@@ -92,9 +92,9 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
       new PostProcessRenderEffect(scene.getEngine(), 'positionCache', () => {
         return [
           this._originalColorPostProcess,
-          this._downSampledOriginalColorPostProcess,
-          this._downSampledPositionPostProcess,
-          this._testPostProcess,
+          // this._downSampledOriginalColorPostProcess,
+          // this._downSampledPositionPostProcess,
+          // this._testPostProcess,
           this._ssgiPostProcess,
         ];
       })
@@ -121,7 +121,7 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
       'ssgi',
       'ssgi',
       ['texelSize'],
-      ['positionSampler', 'originalColorSampler'],
+      ['positionSampler', 'originalColorSampler', 'roughnessSampler'],
       ratio,
       null,
       Texture.NEAREST_SAMPLINGMODE,
@@ -131,8 +131,10 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
     this._ssgiPostProcess.onApply = (effect: Effect) => {
       effect.setFloat2('texelSize', 1.0 / this._ssgiPostProcess.width, 1.0 / this._ssgiPostProcess.height);
       console.log(`w: ${this._ssgiPostProcess.width}, h: ${this._ssgiPostProcess.height}`);
-      effect.setTextureFromPostProcess('originalColorSampler', this._downSampledOriginalColorPostProcess);
-      effect.setTextureFromPostProcessOutput('positionSampler', this._downSampledPositionPostProcess);
+      effect.setTextureFromPostProcess('originalColorSampler', this._originalColorPostProcess);
+      // effect.setTextureFromPostProcess('positionSampler', this._downSampledPositionPostProcess);
+      effect.setTexture('positionSampler', this._gbuffer.textures[2]);
+      effect.setTexture('roughnessSampler', this._gbuffer.textures[3]);
     };
   }
 

@@ -4,11 +4,12 @@ varying vec2 vUV;
 uniform sampler2D textureSampler;
 uniform sampler2D originalColorSampler;
 uniform sampler2D positionSampler;
+uniform sampler2D roughnessSampler;
 uniform vec2 texelSize;
 float eps = 0.00000001;
 vec3 getWorldNormal(vec3 pos, vec2 coords) {
-    vec2 offset1 = vec2(0.0, texelSize.y * 10.0);
-    vec2 offset2 = vec2(texelSize.x * 10.0, 0.0);
+    vec2 offset1 = vec2(0.0, texelSize.y);
+    vec2 offset2 = vec2(texelSize.x, 0.0);
 
     vec3 pos1 = texture2D(positionSampler, coords + offset1).rgb;
     vec3 pos2 = texture2D(positionSampler, coords + offset2).rgb;
@@ -20,11 +21,13 @@ vec3 getWorldNormal(vec3 pos, vec2 coords) {
 
 void main(void) {
     //gl_FragColor = texture2D(positionSampler, vUV);
-    vec3 normal = getWorldNormal(texture2D(positionSampler, vUV).rgb, vUV);
 
-    if(vUV.x < 0.5) {
+    if(vUV.x < 0.4) {
         gl_FragColor = texture2D(originalColorSampler, vUV);
-    } else if(vUV.x < 0.75) {
+    } else if(vUV.x < 0.6) {
+        gl_FragColor = texture2D(roughnessSampler, vUV);
+    } else if(vUV.x < 0.8) {
+        vec3 normal = getWorldNormal(texture2D(positionSampler, vUV).rgb, vUV);
         gl_FragColor = vec4(normal, 1.0);
     } else {
         gl_FragColor = texture2D(positionSampler, vUV);

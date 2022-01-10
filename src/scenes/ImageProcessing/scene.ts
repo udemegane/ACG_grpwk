@@ -109,8 +109,9 @@ export default class SceneScript extends SceneScriptBase {
     const gloeLayer = new GlowLayer('glow', this._scene);
     // this._pipeline = new MSSAOPipeline('testssao', this._scene);
     this._pipeline = new FastSSGIPipeline('ssgi', this._scene);
-    // this._scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline('ssgi', this._camera);
+    this._scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline('ssgi', this._camera);
 
+    /*
     Effect.ShadersStore['worldnormalFragmentShader'] = normalsrc;
     const normalpp = new PostProcess(
       'worldnormal',
