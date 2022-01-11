@@ -2,6 +2,7 @@ import {
   BlurPostProcess,
   Camera,
   Constants,
+  DynamicTexture,
   Effect,
   MultiRenderTarget,
   PassPostProcess,
@@ -12,6 +13,7 @@ import {
   Scene,
   Texture,
   Vector2,
+  Vector3,
 } from '@babylonjs/core';
 import ssgiSource from './effects/shader/ssgi.frag.glsl';
 import compositeSource from './effects/shader/compositeSSGI.frag.glsl';
@@ -20,6 +22,7 @@ import passTexSource from './effects/shader/passTexture.frag.glsl';
 
 export class FastSSGIPipeline extends PostProcessRenderPipeline {
   private _scene: Scene;
+  private _randomTexture: DynamicTexture;
   private _originalColorPostProcess: PassPostProcess;
   private _downSampledOriginalColorPostProcess: PassTexturePostprocess;
   private _downSampledPositionPostProcess: PassTexturePostprocess;
@@ -77,6 +80,7 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
 
     // this._createDownSampledPositionPostProcess(this._downSampleRatio);
     this._createBlurPostProcess(this._downSampleRatio);
+    this._createRandomTexture();
     this._createSSGIPostProcess(this._downSampleRatio);
     this._createCompositePostProcess(1.0, this._downSampleRatio);
     this._createTestPostProcess(this._downSampleRatio);
@@ -118,7 +122,7 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
   }
 
   private _createBlurPostProcess(ratio: number): void {
-    const size = 40;
+    const size = 32;
 
     this._blurHPostProcess = new BlurPostProcess(
       'BlurH',
@@ -160,7 +164,7 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
       'ssgi',
       'ssgi',
       ['texelSize'],
-      ['positionSampler', 'originalColorSampler', 'roughnessSampler', 'normalSampler'],
+      ['positionSampler', 'originalColorSampler', 'roughnessSampler', 'normalSampler', 'randomSampler'],
       ratio,
       null,
       Texture.NEAREST_SAMPLINGMODE,
@@ -175,6 +179,7 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
       effect.setTexture('normalSampler', this._gbuffer.textures[1]);
       effect.setTexture('positionSampler', this._gbuffer.textures[2]);
       effect.setTexture('roughnessSampler', this._gbuffer.textures[3]);
+      effect.setTexture('randomSampler', this._randomTexture);
     };
   }
 
@@ -225,5 +230,40 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
       effect.setTextureFromPostProcess('originalColor', this._originalColorPostProcess);
       effect.setTextureFromPostProcessOutput('ssgiColor', this._blurVPostProcess);
     };
+  }
+
+  private _createRandomTexture(): void {
+    const size = 512;
+
+    this._randomTexture = new DynamicTexture(
+      'SSAORandomTexture',
+      size,
+      this._scene,
+      false,
+      Texture.TRILINEAR_SAMPLINGMODE
+    );
+    this._randomTexture.wrapU = Texture.WRAP_ADDRESSMODE;
+    this._randomTexture.wrapV = Texture.WRAP_ADDRESSMODE;
+
+    const context = this._randomTexture.getContext();
+
+    const rand = (min: number, max: number) => {
+      return Math.random() * (max - min) + min;
+    };
+
+    const randVector = Vector3.Zero();
+
+    for (let x = 0; x < size; x++) {
+      for (let y = 0; y < size; y++) {
+        randVector.x = Math.floor(rand(-1.0, 1.0) * 255);
+        randVector.y = Math.floor(rand(-1.0, 1.0) * 255);
+        randVector.z = Math.floor(rand(-1.0, 1.0) * 255);
+
+        context.fillStyle = 'rgb(' + randVector.x + ', ' + randVector.y + ', ' + randVector.z + ')';
+        context.fillRect(x, y, 1, 1);
+      }
+    }
+
+    this._randomTexture.update(false);
   }
 }

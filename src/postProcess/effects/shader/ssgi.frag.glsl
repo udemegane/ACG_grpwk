@@ -6,6 +6,7 @@ uniform sampler2D originalColorSampler;
 uniform sampler2D positionSampler;
 uniform sampler2D roughnessSampler;
 uniform sampler2D normalSampler;
+uniform sampler2D randomSampler;
 uniform vec2 texelSize;
 
 #define GIINTENSITY 4.0
@@ -39,7 +40,7 @@ vec3 calcRoughGI(vec3 pos) {
     float yoffset = 0.1;
     float xoffset = 0.1;
     vec3 camNormal = texture2D(normalSampler, vUV).rgb;
-    vec2 offset = vec2(0.0, -camNormal.b) * 0.2;
+    vec2 offset = vec2(camNormal.r, -camNormal.b) * 0.2;
     vec2 up = vec2(0.0, yoffset);
     vec2 down = vec2(0.0, -yoffset);
     vec2 right = vec2(xoffset, 0.0);
@@ -50,22 +51,24 @@ vec3 calcRoughGI(vec3 pos) {
     vec2 dtmp = down * l;
     vec2 rtmp = right * l;
     vec2 ltmp = left * l;
-    gitemp += sampling(pos, vUV + utmp + offset);
-    gitemp += sampling(pos, vUV + utmp * 2.0 + offset);
-    gitemp += sampling(pos, vUV + dtmp + offset);
-    gitemp += sampling(pos, vUV + dtmp * 2.0 + offset);
-    gitemp += sampling(pos, vUV + rtmp + offset);
-    gitemp += sampling(pos, vUV + rtmp * 2.0 + offset);
-    gitemp += sampling(pos, vUV + ltmp + offset);
-    gitemp += sampling(pos, vUV + ltmp * 2.0 + offset);
-    gitemp += sampling(pos, vUV + utmp + rtmp + offset);
-    gitemp += sampling(pos, vUV + (utmp + rtmp) * 2.0 + offset);
-    gitemp += sampling(pos, vUV + utmp + ltmp + offset);
-    gitemp += sampling(pos, vUV + (utmp + ltmp) * 2.0 + offset);
-    gitemp += sampling(pos, vUV + dtmp + rtmp + offset);
-    gitemp += sampling(pos, vUV + (dtmp + rtmp) * 2.0 + offset);
-    gitemp += sampling(pos, vUV + dtmp + ltmp + offset);
-    gitemp += sampling(pos, vUV + (dtmp + ltmp) * 2.0 + offset);
+    vec2 rand1 = texture2D(randomSampler, vUV).rg * texelSize * 10.0;
+    vec2 rand2 = texture2D(randomSampler, vUV + vec2(0.01, 0.01)).rg * texelSize * 8.0;
+    gitemp += sampling(pos, vUV + utmp + offset + rand1 + rand1);
+    gitemp += sampling(pos, vUV + utmp * 2.0 + offset + rand2);
+    gitemp += sampling(pos, vUV + dtmp + offset + rand1);
+    gitemp += sampling(pos, vUV + dtmp * 2.0 + offset + rand2);
+    gitemp += sampling(pos, vUV + rtmp + offset + rand1);
+    gitemp += sampling(pos, vUV + rtmp * 2.0 + offset + rand2);
+    gitemp += sampling(pos, vUV + ltmp + offset + rand1);
+    gitemp += sampling(pos, vUV + ltmp * 2.0 + offset + rand2);
+    gitemp += sampling(pos, vUV + utmp + rtmp + offset + rand1);
+    gitemp += sampling(pos, vUV + (utmp + rtmp) * 2.0 + offset + rand2);
+    gitemp += sampling(pos, vUV + utmp + ltmp + offset + rand1);
+    gitemp += sampling(pos, vUV + (utmp + ltmp) * 2.0 + offset + rand2);
+    gitemp += sampling(pos, vUV + dtmp + rtmp + offset + rand1);
+    gitemp += sampling(pos, vUV + (dtmp + rtmp) * 2.0 + offset + rand2);
+    gitemp += sampling(pos, vUV + dtmp + ltmp + offset + rand1);
+    gitemp += sampling(pos, vUV + (dtmp + ltmp) * 2.0 + offset + rand2);
     return gitemp;
 }
 
