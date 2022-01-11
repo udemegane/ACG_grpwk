@@ -1,5 +1,7 @@
 import {
+  BlurPostProcess,
   Camera,
+  Constants,
   Effect,
   MultiRenderTarget,
   PassPostProcess,
@@ -9,6 +11,7 @@ import {
   RenderTargetTexture,
   Scene,
   Texture,
+  Vector2,
 } from '@babylonjs/core';
 import ssgiSource from './effects/shader/ssgi.frag.glsl';
 import compositeSource from './effects/shader/compositeSSGI.frag.glsl';
@@ -23,9 +26,11 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
   private _ssgiPostProcess: PostProcess;
   private _compositePostProcess: PostProcess;
   private _testPostProcess: PostProcess;
+  private _blurHPostProcess: BlurPostProcess;
+  private _blurVPostProcess: BlurPostProcess;
   private _gbuffer: MultiRenderTarget;
   private _textureCache: MultiRenderTarget;
-  private _downSampleRatio = 0.0625;
+  private _downSampleRatio = 0.25;
   constructor(name: string, scene: Scene, cameras?: Camera[]) {
     super(scene.getEngine(), name);
     this._scene = scene;
@@ -71,6 +76,7 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
      */
 
     // this._createDownSampledPositionPostProcess(this._downSampleRatio);
+    this._createBlurPostProcess(this._downSampleRatio);
     this._createSSGIPostProcess(this._downSampleRatio);
     this._createCompositePostProcess(1.0, this._downSampleRatio);
     this._createTestPostProcess(this._downSampleRatio);
@@ -88,15 +94,10 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
       })
     );
      */
+
     this.addEffect(
       new PostProcessRenderEffect(scene.getEngine(), 'positionCache', () => {
-        return [
-          this._originalColorPostProcess,
-          // this._downSampledOriginalColorPostProcess,
-          // this._downSampledPositionPostProcess,
-          // this._testPostProcess,
-          this._ssgiPostProcess,
-        ];
+        return [this._originalColorPostProcess, this._ssgiPostProcess, this._blurHPostProcess, this._blurVPostProcess];
       })
     );
     /*
@@ -115,13 +116,51 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
 
     scene.postProcessRenderPipelineManager.addPipeline(this);
   }
+
+  private _createBlurPostProcess(ratio: number): void {
+    const size = 40;
+
+    this._blurHPostProcess = new BlurPostProcess(
+      'BlurH',
+      new Vector2(1, 0),
+      size,
+      ratio,
+      null,
+      Texture.BILINEAR_SAMPLINGMODE,
+      this._scene.getEngine(),
+      false
+      // Constants.TEXTURETYPE_UNSIGNED_INT
+    );
+    this._blurVPostProcess = new BlurPostProcess(
+      'BlurV',
+      new Vector2(0, 1),
+      size,
+      ratio,
+      null,
+      Texture.BILINEAR_SAMPLINGMODE,
+      this._scene.getEngine(),
+      false
+      // Constants.TEXTURETYPE_UNSIGNED_INT
+    );
+
+    this._blurHPostProcess.onActivateObservable.add(() => {
+      const dw = this._blurHPostProcess.width / this._scene.getEngine().getRenderWidth();
+      this._blurHPostProcess.kernel = size * dw;
+    });
+
+    this._blurVPostProcess.onActivateObservable.add(() => {
+      const dw = this._blurVPostProcess.height / this._scene.getEngine().getRenderHeight();
+      this._blurVPostProcess.kernel = size * dw;
+    });
+  }
+
   private _createSSGIPostProcess(ratio: number): void {
     Effect.ShadersStore['ssgiFragmentShader'] = ssgiSource;
     this._ssgiPostProcess = new PostProcess(
       'ssgi',
       'ssgi',
       ['texelSize'],
-      ['positionSampler', 'originalColorSampler', 'roughnessSampler'],
+      ['positionSampler', 'originalColorSampler', 'roughnessSampler', 'normalSampler'],
       ratio,
       null,
       Texture.NEAREST_SAMPLINGMODE,
@@ -133,6 +172,7 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
       console.log(`w: ${this._ssgiPostProcess.width}, h: ${this._ssgiPostProcess.height}`);
       effect.setTextureFromPostProcess('originalColorSampler', this._originalColorPostProcess);
       // effect.setTextureFromPostProcess('positionSampler', this._downSampledPositionPostProcess);
+      effect.setTexture('normalSampler', this._gbuffer.textures[1]);
       effect.setTexture('positionSampler', this._gbuffer.textures[2]);
       effect.setTexture('roughnessSampler', this._gbuffer.textures[3]);
     };
@@ -183,7 +223,7 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
     );
     this._compositePostProcess.onApply = (effect: Effect) => {
       effect.setTextureFromPostProcess('originalColor', this._originalColorPostProcess);
-      effect.setTextureFromPostProcessOutput('ssgiColor', this._ssgiPostProcess);
+      effect.setTextureFromPostProcessOutput('ssgiColor', this._blurVPostProcess);
     };
   }
 }
