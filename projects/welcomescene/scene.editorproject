@@ -1,56 +1,43 @@
 {
 	"filesList": [
-		"decide21.mp3"
+		"decide21.mp3",
+		"Flare.png"
 	],
 	"cameras": [
 		"New Free Camera-7677d1dd-b8d4-46fe-ae7c-3d639fca82c8.json"
 	],
 	"materials": [
 		{
-			"bindedMeshes": [],
-			"json": "sky-b2346078-7465-4c63-8877-44b542584898.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
-			"json": "sky-83ba6db2-aa00-4321-b85f-05345ec01741.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
-			"json": "ground-44ce4d7a-5718-4025-a141-272ee6387673.json",
+			"bindedMeshes": [
+				"b2c34a75-116b-46cb-bd9e-787c806f5f66"
+			],
+			"json": "Material.001-39e2f810-ec1f-484f-becf-2371a940f134.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [
-				"033d745f-cac8-4059-aab9-dc302893dc17"
+				"f74c2a2e-bd2b-4b54-ab8e-e35620c9b546"
 			],
-			"json": "sky-4fedeaf9-3eb2-46bf-939f-aa8a03e6bd6f.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
-			"json": "cube-03bdd37e-fe54-4095-a392-0de62b0de089.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
-			"json": "sky-8163fa27-2536-4166-9f23-73717f22ab78.json",
+			"json": "sky-4ce80c5d-809e-415d-a8d8-2c0d42d8fcf1.json",
 			"isMultiMaterial": false
 		}
 	],
-	"textures": [],
+	"textures": [
+		"Flare.png-21.json",
+		"Flare.png-18.json",
+		"icon.png-38.json"
+	],
 	"meshes": [
-		"New Cube-b360ae11-7a84-4ea2-8e4c-0b29f588c903.json",
-		"Sky-033d745f-cac8-4059-aab9-dc302893dc17.json"
+		"__root__-a3f81655-7c8c-4fc5-9166-e2f76e5d1821.json",
+		"New Particle System-32066eec-f89a-4f04-9025-069c9ff4b831.json",
+		"Text-b2c34a75-116b-46cb-bd9e-787c806f5f66.json",
+		"Sky-f74c2a2e-bd2b-4b54-ab8e-e35620c9b546.json"
 	],
 	"transformNodes": [],
-	"particleSystems": [],
-	"lights": [
-		{
-			"json": "New Hemispheric Light-877f5ba5-46e0-4dc6-90ce-1c0944d0f62c.json"
-		}
+	"particleSystems": [
+		"default system-c2382c35-aaca-49c5-b1f2-5ccdecc0dba3.json"
 	],
+	"lights": [],
 	"sounds": [
 		"files!decide21.mp3.json"
 	],
@@ -191,7 +178,7 @@
 				"autoplay": false,
 				"loop": false,
 				"volume": 1,
-				"spatialSound": true,
+				"spatialSound": false,
 				"maxDistance": 100,
 				"rolloffFactor": 1,
 				"refDistance": 1,
@@ -201,40 +188,27 @@
 				"soundTrackId": -1,
 				"metadata": {
 					"id": "48baad39-d2ae-4c19-8e81-423ecd87dbdb"
-				},
-				"connectedMeshId": "b360ae11-7a84-4ea2-8e4c-0b29f588c903",
-				"position": [
-					-0.9712135791778564,
-					-0.003795069409534335,
-					-15.76201343536377
-				],
-				"isDirectional": false,
-				"localDirectionToMesh": [
-					1,
-					0,
-					0
-				],
-				"coneInnerAngle": 360,
-				"coneOuterAngle": 360,
-				"coneOuterGain": 0
+				}
 			}
 		]
 	},
 	"assets": {
-		"meshes": [],
+		"meshes": [
+			"text.glb"
+		],
 		"prefabs": [],
 		"graphs": []
 	},
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": 0.5425070693146111,
-			"beta": 1.3506555353570955,
-			"radius": 8.142718777160969,
+			"alpha": 0.13264017465037134,
+			"beta": 2.6548135946120746,
+			"radius": 41.62618789739648,
 			"target": [
-				0,
-				0.5194425582885742,
-				0
+				-2.6970875697678434,
+				-1.680250255731808,
+				-5.230431324688723
 			],
 			"inertialAlphaOffset": 0,
 			"inertialBetaOffset": 0,
@@ -264,9 +238,9 @@
 			],
 			"speed": 2,
 			"position": [
-				6.805267907696656,
-				2.297543783581922,
-				4.102505797803838
+				16.603835277983144,
+				-38.471312389427226,
+				-2.6552336295429515
 			],
 			"upVector": [
 				0,
@@ -275,7 +249,7 @@
 			],
 			"fov": 0.8,
 			"minZ": 1,
-			"maxZ": 15000,
+			"maxZ": 864975.5859375,
 			"inertia": 0.9,
 			"mode": 0,
 			"layerMask": 268435455,
@@ -328,7 +302,7 @@
 					"pinchPrecision": 12,
 					"pinchDeltaPercentage": 0,
 					"useNaturalPinchZoom": false,
-					"panningSensibility": 122.80910435036034,
+					"panningSensibility": 24.023338444175554,
 					"multiTouchPanning": true,
 					"multiTouchPanAndZoom": true
 				}

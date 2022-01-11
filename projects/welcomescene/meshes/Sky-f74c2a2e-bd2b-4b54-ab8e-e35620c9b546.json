@@ -1,25 +1,25 @@
 {
+	"materials": [],
 	"meshes": [
 		{
-			"name": "New Cube",
-			"id": "b360ae11-7a84-4ea2-8e4c-0b29f588c903",
-			"uniqueId": 8,
+			"name": "Sky",
+			"id": "f74c2a2e-bd2b-4b54-ab8e-e35620c9b546",
+			"uniqueId": 11,
 			"type": "Mesh",
 			"position": [
-				-0.9712135791778564,
-				-0.003795069409534335,
-				-15.76201343536377
+				-2.937893867492676,
+				-2.0297906398773193,
+				0
 			],
-			"rotationQuaternion": [
+			"rotation": [
 				0,
 				0,
-				0,
-				1
+				0
 			],
 			"scaling": [
-				2.226393699645996,
-				6.738609313964844,
-				1.227494716644287
+				1,
+				1,
+				1
 			],
 			"localMatrix": {
 				"0": 1,
@@ -50,16 +50,13 @@
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": null,
 			"isUnIndexed": false,
-			"geometryId": "fe04ee9c-3068-413c-b01b-5c203eb65ef8",
+			"geometryId": "88fcfca7-38c4-488c-807e-193283ffd5c1",
 			"subMeshes": null,
-			"physicsMass": 1,
-			"physicsFriction": 0.2,
-			"physicsRestitution": 0.2,
-			"physicsImpostor": 2,
+			"materialId": "4ce80c5d-809e-415d-a8d8-2c0d42d8fcf1",
 			"metadata": {
 				"isPickable": true,
 				"script": {
-					"name": "src/scenes/welcomescene/sound.ts"
+					"name": "None"
 				},
 				"renderingGroupId": 0
 			},
@@ -76,16 +73,16 @@
 				0
 			],
 			"applyFog": true,
-			"delayLoadingFile": "geometries/fe04ee9c-3068-413c-b01b-5c203eb65ef8.babylonbinarymeshdata",
+			"delayLoadingFile": "geometries/88fcfca7-38c4-488c-807e-193283ffd5c1.babylonbinarymeshdata",
 			"boundingBoxMaximum": [
-				0.5,
-				0.5,
-				0.5
+				2500,
+				2500,
+				2500
 			],
 			"boundingBoxMinimum": [
-				-0.5,
-				-0.5,
-				-0.5
+				-2500,
+				-2500,
+				-2500
 			],
 			"_binaryInfo": {
 				"positionsAttrDesc": {
@@ -126,7 +123,6 @@
 			"indices": null
 		}
 	],
-	"materials": [],
 	"multiMaterials": [],
 	"lods": []
 }

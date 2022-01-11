@@ -1,12 +1,5 @@
-import {
-  AdvancedDynamicTexture,
-  Button,
-  Button3D,
-  InputText,
-  TextBlock,
-} from '@babylonjs/gui';
+import { AdvancedDynamicTexture, Button, Button3D, InputText, TextBlock } from '@babylonjs/gui';
 import { KeyboardEventTypes } from '@babylonjs/core';
-import { clearInterval } from 'timers';
 import { onKeyboardEvent } from '../tools';
 import { GameManager } from '../GameScripts/gameManager';
 /**
@@ -46,6 +39,7 @@ export default class MyScript extends Node {
   inputusername = new InputText();
   inputpassword = new InputText();
   welcome = new TextBlock();
+  waiting = new TextBlock();
   enterbutton = Button.CreateSimpleButton('Enter', 'OK');
   /**
    * Override constructor.
@@ -66,40 +60,44 @@ export default class MyScript extends Node {
    * Called on the scene starts.
    */
   public onStart(): void {
-    this.createTitleGUI();
     this.createbuttonGUI();
     this.createsingleplayGUI();
     this.createmultiplayGUI();
     this.createinputGUI();
     this.createenterbuttonGUI();
     this.welcomecommentGUI();
+    this.createloadingGUI();
+    this.waitinganimation();
     // ...
   }
 
   @onKeyboardEvent([32], KeyboardEventTypes.KEYUP)
   private _onSpaceKey(): void {
+    let size = 30;
+    let t = 100;
     switch (this.nowscene) {
       case 0:
-        this.ispressed = true;
-        let size = 20;
-        let t = 100;
-        this.button.alpha = 1.0;
-        this.button.shadowBlur = 10;
-        const handle = setInterval(() => {
-          t -= 1;
-          size += 0.025;
-          this.button.alpha -= 0.01;
-          this.button.fontSize = size;
-          if (t === 0) {
-            clearInterval(handle);
-            this.button.dispose();
-            this.nowscene = 1;
-            this.inputusername.isVisible = true;
-          }
-        }, 10);
+        if (this.ispressed === false) {
+          this.ispressed = true;
+          this.button.alpha = 1.0;
+          this.button.shadowBlur = 10;
+          const handle = setInterval(() => {
+            t -= 1;
+            size += 0.025;
+            this.button.alpha -= 0.01;
+            this.button.fontSize = size;
+            if (t === 0) {
+              clearInterval(handle);
+              this.button.dispose();
+              this.nowscene = 1;
+              this.inputusername.isVisible = true;
+            }
+          }, 10);
+        }
         break;
       case 2:
         if (this.selectup === false) this.nowscene = 3;
+        else GameManager.switchScene('./scenes/scene/');
         break;
       default:
         break;
@@ -115,12 +113,18 @@ export default class MyScript extends Node {
     this.selectup = false;
   }
 
+  @onKeyboardEvent([90], KeyboardEventTypes.KEYUP)
+  private _onZKey(): void {
+    if (this.nowscene !== 1) {
+      this.nowscene -= 1;
+    }
+  }
+
   /**
    * Called each frame.
    */
   public onUpdate(): void {
-    if (this.ispressed === false)
-      this.button.alpha = Math.sin(this.time++ / 30) * 0.5 + 0.5;
+    if (this.ispressed === false) this.button.alpha = Math.sin(this.time++ / 30) * 0.5 + 0.5;
     if (this.nowscene === 1) {
       this.inputusername.isVisible = true;
       this.inputpassword.isVisible = true;
@@ -139,36 +143,30 @@ export default class MyScript extends Node {
       this.multiplay.isVisible = false;
       this.welcome.isVisible = false;
     }
+    if (this.nowscene === 3) {
+      this.waiting.isVisible = true;
+    } else {
+      this.waiting.isVisible = false;
+    }
     this.selectbutton();
     // ...
   }
 
-  public createTitleGUI(): void {
-    const textblock = new TextBlock();
-    textblock.text = 'AGC\nSample\nGame';
-    textblock.fontSize = 50;
-    textblock.top = -50;
-    textblock.shadowBlur = 15;
-    textblock.shadowColor = '#FFFFFF';
-    textblock.color = 'white';
-    textblock.fontFamily = 'Impact';
-    this.advancedTexture.addControl(textblock);
-  }
-
   public welcomecommentGUI(): void {
     this.welcome.text = 'welcome ';
-    this.welcome.top = 150;
+    this.welcome.top = 200;
     this.welcome.shadowBlur = 0;
     this.welcome.shadowColor = '#FFFFFF';
     this.welcome.color = '#C0C0C0';
+    this.welcome.fontSizeInPixels = 30;
     this.welcome.isVisible = false;
     this.advancedTexture.addControl(this.welcome);
   }
 
   public createbuttonGUI(): void {
     this.button.text = 'PRESS [SPACE] TO PLAY';
-    this.button.fontSizeInPixels = 20;
-    this.button.top = 100;
+    this.button.fontSizeInPixels = 30;
+    this.button.top = 110;
     this.button.shadowBlur = 0;
     this.button.shadowColor = '#FFFFFF';
     this.button.color = '#C0C0C0';
@@ -177,8 +175,8 @@ export default class MyScript extends Node {
 
   public createsingleplayGUI(): void {
     this.singleplay.text = '  SINGLE PLAY';
-    this.singleplay.fontSizeInPixels = 20;
-    this.singleplay.top = 85;
+    this.singleplay.fontSizeInPixels = 30;
+    this.singleplay.top = 100;
     this.singleplay.left = -10;
     this.singleplay.color = '#C0C0C0';
     this.singleplay.shadowBlur = 0;
@@ -189,8 +187,8 @@ export default class MyScript extends Node {
 
   public createmultiplayGUI(): void {
     this.multiplay.text = '  MULTI PLAY';
-    this.multiplay.fontSizeInPixels = 20;
-    this.multiplay.top = 115;
+    this.multiplay.fontSizeInPixels = 30;
+    this.multiplay.top = 140;
     this.multiplay.left = -10;
     this.multiplay.shadowBlur = 0;
     this.multiplay.shadowColor = '#FFFFFF';
@@ -214,19 +212,21 @@ export default class MyScript extends Node {
   }
 
   public createinputGUI(): void {
-    this.inputusername.top = 80;
+    this.inputusername.top = 90;
     this.inputusername.width = 0.25;
     this.inputusername.maxWidth = 0.25;
     this.inputusername.height = 0.075;
+    this.inputusername.fontSize = 30;
     this.inputusername.text = 'username';
     this.inputusername.color = 'white';
     this.inputusername.isVisible = false;
     this.advancedTexture.addControl(this.inputusername);
 
-    this.inputpassword.top = 115;
+    this.inputpassword.top = 150;
     this.inputpassword.width = 0.25;
     this.inputpassword.maxWidth = 0.25;
     this.inputpassword.height = 0.075;
+    this.inputpassword.fontSize = 30;
     this.inputpassword.text = 'password';
     this.inputpassword.color = 'white';
     this.inputpassword.isVisible = false;
@@ -237,7 +237,7 @@ export default class MyScript extends Node {
     this.enterbutton.color = 'white';
     this.enterbutton.background = 'black';
     this.enterbutton.isVisible = false;
-    this.enterbutton.top = 150;
+    this.enterbutton.top = 250;
     this.enterbutton.width = 0.1;
     this.enterbutton.height = 0.075;
     this.enterbutton.isVisible = false;
@@ -245,9 +245,44 @@ export default class MyScript extends Node {
       this.nowscene = 2;
       this.username = this.inputusername.text;
       this.password = this.inputpassword.text;
-      this.welcome.text = `welcome ${this.username} !`;
+      this.welcome.text = `Welcome ${this.username} !`;
     });
     this.advancedTexture.addControl(this.enterbutton);
+  }
+
+  public createloadingGUI(): void {
+    this.waiting.color = 'white';
+    this.waiting.top = 150;
+    this.waiting.fontSize = 30;
+    this.waiting.text = 'Waiting';
+    this.waiting.isVisible = false;
+    this.advancedTexture.addControl(this.waiting);
+  }
+
+  public createhowtoplay(): void {}
+
+  public waitinganimation(): void {
+    let t = 0;
+    this.waiting.text = 'Waiting';
+    const handle = setInterval(() => {
+      t += 1;
+      switch (t % 4) {
+        case 0:
+          this.waiting.text = 'Waiting';
+          break;
+        case 1:
+          this.waiting.text = 'Waiting.';
+          break;
+        case 2:
+          this.waiting.text = 'Waiting..';
+          break;
+        case 3:
+          this.waiting.text = 'Waiting...';
+          break;
+        default:
+          break;
+      }
+    }, 1000);
   }
 
   /**

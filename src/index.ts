@@ -27,7 +27,7 @@ export class Game {
     this.scene = new Scene(this.engine);
 
     this._bindEvents();
-    this._load('./scenes/scene/');
+    this._load('./scenes/welcomescene/');
     GameManager.onSwitchSceneObservable.add((rootUrl: string) => {
       this.engine.stopRenderLoop();
       this.scene.dispose();
