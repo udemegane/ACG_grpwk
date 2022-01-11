@@ -6,6 +6,7 @@
 ## Documentation
 
 - [HackMD](https://hackmd.io/@udemegane/SyovqFy5F/edit)
+- [Initial Report](https://hackmd.io/HJvDXrveRyewOOHZOYNmEQ)
 
 ## 環境構築
 

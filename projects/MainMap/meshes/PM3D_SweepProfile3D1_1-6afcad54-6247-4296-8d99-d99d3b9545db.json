@@ -2,19 +2,20 @@
 	"materials": [],
 	"meshes": [
 		{
-			"name": "Sky",
-			"id": "2103688e-fca6-480b-a089-940568af4473",
-			"uniqueId": 9,
+			"name": "PM3D_SweepProfile3D1_1",
+			"id": "6afcad54-6247-4296-8d99-d99d3b9545db",
+			"uniqueId": 183,
 			"type": "Mesh",
 			"position": [
 				0,
-				0,
+				10.062779426574707,
 				0
 			],
-			"rotation": [
+			"rotationQuaternion": [
 				0,
 				0,
-				0
+				0,
+				1
 			],
 			"scaling": [
 				1,
@@ -48,24 +49,50 @@
 			"visibility": 1,
 			"checkCollisions": false,
 			"isBlocker": false,
-			"overrideMaterialSideOrientation": null,
+			"overrideMaterialSideOrientation": 0,
+			"parentId": "df479701-7d74-4c59-aa4d-693040051dea",
 			"isUnIndexed": false,
-			"geometryId": "295d1c87-05cc-485a-a403-d91cc47858c1",
+			"geometryId": "bf57e50a-7f34-4dca-80b7-0f9011d378e4",
 			"subMeshes": null,
-			"materialId": "b2346078-7465-4c63-8877-44b542584898",
+			"materialId": "0fdcfa78-ffd3-45d3-8483-f979e418f960",
 			"metadata": {
-				"isPickable": true,
-				"script": {
-					"name": "None"
+				"gltf": {
+					"pointers": [
+						"/meshes/18/primitives/0",
+						"/nodes/20"
+					]
 				},
-				"renderingGroupId": 0
+				"basePoseMatrix": {
+					"0": -1,
+					"1": 0,
+					"2": 0,
+					"3": 0,
+					"4": 0,
+					"5": 1,
+					"6": 0,
+					"7": 0,
+					"8": 0,
+					"9": 0,
+					"10": 1,
+					"11": 0,
+					"12": 0,
+					"13": -10.062779426574707,
+					"14": 0,
+					"15": 1
+				},
+				"originalSourceFile": {
+					"id": "PM3D_SweepProfile3D1_1",
+					"name": "PM3D_SweepProfile3D1_1",
+					"sceneFileName": "prototype.glb"
+				},
+				"isPickable": true
 			},
 			"instances": [],
 			"animations": [],
 			"ranges": [],
 			"layerMask": 268435455,
 			"alphaIndex": 1.7976931348623157e+308,
-			"hasVertexAlpha": false,
+			"hasVertexAlpha": true,
 			"overlayAlpha": 0.3,
 			"overlayColor": [
 				1,
@@ -73,53 +100,52 @@
 				0
 			],
 			"applyFog": true,
-			"delayLoadingFile": "geometries/295d1c87-05cc-485a-a403-d91cc47858c1.babylonbinarymeshdata",
+			"delayLoadingFile": "geometries/bf57e50a-7f34-4dca-80b7-0f9011d378e4.babylonbinarymeshdata",
 			"boundingBoxMaximum": [
-				2500,
-				2500,
-				2500
+				22.84778594970703,
+				-1.865882396697998,
+				17.841819763183594
 			],
 			"boundingBoxMinimum": [
-				-2500,
-				-2500,
-				-2500
+				8.744268417358398,
+				-10.286450386047363,
+				9.30601978302002
 			],
 			"_binaryInfo": {
 				"positionsAttrDesc": {
-					"count": 72,
+					"count": 696,
 					"stride": 3,
 					"offset": 0,
 					"dataType": 1
 				},
 				"normalsAttrDesc": {
-					"count": 72,
+					"count": 696,
 					"stride": 3,
-					"offset": 288,
+					"offset": 2784,
 					"dataType": 1
 				},
-				"uvsAttrDesc": {
-					"count": 48,
-					"stride": 2,
-					"offset": 576,
+				"colorsAttrDesc": {
+					"count": 928,
+					"stride": 4,
+					"offset": 5568,
 					"dataType": 1
 				},
 				"indicesAttrDesc": {
-					"count": 36,
+					"count": 576,
 					"stride": 1,
-					"offset": 768,
+					"offset": 9280,
 					"dataType": 0
 				},
 				"subMeshesAttrDesc": {
 					"count": 1,
 					"stride": 5,
-					"offset": 912,
+					"offset": 11584,
 					"dataType": 0
 				}
 			},
 			"positions": null,
 			"normals": null,
-			"uvs": null,
-			"hasUVs": true,
+			"colors": null,
 			"indices": null
 		}
 	],
