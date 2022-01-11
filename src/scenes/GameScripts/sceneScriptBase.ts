@@ -1,6 +1,7 @@
 import { Scene } from '@babylonjs/core';
 import { Pane } from 'tweakpane';
 import { visibleInInspector } from '../decorators';
+import { Env } from './environment';
 /**
  * This represents a script that is attached to a node in the editor.
  * Available nodes are:
@@ -53,7 +54,7 @@ export default class SceneScriptBase extends Scene {
    * This function is called immediatly after the constructor has been called.
    */
   public onInitialize(): void {
-    // ...
+    Env.onInitialize();
   }
 
   /**
