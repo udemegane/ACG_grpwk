@@ -20,7 +20,10 @@ export class Game {
    */
   public constructor() {
     console.log(process.env.ACG_BACKSERVER_URL);
-    this.engine = new Engine(document.getElementById('renderCanvas') as HTMLCanvasElement, true);
+    this.engine = new Engine(document.getElementById('renderCanvas') as HTMLCanvasElement, true, {
+      preserveDrawingBuffer: true,
+      stencil: true,
+    });
     this.scene = new Scene(this.engine);
     GameManager.setScene(this.scene);
     this._bindEvents();

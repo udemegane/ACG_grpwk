@@ -15,9 +15,11 @@ import {
   FreeCamera,
   PostProcessRenderPipeline,
   GlowLayer,
+  KeyboardEventTypes,
+  Tools,
 } from '@babylonjs/core';
 import SceneScriptBase from '../GameScripts/sceneScriptBase';
-import { visibleInInspector, fromScene, fromChildren } from '../decorators';
+import { visibleInInspector, fromScene, fromChildren, onKeyboardEvent } from '../decorators';
 import { SscPostProcess } from '../../postProcess/effects/ssc';
 import { GameManager } from '../GameScripts/gameManager';
 import { SsaoPostProcess } from '../../postProcess/effects/ssao_old';
@@ -182,7 +184,10 @@ export default class SceneScript extends SceneScriptBase {
     super.onUpdate();
     // ...
   }
-
+  @onKeyboardEvent([48], KeyboardEventTypes.KEYUP)
+  private _onZeroKey(): void {
+    Tools.CreateScreenshot(this._scene.getEngine(), this._camera, { width: 1920, height: 1080 });
+  }
   /**
    * Called on a message has been received and sent from a graph.
    * @param message defines the name of the message sent from the graph.
