@@ -2,19 +2,20 @@
 	"materials": [],
 	"meshes": [
 		{
-			"name": "Walls_primitive1",
-			"id": "bfee1a62-bcf2-4148-9151-6622269639a8",
-			"uniqueId": 30,
+			"name": "Cube",
+			"id": "4ddd4dc6-7559-4547-8c82-33c2f9569bcb",
+			"uniqueId": 315,
 			"type": "Mesh",
 			"position": [
 				0,
 				0,
 				0
 			],
-			"rotation": [
+			"rotationQuaternion": [
 				0,
 				0,
-				0
+				0,
+				1
 			],
 			"scaling": [
 				1,
@@ -49,15 +50,16 @@
 			"checkCollisions": false,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": 0,
-			"parentId": "7fdd1b3e-013c-4a0b-bc95-4912e2eeb9c4",
+			"parentId": "bc31d7f7-5d90-47fe-bd7b-f108d5118493",
 			"isUnIndexed": false,
-			"geometryId": "90a92fbe-945d-4717-bbca-000310173ee5",
+			"geometryId": "58c6748d-c103-4725-a19a-aa7d8e0345b6",
 			"subMeshes": null,
-			"materialId": "1a06f387-4e3b-476f-8f81-303dc612b8d5",
+			"materialId": "90de15e5-b14e-49fe-badc-6a5b465d55ed",
 			"metadata": {
 				"gltf": {
 					"pointers": [
-						"/meshes/0/primitives/1"
+						"/meshes/0/primitives/0",
+						"/nodes/0"
 					]
 				},
 				"basePoseMatrix": {
@@ -71,23 +73,19 @@
 					"7": 0,
 					"8": 0,
 					"9": 0,
-					"10": 0.6666666865348816,
+					"10": 1,
 					"11": 0,
 					"12": 0,
-					"13": -1,
+					"13": 0,
 					"14": 0,
 					"15": 1
 				},
 				"originalSourceFile": {
-					"id": "Walls_primitive1",
-					"name": "Walls_primitive1",
-					"sceneFileName": "uploads_files_2770156_House#3+SmartMaterials.glb"
+					"id": "Cube",
+					"name": "Cube",
+					"sceneFileName": "box.glb"
 				},
-				"isPickable": true,
-				"script": {
-					"name": "None"
-				},
-				"renderingGroupId": 0
+				"isPickable": true
 			},
 			"instances": [],
 			"animations": [],
@@ -102,46 +100,46 @@
 				0
 			],
 			"applyFog": true,
-			"delayLoadingFile": "geometries/90a92fbe-945d-4717-bbca-000310173ee5.babylonbinarymeshdata",
+			"delayLoadingFile": "geometries/58c6748d-c103-4725-a19a-aa7d8e0345b6.babylonbinarymeshdata",
 			"boundingBoxMaximum": [
-				1.299836277961731,
-				2.408518075942993,
-				1.0000001192092896
+				1,
+				1,
+				1
 			],
 			"boundingBoxMinimum": [
-				-1.3107208013534546,
 				-1,
-				-1.0000001192092896
+				-1,
+				-1
 			],
 			"_binaryInfo": {
 				"positionsAttrDesc": {
-					"count": 4152,
+					"count": 72,
 					"stride": 3,
 					"offset": 0,
 					"dataType": 1
 				},
 				"normalsAttrDesc": {
-					"count": 4152,
+					"count": 72,
 					"stride": 3,
-					"offset": 16608,
+					"offset": 288,
 					"dataType": 1
 				},
 				"uvsAttrDesc": {
-					"count": 2768,
+					"count": 48,
 					"stride": 2,
-					"offset": 33216,
+					"offset": 576,
 					"dataType": 1
 				},
 				"indicesAttrDesc": {
-					"count": 3516,
+					"count": 36,
 					"stride": 1,
-					"offset": 44288,
+					"offset": 768,
 					"dataType": 0
 				},
 				"subMeshesAttrDesc": {
 					"count": 1,
 					"stride": 5,
-					"offset": 58352,
+					"offset": 912,
 					"dataType": 0
 				}
 			},

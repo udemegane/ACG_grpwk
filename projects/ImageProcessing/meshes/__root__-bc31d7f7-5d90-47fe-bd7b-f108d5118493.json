@@ -2,19 +2,19 @@
 	"meshes": [
 		{
 			"name": "__root__",
-			"id": "67ecad21-2faf-451b-8e91-642418b6791e",
-			"uniqueId": 9,
+			"id": "bc31d7f7-5d90-47fe-bd7b-f108d5118493",
+			"uniqueId": 314,
 			"type": "Mesh",
 			"position": [
-				0,
-				0,
-				0
+				-5.1534997915058005,
+				-0.06506544351577581,
+				10.110920267598143
 			],
 			"rotationQuaternion": [
 				0,
+				1,
 				0,
-				0,
-				1
+				0
 			],
 			"scaling": [
 				1,
@@ -72,13 +72,9 @@
 				"originalSourceFile": {
 					"id": "__root__",
 					"name": "__root__",
-					"sceneFileName": "ReflectionTest.glb"
+					"sceneFileName": "box.glb"
 				},
-				"isPickable": true,
-				"script": {
-					"name": "None"
-				},
-				"renderingGroupId": 0
+				"isPickable": true
 			},
 			"instances": [],
 			"animations": [],
