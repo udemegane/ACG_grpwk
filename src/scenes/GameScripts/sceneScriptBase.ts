@@ -23,7 +23,7 @@ export default class SceneScriptBase extends Scene {
   @visibleInInspector('string', 'In gameModeBase', 'Hello World!')
   private _testString: string;
 
-  @visibleInInspector('boolean', 'Show Debug menu', true)
+  @visibleInInspector('boolean', 'Show Debug menu', false)
   private _isVisibleDebugMenu: boolean;
 
   public static pane: Pane;
@@ -61,7 +61,7 @@ export default class SceneScriptBase extends Scene {
    */
   public onStart(): void {
     if (this._isVisibleDebugMenu) {
-      SceneScriptBase.setDebugMenu();
+      // SceneScriptBase.setDebugMenu();
     }
     // ...
   }
