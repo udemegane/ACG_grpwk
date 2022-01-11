@@ -121,6 +121,18 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
     scene.postProcessRenderPipelineManager.addPipeline(this);
   }
 
+  public getPerformance() {
+    let startTime;
+    let endTime;
+    this._ssgiPostProcess.onBeforeRender = (effect) => {
+      startTime = performance.now();
+    };
+    this._ssgiPostProcess.onAfterRender = (effect) => {
+      endTime = performance.now();
+    };
+    const ssgiCalcTime = endTime - startTime;
+  }
+
   private _createBlurPostProcess(ratio: number): void {
     const size = 32;
 
@@ -173,9 +185,7 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
     );
     this._ssgiPostProcess.onApply = (effect: Effect) => {
       effect.setFloat2('texelSize', 1.0 / this._ssgiPostProcess.width, 1.0 / this._ssgiPostProcess.height);
-      console.log(`w: ${this._ssgiPostProcess.width}, h: ${this._ssgiPostProcess.height}`);
       effect.setTextureFromPostProcess('originalColorSampler', this._originalColorPostProcess);
-      // effect.setTextureFromPostProcess('positionSampler', this._downSampledPositionPostProcess);
       effect.setTexture('normalSampler', this._gbuffer.textures[1]);
       effect.setTexture('positionSampler', this._gbuffer.textures[2]);
       effect.setTexture('roughnessSampler', this._gbuffer.textures[3]);
