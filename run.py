@@ -11,6 +11,8 @@ api = responder.API(
     cors=True,
     cors_params={
         'allow_origins': ['*'],
+        'allow_methods': ['*'],
+        'allow_headers': ['*'],
     }
 )
 
@@ -47,6 +49,20 @@ async def checktoken(req: Request, resp: Response):
     preq.ParseFromString(await req.content)
     presp = RespSuccess()
     presp.success = backuser.getUserId(preq.token) is not None
+    resp.content = presp.SerializeToString()
+
+
+@api.route('/api/getuserdata')
+async def getuserdata(req: Request, resp: Response):
+    preq = CheckToken()
+    preq.ParseFromString(await req.content)
+    presp = UserData()
+    userData = backuser.getUserData(backuser.getUserId(preq.token))
+    if userData is not None and 'userName' in userData:
+        presp.success = True
+        presp.username = userData['userName']
+    else:
+        presp.success = False
     resp.content = presp.SerializeToString()
 
 

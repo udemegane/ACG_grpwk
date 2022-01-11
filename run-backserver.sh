@@ -157,6 +157,10 @@ if [[ x$initialize = xtrue ]]; then
     warning 'Please install dependencies of protobuf for ts.'
     checkinstall 'npm install ts-proto'
   fi
+  # if [[ x"$backonly" != xtrue ]]; then
+  #   warning 'Please install dependencies of protobuf for ts.'
+  #   checkinstall 'npm install @protobuf-ts/plugin'
+  # fi
 fi
 
 if [[ x"$ACG_PRODUCTION_STAGE" != x'production' ]]; then
@@ -180,13 +184,17 @@ function build_protobuf() {
   protoc --python_out=. --mypy_out=. protobuf/*.proto
   if [[ x"$backonly" != xtrue ]]; then
     pb2=compiled_pb2
-    info 'Compiling protobuf for js/ts to' "$pb2.js"
-    protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=. protobuf/*.proto
+    info 'Compiling protobuf for js/ts to' "$pb2.ts"
+    # npx protoc --ts_out=protobuf --proto_path protobuf protobuf/*.proto
+    protoc \
+      --plugin=./node_modules/.bin/protoc-gen-ts_proto \
+      --ts_proto_opt=exportCommonSymbols=false,unrecognizedEnum=false,fileSuffix=_pb2 \
+      --ts_proto_out=. protobuf/*.proto
     cd protobuf
-    echo '' > $pb2.ts && echo '' > $pb2.py
+    echo '/* eslint-disable */' > $pb2.ts && echo '# pylint: skip-file' > $pb2.py
     for f in *.proto; do
       F="${f%.*}"
-      [ -f "$F".ts ] && command mv "$F.ts" "${F}_pb2.ts"
+      [ -f "${F}.ts" ] && mv "${F}.ts" "${F}_pb2.ts"
       echo "export * from './${F}_pb2';" >> $pb2.ts
       echo "from .${F}_pb2 import * # noqa" >> $pb2.py
     done
@@ -203,17 +211,16 @@ if [[ x$rebuild = xtrue ]]; then
   if [[ x"$ACG_PRODUCTION_STAGE" != x'production' ]]; then
     build_protobuf
   fi
-
-    # Generate sample database
-    info 'Generating database for local development'
-    if [ -f sample_db.sqlite3 ]; then
-      warning 'sample_db.sqlite3 already exists'
-      checkyes 'Delete and Initialize?'
-      if [ $? -eq 0 ]; then
-        rm sample_db.sqlite3
-      fi
+  # Generate sample database
+  info 'Generating database for local development'
+  if [ -f sample_db.sqlite3 ]; then
+    warning 'sample_db.sqlite3 already exists'
+    checkyes 'Delete and Initialize?'
+    if [ $? -eq 0 ]; then
+      rm sample_db.sqlite3
     fi
-    alembic upgrade head
+  fi
+  alembic upgrade head
 fi
 
 if [[ x$protoc = xtrue ]]; then
