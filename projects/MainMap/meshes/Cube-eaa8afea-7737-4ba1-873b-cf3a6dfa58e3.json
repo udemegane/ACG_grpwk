@@ -1,24 +1,26 @@
 {
+	"materials": [],
 	"meshes": [
 		{
-			"name": "New Cube",
-			"id": "54d21ae1-2cb9-4122-bfc8-ca72b703132c",
-			"uniqueId": 10,
+			"name": "Cube",
+			"id": "eaa8afea-7737-4ba1-873b-cf3a6dfa58e3",
+			"uniqueId": 127,
 			"type": "Mesh",
 			"position": [
-				-2.9920718669891357,
-				6.6076250076293945,
-				21.308094024658203
+				0,
+				10.062779426574707,
+				0
 			],
-			"rotation": [
-				1.1919191465408032e-9,
-				0.5236317385338861,
-				1.2165444274259478e-17
+			"rotationQuaternion": [
+				0,
+				0,
+				0,
+				1
 			],
 			"scaling": [
-				3.5892625271837044,
 				1,
-				2.5244955286432194
+				1,
+				1
 			],
 			"localMatrix": {
 				"0": 1,
@@ -47,11 +49,42 @@
 			"visibility": 1,
 			"checkCollisions": false,
 			"isBlocker": false,
-			"overrideMaterialSideOrientation": null,
+			"overrideMaterialSideOrientation": 0,
+			"parentId": "df479701-7d74-4c59-aa4d-693040051dea",
 			"isUnIndexed": false,
-			"geometryId": "50a39759-3db6-4ae2-8f5a-6b10685e5662",
+			"geometryId": "a71acc0a-dc45-4221-a72d-b226ae19438a",
 			"subMeshes": null,
+			"materialId": "1c85e014-e2f1-4921-a0f3-152ab871662e",
 			"metadata": {
+				"gltf": {
+					"pointers": [
+						"/meshes/0/primitives/0",
+						"/nodes/0"
+					]
+				},
+				"basePoseMatrix": {
+					"0": -1,
+					"1": 0,
+					"2": 0,
+					"3": 0,
+					"4": 0,
+					"5": 1,
+					"6": 0,
+					"7": 0,
+					"8": 0,
+					"9": 0,
+					"10": 1,
+					"11": 0,
+					"12": 0,
+					"13": -10.062779426574707,
+					"14": 0,
+					"15": 1
+				},
+				"originalSourceFile": {
+					"id": "Cube",
+					"name": "Cube",
+					"sceneFileName": "prototype.glb"
+				},
 				"isPickable": true,
 				"script": {
 					"name": "None"
@@ -64,23 +97,23 @@
 			"layerMask": 268435455,
 			"alphaIndex": 1.7976931348623157e+308,
 			"hasVertexAlpha": false,
-			"overlayAlpha": 0.3,
+			"overlayAlpha": 0.5,
 			"overlayColor": [
 				1,
 				0,
 				0
 			],
 			"applyFog": true,
-			"delayLoadingFile": "geometries/50a39759-3db6-4ae2-8f5a-6b10685e5662.babylonbinarymeshdata",
+			"delayLoadingFile": "geometries/a71acc0a-dc45-4221-a72d-b226ae19438a.babylonbinarymeshdata",
 			"boundingBoxMaximum": [
-				0.5,
-				0.5,
-				0.5
+				1,
+				1,
+				1
 			],
 			"boundingBoxMinimum": [
-				-0.5,
-				-0.5,
-				-0.5
+				-1,
+				-1,
+				-1
 			],
 			"_binaryInfo": {
 				"positionsAttrDesc": {
@@ -121,7 +154,6 @@
 			"indices": null
 		}
 	],
-	"materials": [],
 	"multiMaterials": [],
 	"lods": []
 }
