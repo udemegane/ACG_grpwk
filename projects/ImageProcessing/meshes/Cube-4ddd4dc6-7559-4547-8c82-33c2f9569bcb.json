@@ -7,9 +7,9 @@
 			"uniqueId": 315,
 			"type": "Mesh",
 			"position": [
+				-4.08783483505249,
 				0,
-				0,
-				0
+				-26.033594131469727
 			],
 			"rotationQuaternion": [
 				0,
@@ -50,7 +50,6 @@
 			"checkCollisions": false,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": 0,
-			"parentId": "bc31d7f7-5d90-47fe-bd7b-f108d5118493",
 			"isUnIndexed": false,
 			"geometryId": "58c6748d-c103-4725-a19a-aa7d8e0345b6",
 			"subMeshes": null,
@@ -85,7 +84,11 @@
 					"name": "Cube",
 					"sceneFileName": "box.glb"
 				},
-				"isPickable": true
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],

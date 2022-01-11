@@ -91,42 +91,7 @@
 				},
 				"renderingGroupId": 0
 			},
-			"instances": [
-				{
-					"name": "Sphere_blue (Mesh Instance)",
-					"id": "98c1cf9b-ec2e-4b04-82a6-d41d7aa6a0e3",
-					"isEnabled": true,
-					"isVisible": true,
-					"isPickable": true,
-					"checkCollisions": false,
-					"position": [
-						4.956569194793701,
-						1.312583088874817,
-						13.095203399658203
-					],
-					"scaling": [
-						1,
-						1,
-						1
-					],
-					"parentId": "67ecad21-2faf-451b-8e91-642418b6791e",
-					"rotationQuaternion": [
-						0,
-						0,
-						0,
-						1
-					],
-					"metadata": {
-						"isPickable": true,
-						"script": {
-							"name": "None"
-						},
-						"renderingGroupId": 0
-					},
-					"animations": [],
-					"ranges": []
-				}
-			],
+			"instances": [],
 			"animations": [],
 			"ranges": [],
 			"layerMask": 268435455,
