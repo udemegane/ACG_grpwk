@@ -14,12 +14,14 @@ export class Game {
    * Defines the scene used to store and draw elements in the canvas.
    */
   public scene: Scene;
+  private fpsPane: HTMLElement;
 
   /**
    * Constructor.
    */
   public constructor() {
     console.log(process.env.ACG_BACKSERVER_URL);
+    this.fpsPane = document.getElementById('fps');
     this.engine = new Engine(document.getElementById('renderCanvas') as HTMLCanvasElement, true, {
       preserveDrawingBuffer: true,
       stencil: true,
@@ -61,7 +63,11 @@ export class Game {
             module.runScene(this.scene, rootUrl);
 
             // Render.
-            this.engine.runRenderLoop(() => this.scene.render());
+            const tmp = this.engine;
+            this.engine.runRenderLoop(() => {
+              this.fpsPane.innerHTML = `${this.engine.getFps().toFixed()} fps`;
+              this.scene.render();
+            });
           });
         });
       },
