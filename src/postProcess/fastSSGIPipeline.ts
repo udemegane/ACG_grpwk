@@ -120,17 +120,30 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
 
     scene.postProcessRenderPipelineManager.addPipeline(this);
   }
-
+  private ssgiStart;
+  private ssgiEnd;
+  private start;
+  private end;
+  private ssgiCalcTime;
+  private ssgiGlobalTime;
   public getPerformance() {
-    let startTime;
-    let endTime;
     this._ssgiPostProcess.onBeforeRender = (effect) => {
-      startTime = performance.now();
+      this.ssgiStart = performance.now();
     };
     this._ssgiPostProcess.onAfterRender = (effect) => {
-      endTime = performance.now();
+      this.ssgiEnd = performance.now();
     };
-    const ssgiCalcTime = endTime - startTime;
+    this._originalColorPostProcess.onBeforeRender = (effect) => {
+      this.start = performance.now();
+    };
+    this._compositePostProcess.onAfterRender = (effect) => {
+      this.end = performance.now();
+      this.ssgiCalcTime = this.ssgiEnd - this.ssgiStart;
+      this.ssgiGlobalTime = this.end - this.start;
+      console.log(`end: ${this.ssgiEnd - this.ssgiStart}, ${this.end - this.start}`);
+    };
+
+    return { ssgipp: this.ssgiCalcTime, ssgiline: this.ssgiGlobalTime };
   }
 
   private _createBlurPostProcess(ratio: number): void {

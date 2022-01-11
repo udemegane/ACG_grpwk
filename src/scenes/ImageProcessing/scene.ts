@@ -17,6 +17,7 @@ import {
   GlowLayer,
   KeyboardEventTypes,
   Tools,
+  SSAO2RenderingPipeline,
 } from '@babylonjs/core';
 import SceneScriptBase from '../GameScripts/sceneScriptBase';
 import { visibleInInspector, fromScene, fromChildren, onKeyboardEvent } from '../decorators';
@@ -55,7 +56,7 @@ export default class SceneScript extends SceneScriptBase {
   private _scene: Scene;
   private _gbuffer: GeometryBufferRenderer;
   private _rtt: RenderTargetTexture;
-  private _pipeline: PostProcessRenderPipeline;
+  private _ssgiPipeline: FastSSGIPipeline;
   /**
    * Override constructor.
    * @warn do not fill.
@@ -110,8 +111,9 @@ export default class SceneScript extends SceneScriptBase {
     super.onStart();
     const gloeLayer = new GlowLayer('glow', this._scene);
     // this._pipeline = new MSSAOPipeline('testssao', this._scene);
-    this._pipeline = new FastSSGIPipeline('ssgi', this._scene);
+    this._ssgiPipeline = new FastSSGIPipeline('ssgi', this._scene);
     this._scene.postProcessRenderPipelineManager.attachCamerasToRenderPipeline('ssgi', this._camera);
+    // const ssaoPipeline = new SSAO2RenderingPipeline('ssaoline', this._scene, 1.0, [this._camera]);
 
     /*
     Effect.ShadersStore['worldnormalFragmentShader'] = normalsrc;
@@ -187,6 +189,18 @@ export default class SceneScript extends SceneScriptBase {
   @onKeyboardEvent([48], KeyboardEventTypes.KEYUP)
   private _onZeroKey(): void {
     Tools.CreateScreenshot(this._scene.getEngine(), this._camera, { width: 1920, height: 1080 });
+  }
+
+  @onKeyboardEvent([49], KeyboardEventTypes.KEYUP)
+  private _onOneKey(): void {
+    const hardwareInfo = this._scene.getEngine().getGlInfo();
+    const currentFps = this._scene.getEngine().getFps();
+    const ssgiData = this._ssgiPipeline.getPerformance();
+    console.log({
+      hardware: hardwareInfo,
+      fps: currentFps,
+      pptime: ssgiData,
+    });
   }
   /**
    * Called on a message has been received and sent from a graph.

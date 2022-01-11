@@ -5,7 +5,7 @@ uniform sampler2D originalColor;
 uniform sampler2D ssgiColor;
 void main(void) {
     if(vUV.x < 1.0) {
-        gl_FragColor = texture2D(originalColor, vUV) + 0.5 * texture2D(ssgiColor, vUV);
+        gl_FragColor = texture2D(originalColor, vUV) + 0.7 * texture2D(ssgiColor, vUV);
     } else {
         gl_FragColor = texture2D(ssgiColor, vUV);
     }

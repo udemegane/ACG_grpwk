@@ -76,7 +76,7 @@ void main(void) {
     //gl_FragColor = texture2D(positionSampler, vUV);
     float uvCut = 2.0 * length(vUV - vec2(0.5, 0.5));
     uvCut *= uvCut;
-    float edge = max(0.0, 1.0 - uvCut);
+    float edge = max(0.0, sqrt(1.0 - uvCut));
     vec3 pos = texture2D(positionSampler, vUV).rgb;
     //vec3 orgColor = texture2D(originalColorSampler, vUV).rgb;
     vec3 gi = calcRoughGI(pos) * edge;
