@@ -1,0 +1,224 @@
+{
+	"meshes": [
+		{
+			"name": "New Cylinder",
+			"id": "127b187a-4940-42fe-b6a5-f43e5ed788db",
+			"uniqueId": 37,
+			"type": "Mesh",
+			"position": [
+				-3.0774173736572266,
+				0,
+				-7.906373023986816
+			],
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"scaling": [
+				1,
+				10,
+				1
+			],
+			"localMatrix": {
+				"0": 1,
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 1,
+				"6": 0,
+				"7": 0,
+				"8": 0,
+				"9": 0,
+				"10": 1,
+				"11": 0,
+				"12": 0,
+				"13": 0,
+				"14": 0,
+				"15": 1
+			},
+			"isEnabled": true,
+			"isVisible": true,
+			"infiniteDistance": false,
+			"pickable": true,
+			"receiveShadows": false,
+			"billboardMode": 0,
+			"visibility": 1,
+			"checkCollisions": false,
+			"isBlocker": false,
+			"overrideMaterialSideOrientation": null,
+			"isUnIndexed": false,
+			"geometryId": "50930de5-ae34-40b3-8f4e-be57e29a922e",
+			"subMeshes": null,
+			"metadata": {
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
+			},
+			"instances": [
+				{
+					"name": "New Cylinder (Mesh Instance)",
+					"id": "50f38c9a-e7ed-48de-84ee-658d9c2ae818",
+					"isEnabled": true,
+					"isVisible": true,
+					"isPickable": true,
+					"checkCollisions": false,
+					"position": [
+						-3.0774173736572266,
+						0,
+						-9.54577922821045
+					],
+					"scaling": [
+						1,
+						10,
+						1
+					],
+					"rotation": [
+						0,
+						0,
+						0
+					],
+					"metadata": {
+						"isPickable": true,
+						"script": {
+							"name": "None"
+						},
+						"renderingGroupId": 0
+					},
+					"animations": [],
+					"ranges": []
+				},
+				{
+					"name": "New Cylinder (Mesh Instance)",
+					"id": "1204743e-7072-4ffe-b3a7-1d71fbb33ec3",
+					"isEnabled": true,
+					"isVisible": true,
+					"isPickable": true,
+					"checkCollisions": false,
+					"position": [
+						-3.0774173736572266,
+						0,
+						-11.31580924987793
+					],
+					"scaling": [
+						1,
+						10,
+						1
+					],
+					"rotation": [
+						0,
+						0,
+						0
+					],
+					"metadata": {
+						"isPickable": true,
+						"script": {
+							"name": "None"
+						},
+						"renderingGroupId": 0
+					},
+					"animations": [],
+					"ranges": []
+				},
+				{
+					"name": "New Cylinder (Mesh Instance)",
+					"id": "939b2ea9-ebf1-4719-b871-d57a03255477",
+					"isEnabled": true,
+					"isVisible": true,
+					"isPickable": true,
+					"checkCollisions": false,
+					"position": [
+						-3.0774173736572266,
+						0,
+						-13.304635047912598
+					],
+					"scaling": [
+						1,
+						10,
+						1
+					],
+					"rotation": [
+						0,
+						0,
+						0
+					],
+					"metadata": {
+						"isPickable": true,
+						"script": {
+							"name": "None"
+						},
+						"renderingGroupId": 0
+					},
+					"animations": [],
+					"ranges": []
+				}
+			],
+			"animations": [],
+			"ranges": [],
+			"layerMask": 268435455,
+			"alphaIndex": 1.7976931348623157e+308,
+			"hasVertexAlpha": false,
+			"overlayAlpha": 0.3,
+			"overlayColor": [
+				1,
+				0,
+				0
+			],
+			"applyFog": true,
+			"delayLoadingFile": "geometries/50930de5-ae34-40b3-8f4e-be57e29a922e.babylonbinarymeshdata",
+			"boundingBoxMaximum": [
+				0.5,
+				0.5,
+				0.5
+			],
+			"boundingBoxMinimum": [
+				-0.5,
+				-0.5,
+				-0.5
+			],
+			"_binaryInfo": {
+				"positionsAttrDesc": {
+					"count": 210,
+					"stride": 3,
+					"offset": 0,
+					"dataType": 1
+				},
+				"normalsAttrDesc": {
+					"count": 210,
+					"stride": 3,
+					"offset": 840,
+					"dataType": 1
+				},
+				"uvsAttrDesc": {
+					"count": 140,
+					"stride": 2,
+					"offset": 1680,
+					"dataType": 1
+				},
+				"indicesAttrDesc": {
+					"count": 192,
+					"stride": 1,
+					"offset": 2240,
+					"dataType": 0
+				},
+				"subMeshesAttrDesc": {
+					"count": 1,
+					"stride": 5,
+					"offset": 3008,
+					"dataType": 0
+				}
+			},
+			"positions": null,
+			"normals": null,
+			"uvs": null,
+			"hasUVs": true,
+			"indices": null
+		}
+	],
+	"materials": [],
+	"multiMaterials": [],
+	"lods": []
+}

@@ -7,7 +7,7 @@
 	"disableBumpMap": false,
 	"albedoTexture": {
 		"tags": null,
-		"url": "files/CustomUVChecker_byValle_1K.png",
+		"url": "files/PPTestScene_RoughMIrror_Roughness.png",
 		"uOffset": 0,
 		"vOffset": 0,
 		"uScale": 1,
@@ -20,10 +20,10 @@
 		"wRotationCenter": 0.5,
 		"homogeneousRotationInUVTransform": false,
 		"isBlocking": true,
-		"name": "files/CustomUVChecker_byValle_1K.png",
+		"name": "files/PPTestScene_RoughMIrror_Roughness.png",
 		"metadata": {
-			"editorName": "CustomUVChecker_byValle_1K.png",
-			"editorId": "e078fb65-1903-450d-8057-9ed84e5ac35f",
+			"editorName": "PPTestScene_RoughMIrror_Roughness.png",
+			"editorId": "c06da9a1-dc83-4b7b-816d-59ec9d1f012a",
 			"ktx2CompressedTextures": {
 				"isUsingCompressedTexture": false
 			}
@@ -55,7 +55,7 @@
 	"ambientTextureImpactOnAnalyticalLights": 0,
 	"reflectivityTexture": {
 		"tags": null,
-		"url": "files/PPTestScene_Metal_red_Roughness.png",
+		"url": "files/PPTestScene_Metal_blue_Roughness.png",
 		"uOffset": 0,
 		"vOffset": 0,
 		"uScale": 1,
@@ -68,10 +68,10 @@
 		"wRotationCenter": 0.5,
 		"homogeneousRotationInUVTransform": false,
 		"isBlocking": true,
-		"name": "files/PPTestScene_Metal_red_Roughness.png",
+		"name": "files/PPTestScene_Metal_blue_Roughness.png",
 		"metadata": {
-			"editorName": "PPTestScene_Metal_red_Roughness.png",
-			"editorId": "d80565c9-4c43-4241-90cf-1c53dd2449f2",
+			"editorName": "PPTestScene_Metal_blue_Roughness.png",
+			"editorId": "1f525143-89d8-4ab8-88c2-2d821f9314e4",
 			"ktx2CompressedTextures": {
 				"isUsingCompressedTexture": false
 			}

@@ -1,0 +1,52 @@
+{
+	"tags": null,
+	"url": "files/Pavement (Normal).jpeg",
+	"uOffset": 0,
+	"vOffset": -5,
+	"uScale": 6,
+	"vScale": 6,
+	"uAng": 0,
+	"vAng": 0,
+	"wAng": 0,
+	"uRotationCenter": 0,
+	"vRotationCenter": 0,
+	"wRotationCenter": 0.5,
+	"homogeneousRotationInUVTransform": false,
+	"isBlocking": true,
+	"name": "files/Pavement (Normal).jpeg",
+	"metadata": {
+		"gltf": {
+			"pointers": [
+				"/materials/4/normalTexture"
+			],
+			"editorDone": true
+		},
+		"editorName": "Pavement (Normal).jpeg",
+		"editorId": "7c8ea8b3-a619-4438-80af-68cbc8cc325f",
+		"ktx2CompressedTextures": {
+			"isUsingCompressedTexture": false
+		}
+	},
+	"hasAlpha": false,
+	"getAlphaFromRGB": false,
+	"level": 2,
+	"coordinatesIndex": 0,
+	"coordinatesMode": 0,
+	"wrapU": 1,
+	"wrapV": 1,
+	"wrapR": 1,
+	"anisotropicFilteringLevel": 4,
+	"isCube": false,
+	"is3D": false,
+	"is2DArray": false,
+	"gammaSpace": true,
+	"invertZ": false,
+	"lodLevelInAlpha": false,
+	"lodGenerationOffset": 0,
+	"lodGenerationScale": 0,
+	"linearSpecularLOD": false,
+	"isRenderTarget": false,
+	"animations": [],
+	"invertY": false,
+	"samplingMode": 3
+}

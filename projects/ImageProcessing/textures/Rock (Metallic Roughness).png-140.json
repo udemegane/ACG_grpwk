@@ -1,0 +1,52 @@
+{
+	"tags": null,
+	"url": "files/Rock (Metallic Roughness).png",
+	"uOffset": 0,
+	"vOffset": -1,
+	"uScale": 2,
+	"vScale": 2,
+	"uAng": 0,
+	"vAng": 0,
+	"wAng": 0,
+	"uRotationCenter": 0,
+	"vRotationCenter": 0,
+	"wRotationCenter": 0.5,
+	"homogeneousRotationInUVTransform": false,
+	"isBlocking": true,
+	"name": "files/Rock (Metallic Roughness).png",
+	"metadata": {
+		"gltf": {
+			"pointers": [
+				"/materials/5/pbrMetallicRoughness/metallicRoughnessTexture"
+			],
+			"editorDone": true
+		},
+		"editorName": "Rock (Metallic Roughness).png",
+		"editorId": "04444682-81ef-4405-96a4-97e55ef039ca",
+		"ktx2CompressedTextures": {
+			"isUsingCompressedTexture": false
+		}
+	},
+	"hasAlpha": false,
+	"getAlphaFromRGB": false,
+	"level": 1,
+	"coordinatesIndex": 0,
+	"coordinatesMode": 0,
+	"wrapU": 1,
+	"wrapV": 1,
+	"wrapR": 1,
+	"anisotropicFilteringLevel": 4,
+	"isCube": false,
+	"is3D": false,
+	"is2DArray": false,
+	"gammaSpace": true,
+	"invertZ": false,
+	"lodLevelInAlpha": false,
+	"lodGenerationOffset": 0,
+	"lodGenerationScale": 0,
+	"linearSpecularLOD": false,
+	"isRenderTarget": false,
+	"animations": [],
+	"invertY": false,
+	"samplingMode": 3
+}

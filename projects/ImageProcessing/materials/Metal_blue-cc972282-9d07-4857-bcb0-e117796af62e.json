@@ -9,7 +9,7 @@
 	"ambientTextureImpactOnAnalyticalLights": 0,
 	"reflectivityTexture": {
 		"tags": null,
-		"url": "files/PPTestScene_Metal_blue_Roughness.png",
+		"url": "files/PPTestScene_Metal_red_Roughness.png",
 		"uOffset": 0,
 		"vOffset": 0,
 		"uScale": 1,
@@ -22,10 +22,10 @@
 		"wRotationCenter": 0.5,
 		"homogeneousRotationInUVTransform": false,
 		"isBlocking": true,
-		"name": "files/PPTestScene_Metal_blue_Roughness.png",
+		"name": "files/PPTestScene_Metal_red_Roughness.png",
 		"metadata": {
-			"editorName": "PPTestScene_Metal_blue_Roughness.png",
-			"editorId": "1f525143-89d8-4ab8-88c2-2d821f9314e4",
+			"editorName": "PPTestScene_Metal_red_Roughness.png",
+			"editorId": "d80565c9-4c43-4241-90cf-1c53dd2449f2",
 			"ktx2CompressedTextures": {
 				"isUsingCompressedTexture": false
 			}

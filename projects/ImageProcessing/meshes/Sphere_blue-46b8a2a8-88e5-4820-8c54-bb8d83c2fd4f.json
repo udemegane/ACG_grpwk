@@ -4,7 +4,7 @@
 		{
 			"name": "Sphere_blue",
 			"id": "46b8a2a8-88e5-4820-8c54-bb8d83c2fd4f",
-			"uniqueId": 18,
+			"uniqueId": 16,
 			"type": "Mesh",
 			"position": [
 				2,
@@ -100,9 +100,9 @@
 					"isPickable": true,
 					"checkCollisions": false,
 					"position": [
-						2,
-						3.7159817218780518,
-						6.754790782928467
+						4.956569194793701,
+						1.312583088874817,
+						13.095203399658203
 					],
 					"scaling": [
 						1,

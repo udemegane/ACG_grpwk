@@ -4,7 +4,7 @@
 		{
 			"name": "Sky",
 			"id": "e168e73f-7a75-465d-8464-1f56b52417fe",
-			"uniqueId": 10,
+			"uniqueId": 12,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -39,7 +39,7 @@
 				"14": 0,
 				"15": 1
 			},
-			"isEnabled": true,
+			"isEnabled": false,
 			"isVisible": true,
 			"infiniteDistance": false,
 			"pickable": true,

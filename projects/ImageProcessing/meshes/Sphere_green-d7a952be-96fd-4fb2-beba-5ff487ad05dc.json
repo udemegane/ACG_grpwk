@@ -4,12 +4,12 @@
 		{
 			"name": "Sphere_green",
 			"id": "d7a952be-96fd-4fb2-beba-5ff487ad05dc",
-			"uniqueId": 16,
+			"uniqueId": 27,
 			"type": "Mesh",
 			"position": [
-				0,
+				-0.9204729795455933,
 				1,
-				0
+				11.753449440002441
 			],
 			"rotationQuaternion": [
 				0,
@@ -54,7 +54,7 @@
 			"isUnIndexed": false,
 			"geometryId": "d3745c0a-6ef4-4b3e-882b-86195c1b2f4e",
 			"subMeshes": null,
-			"materialId": "fc8f5ffc-3903-4c54-9659-2e19b2b7467b",
+			"materialId": "49f5dfca-4463-41b3-be36-f20af9935564",
 			"metadata": {
 				"gltf": {
 					"pointers": [

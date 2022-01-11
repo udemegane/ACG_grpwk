@@ -4,7 +4,7 @@
 		{
 			"name": "Mirror_ground",
 			"id": "1994f2d6-6b12-4c89-8586-a657dab0eede",
-			"uniqueId": 11,
+			"uniqueId": 20,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -91,7 +91,42 @@
 				},
 				"renderingGroupId": 0
 			},
-			"instances": [],
+			"instances": [
+				{
+					"name": "Mirror_ground (Mesh Instance)",
+					"id": "781c6eb9-61ad-4fc3-983b-dac3d73b76bd",
+					"isEnabled": true,
+					"isVisible": true,
+					"isPickable": true,
+					"checkCollisions": false,
+					"position": [
+						-0.9089977145195007,
+						3.9999992847442627,
+						3.6123557090759277
+					],
+					"scaling": [
+						7,
+						0.10000001639127822,
+						7.000000000000063
+					],
+					"parentId": "67ecad21-2faf-451b-8e91-642418b6791e",
+					"rotationQuaternion": [
+						0.7071068286935005,
+						0,
+						0,
+						0.7071067336795978
+					],
+					"metadata": {
+						"isPickable": true,
+						"script": {
+							"name": "None"
+						},
+						"renderingGroupId": 0
+					},
+					"animations": [],
+					"ranges": []
+				}
+			],
 			"animations": [],
 			"ranges": [],
 			"layerMask": 268435455,

@@ -4,7 +4,7 @@
 		{
 			"name": "Sphere_red",
 			"id": "d9bf4bc6-9413-48e2-8f86-d90143aec7db",
-			"uniqueId": 20,
+			"uniqueId": 23,
 			"type": "Mesh",
 			"position": [
 				-2,
@@ -91,7 +91,42 @@
 				},
 				"renderingGroupId": 0
 			},
-			"instances": [],
+			"instances": [
+				{
+					"name": "Sphere_red (Mesh Instance)",
+					"id": "f808829c-4207-4529-bd23-3d5b58767979",
+					"isEnabled": true,
+					"isVisible": true,
+					"isPickable": true,
+					"checkCollisions": false,
+					"position": [
+						-0.9762397408485413,
+						3.2170562744140625,
+						7.8632659912109375
+					],
+					"scaling": [
+						1,
+						1,
+						1
+					],
+					"parentId": "67ecad21-2faf-451b-8e91-642418b6791e",
+					"rotationQuaternion": [
+						0,
+						0,
+						0,
+						1
+					],
+					"metadata": {
+						"isPickable": true,
+						"script": {
+							"name": "None"
+						},
+						"renderingGroupId": 0
+					},
+					"animations": [],
+					"ranges": []
+				}
+			],
 			"animations": [],
 			"ranges": [],
 			"layerMask": 268435455,
