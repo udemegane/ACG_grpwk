@@ -282,7 +282,7 @@ export class FastSSGIPipeline extends PostProcessRenderPipeline {
         randVector.y = Math.floor(rand(-1.0, 1.0) * 255);
         randVector.z = Math.floor(rand(-1.0, 1.0) * 255);
 
-        context.fillStyle = 'rgb(' + randVector.x + ', ' + randVector.y + ', ' + randVector.z + ')';
+        context.fillStyle = `rgb(${randVector.x}, ${randVector.y}, ${randVector.z})`;
         context.fillRect(x, y, 1, 1);
       }
     }
