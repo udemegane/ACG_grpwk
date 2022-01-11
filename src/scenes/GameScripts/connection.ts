@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { Login, RespToken, CheckToken, UserData } from '../../../protobuf';
+import { Login, RespToken, CheckToken, UserData, Signup } from '../../../protobuf';
 
 const axiosConfig: AxiosRequestConfig = {
   baseURL: process.env.ACG_BACKSERVER_URL,
@@ -38,6 +38,19 @@ export class Connection {
 
   public async login(p: Login) {
     return Axios.post('/api/login', Login.encode(p).finish())
+      .then((response) => {
+        const resp = RespToken.decode(response.data);
+        if (resp.success) this.token = resp.token;
+        return resp;
+      })
+      .catch((e) => {
+        if (process.env.ACG_PRODUCTION_STAGE !== 'production') console.log(e);
+        return { success: false } as RespToken;
+      });
+  }
+
+  public async signup(p: Signup) {
+    return Axios.post('/api/signup', Signup.encode(p).finish())
       .then((response) => {
         const resp = RespToken.decode(response.data);
         if (resp.success) this.token = resp.token;

@@ -33,7 +33,10 @@ export class Env {
   public static async login(_username?: string, _password?: string) {
     const username = _username || Env.username;
     const password = _password || Env.password;
-    const result = await this.con.login({ username, password });
+    let result = await this.con.login({ username, password });
+    if (!result.success) {
+      result = await this.con.signup({ username, password });
+    }
     if (result.success) {
       this.setToken(result.token);
       this.setUsername(username);
