@@ -4,12 +4,12 @@
 		{
 			"name": "Sphere_blue",
 			"id": "46b8a2a8-88e5-4820-8c54-bb8d83c2fd4f",
-			"uniqueId": 19,
+			"uniqueId": 29,
 			"type": "Mesh",
 			"position": [
-				2,
-				1,
-				0
+				-0.9188572764396667,
+				2.2385003566741943,
+				9.894822120666504
 			],
 			"rotationQuaternion": [
 				0,
@@ -54,7 +54,7 @@
 			"isUnIndexed": false,
 			"geometryId": "942bc3c3-de6d-4b9d-a45f-8ac9c145dbe6",
 			"subMeshes": null,
-			"materialId": "cc972282-9d07-4857-bcb0-e117796af62e",
+			"materialId": "fc8f5ffc-3903-4c54-9659-2e19b2b7467b",
 			"metadata": {
 				"gltf": {
 					"pointers": [
