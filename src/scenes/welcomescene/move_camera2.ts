@@ -46,10 +46,20 @@ export default class move extends Mesh {
    */
   public onUpdate(): void {
     if (this._scene.activeCamera.name === 'Camera2') {
-      this.position.x -= 0.01;
       if (this.position.x <= 0.0) {
-        this.position.x = 5.0;
-        this._scene.activeCamera = this._scene.getCameraByName('Camera1');
+        let t = 20;
+        const handle = setInterval(() => {
+          this._scene.fogDensity += 0.0001;
+          t -= 1;
+          if (t === 0) {
+            clearInterval(handle);
+            this.position.x = 5.0;
+            this._scene.activeCamera = this._scene.getCameraByName('Camera1');
+          }
+        }, 100);
+      } else {
+        this.position.x -= 0.01;
+        this._scene.fogDensity = 0.0;
       }
     }
     // ...

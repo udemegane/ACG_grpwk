@@ -1,4 +1,4 @@
-import { Mesh } from '@babylonjs/core';
+import { Mesh, Color3, Scene } from '@babylonjs/core';
 
 /**
  * This represents a script that is attached to a node in the editor.
@@ -39,6 +39,10 @@ export default class move extends Mesh {
    */
   public onStart(): void {
     this._scene.activeCamera = this._scene.getCameraByName('Camera1');
+    this._scene.fogEnabled = true;
+    this._scene.fogColor = Color3.Black();
+    this._scene.fogMode = Scene.FOGMODE_EXP2;
+    this._scene.fogDensity = 0.0;
     // ...
   }
 
@@ -47,10 +51,20 @@ export default class move extends Mesh {
    */
   public onUpdate(): void {
     if (this._scene.activeCamera.name === 'Camera1') {
-      this.position.x += 0.01;
       if (this.position.x >= -60.0) {
-        this.position.x = -70.0;
-        this._scene.activeCamera = this._scene.getCameraByName('Camera2');
+        let t = 20;
+        const handle = setInterval(() => {
+          this._scene.fogDensity += 0.0001;
+          t -= 1;
+          if (t === 0) {
+            clearInterval(handle);
+            this.position.x = -70.0;
+            this._scene.activeCamera = this._scene.getCameraByName('Camera2');
+          }
+        }, 100);
+      } else {
+        this.position.x += 0.01;
+        this._scene.fogDensity = 0.0;
       }
     }
     // ...
