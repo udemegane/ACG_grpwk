@@ -72,7 +72,6 @@ module.exports = {
     removeAvailableModules: false,
     removeEmptyChunks: false,
     splitChunks: false,
-    runtimeChunk: true,
   },
   devtool: 'eval-cheap-module-source-map',
 };
