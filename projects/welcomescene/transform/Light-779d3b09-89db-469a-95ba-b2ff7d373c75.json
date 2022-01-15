@@ -1,0 +1,61 @@
+{
+	"tags": null,
+	"position": [
+		4.076245307922363,
+		15.966641426086426,
+		1.0054539442062378
+	],
+	"rotation": [
+		0,
+		0,
+		0
+	],
+	"rotationQuaternion": [
+		-0.16907575196399818,
+		-0.7558803321355735,
+		-0.2721713696021945,
+		0.5709475099843148
+	],
+	"scaling": [
+		1,
+		1,
+		1
+	],
+	"billboardMode": 0,
+	"scalingDeterminant": 1,
+	"infiniteDistance": false,
+	"ignoreNonUniformScaling": false,
+	"reIntegrateRotationIntoRotationQuaternion": false,
+	"name": "Light",
+	"id": "779d3b09-89db-469a-95ba-b2ff7d373c75",
+	"state": "",
+	"metadata": {
+		"gltf": {
+			"pointers": [
+				"/nodes/1"
+			],
+			"editorDone": true
+		}
+	},
+	"type": "TransformNode",
+	"parentId": "d646f8ad-4585-49b4-8232-f82e15cab55d",
+	"localMatrix": {
+		"0": 1,
+		"1": 0,
+		"2": 0,
+		"3": 0,
+		"4": 0,
+		"5": 1,
+		"6": 0,
+		"7": 0,
+		"8": 0,
+		"9": 0,
+		"10": 1,
+		"11": 0,
+		"12": 0,
+		"13": 0,
+		"14": 0,
+		"15": 1
+	},
+	"isEnabled": true
+}

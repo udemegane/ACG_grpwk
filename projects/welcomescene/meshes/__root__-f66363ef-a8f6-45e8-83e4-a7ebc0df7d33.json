@@ -2,24 +2,24 @@
 	"meshes": [
 		{
 			"name": "__root__",
-			"id": "a3f81655-7c8c-4fc5-9166-e2f76e5d1821",
-			"uniqueId": 9,
+			"id": "f66363ef-a8f6-45e8-83e4-a7ebc0df7d33",
+			"uniqueId": 10,
 			"type": "Mesh",
 			"position": [
 				0,
-				0,
-				0
+				-31.195064544677734,
+				25.94905662536621
 			],
 			"rotationQuaternion": [
 				0,
-				1,
 				0,
+				1,
 				0
 			],
 			"scaling": [
 				1,
-				1,
-				-1
+				-1,
+				1
 			],
 			"localMatrix": {
 				"0": 1,
@@ -49,7 +49,6 @@
 			"checkCollisions": false,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": null,
-			"parentId": "7677d1dd-b8d4-46fe-ae7c-3d639fca82c8",
 			"isUnIndexed": false,
 			"metadata": {
 				"basePoseMatrix": {
@@ -73,14 +72,13 @@
 				"originalSourceFile": {
 					"id": "__root__",
 					"name": "__root__",
-					"sceneFileName": "text.glb"
+					"sceneFileName": "testfield.glb"
 				},
 				"isPickable": true,
 				"script": {
-					"name": "src/scenes/welcomescene/object_camera1.ts"
+					"name": "None"
 				},
-				"renderingGroupId": 0,
-				"doNotExport": false
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],

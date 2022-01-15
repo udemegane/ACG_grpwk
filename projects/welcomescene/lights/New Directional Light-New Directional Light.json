@@ -1,0 +1,54 @@
+{
+	"tags": null,
+	"shadowFrustumSize": 0,
+	"shadowOrthoScale": 0.1,
+	"autoUpdateExtends": true,
+	"autoCalcShadowZBounds": false,
+	"diffuse": [
+		1,
+		1,
+		1
+	],
+	"specular": [
+		1,
+		1,
+		1
+	],
+	"falloffType": 2,
+	"intensity": 1,
+	"range": 1.7976931348623157e+308,
+	"intensityMode": 0,
+	"radius": 0.00001,
+	"_renderPriority": 0,
+	"shadowEnabled": true,
+	"excludeWithLayerMask": 0,
+	"includeOnlyWithLayerMask": 0,
+	"lightmapMode": 0,
+	"position": [
+		0,
+		0,
+		1
+	],
+	"direction": [
+		0,
+		0,
+		-1
+	],
+	"name": "New Directional Light",
+	"id": "New Directional Light",
+	"state": "",
+	"metadata": {
+		"gltf": {
+			"pointers": [
+				"/nodes/27/extensions/KHR_lights_punctual"
+			]
+		},
+		"script": {
+			"name": "None"
+		}
+	},
+	"type": 1,
+	"parentId": "65b84589-c2ee-44ca-a4aa-650ffcb0d14d",
+	"animations": [],
+	"ranges": []
+}

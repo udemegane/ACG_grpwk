@@ -1,8 +1,8 @@
 {
 	"name": "default system",
-	"id": "c2382c35-aaca-49c5-b1f2-5ccdecc0dba3",
+	"id": "2c33517a-bbec-466e-8c8b-913c7f8ad909",
 	"capacity": 2000,
-	"emitterId": "6834a052-41b1-41b8-a906-07eca6432d54",
+	"emitterId": "32066eec-f89a-4f04-9025-069c9ff4b831",
 	"particleEmitterType": {
 		"type": "BoxParticleEmitter",
 		"direction1": [
@@ -42,13 +42,6 @@
 		"homogeneousRotationInUVTransform": false,
 		"isBlocking": true,
 		"name": "files/Flare.png",
-		"metadata": {
-			"ktx2CompressedTextures": {
-				"isUsingCompressedTexture": false
-			},
-			"editorName": "Flare.png",
-			"editorId": "d8907e72-ef8c-4ea9-a241-e3f58bdc759a"
-		},
 		"hasAlpha": false,
 		"getAlphaFromRGB": false,
 		"level": 1,

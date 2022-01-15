@@ -2,9 +2,9 @@
 	"materials": [],
 	"meshes": [
 		{
-			"name": "Text",
-			"id": "b2c34a75-116b-46cb-bd9e-787c806f5f66",
-			"uniqueId": 16,
+			"name": "__root__.Text",
+			"id": "13b9addc-22d6-4b68-9b26-d46ea3fc199e",
+			"uniqueId": 30,
 			"type": "Mesh",
 			"position": [
 				7.5,
@@ -22,7 +22,7 @@
 				1,
 				1
 			],
-			"localMatrix": {
+			"pivotMatrix": {
 				"0": 1,
 				"1": 0,
 				"2": 0,
@@ -50,7 +50,7 @@
 			"checkCollisions": false,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": 0,
-			"parentId": "a3f81655-7c8c-4fc5-9166-e2f76e5d1821",
+			"parentId": "bfe80e5c-030e-46ac-884f-8f2e7ee1d4c8",
 			"isUnIndexed": false,
 			"geometryId": "63b6f4df-8e1f-4993-88fd-f8854e7d8616",
 			"subMeshes": null,
@@ -87,7 +87,7 @@
 				},
 				"isPickable": true,
 				"script": {
-					"name": "src/scenes/welcomescene/object_camera1.ts"
+					"name": "src/scenes/welcomescene/object_camera2.ts"
 				},
 				"renderingGroupId": 0,
 				"doNotExport": false

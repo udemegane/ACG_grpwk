@@ -1,26 +1,26 @@
 {
 	"meshes": [
 		{
-			"name": "New Particle System",
-			"id": "32066eec-f89a-4f04-9025-069c9ff4b831",
+			"name": "New Particle System2",
+			"id": "6834a052-41b1-41b8-a906-07eca6432d54",
 			"uniqueId": 8,
 			"type": "Mesh",
 			"position": [
-				-3.0010337829589844,
-				-3.847831964492798,
-				-0.6672581434249878
+				-3.0010335445404053,
+				-6.390293121337891,
+				12.376276969909668
 			],
 			"rotation": [
-				0,
-				0,
-				0
+				-7.419095659500344e-12,
+				6.394986762359237e-9,
+				-1.883290661210661e-11
 			],
 			"scaling": [
 				82.3523941040039,
 				0.8124592900276184,
 				1
 			],
-			"localMatrix": {
+			"pivotMatrix": {
 				"0": 1,
 				"1": 0,
 				"2": 0,
@@ -48,13 +48,15 @@
 			"checkCollisions": false,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": null,
+			"parentId": "b0457c60-4cfd-4d86-956e-4d4618bb6e0d",
 			"isUnIndexed": false,
 			"metadata": {
 				"isPickable": true,
 				"script": {
 					"name": "None"
 				},
-				"renderingGroupId": 0
+				"renderingGroupId": 0,
+				"doNotExport": false
 			},
 			"instances": [],
 			"animations": [],

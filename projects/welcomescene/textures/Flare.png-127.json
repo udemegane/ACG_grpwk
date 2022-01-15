@@ -14,13 +14,6 @@
 	"homogeneousRotationInUVTransform": false,
 	"isBlocking": true,
 	"name": "files/Flare.png",
-	"metadata": {
-		"editorName": "Flare.png",
-		"editorId": "5d0a104b-f267-4afc-997e-c2372e974d1b",
-		"ktx2CompressedTextures": {
-			"isUsingCompressedTexture": false
-		}
-	},
 	"hasAlpha": false,
 	"getAlphaFromRGB": false,
 	"level": 1,
