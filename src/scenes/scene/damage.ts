@@ -1,6 +1,5 @@
-import { Scene } from '@babylonjs/core';
-import { Pane } from 'tweakpane';
-import { visibleInInspector } from '../decorators';
+import { Mesh, ImageProcessingPostProcess, Color4 } from '@babylonjs/core';
+
 /**
  * This represents a script that is attached to a node in the editor.
  * Available nodes are:
@@ -19,34 +18,13 @@ import { visibleInInspector } from '../decorators';
  * The function "onInitialize" is called immediately after the constructor is called.
  * The functions "onStart" and "onUpdate" are called automatically.
  */
-export default class SceneScriptBase extends Scene {
-  @visibleInInspector('string', 'In gameModeBase', 'Hello World!')
-  private _testString: string;
-
-  @visibleInInspector('boolean', 'Show Debug menu', true)
-  private _isVisibleDebugMenu: boolean;
-
-  public static pane: Pane;
+export default class MyScript extends Mesh {
   /**
    * Override constructor.
    * @warn do not fill.
    */
   // @ts-ignore ignoring the super call as we don't want to re-init
   protected constructor() {}
-
-  private static setDebugMenu(): void {
-    if (!this.pane) {
-      this.pane = new Pane();
-      const PARAMS = {
-        // prodStage: process.env.ACG_PRODUCTION_STAGE,
-        // serverURL: process.env.ACG_BACKSERVER_URL,
-      };
-      // this.pane.addInput(PARAMS, 'factor');
-      // this.pane.addInput(PARAMS, 'prodStage');
-      // this.pane.addInput(PARAMS, 'serverURL');
-      // this.pane.addInput(PARAMS, 'color');
-    }
-  }
 
   /**
    * Called on the node is being initialized.
@@ -60,9 +38,7 @@ export default class SceneScriptBase extends Scene {
    * Called on the scene starts.
    */
   public onStart(): void {
-    if (this._isVisibleDebugMenu) {
-      SceneScriptBase.setDebugMenu();
-    }
+    this.getDamage();
     // ...
   }
 
@@ -71,5 +47,27 @@ export default class SceneScriptBase extends Scene {
    */
   public onUpdate(): void {
     // ...
+  }
+
+  public getDamage(): void {
+    const postProcess = new ImageProcessingPostProcess('processing', 1.0, this._scene.activeCamera);
+    postProcess.vignetteWeight = 10;
+    postProcess.vignetteStretch = 0.01;
+    postProcess.vignetteColor = new Color4(1, 0, 0, 0);
+    postProcess.vignetteEnabled = true;
+  }
+
+  /**
+   * Called on a message has been received and sent from a graph.
+   * @param message defines the name of the message sent from the graph.
+   * @param data defines the data sent in the message.
+   * @param sender defines the reference to the graph class that sent the message.
+   */
+  public onMessage(name: string, data: any, sender: any): void {
+    switch (name) {
+      case 'myMessage':
+        // Do something...
+        break;
+    }
   }
 }

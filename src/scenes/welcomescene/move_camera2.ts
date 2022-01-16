@@ -49,7 +49,7 @@ export default class move extends Mesh {
       if (this.position.x <= 0.0) {
         let t = 20;
         const handle = setInterval(() => {
-          this._scene.fogDensity += 0.0001;
+          this._scene.fogDensity += 0.00025;
           t -= 1;
           if (t === 0) {
             clearInterval(handle);

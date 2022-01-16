@@ -10,9 +10,9 @@
 	"materials": [
 		{
 			"bindedMeshes": [
-				"63306508-3dc5-4359-93aa-ea9a4a7890ed"
+				"74124f5c-08ca-49fe-87cb-18963506627e"
 			],
-			"json": "PM3D_Cube3D1_10-4f1b4228-0800-4485-a824-f4de4121f4d1.json",
+			"json": "PM3D_Ring3D1-8e0ecf85-6554-439a-8083-7e3c371c597a.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -31,23 +31,9 @@
 		},
 		{
 			"bindedMeshes": [
-				"f5ca9728-55e5-42f7-925e-624f6588d8c7"
+				"63306508-3dc5-4359-93aa-ea9a4a7890ed"
 			],
-			"json": "PM3D_Cube3D1_7-ff1d932e-15f6-4ba3-8fcc-73986225ad29.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"4a47741a-8971-41c3-b09c-f0ee87553a92"
-			],
-			"json": "PM3D_Cube3D1_11-009e8043-53c8-447c-9bd4-1823d329a177.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"74124f5c-08ca-49fe-87cb-18963506627e"
-			],
-			"json": "PM3D_Ring3D1-8e0ecf85-6554-439a-8083-7e3c371c597a.json",
+			"json": "PM3D_Cube3D1_10-4f1b4228-0800-4485-a824-f4de4121f4d1.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -59,23 +45,21 @@
 		},
 		{
 			"bindedMeshes": [
-				"d1bd93a1-7c0c-4a21-8387-2ffc39a7b8eb"
+				"f5ca9728-55e5-42f7-925e-624f6588d8c7"
 			],
-			"json": "PM3D_Cube3D1_1-c77e2e83-f8dc-4c0f-9cc1-b19f55ebfe32.json",
+			"json": "PM3D_Cube3D1_7-ff1d932e-15f6-4ba3-8fcc-73986225ad29.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "sky-4ce80c5d-809e-415d-a8d8-2c0d42d8fcf1.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [
-				"59f47bef-ed12-4a4a-b006-0379f466d220"
+				"d4f92ed3-6fdf-4e6e-ad62-1935d690088e"
 			],
-			"json": "PM3D_Cube3D1_6-dbc9cb17-788a-4bac-8bfb-fac563689eb5.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"9be4b61b-5435-4daa-8928-29c2237a9cf2"
-			],
-			"json": "PM3D_Cube3D1_9-8b5f8d51-a744-4a17-b184-02032ae55c9e.json",
+			"json": "PM3D_Cylinder3D1-1b24569f-0429-4ad6-8b61-5acc4c03cf2e.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -87,20 +71,6 @@
 		},
 		{
 			"bindedMeshes": [
-				"4a0c35b2-645f-4e2c-8f24-321d4a9366de"
-			],
-			"json": "PM3D_Cube3D1_2-e811b786-569b-4d75-873e-4bb2d0fd2808.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"f526f3ba-e216-4626-be4b-5a5b3149788d"
-			],
-			"json": "PM3D_Cylinder3D1_1-b110adcf-5354-4c40-ac92-45f1b9a2b0d2.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
 				"86411cd6-b0a5-47ba-908f-5018e1bae99f"
 			],
 			"json": "PM3D_Cube3D1_8-c057034a-b5a6-4191-9152-df6c8d20553c.json",
@@ -108,14 +78,16 @@
 		},
 		{
 			"bindedMeshes": [
-				"d4f92ed3-6fdf-4e6e-ad62-1935d690088e"
+				"4a47741a-8971-41c3-b09c-f0ee87553a92"
 			],
-			"json": "PM3D_Cylinder3D1-1b24569f-0429-4ad6-8b61-5acc4c03cf2e.json",
+			"json": "PM3D_Cube3D1_11-009e8043-53c8-447c-9bd4-1823d329a177.json",
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [],
-			"json": "sky-4ce80c5d-809e-415d-a8d8-2c0d42d8fcf1.json",
+			"bindedMeshes": [
+				"4a0c35b2-645f-4e2c-8f24-321d4a9366de"
+			],
+			"json": "PM3D_Cube3D1_2-e811b786-569b-4d75-873e-4bb2d0fd2808.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -128,38 +100,23 @@
 		},
 		{
 			"bindedMeshes": [
-				"e9419aba-389f-4bc4-90e9-6d0f90219e23"
+				"f526f3ba-e216-4626-be4b-5a5b3149788d"
 			],
-			"json": "PM3D_SweepProfile3D1-15ce1502-7b05-4498-b77d-f7ade01ad3a7.json",
+			"json": "PM3D_Cylinder3D1_1-b110adcf-5354-4c40-ac92-45f1b9a2b0d2.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [
-				"534b746d-07b4-4888-93dd-91cf6b5af109"
+				"9be4b61b-5435-4daa-8928-29c2237a9cf2"
 			],
-			"json": "__GLTFLoader._default-75393314-e23a-4cee-8f35-e3eda1781b69.json",
+			"json": "PM3D_Cube3D1_9-8b5f8d51-a744-4a17-b184-02032ae55c9e.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [
-				"56844da2-6ed6-4648-9bf7-4f49f59abdfa",
-				"c830daef-e9fe-47e3-8891-68246fffdbb8"
+				"d1bd93a1-7c0c-4a21-8387-2ffc39a7b8eb"
 			],
-			"json": "default material-9115fd1b-ed71-4114-99b2-ae2fb663421b.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"892fa984-66e6-4399-8cd3-38a6fe9c7e1a"
-			],
-			"json": "PM3D_Cube3D1_12-187ce5fd-8126-4552-99d6-28c964bed35a.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"ad629d9d-7e28-4d4c-88cb-67c45e060510"
-			],
-			"json": "PM3D_SweepProfile3D1_1-b058d22b-847e-4a99-b27b-278fc20e856f.json",
+			"json": "PM3D_Cube3D1_1-c77e2e83-f8dc-4c0f-9cc1-b19f55ebfe32.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -171,9 +128,16 @@
 		},
 		{
 			"bindedMeshes": [
-				"0774800b-7ab6-44cb-bade-a0fa8e6473b8"
+				"892fa984-66e6-4399-8cd3-38a6fe9c7e1a"
 			],
-			"json": "PM3D_Cube3D1_3-37618d9a-1043-49f7-9d9f-d3d34123532f.json",
+			"json": "PM3D_Cube3D1_12-187ce5fd-8126-4552-99d6-28c964bed35a.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"534b746d-07b4-4888-93dd-91cf6b5af109"
+			],
+			"json": "__GLTFLoader._default-75393314-e23a-4cee-8f35-e3eda1781b69.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -182,55 +146,86 @@
 			],
 			"json": "Material-f0e7495e-b414-4a49-ad7f-19257bdbd470.json",
 			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"e9419aba-389f-4bc4-90e9-6d0f90219e23"
+			],
+			"json": "PM3D_SweepProfile3D1-15ce1502-7b05-4498-b77d-f7ade01ad3a7.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"c830daef-e9fe-47e3-8891-68246fffdbb8",
+				"56844da2-6ed6-4648-9bf7-4f49f59abdfa"
+			],
+			"json": "default material-9115fd1b-ed71-4114-99b2-ae2fb663421b.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"ad629d9d-7e28-4d4c-88cb-67c45e060510"
+			],
+			"json": "PM3D_SweepProfile3D1_1-b058d22b-847e-4a99-b27b-278fc20e856f.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"59f47bef-ed12-4a4a-b006-0379f466d220"
+			],
+			"json": "PM3D_Cube3D1_6-dbc9cb17-788a-4bac-8bfb-fac563689eb5.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"0774800b-7ab6-44cb-bade-a0fa8e6473b8"
+			],
+			"json": "PM3D_Cube3D1_3-37618d9a-1043-49f7-9d9f-d3d34123532f.json",
+			"isMultiMaterial": false
 		}
 	],
 	"textures": [
-		"Flare.png-96.json",
-		"Flare.png-97.json",
-		"Flare.png-99.json",
-		"Flare.png-105.json",
-		"icon.png-100.json",
-		"Flare.png-98.json",
-		"Flare.png-127.json"
+		"icon.png-96.json",
+		"Flare.png-97.json"
 	],
 	"meshes": [
-		"__root__-a3f81655-7c8c-4fc5-9166-e2f76e5d1821.json",
-		"__root__-f66363ef-a8f6-45e8-83e4-a7ebc0df7d33.json",
 		"__root__-bfe80e5c-030e-46ac-884f-8f2e7ee1d4c8.json",
+		"__root__-a3f81655-7c8c-4fc5-9166-e2f76e5d1821.json",
 		"New Particle System2-6834a052-41b1-41b8-a906-07eca6432d54.json",
+		"__root__-f66363ef-a8f6-45e8-83e4-a7ebc0df7d33.json",
 		"New Particle System2-32066eec-f89a-4f04-9025-069c9ff4b831.json",
-		"PM3D_Cube3D1_2-4a0c35b2-645f-4e2c-8f24-321d4a9366de.json",
-		"PM3D_Cube3D1_9-9be4b61b-5435-4daa-8928-29c2237a9cf2.json",
 		"PM3D_Cone3D1-68c432e7-38b2-4fc6-9d79-8dc9a59dc79f.json",
+		"PM3D_Cube3D1_11-4a47741a-8971-41c3-b09c-f0ee87553a92.json",
+		"PM3D_Cube3D1_7-f5ca9728-55e5-42f7-925e-624f6588d8c7.json",
+		"PM3D_Cube3D1_10-63306508-3dc5-4359-93aa-ea9a4a7890ed.json",
 		"PM3D_Cube3D1_5-6414dcf0-89e6-4417-a77c-1322dc61f591.json",
-		"PM3D_Cube3D1_3-0774800b-7ab6-44cb-bade-a0fa8e6473b8.json",
-		"New Ground-c830daef-e9fe-47e3-8891-68246fffdbb8.json",
-		"PM3D_Cube3D1_4-9ec7127a-65ac-4fd8-a3c9-c6e7b5857193.json",
-		"PM3D_Cylinder3D1-d4f92ed3-6fdf-4e6e-ad62-1935d690088e.json",
-		"Sky-534b746d-07b4-4888-93dd-91cf6b5af109.json",
-		"PM3D_Cube3D1_1-d1bd93a1-7c0c-4a21-8387-2ffc39a7b8eb.json",
-		"PM3D_Cube3D1_12-892fa984-66e6-4399-8cd3-38a6fe9c7e1a.json",
+		"PM3D_SweepProfile3D1_1-ad629d9d-7e28-4d4c-88cb-67c45e060510.json",
+		"Text-b2c34a75-116b-46cb-bd9e-787c806f5f66.json",
+		"PM3D_Cube3D1_9-9be4b61b-5435-4daa-8928-29c2237a9cf2.json",
 		"__root__.Text-13b9addc-22d6-4b68-9b26-d46ea3fc199e.json",
+		"PM3D_Cube3D1_1-d1bd93a1-7c0c-4a21-8387-2ffc39a7b8eb.json",
 		"Cube-649a083f-3e95-42c1-884e-b4cfb55e7dd8.json",
 		"PM3D_Cylinder3D1_2-2e9d44e3-467f-41e9-b020-43989324eb54.json",
-		"PM3D_Cube3D1-94c1f918-dd7e-43b3-8585-d137629679c9.json",
-		"PM3D_Cube3D1_7-f5ca9728-55e5-42f7-925e-624f6588d8c7.json",
-		"Text-b2c34a75-116b-46cb-bd9e-787c806f5f66.json",
-		"PM3D_Cube3D1_8-86411cd6-b0a5-47ba-908f-5018e1bae99f.json",
-		"PM3D_Cube3D1_11-4a47741a-8971-41c3-b09c-f0ee87553a92.json",
-		"New Cube-56844da2-6ed6-4648-9bf7-4f49f59abdfa.json",
+		"PM3D_Cube3D1_4-9ec7127a-65ac-4fd8-a3c9-c6e7b5857193.json",
 		"PM3D_Ring3D1-74124f5c-08ca-49fe-87cb-18963506627e.json",
-		"PM3D_SweepProfile3D1_1-ad629d9d-7e28-4d4c-88cb-67c45e060510.json",
-		"PM3D_Cube3D1_10-63306508-3dc5-4359-93aa-ea9a4a7890ed.json",
-		"PM3D_Cylinder3D1_1-f526f3ba-e216-4626-be4b-5a5b3149788d.json",
+		"PM3D_Cube3D1_3-0774800b-7ab6-44cb-bade-a0fa8e6473b8.json",
+		"PM3D_Cube3D1-94c1f918-dd7e-43b3-8585-d137629679c9.json",
+		"PM3D_Cube3D1_8-86411cd6-b0a5-47ba-908f-5018e1bae99f.json",
+		"Sky-534b746d-07b4-4888-93dd-91cf6b5af109.json",
+		"New Ground-c830daef-e9fe-47e3-8891-68246fffdbb8.json",
+		"PM3D_Cube3D1_2-4a0c35b2-645f-4e2c-8f24-321d4a9366de.json",
+		"New Cube-56844da2-6ed6-4648-9bf7-4f49f59abdfa.json",
+		"PM3D_Cube3D1_6-59f47bef-ed12-4a4a-b006-0379f466d220.json",
 		"PM3D_SweepProfile3D1-e9419aba-389f-4bc4-90e9-6d0f90219e23.json",
-		"PM3D_Cube3D1_6-59f47bef-ed12-4a4a-b006-0379f466d220.json"
+		"PM3D_Cylinder3D1-d4f92ed3-6fdf-4e6e-ad62-1935d690088e.json",
+		"PM3D_Cylinder3D1_1-f526f3ba-e216-4626-be4b-5a5b3149788d.json",
+		"PM3D_Cube3D1_12-892fa984-66e6-4399-8cd3-38a6fe9c7e1a.json"
 	],
 	"transformNodes": [
+		"New Directional Light-65b84589-c2ee-44ca-a4aa-650ffcb0d14d.json",
 		"__root__-d646f8ad-4585-49b4-8232-f82e15cab55d.json",
-		"Light-779d3b09-89db-469a-95ba-b2ff7d373c75.json",
 		"Camera-8f0d89ea-3c5d-4c6a-9232-74a1519c0159.json",
-		"New Directional Light-65b84589-c2ee-44ca-a4aa-650ffcb0d14d.json"
+		"Light-779d3b09-89db-469a-95ba-b2ff7d373c75.json"
 	],
 	"particleSystems": [
 		"default system-2c33517a-bbec-466e-8c8b-913c7f8ad909.json",
@@ -406,9 +401,9 @@
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": 3.4408226064926697,
+			"alpha": 3.440822606492669,
 			"beta": 0.7282261615723897,
-			"radius": 324.4573811643612,
+			"radius": 379.88762489441825,
 			"target": [
 				-92.74676674147662,
 				-48.35719079117841,
@@ -442,9 +437,9 @@
 			],
 			"speed": 2,
 			"position": [
-				-299.0926991749378,
-				193.8035705225842,
-				-60.665877448610665
+				-334.3448031229093,
+				235.17427373576925,
+				-71.5408948215396
 			],
 			"upVector": [
 				0,
@@ -506,7 +501,7 @@
 					"pinchPrecision": 12,
 					"pinchDeltaPercentage": 0,
 					"useNaturalPinchZoom": false,
-					"panningSensibility": 3.0820688880966696,
+					"panningSensibility": 2.6323573985278643,
 					"multiTouchPanning": true,
 					"multiTouchPanAndZoom": true
 				}
