@@ -4,7 +4,7 @@
 		{
 			"name": "New Cube",
 			"id": "56844da2-6ed6-4648-9bf7-4f49f59abdfa",
-			"uniqueId": 34,
+			"uniqueId": 31,
 			"type": "Mesh",
 			"position": [
 				2.9920718669891357,
@@ -85,7 +85,11 @@
 					"name": "New Cube",
 					"sceneFileName": "testfield.glb"
 				},
-				"isPickable": true
+				"isPickable": true,
+				"script": {
+					"name": "src/scenes/welcomescene/text.ts"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],

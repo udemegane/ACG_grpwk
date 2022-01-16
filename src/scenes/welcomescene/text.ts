@@ -1,5 +1,5 @@
 import { AdvancedDynamicTexture, Button, Button3D, InputText, TextBlock } from '@babylonjs/gui';
-import { KeyboardEventTypes } from '@babylonjs/core';
+import { Mesh, KeyboardEventTypes } from '@babylonjs/core';
 import { onKeyboardEvent } from '../tools';
 import { GameManager } from '../GameScripts/gameManager';
 /**
@@ -20,7 +20,7 @@ import { GameManager } from '../GameScripts/gameManager';
  * The function "onInitialize" is called immediately after the constructor is called.
  * The functions "onStart" and "onUpdate" are called automatically.
  */
-export default class MyScript extends Node {
+export default class MyScript extends Mesh {
   private _SpaceKey: number;
 
   advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI('UI');
@@ -74,17 +74,18 @@ export default class MyScript extends Node {
   @onKeyboardEvent([32], KeyboardEventTypes.KEYUP)
   private _onSpaceKey(): void {
     let size = 30;
-    let t = 100;
+    let t = 200;
     switch (this.nowscene) {
       case 0:
         if (this.ispressed === false) {
+          this.playSound('files/decide21.mp3');
           this.ispressed = true;
           this.button.alpha = 1.0;
           this.button.shadowBlur = 10;
           const handle = setInterval(() => {
             t -= 1;
-            size += 0.025;
-            this.button.alpha -= 0.01;
+            size += 0.01;
+            this.button.alpha -= 0.005;
             this.button.fontSize = size;
             if (t === 0) {
               clearInterval(handle);
@@ -105,12 +106,18 @@ export default class MyScript extends Node {
   }
   @onKeyboardEvent([87], KeyboardEventTypes.KEYUP)
   private _onWKey(): void {
-    this.selectup = true;
+    if (this.nowscene === 2) {
+      this.playSound('files/button57.mp3');
+      this.selectup = true;
+    }
   }
 
   @onKeyboardEvent([83], KeyboardEventTypes.KEYUP)
   private _onSKey(): void {
-    this.selectup = false;
+    if (this.nowscene === 2) {
+      this.playSound('files/button57.mp3');
+      this.selectup = false;
+    }
   }
 
   @onKeyboardEvent([90], KeyboardEventTypes.KEYUP)
@@ -283,6 +290,12 @@ export default class MyScript extends Node {
           break;
       }
     }, 1000);
+  }
+
+  public playSound(name): void {
+    const selectse = this._scene.getSoundByName(name);
+    selectse.setVolume(0.3);
+    selectse.play();
   }
 
   /**

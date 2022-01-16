@@ -51,11 +51,13 @@ export default class MyScript extends Mesh {
 
   public getDamage(): void {
     const postProcess = new ImageProcessingPostProcess('processing', 1.0, this._scene.activeCamera);
-    postProcess.vignetteWeight = 10;
+    postProcess.vignetteWeight = 7;
     postProcess.vignetteStretch = 0.01;
     postProcess.vignetteColor = new Color4(1, 0, 0, 0);
     postProcess.vignetteEnabled = true;
   }
+
+  public gameOver(): void {}
 
   /**
    * Called on a message has been received and sent from a graph.
