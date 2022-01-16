@@ -38,7 +38,6 @@ export default class MyScript extends Mesh {
    * Called on the scene starts.
    */
   public onStart(): void {
-    this.getDamage();
     // ...
   }
 
@@ -46,6 +45,9 @@ export default class MyScript extends Mesh {
    * Called each frame.
    */
   public onUpdate(): void {
+    // if(get one shot){
+    //   this.getDamage();
+    // }
     // ...
   }
 

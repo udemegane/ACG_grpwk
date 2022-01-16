@@ -2,6 +2,8 @@ import { AdvancedDynamicTexture, Button, InputText, TextBlock } from '@babylonjs
 import { Mesh, KeyboardEventTypes } from '@babylonjs/core';
 import { onKeyboardEvent } from '../tools';
 import { Env } from '../GameScripts/environment';
+import { Connection } from '../GameScripts/connection';
+
 /**
  * This represents a script that is attached to a node in the editor.
  * Available nodes are:
@@ -30,8 +32,6 @@ export default class MyScript extends Mesh {
   ispressed = false;
   selectup = true;
   nowscene = 0;
-  username = '';
-  password = '';
 
   button = new TextBlock();
   multiplay = new TextBlock();
@@ -40,7 +40,9 @@ export default class MyScript extends Mesh {
   inputpassword = new InputText();
   welcome = new TextBlock();
   waiting = new TextBlock();
+  errortext = new TextBlock();
   enterbutton = Button.CreateSimpleButton('Enter', 'OK');
+  returnbutton = Button.CreateSimpleButton('Return', 'Return');
   /**
    * Override constructor.
    * @warn do not fill.
@@ -68,6 +70,7 @@ export default class MyScript extends Mesh {
     this.welcomecommentGUI();
     this.createloadingGUI();
     this.waitinganimation();
+    this.createreturnbuttonGUI();
     // ...
   }
 
@@ -90,8 +93,13 @@ export default class MyScript extends Mesh {
             if (t === 0) {
               clearInterval(handle);
               this.button.dispose();
-              this.nowscene = 1;
-              this.inputusername.isVisible = true;
+              if (Env.checkToken()) {
+                this.nowscene = 2;
+                this.welcome.text = `Welcome ${Env.getUsername()} !`;
+              } else {
+                this.nowscene = 1;
+                this.inputusername.isVisible = true;
+              }
             }
           }, 10);
         }
@@ -154,6 +162,13 @@ export default class MyScript extends Mesh {
       this.waiting.isVisible = true;
     } else {
       this.waiting.isVisible = false;
+    }
+    if (this.nowscene === 4) {
+      this.returnbutton.isVisible = true;
+      this.errortext.isVisible = true;
+    } else {
+      this.returnbutton.isVisible = false;
+      this.errortext.isVisible = false;
     }
     this.selectbutton();
     // ...
@@ -247,14 +262,36 @@ export default class MyScript extends Mesh {
     this.enterbutton.top = 250;
     this.enterbutton.width = 0.1;
     this.enterbutton.height = 0.075;
-    this.enterbutton.isVisible = false;
-    this.enterbutton.onPointerClickObservable.add(() => {
-      this.nowscene = 2;
-      this.username = this.inputusername.text;
-      this.password = this.inputpassword.text;
-      this.welcome.text = `Welcome ${this.username} !`;
+    this.enterbutton.onPointerClickObservable.add(async () => {
+      const a = await Env.login(this.inputusername.text, this.inputpassword.text);
+      if (!a.success) {
+        this.nowscene = 4;
+      } else {
+        this.nowscene = 2;
+        this.welcome.text = `Welcome ${this.inputusername.text} !`;
+      }
     });
     this.advancedTexture.addControl(this.enterbutton);
+  }
+
+  public createreturnbuttonGUI(): void {
+    this.returnbutton.color = 'white';
+    this.returnbutton.background = 'black';
+    this.returnbutton.isVisible = false;
+    this.returnbutton.top = 250;
+    this.returnbutton.width = 0.1;
+    this.returnbutton.height = 0.075;
+
+    this.errortext.color = 'white';
+    this.errortext.text = 'Either the username or password is invalid';
+    this.errortext.isVisible = false;
+    this.errortext.fontSize = 20;
+    this.errortext.top = 200;
+    this.advancedTexture.addControl(this.errortext);
+    this.returnbutton.onPointerClickObservable.add(() => {
+      this.nowscene = 1;
+    });
+    this.advancedTexture.addControl(this.returnbutton);
   }
 
   public createloadingGUI(): void {
@@ -265,8 +302,6 @@ export default class MyScript extends Mesh {
     this.waiting.isVisible = false;
     this.advancedTexture.addControl(this.waiting);
   }
-
-  public createhowtoplay(): void {}
 
   public waitinganimation(): void {
     let t = 0;
@@ -288,6 +323,14 @@ export default class MyScript extends Mesh {
           break;
         default:
           break;
+      }
+      // if (matching is success){
+      //   clearInterval(handle);
+      //   Env.switchScene('./scenes/scene/');
+      // }
+      if (t === 1000) {
+        clearInterval(handle);
+        this.nowscene = 2;
       }
     }, 1000);
   }
