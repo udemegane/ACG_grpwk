@@ -85,7 +85,7 @@ export default class MyScript extends Mesh {
           this.ispressed = true;
           this.button.alpha = 1.0;
           this.button.shadowBlur = 10;
-          const handle = setInterval(() => {
+          const handle = setInterval(async () => {
             t -= 1;
             size += 0.01;
             this.button.alpha -= 0.005;
@@ -93,7 +93,7 @@ export default class MyScript extends Mesh {
             if (t === 0) {
               clearInterval(handle);
               this.button.dispose();
-              if (Env.checkToken()) {
+              if (await Env.checkToken()) {
                 this.nowscene = 2;
                 this.welcome.text = `Welcome ${Env.getUsername()} !`;
               } else {
