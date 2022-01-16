@@ -2,7 +2,6 @@ import { AdvancedDynamicTexture, Button, InputText, TextBlock } from '@babylonjs
 import { Mesh, KeyboardEventTypes } from '@babylonjs/core';
 import { onKeyboardEvent } from '../tools';
 import { Env } from '../GameScripts/environment';
-import { Connection } from '../GameScripts/connection';
 
 /**
  * This represents a script that is attached to a node in the editor.

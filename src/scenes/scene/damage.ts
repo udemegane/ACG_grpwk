@@ -1,4 +1,5 @@
 import { Mesh, ImageProcessingPostProcess, Color4 } from '@babylonjs/core';
+import { TextBlock, AdvancedDynamicTexture } from '@babylonjs/gui';
 
 /**
  * This represents a script that is attached to a node in the editor.
@@ -25,6 +26,7 @@ export default class MyScript extends Mesh {
    */
   // @ts-ignore ignoring the super call as we don't want to re-init
   protected constructor() {}
+  advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI('UI');
 
   /**
    * Called on the node is being initialized.
@@ -59,7 +61,25 @@ export default class MyScript extends Mesh {
     postProcess.vignetteEnabled = true;
   }
 
-  public gameOver(): void {}
+  public youLose(): void {
+    const resulttext = new TextBlock();
+    resulttext.text = 'YOU LOSE';
+    resulttext.fontSizeInPixels = 80;
+    resulttext.shadowBlur = 30;
+    resulttext.shadowColor = 'black';
+    resulttext.color = 'white';
+    this.advancedTexture.addControl(resulttext);
+  }
+
+  public youWin(): void {
+    const resulttext = new TextBlock();
+    resulttext.text = 'YOU WIN';
+    resulttext.fontSizeInPixels = 80;
+    resulttext.shadowBlur = 30;
+    resulttext.shadowColor = 'white';
+    resulttext.color = 'white';
+    this.advancedTexture.addControl(resulttext);
+  }
 
   /**
    * Called on a message has been received and sent from a graph.

@@ -11,17 +11,24 @@
 	"materials": [
 		{
 			"bindedMeshes": [
-				"d66c05ad-967f-4f69-a6fb-7d47281b641c",
-				"f824df87-ae33-41d9-ba8f-551d2083a2be"
+				"f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c"
 			],
-			"json": "cube-965b4240-9156-4704-8e39-cc381d3c7123.json",
+			"json": "ball-0b776f6c-9111-499d-8207-1c8242d97719.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [
-				"f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c"
+				"c4024c20-1c4f-4be6-9abd-525e2a782174"
 			],
-			"json": "ball-0b776f6c-9111-499d-8207-1c8242d97719.json",
+			"json": "sky-cdc8b068-1ebd-4c87-8cb0-f48a85181271.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"f824df87-ae33-41d9-ba8f-551d2083a2be",
+				"d66c05ad-967f-4f69-a6fb-7d47281b641c"
+			],
+			"json": "cube-965b4240-9156-4704-8e39-cc381d3c7123.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -40,13 +47,6 @@
 		},
 		{
 			"bindedMeshes": [
-				"c4024c20-1c4f-4be6-9abd-525e2a782174"
-			],
-			"json": "sky-cdc8b068-1ebd-4c87-8cb0-f48a85181271.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
 				"b6a89645-0d85-44c1-8bf8-b99b8670c51f"
 			],
 			"json": "blaster-71ce380f-e971-41c0-b580-e3e91b316c6f.json",
@@ -54,22 +54,22 @@
 		}
 	],
 	"textures": [
-		"blaster_diffuse.jpg-44.json",
-		"blaster_nmap.jpg-46.json",
-		"parking.env-45.json",
-		"EnvironmentBRDFTexture0-49.json"
+		"parking.env-47.json",
+		"blaster_nmap.jpg-48.json",
+		"EnvironmentBRDFTexture0-49.json",
+		"blaster_diffuse.jpg-46.json"
 	],
 	"meshes": [
 		"__root__-0fff89a4-0495-415c-9659-cdf83470ecce.json",
-		"ball-f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c.json",
 		"ground-b87c0751-53e5-4782-88d9-0461e9457fe1.json",
-		"New Cube-618a29b6-5df8-49ef-b9c7-52ab26b2057f.json",
-		"cube-d66c05ad-967f-4f69-a6fb-7d47281b641c.json",
 		"sky-c4024c20-1c4f-4be6-9abd-525e2a782174.json",
-		"New Cube-c50fde32-b635-466f-9440-684ba17efabf.json",
-		"Cube-4aa354e8-8e08-44cb-8c8a-8104d48ba808.json",
 		"wall-f824df87-ae33-41d9-ba8f-551d2083a2be.json",
-		"blaster-b6a89645-0d85-44c1-8bf8-b99b8670c51f.json"
+		"Cube-4aa354e8-8e08-44cb-8c8a-8104d48ba808.json",
+		"ball-f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c.json",
+		"cube-d66c05ad-967f-4f69-a6fb-7d47281b641c.json",
+		"blaster-b6a89645-0d85-44c1-8bf8-b99b8670c51f.json",
+		"New Cube-618a29b6-5df8-49ef-b9c7-52ab26b2057f.json",
+		"New Cube-c50fde32-b635-466f-9440-684ba17efabf.json"
 	],
 	"transformNodes": [
 		"Camera-243bbf73-7821-4e7a-baa6-ea0cd3641d95.json",
