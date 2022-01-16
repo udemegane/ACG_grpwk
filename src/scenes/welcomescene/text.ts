@@ -262,6 +262,7 @@ export default class MyScript extends Mesh {
     this.enterbutton.width = 0.1;
     this.enterbutton.height = 0.075;
     this.enterbutton.onPointerClickObservable.add(async () => {
+      this.playSound('files/button57.mp3');
       const a = await Env.login(this.inputusername.text, this.inputpassword.text);
       if (!a.success) {
         this.nowscene = 4;
@@ -288,6 +289,7 @@ export default class MyScript extends Mesh {
     this.errortext.top = 200;
     this.advancedTexture.addControl(this.errortext);
     this.returnbutton.onPointerClickObservable.add(() => {
+      this.playSound('files/button57.mp3');
       this.nowscene = 1;
     });
     this.advancedTexture.addControl(this.returnbutton);
