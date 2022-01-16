@@ -336,7 +336,7 @@ export default class MyScript extends Mesh {
 
   public playSound(name): void {
     const selectse = this._scene.getSoundByName(name);
-    selectse.setVolume(0.3);
+    selectse.setVolume(0.5);
     selectse.play();
   }
 
