@@ -1,7 +1,7 @@
-import { AdvancedDynamicTexture, Button, Button3D, InputText, TextBlock } from '@babylonjs/gui';
+import { AdvancedDynamicTexture, Button, InputText, TextBlock } from '@babylonjs/gui';
 import { Mesh, KeyboardEventTypes } from '@babylonjs/core';
 import { onKeyboardEvent } from '../tools';
-import { GameManager } from '../GameScripts/gameManager';
+import { Env } from '../GameScripts/environment';
 /**
  * This represents a script that is attached to a node in the editor.
  * Available nodes are:
@@ -98,7 +98,7 @@ export default class MyScript extends Mesh {
         break;
       case 2:
         if (this.selectup === false) this.nowscene = 3;
-        else GameManager.switchScene('./scenes/scene/');
+        else Env.switchScene('./scenes/scene/');
         break;
       default:
         break;

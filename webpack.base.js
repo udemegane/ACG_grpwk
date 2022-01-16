@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const entryPath = path.join(__dirname, 'src/index.ts');
 const package = require('./package.json');
@@ -19,7 +20,12 @@ module.exports = {
       {
         test: /\.ts?$/,
         // we use babel-loader for polyfill only on production build
-        loader: ['ts-loader'],
+        use: [
+          {
+            loader: 'ts-loader',
+            options: { transpileOnly: true },
+          },
+        ],
         exclude: [
           path.join(__dirname, 'node_modules'),
           path.join(__dirname, 'dist'),
@@ -29,7 +35,7 @@ module.exports = {
           // python script
           path.join(__dirname, 'app'),
           path.join(__dirname, 'migration'),
-          path.join(__dirname, 'protobuf'),
+          // path.join(__dirname, 'protobuf'),
         ],
       },
       {
@@ -59,10 +65,14 @@ module.exports = {
       path: path.resolve(__dirname, '.env'),
     }),
     new webpack.WatchIgnorePlugin([/\.js$/, /\.d\.ts$/]),
+    new ForkTsCheckerWebpackPlugin(),
   ],
   optimization: {
     minimize: false,
     usedExports: true,
+    removeAvailableModules: false,
+    removeEmptyChunks: false,
+    splitChunks: false,
   },
-  devtool: 'source-map',
+  devtool: 'eval-cheap-module-source-map',
 };

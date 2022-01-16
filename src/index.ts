@@ -2,7 +2,7 @@ import { Engine, Scene, SceneLoader } from '@babylonjs/core';
 import '@babylonjs/materials';
 
 // import { runScene } from './scenes/scene';
-import { GameManager } from './scenes/GameScripts/gameManager';
+import { Env } from './scenes/GameScripts/environment';
 
 export class Game {
   /**
@@ -20,15 +20,12 @@ export class Game {
    */
   public constructor() {
     console.log(process.env.ACG_BACKSERVER_URL);
-    this.engine = new Engine(
-      document.getElementById('renderCanvas') as HTMLCanvasElement,
-      true
-    );
+    this.engine = new Engine(document.getElementById('renderCanvas') as HTMLCanvasElement, true);
     this.scene = new Scene(this.engine);
 
     this._bindEvents();
     this._load('./scenes/welcomescene/');
-    GameManager.onSwitchSceneObservable.add((rootUrl: string) => {
+    Env.onSwitchSceneObservable.add((rootUrl: string) => {
       this.engine.stopRenderLoop();
       this.scene.dispose();
       this.scene = new Scene(this.engine);
@@ -49,13 +46,11 @@ export class Game {
           // Attach camera.
           if (!this.scene.activeCamera) {
             throw new Error(
-              'No camera defined in the scene. Please add at least one camera in the project or create one yourself in the code.'
+              'No camera defined in the scene.' +
+                ' Please add at least one camera in the project or create one yourself in the code.'
             );
           }
-          this.scene.activeCamera.attachControl(
-            this.engine.getRenderingCanvas(),
-            false
-          );
+          this.scene.activeCamera.attachControl(this.engine.getRenderingCanvas(), false);
 
           // Run the scene to attach scripts etc.
           import(`${rootUrl}index`).then((module) => {
