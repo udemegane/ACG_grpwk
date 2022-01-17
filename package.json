@@ -32,7 +32,6 @@
     "prettier": "^2.5.0"
   },
   "dependencies": {
-    "@tweakpane/core": "^1.0.8",
     "@babel/plugin-transform-typescript": "^7.16.7",
     "@babylonjs/core": "4.2.0",
     "@babylonjs/gui": "4.2.0",
@@ -40,6 +39,7 @@
     "@babylonjs/materials": "4.2.0",
     "@babylonjs/post-processes": "4.2.0",
     "@babylonjs/procedural-textures": "4.2.0",
+    "@tweakpane/core": "^1.0.8",
     "axios": "^0.24.0",
     "babel-loader": "8.0.4",
     "babylonjs-editor-webpack-progress": "1.0.1",
@@ -53,7 +53,7 @@
     "http-server": "0.12.1",
     "rimraf": "~2.6.2",
     "ts-loader": "4.4.2",
-    "ts-proto": "^1.100.1",
+    "ts-proto": "^1.101.0",
     "ts-shader-loader": "^1.0.6",
     "tweakpane": "^3.0.6",
     "typescript": "3.8.3",
