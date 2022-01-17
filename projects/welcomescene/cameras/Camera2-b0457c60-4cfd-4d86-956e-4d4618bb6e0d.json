@@ -1,0 +1,93 @@
+{
+	"tags": null,
+	"ellipsoid": [
+		0.5,
+		1,
+		0.5
+	],
+	"ellipsoidOffset": [
+		0,
+		0,
+		0
+	],
+	"checkCollisions": false,
+	"applyGravity": false,
+	"rotation": [
+		-0.0003723274425302542,
+		-3.115707944125906,
+		-0.000009548177657284572
+	],
+	"speed": 2,
+	"position": [
+		5,
+		-0.04443909227848053,
+		127.83354187011719
+	],
+	"upVector": [
+		9.15321507477529e-8,
+		0.9999999403953552,
+		0.00037244983832351863
+	],
+	"fov": 0.8,
+	"minZ": 1,
+	"maxZ": 9852612.533569336,
+	"inertia": 0.9,
+	"mode": 0,
+	"layerMask": 268435455,
+	"fovMode": 0,
+	"cameraRigMode": 0,
+	"name": "Camera2",
+	"id": "b0457c60-4cfd-4d86-956e-4d4618bb6e0d",
+	"state": "",
+	"metadata": {
+		"script": {
+			"name": "src/scenes/welcomescene/move_camera2.ts"
+		},
+		"doNotExport": false
+	},
+	"type": "UniversalCamera",
+	"inputsmgr": {
+		"FreeCameraKeyboardMoveInput": {
+			"tags": null,
+			"keysUp": [
+				38
+			],
+			"keysUpward": [
+				33
+			],
+			"keysDown": [
+				40
+			],
+			"keysDownward": [
+				34
+			],
+			"keysLeft": [
+				37
+			],
+			"keysRight": [
+				39
+			]
+		},
+		"FreeCameraMouseInput": {
+			"tags": null,
+			"buttons": [
+				0,
+				1,
+				2
+			],
+			"angularSensibility": 2000
+		},
+		"FreeCameraTouchInput": {
+			"tags": null,
+			"touchAngularSensibility": 200000,
+			"touchMoveSensibility": 250
+		},
+		"FreeCameraGamepadInput": {
+			"tags": null,
+			"gamepadAngularSensibility": 200,
+			"gamepadMoveSensibility": 40
+		}
+	},
+	"animations": [],
+	"ranges": []
+}

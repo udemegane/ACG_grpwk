@@ -31,6 +31,7 @@ module.exports = {
           path.join(__dirname, 'dist'),
           path.join(__dirname, 'projects'),
           path.join(__dirname, 'scenes'),
+          path.join(__dirname, 'generateUnilityFiles.ts'),
           // python script
           path.join(__dirname, 'app'),
           path.join(__dirname, 'migration'),

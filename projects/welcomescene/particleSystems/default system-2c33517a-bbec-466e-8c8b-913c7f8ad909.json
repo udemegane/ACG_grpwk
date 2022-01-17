@@ -1,0 +1,148 @@
+{
+	"name": "default system",
+	"id": "2c33517a-bbec-466e-8c8b-913c7f8ad909",
+	"capacity": 2000,
+	"emitterId": "32066eec-f89a-4f04-9025-069c9ff4b831",
+	"particleEmitterType": {
+		"type": "BoxParticleEmitter",
+		"direction1": [
+			0,
+			1,
+			0
+		],
+		"direction2": [
+			0,
+			1,
+			0
+		],
+		"minEmitBox": [
+			-0.5,
+			-0.5,
+			-0.5
+		],
+		"maxEmitBox": [
+			0.5,
+			0.5,
+			0.5
+		]
+	},
+	"texture": {
+		"tags": null,
+		"url": "files/Flare.png",
+		"uOffset": 0,
+		"vOffset": 0,
+		"uScale": 1,
+		"vScale": 1,
+		"uAng": 0,
+		"vAng": 0,
+		"wAng": 0,
+		"uRotationCenter": 0.5,
+		"vRotationCenter": 0.5,
+		"wRotationCenter": 0.5,
+		"homogeneousRotationInUVTransform": false,
+		"isBlocking": true,
+		"name": "files/Flare.png",
+		"metadata": {
+			"editorName": "Flare.png",
+			"editorId": "5d0a104b-f267-4afc-997e-c2372e974d1b",
+			"ktx2CompressedTextures": {
+				"isUsingCompressedTexture": false
+			}
+		},
+		"hasAlpha": false,
+		"getAlphaFromRGB": false,
+		"level": 1,
+		"coordinatesIndex": 0,
+		"coordinatesMode": 0,
+		"wrapU": 1,
+		"wrapV": 1,
+		"wrapR": 1,
+		"anisotropicFilteringLevel": 4,
+		"isCube": false,
+		"is3D": false,
+		"is2DArray": false,
+		"gammaSpace": true,
+		"invertZ": false,
+		"lodLevelInAlpha": false,
+		"lodGenerationOffset": 0,
+		"lodGenerationScale": 0,
+		"linearSpecularLOD": false,
+		"isRenderTarget": false,
+		"animations": [],
+		"invertY": true,
+		"samplingMode": 3
+	},
+	"isLocal": false,
+	"animations": [],
+	"beginAnimationOnStart": false,
+	"beginAnimationFrom": 0,
+	"beginAnimationTo": 60,
+	"beginAnimationLoop": false,
+	"startDelay": 0,
+	"renderingGroupId": 0,
+	"isBillboardBased": true,
+	"billboardMode": 7,
+	"minAngularSpeed": 1,
+	"maxAngularSpeed": 1,
+	"minSize": 0.1,
+	"maxSize": 1,
+	"minScaleX": 1,
+	"maxScaleX": 1,
+	"minScaleY": 1,
+	"maxScaleY": 1,
+	"minEmitPower": 1,
+	"maxEmitPower": 1.5,
+	"minLifeTime": 1,
+	"maxLifeTime": 10,
+	"emitRate": 15,
+	"gravity": [
+		0,
+		0,
+		0
+	],
+	"noiseStrength": [
+		10,
+		10,
+		10
+	],
+	"color1": [
+		1,
+		1,
+		1,
+		1
+	],
+	"color2": [
+		0.7647058823529411,
+		0.7647058823529411,
+		0.7647058823529411,
+		1
+	],
+	"colorDead": [
+		0,
+		0,
+		0,
+		1
+	],
+	"updateSpeed": 0.016666666666666666,
+	"targetStopDuration": 0,
+	"blendMode": 0,
+	"preWarmCycles": 0,
+	"preWarmStepOffset": 1,
+	"minInitialRotation": 1,
+	"maxInitialRotation": 1,
+	"startSpriteCellID": 0,
+	"endSpriteCellID": 0,
+	"spriteCellChangeSpeed": 1,
+	"spriteCellWidth": 0,
+	"spriteCellHeight": 0,
+	"spriteRandomStartCell": false,
+	"isAnimationSheetEnabled": false,
+	"textureMask": [
+		1,
+		1,
+		1,
+		1
+	],
+	"customShader": null,
+	"preventAutoStart": false
+}
