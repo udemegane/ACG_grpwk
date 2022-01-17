@@ -189,7 +189,6 @@ function build_protobuf() {
   protoc --python_out="$AUTOGEN_PY" --mypy_out="$AUTOGEN_PY" *.proto
   echo '# pylint: skip-file' > "$AUTOGEN_PY"/$pb2.py
   for f in $protofiles; do
-    echo hoge "$f"
     F="${f%.*}" && echo "from .${F}_pb2 import * # noqa" >> "$AUTOGEN_PY"/$pb2.py
   done
 
@@ -204,10 +203,9 @@ function build_protobuf() {
       --plugin=$CWD/node_modules/.bin/protoc-gen-ts_proto \
       --ts_proto_opt=exportCommonSymbols=false,unrecognizedEnum=false,fileSuffix=_pb2 \
       --ts_proto_out="$AUTOGEN_TS" *.proto
-    cd "$AUTOGEN_TS"
-    echo '/* eslint-disable */' > $pb2.ts
+    echo '/* eslint-disable */' > "$AUTOGEN_TS"/$pb2.ts
     for f in $protofiles; do
-      F="${f%.*}" && echo "export * from './${F}_pb2';" >> $pb2.ts
+      F="${f%.*}" && echo "export * from './${F}_pb2';" >> "$AUTOGEN_TS"/$pb2.ts
     done
   fi
   cd "$CWD"
