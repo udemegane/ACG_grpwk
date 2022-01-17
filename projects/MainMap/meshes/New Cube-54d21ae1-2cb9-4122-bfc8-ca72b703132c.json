@@ -3,7 +3,7 @@
 		{
 			"name": "New Cube",
 			"id": "54d21ae1-2cb9-4122-bfc8-ca72b703132c",
-			"uniqueId": 10,
+			"uniqueId": 9,
 			"type": "Mesh",
 			"position": [
 				-2.9920718669891357,
@@ -45,9 +45,10 @@
 			"receiveShadows": false,
 			"billboardMode": 0,
 			"visibility": 1,
-			"checkCollisions": false,
+			"checkCollisions": true,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": null,
+			"parentId": "df479701-7d74-4c59-aa4d-693040051dea",
 			"isUnIndexed": false,
 			"geometryId": "50a39759-3db6-4ae2-8f5a-6b10685e5662",
 			"subMeshes": null,
@@ -56,7 +57,8 @@
 				"script": {
 					"name": "None"
 				},
-				"renderingGroupId": 0
+				"renderingGroupId": 0,
+				"doNotExport": false
 			},
 			"instances": [],
 			"animations": [],

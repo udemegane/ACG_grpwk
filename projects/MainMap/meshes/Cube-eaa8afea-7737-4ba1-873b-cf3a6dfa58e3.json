@@ -4,12 +4,12 @@
 		{
 			"name": "Cube",
 			"id": "eaa8afea-7737-4ba1-873b-cf3a6dfa58e3",
-			"uniqueId": 127,
+			"uniqueId": 30,
 			"type": "Mesh",
 			"position": [
-				0,
+				1.111802577972412,
 				10.062779426574707,
-				0
+				-3.7716684341430664
 			],
 			"rotationQuaternion": [
 				0,
@@ -47,7 +47,7 @@
 			"receiveShadows": false,
 			"billboardMode": 0,
 			"visibility": 1,
-			"checkCollisions": false,
+			"checkCollisions": true,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": 0,
 			"parentId": "df479701-7d74-4c59-aa4d-693040051dea",
@@ -89,7 +89,8 @@
 				"script": {
 					"name": "None"
 				},
-				"renderingGroupId": 0
+				"renderingGroupId": 0,
+				"doNotExport": false
 			},
 			"instances": [],
 			"animations": [],
@@ -97,7 +98,7 @@
 			"layerMask": 268435455,
 			"alphaIndex": 1.7976931348623157e+308,
 			"hasVertexAlpha": false,
-			"overlayAlpha": 0.5,
+			"overlayAlpha": 0.3,
 			"overlayColor": [
 				1,
 				0,

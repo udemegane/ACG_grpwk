@@ -10,18 +10,18 @@
 		0,
 		0
 	],
-	"checkCollisions": false,
-	"applyGravity": false,
+	"checkCollisions": true,
+	"applyGravity": true,
 	"rotation": [
 		0,
-		-2.212373902002078,
+		0.17053948514658773,
 		0
 	],
-	"speed": 2,
+	"speed": 1.5,
 	"position": [
-		-0.09697788208723068,
-		8.003996849060059,
-		6.866573810577393
+		-23.007469177246094,
+		1,
+		-49.48331069946289
 	],
 	"upVector": [
 		0,
@@ -36,46 +36,21 @@
 	"layerMask": 268435455,
 	"fovMode": 0,
 	"cameraRigMode": 0,
-	"name": "New Free Camera",
-	"id": "24348433-1a93-41ea-b0a4-8a3e398fd82d",
+	"name": "PlayerCamera",
+	"id": "a34b79f0-f744-4f43-b3fc-9057868cd6f3",
 	"state": "",
 	"metadata": {
 		"script": {
-			"name": "src/scenes/MainMap/camera.ts",
-			"properties": {
-				"_forwardKey": {
-					"type": "KeyMap",
-					"value": 119
-				},
-				"_backwardKey": {
-					"type": "KeyMap",
-					"value": 115
-				},
-				"_strafeLeftKey": {
-					"type": "KeyMap",
-					"value": 97
-				},
-				"_strafeRightKey": {
-					"type": "KeyMap",
-					"value": 100
-				},
-				"_upwardKey": {
-					"type": "KeyMap",
-					"value": 113
-				},
-				"_downwardKey": {
-					"type": "KeyMap",
-					"value": 101
-				}
-			}
-		}
+			"name": "src/scenes/MainMap/camera.ts"
+		},
+		"doNotExport": false
 	},
 	"type": "UniversalCamera",
 	"inputsmgr": {
 		"FreeCameraKeyboardMoveInput": {
 			"tags": null,
 			"keysUp": [
-				38
+				75
 			],
 			"keysUpward": [
 				33

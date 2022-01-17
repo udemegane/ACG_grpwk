@@ -4,7 +4,7 @@
 		{
 			"name": "PM3D_Cube3D1_1",
 			"id": "8f3f39b4-39b6-40cb-8ddc-a069334bb82b",
-			"uniqueId": 132,
+			"uniqueId": 26,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -47,7 +47,7 @@
 			"receiveShadows": false,
 			"billboardMode": 0,
 			"visibility": 1,
-			"checkCollisions": false,
+			"checkCollisions": true,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": 0,
 			"parentId": "df479701-7d74-4c59-aa4d-693040051dea",

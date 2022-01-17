@@ -1,17 +1,17 @@
 {
 	"tags": null,
-	"luminance": 1,
-	"turbidity": 10,
-	"rayleigh": 2,
+	"luminance": 0.9,
+	"turbidity": 0,
+	"rayleigh": 0.2,
 	"mieCoefficient": 0.005,
 	"mieDirectionalG": 0.8,
 	"distance": 500,
 	"inclination": 0.4,
-	"azimuth": 0.25,
+	"azimuth": 0.3,
 	"sunPosition": [
-		3.061616997868383e-14,
-		154.50849718747367,
-		-475.5282581475768
+		154.50849718747372,
+		146.94631307311823,
+		-452.25424859373686
 	],
 	"useSunPosition": false,
 	"cameraOffset": {
@@ -34,7 +34,7 @@
 	"forceDepthWrite": false,
 	"depthFunction": 0,
 	"separateCullingPass": false,
-	"fogEnabled": true,
+	"fogEnabled": false,
 	"pointSize": 1,
 	"zOffset": 0,
 	"pointsCloud": false,

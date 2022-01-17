@@ -3,12 +3,12 @@
 		{
 			"name": "New Ground",
 			"id": "e9a23fdd-bd0d-4071-aa29-ace52006842a",
-			"uniqueId": 30,
+			"uniqueId": 25,
 			"type": "GroundMesh",
 			"position": [
+				-11.968788146972656,
 				0,
-				0,
-				0
+				7.383433818817139
 			],
 			"rotation": [
 				0,
@@ -16,9 +16,9 @@
 				0
 			],
 			"scaling": [
+				0.19379527866840363,
 				1,
-				1,
-				1
+				0.2734766900539398
 			],
 			"localMatrix": {
 				"0": 1,
@@ -45,7 +45,7 @@
 			"receiveShadows": false,
 			"billboardMode": 0,
 			"visibility": 1,
-			"checkCollisions": false,
+			"checkCollisions": true,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": null,
 			"isUnIndexed": false,
@@ -56,7 +56,8 @@
 				"script": {
 					"name": "None"
 				},
-				"renderingGroupId": 0
+				"renderingGroupId": 0,
+				"doNotExport": false
 			},
 			"instances": [],
 			"animations": [],

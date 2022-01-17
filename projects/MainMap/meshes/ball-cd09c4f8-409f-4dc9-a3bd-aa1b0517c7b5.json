@@ -1,21 +1,19 @@
 {
-	"materials": [],
 	"meshes": [
 		{
-			"name": "PM3D_Cube3D1_9",
-			"id": "b24ec9dc-3d2f-4471-a62e-b23dde971de8",
-			"uniqueId": 21,
+			"name": "ball",
+			"id": "cd09c4f8-409f-4dc9-a3bd-aa1b0517c7b5",
+			"uniqueId": 33,
 			"type": "Mesh",
 			"position": [
 				0,
-				10.062779426574707,
+				0,
 				0
 			],
-			"rotationQuaternion": [
+			"rotation": [
 				0,
 				0,
-				0,
-				1
+				0
 			],
 			"scaling": [
 				1,
@@ -49,42 +47,12 @@
 			"visibility": 1,
 			"checkCollisions": true,
 			"isBlocker": false,
-			"overrideMaterialSideOrientation": 0,
-			"parentId": "df479701-7d74-4c59-aa4d-693040051dea",
+			"overrideMaterialSideOrientation": null,
+			"parentId": "a34b79f0-f744-4f43-b3fc-9057868cd6f3",
 			"isUnIndexed": false,
-			"geometryId": "2c0a48a5-c110-4f72-ab9c-dc69b6699dbd",
+			"geometryId": "9d338d59-e4be-4dc7-8e1e-fe5ba06461bf",
 			"subMeshes": null,
-			"materialId": "da2b2adb-8093-460a-870f-aaac54af55c8",
 			"metadata": {
-				"gltf": {
-					"pointers": [
-						"/meshes/9/primitives/0",
-						"/nodes/11"
-					]
-				},
-				"basePoseMatrix": {
-					"0": -1,
-					"1": 0,
-					"2": 0,
-					"3": 0,
-					"4": 0,
-					"5": 1,
-					"6": 0,
-					"7": 0,
-					"8": 0,
-					"9": 0,
-					"10": 1,
-					"11": 0,
-					"12": 0,
-					"13": -10.062779426574707,
-					"14": 0,
-					"15": 1
-				},
-				"originalSourceFile": {
-					"id": "PM3D_Cube3D1_9",
-					"name": "PM3D_Cube3D1_9",
-					"sceneFileName": "prototype.glb"
-				},
 				"isPickable": true,
 				"script": {
 					"name": "None"
@@ -96,63 +64,65 @@
 			"ranges": [],
 			"layerMask": 268435455,
 			"alphaIndex": 1.7976931348623157e+308,
-			"hasVertexAlpha": true,
-			"overlayAlpha": 0.3,
+			"hasVertexAlpha": false,
+			"overlayAlpha": 0.5,
 			"overlayColor": [
 				1,
 				0,
 				0
 			],
 			"applyFog": true,
-			"delayLoadingFile": "geometries/2c0a48a5-c110-4f72-ab9c-dc69b6699dbd.babylonbinarymeshdata",
+			"delayLoadingFile": "geometries/9d338d59-e4be-4dc7-8e1e-fe5ba06461bf.babylonbinarymeshdata",
 			"boundingBoxMaximum": [
-				16.678569793701172,
-				-6.109528064727783,
-				-13.9297456741333
+				0.5,
+				0.5,
+				0.5
 			],
 			"boundingBoxMinimum": [
-				12.238802909851074,
-				-10.109526634216309,
-				-18.369518280029297
+				-0.5,
+				-0.5,
+				-0.5
 			],
 			"_binaryInfo": {
 				"positionsAttrDesc": {
-					"count": 288,
+					"count": 7245,
 					"stride": 3,
 					"offset": 0,
 					"dataType": 1
 				},
 				"normalsAttrDesc": {
-					"count": 288,
+					"count": 7245,
 					"stride": 3,
-					"offset": 1152,
+					"offset": 28980,
 					"dataType": 1
 				},
-				"colorsAttrDesc": {
-					"count": 384,
-					"stride": 4,
-					"offset": 2304,
+				"uvsAttrDesc": {
+					"count": 4830,
+					"stride": 2,
+					"offset": 57960,
 					"dataType": 1
 				},
 				"indicesAttrDesc": {
-					"count": 144,
+					"count": 13872,
 					"stride": 1,
-					"offset": 3840,
+					"offset": 77280,
 					"dataType": 0
 				},
 				"subMeshesAttrDesc": {
 					"count": 1,
 					"stride": 5,
-					"offset": 4416,
+					"offset": 132768,
 					"dataType": 0
 				}
 			},
 			"positions": null,
 			"normals": null,
-			"colors": null,
+			"uvs": null,
+			"hasUVs": true,
 			"indices": null
 		}
 	],
+	"materials": [],
 	"multiMaterials": [],
 	"lods": []
 }

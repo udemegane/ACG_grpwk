@@ -35,7 +35,11 @@
 				"/nodes/1"
 			],
 			"editorDone": true
-		}
+		},
+		"script": {
+			"name": "None"
+		},
+		"doNotExport": false
 	},
 	"type": "TransformNode",
 	"parentId": "df479701-7d74-4c59-aa4d-693040051dea",
