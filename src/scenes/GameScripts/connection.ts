@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { Login, RespToken, CheckToken, UserData, Signup } from '../../../protobuf';
+import { Login, RespToken, CheckToken, UserData, Signup } from './protobuf';
 
 const axiosConfig: AxiosRequestConfig = {
   baseURL: process.env.ACG_BACKSERVER_URL,

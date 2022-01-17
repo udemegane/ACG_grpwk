@@ -176,30 +176,41 @@ else
 fi
 
 function build_protobuf() {
-  # Compile protobuf
-  info 'Compiling protobuf for python'
-  if [ `find ./protobuf -name '*pb2*' | wc -l` -gt 0 ]; then
-    rm protobuf/*pb2*
-  fi
-  protoc --python_out=. --mypy_out=. protobuf/*.proto
+  CWD=$(pwd)
+  PROTO_DIR="$CWD"/protobuf
+  pb2=compiled_pb2
+  # Compile protobuf (python)
+  cd "$PROTO_DIR"
+  protofiles=$(command ls -a | grep '.proto')
+  AUTOGEN_PY=../protobuf
+  info 'Compiling protobuf for python to' "$PROTO_DIR/$AUTOGEN_PY/$pb2.py"
+  mkdir -p "$AUTOGEN_PY"
+  [ $(command find "$AUTOGEN_PY" -name '*_pb2*' | wc -l) -gt 0 ] && rm "$AUTOGEN_PY"/*_pb2*
+  protoc --python_out="$AUTOGEN_PY" --mypy_out="$AUTOGEN_PY" *.proto
+  echo '# pylint: skip-file' > "$AUTOGEN_PY"/$pb2.py
+  for f in $protofiles; do
+    echo hoge "$f"
+    F="${f%.*}" && echo "from .${F}_pb2 import * # noqa" >> "$AUTOGEN_PY"/$pb2.py
+  done
+
+  # Compile protobuf (typescript)
   if [[ x"$backonly" != xtrue ]]; then
-    pb2=compiled_pb2
-    info 'Compiling protobuf for js/ts to' "$pb2.ts"
-    # npx protoc --ts_out=protobuf --proto_path protobuf protobuf/*.proto
+    cd "$PROTO_DIR"
+    AUTOGEN_TS=../src/scenes/GameScripts/protobuf
+    mkdir -p "$AUTOGEN_TS"
+    [ $(command find "$AUTOGEN_TS" -name '*_pb2*' | wc -l) -gt 0 ] && rm "$AUTOGEN_TS"/*_pb2*
+    info 'Compiling protobuf for js/ts to' "$PROTO_DIR/$AUTOGEN_TS/$pb2.ts"
     protoc \
-      --plugin=./node_modules/.bin/protoc-gen-ts_proto \
+      --plugin=$CWD/node_modules/.bin/protoc-gen-ts_proto \
       --ts_proto_opt=exportCommonSymbols=false,unrecognizedEnum=false,fileSuffix=_pb2 \
-      --ts_proto_out=. protobuf/*.proto
-    cd protobuf
-    echo '/* eslint-disable */' > $pb2.ts && echo '# pylint: skip-file' > $pb2.py
-    for f in *.proto; do
-      F="${f%.*}"
-      [ -f "${F}.ts" ] && mv "${F}.ts" "${F}_pb2.ts"
-      echo "export * from './${F}_pb2';" >> $pb2.ts
-      echo "from .${F}_pb2 import * # noqa" >> $pb2.py
+      --ts_proto_out="$AUTOGEN_TS" *.proto
+    cd "$AUTOGEN_TS"
+    echo '/* eslint-disable */' > $pb2.ts
+    for f in $protofiles; do
+      F="${f%.*}" && echo "export * from './${F}_pb2';" >> $pb2.ts
     done
-    cd -
   fi
+  cd "$CWD"
   # Create a documentation of protobuf defined APIs
   # docker run --rm \
   #     -v $PWD/docs:/out \
