@@ -17,14 +17,6 @@
 		},
 		{
 			"bindedMeshes": [
-				"d66c05ad-967f-4f69-a6fb-7d47281b641c",
-				"f824df87-ae33-41d9-ba8f-551d2083a2be"
-			],
-			"json": "cube-965b4240-9156-4704-8e39-cc381d3c7123.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
 				"c4024c20-1c4f-4be6-9abd-525e2a782174"
 			],
 			"json": "sky-cdc8b068-1ebd-4c87-8cb0-f48a85181271.json",
@@ -39,9 +31,10 @@
 		},
 		{
 			"bindedMeshes": [
-				"b87c0751-53e5-4782-88d9-0461e9457fe1"
+				"d66c05ad-967f-4f69-a6fb-7d47281b641c",
+				"f824df87-ae33-41d9-ba8f-551d2083a2be"
 			],
-			"json": "ground-77eb899b-024f-405e-b240-9bb6e5cbe3c3.json",
+			"json": "cube-965b4240-9156-4704-8e39-cc381d3c7123.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -49,6 +42,13 @@
 				"4aa354e8-8e08-44cb-8c8a-8104d48ba808"
 			],
 			"json": "Material-56f8d3ea-9ba7-4c1d-99fa-2c808eaff6f5.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"b87c0751-53e5-4782-88d9-0461e9457fe1"
+			],
+			"json": "ground-77eb899b-024f-405e-b240-9bb6e5cbe3c3.json",
 			"isMultiMaterial": false
 		}
 	],
@@ -60,19 +60,19 @@
 	],
 	"meshes": [
 		"__root__-0fff89a4-0495-415c-9659-cdf83470ecce.json",
-		"cube-d66c05ad-967f-4f69-a6fb-7d47281b641c.json",
-		"New Cube-c50fde32-b635-466f-9440-684ba17efabf.json",
 		"sky-c4024c20-1c4f-4be6-9abd-525e2a782174.json",
-		"blaster-b6a89645-0d85-44c1-8bf8-b99b8670c51f.json",
+		"New Cube-c50fde32-b635-466f-9440-684ba17efabf.json",
+		"cube-d66c05ad-967f-4f69-a6fb-7d47281b641c.json",
 		"ground-b87c0751-53e5-4782-88d9-0461e9457fe1.json",
-		"New Cube-618a29b6-5df8-49ef-b9c7-52ab26b2057f.json",
 		"wall-f824df87-ae33-41d9-ba8f-551d2083a2be.json",
 		"Cube-4aa354e8-8e08-44cb-8c8a-8104d48ba808.json",
+		"New Cube-618a29b6-5df8-49ef-b9c7-52ab26b2057f.json",
+		"blaster-b6a89645-0d85-44c1-8bf8-b99b8670c51f.json",
 		"ball-f28c95a8-f3fc-4ff6-8522-26f3cc6d5d4c.json"
 	],
 	"transformNodes": [
-		"Camera-243bbf73-7821-4e7a-baa6-ea0cd3641d95.json",
-		"Light-bb25dd26-7e0b-4297-b441-fc6303247b15.json"
+		"Light-bb25dd26-7e0b-4297-b441-fc6303247b15.json",
+		"Camera-243bbf73-7821-4e7a-baa6-ea0cd3641d95.json"
 	],
 	"particleSystems": [],
 	"lights": [
@@ -292,8 +292,8 @@
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": 29.116988814004912,
-			"beta": 0.9900748510748836,
+			"alpha": 29.650996558966053,
+			"beta": 0.47711133155224517,
 			"radius": 31.365857230270127,
 			"target": [
 				7.166921546342701,
@@ -328,9 +328,9 @@
 			],
 			"speed": 2,
 			"position": [
-				-10.284690856484998,
-				26.02229717160033,
-				-23.456951304827914
+				4.388214963413667,
+				36.67721192345748,
+				-18.01616060501921
 			],
 			"upVector": [
 				0,

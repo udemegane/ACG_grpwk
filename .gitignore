@@ -38,8 +38,8 @@ jspm_packages/
 # babylonjs editor generated file
 cache.json
 dist
-declaration
-.babylon
+# declaration
+# .babylon
 # src/scenes/decorators.ts
 # src/scenes/tools.ts
 # src/scenes/scripts-map.ts
