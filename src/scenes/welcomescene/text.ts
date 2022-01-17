@@ -129,7 +129,7 @@ export default class MyScript extends Mesh {
 
   @onKeyboardEvent([90], KeyboardEventTypes.KEYUP)
   private _onZKey(): void {
-    if (this.nowscene !== 1) {
+    if (this.nowscene !== 1 && this.nowscene !== 4) {
       this.nowscene -= 1;
     }
   }
