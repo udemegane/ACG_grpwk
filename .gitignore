@@ -40,10 +40,10 @@ cache.json
 dist
 declaration
 .babylon
-src/scenes/decorators.ts
-src/scenes/tools.ts
-src/scenes/scripts-map.ts
-src/scenes/*/index.ts
+# src/scenes/decorators.ts
+# src/scenes/tools.ts
+# src/scenes/scripts-map.ts
+# src/scenes/*/index.ts
 # python and vim session files
 *.sqlite3
 .Python
