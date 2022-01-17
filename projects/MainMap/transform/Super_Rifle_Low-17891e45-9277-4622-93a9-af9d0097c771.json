@@ -1,0 +1,64 @@
+{
+	"tags": null,
+	"position": [
+		-0.10379499942064285,
+		-0.1467919945716858,
+		0
+	],
+	"rotation": [
+		0,
+		0,
+		0
+	],
+	"rotationQuaternion": [
+		0.7071068286895752,
+		0,
+		0,
+		0.7071067094802856
+	],
+	"scaling": [
+		0.009999999776482582,
+		0.010000000707805157,
+		0.010000000707805157
+	],
+	"billboardMode": 0,
+	"scalingDeterminant": 1,
+	"infiniteDistance": false,
+	"ignoreNonUniformScaling": false,
+	"reIntegrateRotationIntoRotationQuaternion": false,
+	"name": "Super_Rifle_Low",
+	"id": "17891e45-9277-4622-93a9-af9d0097c771",
+	"state": "",
+	"metadata": {
+		"gltf": {
+			"pointers": [
+				"/nodes/3"
+			],
+			"editorDone": true
+		},
+		"script": {
+			"name": "None"
+		}
+	},
+	"type": "TransformNode",
+	"parentId": "a34b79f0-f744-4f43-b3fc-9057868cd6f3",
+	"localMatrix": {
+		"0": 1,
+		"1": 0,
+		"2": 0,
+		"3": 0,
+		"4": 0,
+		"5": 1,
+		"6": 0,
+		"7": 0,
+		"8": 0,
+		"9": 0,
+		"10": 1,
+		"11": 0,
+		"12": 0,
+		"13": 0,
+		"14": 0,
+		"15": 1
+	},
+	"isEnabled": true
+}
