@@ -31,6 +31,7 @@ module.exports = {
           path.join(__dirname, 'dist'),
           path.join(__dirname, 'projects'),
           path.join(__dirname, 'scenes'),
+          path.join(__dirname, 'generateUnilityFiles.ts'),
           // python script
           path.join(__dirname, 'app'),
           path.join(__dirname, 'migration'),
@@ -72,7 +73,6 @@ module.exports = {
     removeAvailableModules: false,
     removeEmptyChunks: false,
     splitChunks: false,
-    runtimeChunk: true,
   },
   devtool: 'eval-cheap-module-source-map',
 };

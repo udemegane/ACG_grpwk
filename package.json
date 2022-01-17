@@ -40,6 +40,7 @@
     "@babylonjs/materials": "4.2.0",
     "@babylonjs/post-processes": "4.2.0",
     "@babylonjs/procedural-textures": "4.2.0",
+    "babylon.font": "github:ycw/babylon.font",
     "axios": "^0.24.0",
     "babel-loader": "8.0.4",
     "babylonjs-editor-webpack-progress": "1.0.1",
