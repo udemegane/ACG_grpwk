@@ -4,16 +4,16 @@
 		{
 			"name": "PM3D_Cylinder3D1_2",
 			"id": "4148285b-4504-4e1c-9a51-2386eef5af2c",
-			"uniqueId": 144,
+			"uniqueId": 31,
 			"type": "Mesh",
 			"position": [
-				0,
+				-2.3535702228546143,
 				10.062779426574707,
-				0
+				7.426422143907985e-9
 			],
 			"rotationQuaternion": [
 				0,
-				0,
+				1.1171574776369653e-9,
 				0,
 				1
 			],
@@ -47,7 +47,7 @@
 			"receiveShadows": false,
 			"billboardMode": 0,
 			"visibility": 1,
-			"checkCollisions": false,
+			"checkCollisions": true,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": 0,
 			"parentId": "df479701-7d74-4c59-aa4d-693040051dea",
@@ -85,7 +85,11 @@
 					"name": "PM3D_Cylinder3D1_2",
 					"sceneFileName": "prototype.glb"
 				},
-				"isPickable": true
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],

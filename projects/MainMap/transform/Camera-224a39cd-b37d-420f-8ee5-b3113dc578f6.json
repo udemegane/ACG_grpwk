@@ -35,6 +35,9 @@
 				"/nodes/2"
 			],
 			"editorDone": true
+		},
+		"script": {
+			"name": "None"
 		}
 	},
 	"type": "TransformNode",

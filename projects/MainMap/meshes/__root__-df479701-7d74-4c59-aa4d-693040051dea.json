@@ -3,23 +3,23 @@
 		{
 			"name": "__root__",
 			"id": "df479701-7d74-4c59-aa4d-693040051dea",
-			"uniqueId": 126,
+			"uniqueId": 8,
 			"type": "Mesh",
 			"position": [
-				6.774474143981934,
+				14.09672737121582,
 				0,
-				15.705277442932129
+				17.255279541015625
 			],
 			"rotationQuaternion": [
+				-0.10411312703269686,
 				0,
-				0,
-				1,
+				0.9945654570277209,
 				0
 			],
 			"scaling": [
-				1,
+				1.0000000446485435,
 				-1,
-				1
+				1.0000000446485435
 			],
 			"localMatrix": {
 				"0": 1,
@@ -78,7 +78,8 @@
 				"script": {
 					"name": "None"
 				},
-				"renderingGroupId": 0
+				"renderingGroupId": 0,
+				"doNotExport": false
 			},
 			"instances": [],
 			"animations": [],

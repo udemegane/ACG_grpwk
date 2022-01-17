@@ -4,7 +4,7 @@
 		{
 			"name": "PM3D_Cube3D1_11",
 			"id": "9e6bd45e-1f53-4272-86d7-108315fad75c",
-			"uniqueId": 150,
+			"uniqueId": 19,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -47,7 +47,7 @@
 			"receiveShadows": false,
 			"billboardMode": 0,
 			"visibility": 1,
-			"checkCollisions": false,
+			"checkCollisions": true,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": 0,
 			"parentId": "df479701-7d74-4c59-aa4d-693040051dea",
@@ -85,7 +85,11 @@
 					"name": "PM3D_Cube3D1_11",
 					"sceneFileName": "prototype.glb"
 				},
-				"isPickable": true
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],
