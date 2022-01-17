@@ -2,25 +2,25 @@
 	"materials": [],
 	"meshes": [
 		{
-			"name": "PM3D_Cube3D1",
-			"id": "dcbc8fd5-852f-4603-b8c7-51111f0f20d9",
-			"uniqueId": 9,
+			"name": "Rifle:Gun_Lo",
+			"id": "0cdfde5f-a821-4530-87f4-8ef6e7c6bb1b",
+			"uniqueId": 1614,
 			"type": "Mesh",
 			"position": [
-				0,
-				10.062779426574707,
-				0
+				116.61666107177734,
+				408.9984436035156,
+				170.00003051757812
 			],
 			"rotationQuaternion": [
-				0,
-				0,
-				0,
-				1
+				8.402929205670571e-7,
+				8.995741073957976e-7,
+				-0.6716789076967391,
+				0.7408424009071966
 			],
 			"scaling": [
-				1,
-				1,
-				1
+				7.000007391169502,
+				7.000003067735048,
+				6.999999523184052
 			],
 			"localMatrix": {
 				"0": 1,
@@ -47,56 +47,57 @@
 			"receiveShadows": false,
 			"billboardMode": 0,
 			"visibility": 1,
-			"checkCollisions": true,
+			"checkCollisions": false,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": 0,
-			"parentId": "df479701-7d74-4c59-aa4d-693040051dea",
+			"parentId": "17891e45-9277-4622-93a9-af9d0097c771",
 			"isUnIndexed": false,
-			"geometryId": "9d51e19b-4889-4930-9fd8-9ca0c806a5f3",
+			"geometryId": "b56e502b-486e-4d3e-a7cc-7dfdaa3843c8",
 			"subMeshes": null,
-			"materialId": "94d7bb65-a9ed-4c44-85f3-1e997ef7d872",
+			"materialId": "fe449c77-d956-4376-b545-1d5f6632a883",
 			"metadata": {
 				"gltf": {
 					"pointers": [
-						"/meshes/14/primitives/0",
-						"/nodes/16"
+						"/meshes/0/primitives/0",
+						"/nodes/2"
 					]
 				},
 				"basePoseMatrix": {
-					"0": -1,
+					"0": -100,
 					"1": 0,
 					"2": 0,
 					"3": 0,
 					"4": 0,
-					"5": 1,
-					"6": 0,
+					"5": -0.000013435885193757713,
+					"6": -99.99999237060547,
 					"7": 0,
 					"8": 0,
-					"9": 0,
-					"10": 1,
+					"9": 99.99999237060547,
+					"10": -0.000013435885193757713,
 					"11": 0,
-					"12": 0,
-					"13": -10.062779426574707,
-					"14": 0,
+					"12": 10.379500389099121,
+					"13": -0.00000197228041542985,
+					"14": -14.679198265075684,
 					"15": 1
 				},
 				"originalSourceFile": {
-					"id": "PM3D_Cube3D1",
-					"name": "PM3D_Cube3D1",
-					"sceneFileName": "prototype.glb"
+					"id": "Rifle:Gun_Lo",
+					"name": "Rifle:Gun_Lo",
+					"sceneFileName": "gun.glb"
 				},
 				"isPickable": true,
 				"script": {
 					"name": "None"
 				},
-				"renderingGroupId": 0
+				"renderingGroupId": 0,
+				"doNotExport": false
 			},
 			"instances": [],
 			"animations": [],
 			"ranges": [],
 			"layerMask": 268435455,
 			"alphaIndex": 1.7976931348623157e+308,
-			"hasVertexAlpha": true,
+			"hasVertexAlpha": false,
 			"overlayAlpha": 0.3,
 			"overlayColor": [
 				1,
@@ -104,52 +105,53 @@
 				0
 			],
 			"applyFog": true,
-			"delayLoadingFile": "geometries/9d51e19b-4889-4930-9fd8-9ca0c806a5f3.babylonbinarymeshdata",
+			"delayLoadingFile": "geometries/b56e502b-486e-4d3e-a7cc-7dfdaa3843c8.babylonbinarymeshdata",
 			"boundingBoxMaximum": [
-				33.236446380615234,
-				14.294408798217773,
-				2.6674180030822754
+				44.112144470214844,
+				1.599323034286499,
+				-10.818805694580078
 			],
 			"boundingBoxMinimum": [
-				-8.754138946533203,
-				-9.860928535461426,
-				-29.767295837402344
+				-23.489425659179688,
+				-1.5993239879608154,
+				-24.60259437561035
 			],
 			"_binaryInfo": {
 				"positionsAttrDesc": {
-					"count": 903,
+					"count": 36621,
 					"stride": 3,
 					"offset": 0,
 					"dataType": 1
 				},
 				"normalsAttrDesc": {
-					"count": 903,
+					"count": 36621,
 					"stride": 3,
-					"offset": 3612,
+					"offset": 146484,
 					"dataType": 1
 				},
-				"colorsAttrDesc": {
-					"count": 1204,
-					"stride": 4,
-					"offset": 7224,
+				"uvsAttrDesc": {
+					"count": 24414,
+					"stride": 2,
+					"offset": 292968,
 					"dataType": 1
 				},
 				"indicesAttrDesc": {
-					"count": 576,
+					"count": 59121,
 					"stride": 1,
-					"offset": 12040,
+					"offset": 390624,
 					"dataType": 0
 				},
 				"subMeshesAttrDesc": {
 					"count": 1,
 					"stride": 5,
-					"offset": 14344,
+					"offset": 627108,
 					"dataType": 0
 				}
 			},
 			"positions": null,
 			"normals": null,
-			"colors": null,
+			"uvs": null,
+			"hasUVs": true,
 			"indices": null
 		}
 	],
