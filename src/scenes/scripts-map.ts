@@ -11,6 +11,8 @@ export interface ISceneScriptMap extends ScriptMap {
 	"src/scenes/GameScripts/protobuf/websocket_pb2.ts": any;
 	"src/scenes/GameScripts/sceneScriptBase.ts": any;
 	"src/scenes/MainMap/camera.ts": any;
+	"src/scenes/MainMap/cameramove.ts": any;
+	"src/scenes/MainMap/enemy.ts.ts": any;
 	"src/scenes/MainMap/mainMap.ts": any;
 	"src/scenes/scene/camera.ts": any;
 	"src/scenes/scene/damage.ts": any;
@@ -36,6 +38,8 @@ export const scriptsMap: ISceneScriptMap = {
 	"src/scenes/GameScripts/protobuf/websocket_pb2.ts": require("./GameScripts/protobuf/websocket_pb2"),
 	"src/scenes/GameScripts/sceneScriptBase.ts": require("./GameScripts/sceneScriptBase"),
 	"src/scenes/MainMap/camera.ts": require("./MainMap/camera"),
+	"src/scenes/MainMap/cameramove.ts": require("./MainMap/cameramove"),
+	"src/scenes/MainMap/enemy.ts.ts": require("./MainMap/enemy.ts"),
 	"src/scenes/MainMap/mainMap.ts": require("./MainMap/mainMap"),
 	"src/scenes/scene/camera.ts": require("./scene/camera"),
 	"src/scenes/scene/damage.ts": require("./scene/damage"),

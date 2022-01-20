@@ -13,24 +13,24 @@
 	"checkCollisions": true,
 	"applyGravity": true,
 	"rotation": [
-		-0.04305067363720088,
-		-12.525617316634717,
-		1.7167265859003078e-10
+		-0.12634597433486816,
+		0.04075328247684231,
+		-1.87032916786655e-9
 	],
 	"speed": 1.5,
 	"position": [
-		-43.064910888671875,
-		0.999999463558197,
-		-44.65068817138672
+		-29.490251541137695,
+		6.97527551651001,
+		-16.000499725341797
 	],
 	"upVector": [
-		0.0009119240567088127,
-		0.9999924302101135,
-		0.0037845552433282137
+		-0.005133901722729206,
+		0.9920289516448975,
+		-0.12590546905994415
 	],
-	"fov": 0.8,
+	"fov": 0.6,
 	"minZ": 1,
-	"maxZ": 50625,
+	"maxZ": 1946195.068359375,
 	"inertia": 0.9,
 	"mode": 0,
 	"layerMask": 268435455,
@@ -41,7 +41,33 @@
 	"state": "",
 	"metadata": {
 		"script": {
-			"name": "src/scenes/MainMap/camera.ts"
+			"name": "src/scenes/MainMap/cameramove.ts",
+			"properties": {
+				"_forwardKey": {
+					"type": "KeyMap",
+					"value": 87
+				},
+				"_backwardKey": {
+					"type": "KeyMap",
+					"value": 83
+				},
+				"_upwardsKey": {
+					"type": "KeyMap",
+					"value": 32
+				},
+				"_strafeLeftKey": {
+					"type": "KeyMap",
+					"value": 65
+				},
+				"_strafeRightKey": {
+					"type": "KeyMap",
+					"value": 68
+				},
+				"_ballForceFactor": {
+					"type": "number",
+					"value": 1
+				}
+			}
 		},
 		"doNotExport": false
 	},
