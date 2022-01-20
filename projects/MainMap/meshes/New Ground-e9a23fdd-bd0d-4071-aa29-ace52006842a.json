@@ -3,7 +3,7 @@
 		{
 			"name": "New Ground",
 			"id": "e9a23fdd-bd0d-4071-aa29-ace52006842a",
-			"uniqueId": 22,
+			"uniqueId": 25,
 			"type": "GroundMesh",
 			"position": [
 				-11.968788146972656,
@@ -16,8 +16,8 @@
 				0
 			],
 			"scaling": [
-				0.19379527866840363,
-				1,
+				0.1,
+				0.1,
 				0.2734766900539398
 			],
 			"localMatrix": {
