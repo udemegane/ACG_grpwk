@@ -16,6 +16,8 @@ import {VecToLocal}
 import { fromChildren, visibleInInspector, onPointerEvent, onKeyboardEvent } from '../tools';
 import { Env } from '../GameScripts/environment';
 import { TextBlock, AdvancedDynamicTexture } from '@babylonjs/gui';
+import { clearInterval } from 'timers';
+import { count } from 'console';
 
 export default class PlayerCamera extends FreeCamera {
   @visibleInInspector('KeyMap', 'Forward Key', 'w'.charCodeAt(0))
@@ -39,8 +41,12 @@ export default class PlayerCamera extends FreeCamera {
   @visibleInInspector('number', 'Walk Speed', 2)
   private _walkSpeed: number;
 
+  @visibleInInspector('number', 'Range', 2)
+  private _range: number;
+
   private _jumping = false;
   private _shift = false;
+  private _shot = false;
   /**
    * Override constructor.
    * @warn do not fill.
@@ -110,29 +116,15 @@ export default class PlayerCamera extends FreeCamera {
     var direction = forward.subtract(this.position);
     direction = Vector3.Normalize(direction);
 
-    var length = 100;
-    var ray = new Ray(this.position, direction, length);
+    var ray = new Ray(this.position, direction, this._range);
     let rayHelper = new RayHelper(ray);
     rayHelper.show(this._scene);
 
     var hit = this._scene.pickWithRay(ray);
 
-    // var text = new TextBlock();
-    // var advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI('UI');
-    // text.top = 100;
-    // text.text = '';
-    // text.color = 'white';
-    // text.isVisible = false;
-    // advancedTexture.addControl(text);
     if(hit.pickedMesh.name == 'player'){
       // Env.hit = true?
-      // hit.pickedMesh.scaling.y += 0.1;
-      // text.text = hit.pickedMesh.name;
-      // text.isVisible = true;
     }
-    // if(hit.pickedMesh.name === "enemy"){
-    //   hit.pickedMesh.scaling.y += 0.1;
-    // }
   }
 
 
@@ -143,7 +135,28 @@ export default class PlayerCamera extends FreeCamera {
   @onPointerEvent(PointerEventTypes.POINTERDOWN, false)
   private _onPointerEvent(info: PointerInfo): void {
     this._enterPointerLock();
-    this.Shot();
+    if(this._shot === false){
+      this.Shot();
+      this._shot = true;
+      let t = 10;
+      var countdown = new TextBlock();
+      var advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI('UI');
+      countdown.top = -100;
+      countdown.color = 'white';
+      countdown.text = t.toString();
+      countdown.isVisible = true;
+      advancedTexture.addControl(countdown);
+      const handle = setInterval(async () => {
+        t -= 1
+        countdown.text = t.toString();
+        if(t === 0){
+          clearInterval(handle);
+          countdown.dispose();
+          countdown.isVisible = false;
+          this._shot = false;
+        }
+      }, 1000);
+    }
   }
 
   /**
