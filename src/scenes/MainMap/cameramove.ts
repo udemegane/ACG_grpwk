@@ -1,19 +1,21 @@
 import {
   FreeCamera,
   PointerEventTypes,
-  Mesh,
   PointerInfo,
   KeyboardInfo,
-  PhysicsImpostor,
+  Ray,
   Vector3,
   Animation,
   CircleEase,
   EasingFunction,
   KeyboardEventTypes,
+  RayHelper,
 } from '@babylonjs/core';
+import {VecToLocal}
 
 import { fromChildren, visibleInInspector, onPointerEvent, onKeyboardEvent } from '../tools';
 import { Env } from '../GameScripts/environment';
+import { TextBlock, AdvancedDynamicTexture } from '@babylonjs/gui';
 
 export default class PlayerCamera extends FreeCamera {
   @visibleInInspector('KeyMap', 'Forward Key', 'w'.charCodeAt(0))
@@ -100,6 +102,40 @@ export default class PlayerCamera extends FreeCamera {
     });
   }
 
+  public Shot() {
+    var forward = new Vector3(0, 0, 1);
+    var m = this.getWorldMatrix();
+    forward = Vector3.TransformCoordinates(forward, m);
+
+    var direction = forward.subtract(this.position);
+    direction = Vector3.Normalize(direction);
+
+    var length = 100;
+    var ray = new Ray(this.position, direction, length);
+    let rayHelper = new RayHelper(ray);
+    rayHelper.show(this._scene);
+
+    var hit = this._scene.pickWithRay(ray);
+
+    // var text = new TextBlock();
+    // var advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI('UI');
+    // text.top = 100;
+    // text.text = '';
+    // text.color = 'white';
+    // text.isVisible = false;
+    // advancedTexture.addControl(text);
+    if(hit.pickedMesh.name == 'player'){
+      // Env.hit = true?
+      // hit.pickedMesh.scaling.y += 0.1;
+      // text.text = hit.pickedMesh.name;
+      // text.isVisible = true;
+    }
+    // if(hit.pickedMesh.name === "enemy"){
+    //   hit.pickedMesh.scaling.y += 0.1;
+    // }
+  }
+
+
   /**
    * Called on the user clicks on the canvas.
    * Used to request pointer lock and launch a new ball.
@@ -107,6 +143,7 @@ export default class PlayerCamera extends FreeCamera {
   @onPointerEvent(PointerEventTypes.POINTERDOWN, false)
   private _onPointerEvent(info: PointerInfo): void {
     this._enterPointerLock();
+    this.Shot();
   }
 
   /**
