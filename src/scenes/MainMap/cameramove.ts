@@ -63,7 +63,6 @@ export default class PlayerCamera extends FreeCamera {
     }
     this._jumping = true;
     this.cameraJump();
-    this._jumping = false;
   }
 
   public cameraJump() {
@@ -83,7 +82,9 @@ export default class PlayerCamera extends FreeCamera {
     a.setEasingFunction(easingFunction);
 
     cam.animations.push(a);
-    this._scene.beginAnimation(cam, 0, 50, false);
+    this._scene.beginAnimation(cam, 0, 50, false, 1, () => {
+      this._jumping = false;
+    });
   }
 
   /**
