@@ -181,12 +181,6 @@ export default class PlayerCamera extends FreeCamera {
     this._shift = false;
   }
 
-  // キー0をシーン切り替えデバッグ用にした
-  //   @onKeyboardEvent([48], KeyboardEventTypes.KEYUP)
-  //   private _onZeroKey(): void {
-  //     Env.switchScene('./scenes/MainMap/');
-  //   }
-
   /**
    * Requests the pointer lock.
    */
