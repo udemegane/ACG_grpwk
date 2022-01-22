@@ -11,13 +11,12 @@ import {
   KeyboardEventTypes,
   RayHelper,
 } from '@babylonjs/core';
-import {VecToLocal}
 
-import { fromChildren, visibleInInspector, onPointerEvent, onKeyboardEvent } from '../tools';
-import { Env } from '../GameScripts/environment';
 import { TextBlock, AdvancedDynamicTexture } from '@babylonjs/gui';
 import { clearInterval } from 'timers';
 import { count } from 'console';
+import { Env } from '../GameScripts/environment';
+import { fromChildren, visibleInInspector, onPointerEvent, onKeyboardEvent } from '../tools';
 
 export default class PlayerCamera extends FreeCamera {
   @visibleInInspector('KeyMap', 'Forward Key', 'w'.charCodeAt(0))
@@ -32,16 +31,16 @@ export default class PlayerCamera extends FreeCamera {
   @visibleInInspector('KeyMap', 'Strafe Right Key', 'd'.charCodeAt(0))
   private _strafeRightKey: number;
 
-  @visibleInInspector('number', 'Jump Value', 5)
+  @visibleInInspector('number', 'Jump Value', 10)
   private _jumpvalue: number;
 
-  @visibleInInspector('number', 'Run Speed', 2)
+  @visibleInInspector('number', 'Run Speed', 0.5)
   private _runSpeed: number;
 
-  @visibleInInspector('number', 'Walk Speed', 2)
+  @visibleInInspector('number', 'Walk Speed', 0.3)
   private _walkSpeed: number;
 
-  @visibleInInspector('number', 'Range', 2)
+  @visibleInInspector('number', 'Range', 100)
   private _range: number;
 
   private _jumping = false;
@@ -86,7 +85,7 @@ export default class PlayerCamera extends FreeCamera {
     this.cameraJump();
   }
 
-  public cameraJump() {
+  public cameraJump(): void {
     const cam = this._scene.activeCamera;
     cam.animations = [];
     const a = new Animation('a', 'position.y', 50, Animation.ANIMATIONTYPE_FLOAT, Animation.ANIMATIONLOOPMODE_CYCLE);
@@ -108,26 +107,25 @@ export default class PlayerCamera extends FreeCamera {
     });
   }
 
-  public Shot() {
+  public Shot(): void {
     const shotse = this._scene.getSoundByName('files/Rifle.mp3');
     shotse.play();
-    var forward = new Vector3(0, 0, 1);
-    var m = this.getWorldMatrix();
+    let forward = new Vector3(0, 0, 1);
+    const m = this.getWorldMatrix();
     forward = Vector3.TransformCoordinates(forward, m);
 
-    var direction = forward.subtract(this.position);
+    let direction = forward.subtract(this.position);
     direction = Vector3.Normalize(direction);
 
-    var ray = new Ray(this.position, direction, this._range);
-    let rayHelper = new RayHelper(ray);
+    const ray = new Ray(this.position, direction, this._range);
+    const rayHelper = new RayHelper(ray);
     rayHelper.show(this._scene);
 
-    var hit = this._scene.pickWithRay(ray);
-    if(hit.pickedMesh.name == 'player'){
+    const hit = this._scene.pickWithRay(ray);
+    if (hit.pickedMesh.name === 'player') {
       // Env.hit = true?
     }
   }
-
 
   /**
    * Called on the user clicks on the canvas.
@@ -136,27 +134,27 @@ export default class PlayerCamera extends FreeCamera {
   @onPointerEvent(PointerEventTypes.POINTERDOWN, false)
   private _onPointerEvent(info: PointerInfo): void {
     this._enterPointerLock();
-    if(this._shot === false){
-      this.Shot();
+    if (this._shot === false) {
       this._shot = true;
       let t = 10;
-      var countdown = new TextBlock();
-      var advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI('UI');
+      const countdown = new TextBlock();
+      const advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI('UI');
       countdown.top = -100;
       countdown.color = 'white';
       countdown.text = t.toString();
       countdown.isVisible = true;
       advancedTexture.addControl(countdown);
       const handle = setInterval(async () => {
-        t -= 1
+        t -= 1;
         countdown.text = t.toString();
-        if(t === 0){
+        if (t === 0) {
           clearInterval(handle);
           countdown.dispose();
           countdown.isVisible = false;
           this._shot = false;
         }
       }, 1000);
+      this.Shot();
     }
   }
 
