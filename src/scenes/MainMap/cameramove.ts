@@ -9,17 +9,11 @@ import {
   CircleEase,
   EasingFunction,
   KeyboardEventTypes,
-  RayHelper,
-  Node,
-  MeshBuilder,
   PowerEase,
 } from '@babylonjs/core';
 
 import { TextBlock, AdvancedDynamicTexture } from '@babylonjs/gui';
-import { clearInterval } from 'timers';
-import { count } from 'console';
-import { Env } from '../GameScripts/environment';
-import { fromChildren, visibleInInspector, onPointerEvent, onKeyboardEvent } from '../tools';
+import { visibleInInspector, onPointerEvent, onKeyboardEvent } from '../tools';
 
 export default class PlayerCamera extends FreeCamera {
   @visibleInInspector('KeyMap', 'Forward Key', 'w'.charCodeAt(0))
@@ -50,27 +44,17 @@ export default class PlayerCamera extends FreeCamera {
   private _hook = false;
   private _shift = false;
   private _shot = false;
-  /**
-   * Override constructor.
-   * @warn do not fill.
-   */
+
   // @ts-ignore ignoring the super call as we don't want to re-init
   private constructor() {}
 
-  /**
-   * Called on the scene starts.
-   */
   public onStart(): void {
-    // For the example, let's configure the keys of the camera using the @visibleInInspector decorator.
     this.keysUp = [this._forwardKey];
     this.keysDown = [this._backwardKey];
     this.keysLeft = [this._strafeLeftKey];
     this.keysRight = [this._strafeRightKey];
   }
 
-  /**
-   * Called each frame.
-   */
   public onUpdate(): void {
     if (this._shift) {
       this.speed = this._runSpeed;
@@ -93,7 +77,6 @@ export default class PlayerCamera extends FreeCamera {
     cam.animations = [];
     const a = new Animation('a', 'position.y', 50, Animation.ANIMATIONTYPE_FLOAT, Animation.ANIMATIONLOOPMODE_CYCLE);
 
-    // Animation keys
     const keys = [];
     keys.push({ frame: 0, value: cam.position.y });
     keys.push({ frame: 25, value: cam.position.y + this._jumpvalue });
@@ -112,7 +95,7 @@ export default class PlayerCamera extends FreeCamera {
 
   public Shot(): void {
     const shotse = this._scene.getSoundByName('files/Rifle.mp3');
-    shotse.setVolume(0);
+    shotse.setVolume(0.5);
     shotse.play();
     let forward = new Vector3(0, 0, 1);
     const m = this.getWorldMatrix();
@@ -122,9 +105,8 @@ export default class PlayerCamera extends FreeCamera {
     direction = Vector3.Normalize(direction);
 
     const ray = new Ray(this.globalPosition, direction, this._range);
-
-    const hit = this._scene.pickWithRay(ray);
-    if (hit.pickedMesh.name === 'player') {
+    const hit = this._scene.pickWithRay(ray, (mesh) => mesh.isPickable && mesh.isEnabled());
+    if (hit !== null && hit.hit && hit.pickedMesh.name === 'player') {
       // Env.hit = true?
     }
   }
@@ -138,13 +120,8 @@ export default class PlayerCamera extends FreeCamera {
     direction = Vector3.Normalize(direction);
 
     const ray = new Ray(this.globalPosition, direction, this._range);
-
     const hit = this._scene.pickWithRay(ray);
-
-    // const cone = MeshBuilder.CreateCylinder('hook', { height: 100, diameter: 0.1 });
-    // cone.position.set(this.globalPosition.x, this.globalPosition.y, this.globalPosition.z);
-
-    if (hit.pickedMesh) {
+    if (hit !== null && hit.pickedMesh) {
       this.moveToMesh(hit.pickedPoint);
     } else {
       this._hook = false;
@@ -154,7 +131,7 @@ export default class PlayerCamera extends FreeCamera {
 
   public moveToMesh(point: Vector3) {
     const movese = this._scene.getSoundByName('files/move.mp3');
-    movese.setVolume(0);
+    movese.setVolume(0.5);
     movese.play();
     Animation.CreateAndStartAnimation(
       'hook',
@@ -173,12 +150,8 @@ export default class PlayerCamera extends FreeCamera {
     );
   }
 
-  /**
-   * Called on the user clicks on the canvas.
-   * Used to request pointer lock and launch a new ball.
-   */
   @onPointerEvent(PointerEventTypes.POINTERDOWN, false)
-  private _onPointerEvent(info: PointerInfo): void {
+  private _onPointerEvent(_info: PointerInfo): void {
     this._enterPointerLock();
     if (!this._shot) {
       this._shot = true;
@@ -190,7 +163,7 @@ export default class PlayerCamera extends FreeCamera {
       countdown.text = t.toString();
       countdown.isVisible = true;
       advancedTexture.addControl(countdown);
-      const handle = setInterval(async () => {
+      const handle = setInterval(() => {
         t -= 1;
         countdown.text = t.toString();
         if (t === 0) {
@@ -204,10 +177,6 @@ export default class PlayerCamera extends FreeCamera {
     }
   }
 
-  /**
-   * Called on the escape key (key code 27) is up.
-   * Used to exit pointer lock.
-   */
   @onKeyboardEvent([27], KeyboardEventTypes.KEYUP)
   private _onEscapeKey(): void {
     const engine = this.getEngine();
@@ -226,18 +195,15 @@ export default class PlayerCamera extends FreeCamera {
   }
 
   @onKeyboardEvent([16], KeyboardEventTypes.KEYDOWN)
-  private _onShiftdown(info: KeyboardInfo): void {
+  private _onShiftdown(_info: KeyboardInfo): void {
     this._shift = true;
   }
 
   @onKeyboardEvent([16], KeyboardEventTypes.KEYUP)
-  private _onShiftup(info: KeyboardInfo): void {
+  private _onShiftup(_info: KeyboardInfo): void {
     this._shift = false;
   }
 
-  /**
-   * Requests the pointer lock.
-   */
   private _enterPointerLock(): void {
     const engine = this.getEngine();
     if (!engine.isPointerLock) {
