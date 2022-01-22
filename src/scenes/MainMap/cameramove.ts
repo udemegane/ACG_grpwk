@@ -142,6 +142,7 @@ export default class PlayerCamera extends FreeCamera {
       this.moveToMesh(hit.pickedPoint);
     } else {
       this._hook = false;
+      this._jumping = false;
     }
     // const cone = MeshBuilder.CreateCylinder('hook', {});
     // cone.position = this.position.add(forward);
@@ -163,6 +164,7 @@ export default class PlayerCamera extends FreeCamera {
       new PowerEase(1),
       () => {
         this._hook = false;
+        this._jumping = false;
       }
     );
   }
@@ -214,6 +216,7 @@ export default class PlayerCamera extends FreeCamera {
   private _onHkey(): void {
     if (!this._hook) {
       this._hook = true;
+      this._jumping = true;
       this.makeHook();
     }
   }
