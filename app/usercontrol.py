@@ -33,6 +33,8 @@ def signup(username: str, password: str):
 
 
 def getUserId(token: Optional[str]):
+    if token is None:
+        return None
     with SessionContext() as session:
         tokendata = session.query(TokenTable).filter_by(token=token).one_or_none()
         if tokendata is None:
@@ -41,6 +43,8 @@ def getUserId(token: Optional[str]):
 
 
 def getUserData(userId: Optional[int], session=None):
+    if userId is None:
+        return None
     with SessionContext(session=session) as session:
         data: Users = session.query(Users).get(userId)
         if data is None:
@@ -61,3 +65,4 @@ def createToken(userId: int):
     with SessionContext() as session:
         session.add(TokenTable(userId=userId, token=new_token))
         return new_token
+

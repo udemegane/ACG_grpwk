@@ -1,5 +1,6 @@
 import SceneScriptBase from '../GameScripts/sceneScriptBase';
 import { visibleInInspector } from '../decorators';
+import { Env } from '../GameScripts/environment';
 /**
  * This represents a script that is attached to a node in the editor.
  * Available nodes are:
@@ -22,6 +23,7 @@ import { visibleInInspector } from '../decorators';
 export default class MainMapScript extends SceneScriptBase {
   @visibleInInspector('string', 'In sceneScript', 'Hello world!')
   private _testLocalString: string;
+
   /**
    * Override constructor.
    * @warn do not fill.
@@ -35,6 +37,7 @@ export default class MainMapScript extends SceneScriptBase {
    */
   public onInitialize(): void {
     super.onInitialize();
+    if (process.env.ACG_PRODUCTION_STAGE !== 'production') console.log('main map oninit');
     // ...
   }
 
@@ -43,6 +46,13 @@ export default class MainMapScript extends SceneScriptBase {
    */
   public onStart(): void {
     super.onStart();
+    if (process.env.ACG_PRODUCTION_STAGE !== 'production') console.log('main map onstart');
+    Env.requestMultiMatch().then((res) => {
+      console.log(res);
+      Env.createConnection(res).then(() => {
+        Env.gameStarted = true;
+      });
+    });
     // ...
   }
 

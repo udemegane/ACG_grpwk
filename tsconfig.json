@@ -6,6 +6,7 @@
     "declaration": true,
     "outDir": "./build/src",
     "declarationDir": "./declaration/src",
+    "esModuleInterop": true,
     "experimentalDecorators": true,
     "typeRoots": [
       "node_modules/@types"
