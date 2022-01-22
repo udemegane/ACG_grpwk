@@ -154,7 +154,7 @@ export default class PlayerCamera extends FreeCamera {
 
   public moveToMesh(point: Vector3) {
     const movese = this._scene.getSoundByName('files/move.mp3');
-    movese.setVolume(0.1);
+    movese.setVolume(0);
     movese.play();
     Animation.CreateAndStartAnimation(
       'hook',

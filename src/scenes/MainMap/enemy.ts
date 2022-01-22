@@ -1,4 +1,4 @@
-import { Node, Mesh, Animation, Vector3 } from '@babylonjs/core';
+import { Node, Mesh, Animation, Vector3, AnimationRange } from '@babylonjs/core';
 import { Env } from '../GameScripts/environment';
 /**
  * This represents a script that is attached to a node in the editor.
@@ -62,9 +62,10 @@ export default class MyScript extends Mesh {
     // ...
   }
 
-  //   public startAnimation(animname: string): void {
-  //     this._scene.getAnimationGroupByName(animname).start();
-  //   }
+  public startAnimation(animname: string): void {
+    // const anim = this._scene.Anima(animname);
+    // anim.start();
+  }
   /**
    * Called on a message has been received and sent from a graph.
    * @param message defines the name of the message sent from the graph.
