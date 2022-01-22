@@ -45,27 +45,22 @@ export default class MyScript extends Mesh {
    * Called each frame.
    */
   public onUpdate(): void {
-    // this.startAnimation('Ybot_Run');
-    // const anim = this.getAnimationByName('Ybot_Run');
-    // anim.
+    // const animrange = this.getAnimationRange('YBot_Run');
+    // this._scene.beginAnimation(this.skeleton, 127, 148);
     // var nextpos = Env.getposition();
     // var nextqua = Env.getposition();
     // if(nextpos !== this.absolutePosition){
     // this.startAnimation('YBot_Idle');
     // }else if(shiftkey is pressed){
-    // this.startAnimation('Ybot_Run');
+    // this.startAnimation('YBot_Run');
     // }else{
-    // this.startAnimation('Ybot_Walk');
+    // this.startAnimation('YBot_Walk');
     // }
     // this.setAbsolutePosition(Env.getposition());
     // this.rotationQuaternion=Env.getrotation();
     // ...
   }
 
-  public startAnimation(animname: string): void {
-    // const anim = this._scene.Anima(animname);
-    // anim.start();
-  }
   /**
    * Called on a message has been received and sent from a graph.
    * @param message defines the name of the message sent from the graph.
