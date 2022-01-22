@@ -1,0 +1,18 @@
+{
+	"name": "files/move.mp3",
+	"url": "move.mp3",
+	"autoplay": false,
+	"loop": false,
+	"volume": 1,
+	"spatialSound": false,
+	"maxDistance": 100,
+	"rolloffFactor": 1,
+	"refDistance": 1,
+	"distanceModel": "linear",
+	"playbackRate": 1,
+	"panningModel": "equalpower",
+	"soundTrackId": -1,
+	"metadata": {
+		"id": "e16b8b50-33ed-4ea8-ae9d-30779943683d"
+	}
+}

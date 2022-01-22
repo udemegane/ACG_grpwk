@@ -11,6 +11,7 @@ import {
   KeyboardEventTypes,
   RayHelper,
   MeshBuilder,
+  PowerEase,
 } from '@babylonjs/core';
 
 import { TextBlock, AdvancedDynamicTexture } from '@babylonjs/gui';
@@ -119,8 +120,6 @@ export default class PlayerCamera extends FreeCamera {
     direction = Vector3.Normalize(direction);
 
     const ray = new Ray(this.position, direction, this._range);
-    const rayHelper = new RayHelper(ray);
-    rayHelper.show(this._scene);
 
     const hit = this._scene.pickWithRay(ray);
     if (hit.pickedMesh.name === 'player') {
@@ -137,13 +136,35 @@ export default class PlayerCamera extends FreeCamera {
     direction = Vector3.Normalize(direction);
 
     const ray = new Ray(this.position, direction, this._range);
-    const rayHelper = new RayHelper(ray);
-    rayHelper.show(this._scene);
 
     const hit = this._scene.pickWithRay(ray);
-    const cone = MeshBuilder.CreateCylinder('hook', {});
-    cone.position = this.position.add(forward);
-    cone.rotation = direction;
+    if (hit.pickedMesh) {
+      this.moveToMesh(hit.pickedPoint);
+    } else {
+      this._hook = false;
+    }
+    // const cone = MeshBuilder.CreateCylinder('hook', {});
+    // cone.position = this.position.add(forward);
+    // cone.rotation = direction;
+  }
+
+  public moveToMesh(point: Vector3) {
+    const movese = this._scene.getSoundByName('files/move.mp3');
+    movese.play();
+    Animation.CreateAndStartAnimation(
+      'hook',
+      this._scene.activeCamera,
+      'position',
+      15,
+      5,
+      this.position,
+      point,
+      Animation.ANIMATIONLOOPMODE_CONSTANT,
+      new PowerEase(1),
+      () => {
+        this._hook = false;
+      }
+    );
   }
 
   /**
