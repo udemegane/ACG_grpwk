@@ -14,6 +14,7 @@ export interface ISceneScriptMap extends ScriptMap {
 	"src/scenes/MainMap/cameramove.ts": any;
 	"src/scenes/MainMap/enemy.ts.ts": any;
 	"src/scenes/MainMap/mainMap.ts": any;
+	"src/scenes/MainMap/move.ts": any;
 	"src/scenes/scene/camera.ts": any;
 	"src/scenes/scene/damage.ts": any;
 	"src/scenes/scene/scene.ts": any;
@@ -41,6 +42,7 @@ export const scriptsMap: ISceneScriptMap = {
 	"src/scenes/MainMap/cameramove.ts": require("./MainMap/cameramove"),
 	"src/scenes/MainMap/enemy.ts.ts": require("./MainMap/enemy.ts"),
 	"src/scenes/MainMap/mainMap.ts": require("./MainMap/mainMap"),
+	"src/scenes/MainMap/move.ts": require("./MainMap/move"),
 	"src/scenes/scene/camera.ts": require("./scene/camera"),
 	"src/scenes/scene/damage.ts": require("./scene/damage"),
 	"src/scenes/scene/scene.ts": require("./scene/scene"),

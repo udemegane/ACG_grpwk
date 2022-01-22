@@ -5,6 +5,9 @@ import {
   PointerInfo,
   PhysicsImpostor,
   Vector3,
+  Animation,
+  CircleEase,
+  EasingFunction,
   KeyboardEventTypes,
 } from '@babylonjs/core';
 
@@ -12,9 +15,6 @@ import { fromChildren, visibleInInspector, onPointerEvent, onKeyboardEvent } fro
 import { Env } from '../GameScripts/environment';
 
 export default class PlayerCamera extends FreeCamera {
-  @fromChildren('ball')
-  private _ball: Mesh;
-
   @visibleInInspector('KeyMap', 'Forward Key', 'w'.charCodeAt(0))
   private _forwardKey: number;
 
@@ -27,9 +27,10 @@ export default class PlayerCamera extends FreeCamera {
   @visibleInInspector('KeyMap', 'Strafe Right Key', 'd'.charCodeAt(0))
   private _strafeRightKey: number;
 
-  @visibleInInspector('number', 'Ball Force Factor', 5)
-  private _ballForceFactor: number;
+  @visibleInInspector('number', 'Jump Value', 5)
+  private _jumpvalue: number;
 
+  private _jumping = false;
   /**
    * Override constructor.
    * @warn do not fill.
@@ -55,6 +56,36 @@ export default class PlayerCamera extends FreeCamera {
     // Nothing to do now...
   }
 
+  @onKeyboardEvent([74], KeyboardEventTypes.KEYUP)
+  private _jump(): void {
+    if (this._jumping) {
+      return;
+    }
+    this._jumping = true;
+    this.cameraJump();
+    this._jumping = false;
+  }
+
+  public cameraJump() {
+    const cam = this._scene.activeCamera;
+    cam.animations = [];
+    const a = new Animation('a', 'position.y', 50, Animation.ANIMATIONTYPE_FLOAT, Animation.ANIMATIONLOOPMODE_CYCLE);
+
+    // Animation keys
+    const keys = [];
+    keys.push({ frame: 0, value: cam.position.y });
+    keys.push({ frame: 25, value: cam.position.y + this._jumpvalue });
+    keys.push({ frame: 50, value: cam.position.y });
+    a.setKeys(keys);
+
+    const easingFunction = new CircleEase();
+    easingFunction.setEasingMode(EasingFunction.EASINGMODE_EASEINOUT);
+    a.setEasingFunction(easingFunction);
+
+    cam.animations.push(a);
+    this._scene.beginAnimation(cam, 0, 50, false);
+  }
+
   /**
    * Called on the user clicks on the canvas.
    * Used to request pointer lock and launch a new ball.
@@ -62,7 +93,6 @@ export default class PlayerCamera extends FreeCamera {
   @onPointerEvent(PointerEventTypes.POINTERDOWN, false)
   private _onPointerEvent(info: PointerInfo): void {
     this._enterPointerLock();
-    this._launchBall(info);
   }
 
   /**
@@ -91,29 +121,5 @@ export default class PlayerCamera extends FreeCamera {
     if (!engine.isPointerLock) {
       engine.enterPointerlock();
     }
-  }
-
-  /**
-   * Launches a new ball from the camera position to the camera direction.
-   */
-  private _launchBall(info: PointerInfo): void {
-    // Create a new ball instance
-    const ballInstance = this._ball.createInstance('ballInstance');
-    ballInstance.position.copyFrom(this._ball.getAbsolutePosition());
-
-    // Create physics impostor for the ball instance
-    ballInstance.physicsImpostor = new PhysicsImpostor(ballInstance, PhysicsImpostor.SphereImpostor, {
-      mass: 1,
-      friction: 0.2,
-      restitution: 0.2,
-    });
-
-    // Apply impulse on ball
-    const force = this.getDirection(new Vector3(0, 0, 1)).multiplyByFloats(
-      this._ballForceFactor,
-      this._ballForceFactor,
-      this._ballForceFactor
-    );
-    ballInstance.applyImpulse(force, ballInstance.getAbsolutePosition());
   }
 }
