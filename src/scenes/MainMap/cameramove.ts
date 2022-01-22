@@ -109,6 +109,8 @@ export default class PlayerCamera extends FreeCamera {
   }
 
   public Shot() {
+    const shotse = this._scene.getSoundByName('files/Rifle.mp3');
+    shotse.play();
     var forward = new Vector3(0, 0, 1);
     var m = this.getWorldMatrix();
     forward = Vector3.TransformCoordinates(forward, m);
@@ -121,7 +123,6 @@ export default class PlayerCamera extends FreeCamera {
     rayHelper.show(this._scene);
 
     var hit = this._scene.pickWithRay(ray);
-
     if(hit.pickedMesh.name == 'player'){
       // Env.hit = true?
     }
