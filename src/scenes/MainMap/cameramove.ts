@@ -3,6 +3,7 @@ import {
   PointerEventTypes,
   Mesh,
   PointerInfo,
+  KeyboardInfo,
   PhysicsImpostor,
   Vector3,
   Animation,
@@ -30,7 +31,14 @@ export default class PlayerCamera extends FreeCamera {
   @visibleInInspector('number', 'Jump Value', 5)
   private _jumpvalue: number;
 
+  @visibleInInspector('number', 'Run Speed', 2)
+  private _runSpeed: number;
+
+  @visibleInInspector('number', 'Walk Speed', 2)
+  private _walkSpeed: number;
+
   private _jumping = false;
+  private _shift = false;
   /**
    * Override constructor.
    * @warn do not fill.
@@ -53,6 +61,11 @@ export default class PlayerCamera extends FreeCamera {
    * Called each frame.
    */
   public onUpdate(): void {
+    if (this._shift) {
+      this.speed = this._runSpeed;
+    } else {
+      this.speed = this._walkSpeed;
+    }
     // Nothing to do now...
   }
 
@@ -106,6 +119,16 @@ export default class PlayerCamera extends FreeCamera {
     if (engine.isPointerLock) {
       engine.exitPointerlock();
     }
+  }
+
+  @onKeyboardEvent([16], KeyboardEventTypes.KEYDOWN)
+  private _onShiftdown(info: KeyboardInfo): void {
+    this._shift = true;
+  }
+
+  @onKeyboardEvent([16], KeyboardEventTypes.KEYUP)
+  private _onShiftup(info: KeyboardInfo): void {
+    this._shift = false;
   }
 
   // キー0をシーン切り替えデバッグ用にした
