@@ -10,6 +10,7 @@ import {
   EasingFunction,
   KeyboardEventTypes,
   RayHelper,
+  Node,
   MeshBuilder,
   PowerEase,
 } from '@babylonjs/core';
@@ -111,15 +112,16 @@ export default class PlayerCamera extends FreeCamera {
 
   public Shot(): void {
     const shotse = this._scene.getSoundByName('files/Rifle.mp3');
+    shotse.setVolume(0);
     shotse.play();
     let forward = new Vector3(0, 0, 1);
     const m = this.getWorldMatrix();
     forward = Vector3.TransformCoordinates(forward, m);
 
-    let direction = forward.subtract(this.position);
+    let direction = forward.subtract(this.globalPosition);
     direction = Vector3.Normalize(direction);
 
-    const ray = new Ray(this.position, direction, this._range);
+    const ray = new Ray(this.globalPosition, direction, this._range);
 
     const hit = this._scene.pickWithRay(ray);
     if (hit.pickedMesh.name === 'player') {
@@ -132,33 +134,35 @@ export default class PlayerCamera extends FreeCamera {
     const m = this.getWorldMatrix();
     forward = Vector3.TransformCoordinates(forward, m);
 
-    let direction = forward.subtract(this.position);
+    let direction = forward.subtract(this.globalPosition);
     direction = Vector3.Normalize(direction);
 
-    const ray = new Ray(this.position, direction, this._range);
+    const ray = new Ray(this.globalPosition, direction, this._range);
 
     const hit = this._scene.pickWithRay(ray);
+
+    // const cone = MeshBuilder.CreateCylinder('hook', { height: 100, diameter: 0.1 });
+    // cone.position.set(this.globalPosition.x, this.globalPosition.y, this.globalPosition.z);
+
     if (hit.pickedMesh) {
       this.moveToMesh(hit.pickedPoint);
     } else {
       this._hook = false;
       this._jumping = false;
     }
-    // const cone = MeshBuilder.CreateCylinder('hook', {});
-    // cone.position = this.position.add(forward);
-    // cone.rotation = direction;
   }
 
   public moveToMesh(point: Vector3) {
     const movese = this._scene.getSoundByName('files/move.mp3');
+    movese.setVolume(0.1);
     movese.play();
     Animation.CreateAndStartAnimation(
       'hook',
-      this._scene.activeCamera,
+      this._scene.getNodeByName('player1'),
       'position',
       15,
       5,
-      this.position,
+      this.globalPosition,
       point,
       Animation.ANIMATIONLOOPMODE_CONSTANT,
       new PowerEase(1),

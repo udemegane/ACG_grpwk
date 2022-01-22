@@ -1,5 +1,5 @@
-import { Node } from '@babylonjs/core';
-
+import { Node, Mesh, Animation, Vector3 } from '@babylonjs/core';
+import { Env } from '../GameScripts/environment';
 /**
  * This represents a script that is attached to a node in the editor.
  * Available nodes are:
@@ -18,7 +18,7 @@ import { Node } from '@babylonjs/core';
  * The function "onInitialize" is called immediately after the constructor is called.
  * The functions "onStart" and "onUpdate" are called automatically.
  */
-export default class MyScript extends Node {
+export default class MyScript extends Mesh {
   /**
    * Override constructor.
    * @warn do not fill.
@@ -45,9 +45,26 @@ export default class MyScript extends Node {
    * Called each frame.
    */
   public onUpdate(): void {
+    // this.startAnimation('Ybot_Run');
+    // const anim = this.getAnimationByName('Ybot_Run');
+    // anim.
+    // var nextpos = Env.getposition();
+    // var nextqua = Env.getposition();
+    // if(nextpos !== this.absolutePosition){
+    // this.startAnimation('YBot_Idle');
+    // }else if(shiftkey is pressed){
+    // this.startAnimation('Ybot_Run');
+    // }else{
+    // this.startAnimation('Ybot_Walk');
+    // }
+    // this.setAbsolutePosition(Env.getposition());
+    // this.rotationQuaternion=Env.getrotation();
     // ...
   }
 
+  //   public startAnimation(animname: string): void {
+  //     this._scene.getAnimationGroupByName(animname).start();
+  //   }
   /**
    * Called on a message has been received and sent from a graph.
    * @param message defines the name of the message sent from the graph.

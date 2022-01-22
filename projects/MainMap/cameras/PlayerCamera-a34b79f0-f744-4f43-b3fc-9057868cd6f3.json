@@ -13,24 +13,24 @@
 	"checkCollisions": true,
 	"applyGravity": true,
 	"rotation": [
-		-0.12634597433486816,
-		0.04075328247684231,
-		-1.87032916786655e-9
+		0,
+		0,
+		0
 	],
 	"speed": 1.5,
 	"position": [
-		-29.490251541137695,
-		6.97527551651001,
-		-16.000499725341797
+		0,
+		0,
+		0
 	],
 	"upVector": [
-		-0.005133901722729206,
-		0.9920289516448975,
-		-0.12590546905994415
+		0,
+		1,
+		0
 	],
 	"fov": 0.6,
 	"minZ": 1,
-	"maxZ": 1946195.068359375,
+	"maxZ": 9852612.533569336,
 	"inertia": 0.9,
 	"mode": 0,
 	"layerMask": 268435455,
@@ -88,6 +88,7 @@
 		"doNotExport": false
 	},
 	"type": "UniversalCamera",
+	"parentId": "5d8e0d87-8811-4e82-b4de-c65f5913bae3",
 	"inputsmgr": {
 		"FreeCameraKeyboardMoveInput": {
 			"tags": null,

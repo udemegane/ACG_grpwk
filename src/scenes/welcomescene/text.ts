@@ -105,7 +105,7 @@ export default class MyScript extends Mesh {
         break;
       case 2:
         if (this.selectup === false) this.nowscene = 3;
-        else Env.switchScene('./scenes/scene/');
+        else Env.switchScene('./scenes/MainMap/');
         break;
       default:
         break;
