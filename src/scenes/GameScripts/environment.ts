@@ -1,4 +1,4 @@
-import { Observable } from '@babylonjs/core';
+import { Observable, Vector3, Quaternion } from '@babylonjs/core';
 import { Connection } from './connection';
 
 export class Env {
@@ -8,9 +8,24 @@ export class Env {
   public static readonly onSwitchSceneObservable: Observable<Env> = new Observable();
 
   public static readonly con = new Connection();
+  public static gameStarted = false;
 
-  public static onInitialize() {
+  public static async onInitialize() {
+    if (process.env.ACG_PRODUCTION_STAGE !== 'production') console.log('env init');
     document.title = process.env.ACG_APP_NAME;
+    if (process.env.ACG_PRODUCTION_STAGE !== 'production') {
+      if (!(await this.checkToken())) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const testUserId = parseInt(urlParams.get('user') || '0', 10);
+        const users = [
+          { user: 'test_user', pass: 'test_password' },
+          { user: 'enemy', pass: 'enemy_password' },
+        ];
+        const user = users[testUserId];
+        console.log('logging in with user: ', user);
+        await this.login(user.user, user.pass);
+      }
+    }
   }
 
   public static setUsername(username: string) {
@@ -69,6 +84,71 @@ export class Env {
     if (!token) return false;
     const resp = await this.loginWithToken(token);
     return resp.success;
+  }
+
+  /**
+   * requestMulti: add current user to multi player queue.
+   * @param{number?} maxTry?: set to change how many challenges. (default = 3)
+   * @returns Promise<string?>: gameid for p2p connection
+   *                          - `undefined` if no matching for more than `waitMax` seconds
+   */
+  public static async requestMultiMatch(maxTry = 3, currentCount = 0): Promise<string> {
+    if (currentCount > maxTry) return undefined;
+    if (process.env.ACG_PRODUCTION_STAGE !== 'production') await this.onInitialize();
+    if (!this.con.isValid()) {
+      console.log('Not Logged In');
+      return undefined;
+    }
+    const resp = await this.con.multiQueue(60);
+    if (!resp.success) return undefined;
+    return new Promise((resolve) => {
+      setTimeout(async () => {
+        const check = await this.con.checkMulti();
+        if (check.success) {
+          resolve(resp.oppeer);
+        } else resolve(await this.requestMultiMatch(maxTry, currentCount + 1));
+      }, 5000);
+    });
+  }
+
+  public static async createConnection(oppeer?: string) {
+    await this.con.createConnection(oppeer);
+  }
+
+  public static sendMyStatus(pos: Vector3, dir: Quaternion) {
+    if (!Env.gameStarted) return;
+    this.con.sendMyAbsPos(pos);
+    this.con.sendMyAbsDir(dir);
+  }
+
+  public static sendShot(origin: Vector3, direction: Vector3, length = -1) {
+    if (!Env.gameStarted) return;
+    this.con.sendNewShot(origin, direction, length);
+  }
+
+  public static updateHp(hp: number) {
+    if (!Env.gameStarted) return;
+    this.con.sendHp(hp);
+  }
+
+  public static getOpAbsPos() {
+    return this.con.opponent.pos;
+  }
+
+  public static getOpAbsDir() {
+    return this.con.opponent.dir;
+  }
+
+  public static getOpHp() {
+    return this.con.opponent.hp;
+  }
+
+  /**
+   * return one of new shots. `undefined` if none.
+   */
+  public static getNewShot() {
+    if (this.con.opponent.shots.length === 0) return undefined;
+    return this.con.opponent.shots.shift();
   }
 
   public static async switchScene(sceneRootUrl: string) {

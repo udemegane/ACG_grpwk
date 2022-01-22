@@ -201,7 +201,7 @@ function build_protobuf() {
     info 'Compiling protobuf for js/ts to' "$PROTO_DIR/$AUTOGEN_TS/$pb2.ts"
     protoc \
       --plugin=$CWD/node_modules/.bin/protoc-gen-ts_proto \
-      --ts_proto_opt=exportCommonSymbols=false,unrecognizedEnum=false,fileSuffix=_pb2 \
+      --ts_proto_opt=exportCommonSymbols=false,unrecognizedEnum=false,fileSuffix=_pb2,esModuleInterop=true,oneof=unions \
       --ts_proto_out="$AUTOGEN_TS" *.proto
     echo '/* eslint-disable */' > "$AUTOGEN_TS"/$pb2.ts
     for f in $protofiles; do
