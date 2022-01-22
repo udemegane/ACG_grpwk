@@ -10,26 +10,16 @@ import {
   EasingFunction,
   KeyboardEventTypes,
   PowerEase,
+  PickingInfo,
 } from '@babylonjs/core';
 
 import { TextBlock, AdvancedDynamicTexture } from '@babylonjs/gui';
 import { visibleInInspector, onPointerEvent, onKeyboardEvent } from '../tools';
+import { Env } from '../GameScripts/environment';
 
 export default class PlayerCamera extends FreeCamera {
-  @visibleInInspector('KeyMap', 'Forward Key', 'w'.charCodeAt(0))
-  private _forwardKey: number;
-
-  @visibleInInspector('KeyMap', 'Backward Key', 's'.charCodeAt(0))
-  private _backwardKey: number;
-
-  @visibleInInspector('KeyMap', 'Strafe Left Key', 'a'.charCodeAt(0))
-  private _strafeLeftKey: number;
-
-  @visibleInInspector('KeyMap', 'Strafe Right Key', 'd'.charCodeAt(0))
-  private _strafeRightKey: number;
-
-  @visibleInInspector('number', 'Jump Value', 10)
-  private _jumpvalue: number;
+  @visibleInInspector('number', 'Jump Force', 10)
+  private _jumpForce: number;
 
   @visibleInInspector('number', 'Run Speed', 0.5)
   private _runSpeed: number;
@@ -37,10 +27,21 @@ export default class PlayerCamera extends FreeCamera {
   @visibleInInspector('number', 'Walk Speed', 0.3)
   private _walkSpeed: number;
 
-  @visibleInInspector('number', 'Range', 100)
-  private _range: number;
+  @visibleInInspector('number', 'Shot Move Speed', 0.9)
+  private _shotMoveSpeed: number;
 
+  @visibleInInspector('number', 'Shot Range', 100)
+  private _shotRange: number;
+
+  @visibleInInspector('number', 'Hook Range', 100)
+  private _hookRange: number;
+
+  private _forward = false;
+  private _backward = false;
+  private _toRight = false;
+  private _toLeft = false;
   private _jumping = false;
+  private _vy: number;
   private _hook = false;
   private _shift = false;
   private _shot = false;
@@ -49,27 +50,79 @@ export default class PlayerCamera extends FreeCamera {
   private constructor() {}
 
   public onStart(): void {
-    this.keysUp = [this._forwardKey];
-    this.keysDown = [this._backwardKey];
-    this.keysLeft = [this._strafeLeftKey];
-    this.keysRight = [this._strafeRightKey];
+    this.keysUp = [];
+    this.keysDown = [];
+    this.keysLeft = [];
+    this.keysRight = [];
+    new Promise((resolve) => {
+      // disable move with keys until game is started
+      const interval = setInterval(() => {
+        if (Env.gameStarted || process.env.ACG_PRODUCTION_STAGE !== 'production') {
+          clearInterval(interval);
+          resolve();
+        }
+      }, 1000);
+    }).then(() => {
+      // this.keysUp = [this._forwardKey];
+      // this.keysDown = [this._backwardKey];
+      // this.keysLeft = [this._strafeLeftKey];
+      // this.keysRight = [this._strafeRightKey];
+      // this.keysUpward = [74];
+    });
   }
 
   public onUpdate(): void {
+    const deltaTime = this.getEngine().getDeltaTime();
     if (this._shift) {
       this.speed = this._runSpeed;
     } else {
       this.speed = this._walkSpeed;
     }
+    if (!this._isGrounded() && !this._hook) {
+      this._jumping = true;
+      this._vy -= 9.8 * 0.001 * deltaTime;
+    } else {
+      this._jumping = this._hook;
+      this._vy = 0;
+    }
+    this._applyGravity(deltaTime);
+    const moveVec = Vector3.Zero();
+    Vector3.Zero()
+      .add(Vector3.Forward().scale(+this._forward - +this._backward))
+      .add(Vector3.Right().scale(+this._toRight - +this._toLeft))
+      .rotateByQuaternionToRef(this.absoluteRotation, moveVec);
+    if (moveVec.length()) this.position.addInPlace(moveVec.normalize().scale(this.speed));
   }
 
-  @onKeyboardEvent([74], KeyboardEventTypes.KEYUP)
-  private _jump(): void {
-    if (this._jumping) {
-      return;
+  private _applyGravity(deltaTime?: number) {
+    const d = deltaTime || this.getEngine().getDeltaTime();
+    this.position.addInPlace(Vector3.Up().scale(this._vy * d * 0.001));
+  }
+
+  private _isGrounded(): boolean {
+    // console.log(this.position);
+    if (this._floorRaycast(0, 0, 0.6).equals(Vector3.Zero())) return false;
+    return true;
+  }
+
+  private _floorRaycast(offsetx: number, offsetz: number, raycastlen: number): Vector3 {
+    const raycastFloorPos = new Vector3(this.position.x + offsetx, this.position.y + 0.5, this.position.z + offsetz);
+    const ray = new Ray(raycastFloorPos, Vector3.Up().scale(-1), raycastlen);
+    const pick = this._scene.pickWithRay(ray, (mesh) => mesh.isPickable && mesh.isEnabled());
+    if (pick !== null && pick.hit && pick.pickedPoint !== null) {
+      return pick.pickedPoint;
     }
+    return Vector3.Zero();
+  }
+
+  @onKeyboardEvent([74], KeyboardEventTypes.KEYDOWN) // j
+  private _jump(): void {
+    // if (this._jumping) {
+    //   return;
+    // }
     this._jumping = true;
-    this.cameraJump();
+    this._vy = this._jumpForce;
+    this._applyGravity(200 / this._vy);
   }
 
   public cameraJump(): void {
@@ -79,8 +132,8 @@ export default class PlayerCamera extends FreeCamera {
 
     const keys = [];
     keys.push({ frame: 0, value: cam.position.y });
-    keys.push({ frame: 25, value: cam.position.y + this._jumpvalue });
-    keys.push({ frame: 50, value: cam.position.y });
+    keys.push({ frame: 25, value: cam.position.y + this._jumpForce });
+    keys.push({ frame: 50, value: cam.position.y + this._jumpForce });
     a.setKeys(keys);
 
     const easingFunction = new CircleEase();
@@ -88,15 +141,17 @@ export default class PlayerCamera extends FreeCamera {
     a.setEasingFunction(easingFunction);
 
     cam.animations.push(a);
+    console.log(this.globalPosition);
     this._scene.beginAnimation(cam, 0, 50, false, 1, () => {
       this._jumping = false;
+      console.log(this.globalPosition);
     });
   }
 
   public Shot(): void {
-    const shotse = this._scene.getSoundByName('files/Rifle.mp3');
-    shotse.setVolume(0.5);
-    shotse.play();
+    const shotSE = this._scene.getSoundByName('files/Rifle.mp3');
+    shotSE.setVolume(0.5);
+    shotSE.play();
     let forward = new Vector3(0, 0, 1);
     const m = this.getWorldMatrix();
     forward = Vector3.TransformCoordinates(forward, m);
@@ -104,49 +159,49 @@ export default class PlayerCamera extends FreeCamera {
     let direction = forward.subtract(this.globalPosition);
     direction = Vector3.Normalize(direction);
 
-    const ray = new Ray(this.globalPosition, direction, this._range);
+    const ray = new Ray(this.globalPosition, direction, this._shotRange);
     const hit = this._scene.pickWithRay(ray, (mesh) => mesh.isPickable && mesh.isEnabled());
-    if (hit !== null && hit.hit && hit.pickedMesh.name === 'player') {
+    console.log('shot:', hit);
+    if (hit !== null && hit.hit && hit.pickedMesh.name === 'EnemyNode') {
+      console.log('You shot enemy!!');
       // Env.hit = true?
     }
   }
 
   public makeHook() {
-    let forward = new Vector3(0, 0, 1);
-    const m = this.getWorldMatrix();
-    forward = Vector3.TransformCoordinates(forward, m);
-
-    let direction = forward.subtract(this.globalPosition);
-    direction = Vector3.Normalize(direction);
-
-    const ray = new Ray(this.globalPosition, direction, this._range);
+    const ray = this.getForwardRay(this._hookRange);
     const hit = this._scene.pickWithRay(ray);
-    if (hit !== null && hit.pickedMesh) {
-      this.moveToMesh(hit.pickedPoint);
+    console.log('hook:', hit);
+    if (hit !== null && hit.hit && hit.pickedMesh.name !== 'EnemyNode') {
+      this.moveToMesh(hit, () => {
+        this._hook = false;
+        this._jumping = false;
+      });
     } else {
       this._hook = false;
       this._jumping = false;
     }
   }
 
-  public moveToMesh(point: Vector3) {
-    const movese = this._scene.getSoundByName('files/move.mp3');
-    movese.setVolume(0.5);
-    movese.play();
+  public moveToMesh(dest: PickingInfo, callback: () => void) {
+    if (dest.distance <= 4) {
+      callback();
+      return;
+    }
+    const moveSE = this._scene.getSoundByName('files/move.mp3');
+    moveSE.setVolume(0.5);
+    moveSE.play();
     Animation.CreateAndStartAnimation(
       'hook',
-      this._scene.getNodeByName('player1'),
+      this,
       'position',
       15,
-      5,
-      this.globalPosition,
-      point,
+      Math.floor(dest.distance / this._shotMoveSpeed / 2),
+      this.position,
+      this.position.add(dest.pickedPoint.subtract(this.globalPosition).scale(0.9)),
       Animation.ANIMATIONLOOPMODE_CONSTANT,
       new PowerEase(1),
-      () => {
-        this._hook = false;
-        this._jumping = false;
-      }
+      callback
     );
   }
 
@@ -177,7 +232,7 @@ export default class PlayerCamera extends FreeCamera {
     }
   }
 
-  @onKeyboardEvent([27], KeyboardEventTypes.KEYUP)
+  @onKeyboardEvent([27], KeyboardEventTypes.KEYUP) // escape
   private _onEscapeKey(): void {
     const engine = this.getEngine();
     if (engine.isPointerLock) {
@@ -185,7 +240,7 @@ export default class PlayerCamera extends FreeCamera {
     }
   }
 
-  @onKeyboardEvent([72], KeyboardEventTypes.KEYUP)
+  @onKeyboardEvent([72], KeyboardEventTypes.KEYDOWN) // h
   private _onHkey(): void {
     if (!this._hook) {
       this._hook = true;
@@ -194,14 +249,54 @@ export default class PlayerCamera extends FreeCamera {
     }
   }
 
-  @onKeyboardEvent([16], KeyboardEventTypes.KEYDOWN)
+  @onKeyboardEvent([16], KeyboardEventTypes.KEYDOWN) // shift
   private _onShiftdown(_info: KeyboardInfo): void {
     this._shift = true;
   }
 
-  @onKeyboardEvent([16], KeyboardEventTypes.KEYUP)
+  @onKeyboardEvent([16], KeyboardEventTypes.KEYUP) // shift
   private _onShiftup(_info: KeyboardInfo): void {
     this._shift = false;
+  }
+
+  @onKeyboardEvent([87], KeyboardEventTypes.KEYDOWN)
+  private _forwardDown(): void {
+    this._forward = true;
+  }
+
+  @onKeyboardEvent([87], KeyboardEventTypes.KEYUP)
+  private _forwardUp(): void {
+    this._forward = false;
+  }
+
+  @onKeyboardEvent([83], KeyboardEventTypes.KEYDOWN)
+  private _backwardDown(): void {
+    this._backward = true;
+  }
+
+  @onKeyboardEvent([83], KeyboardEventTypes.KEYUP)
+  private _backwardUp(): void {
+    this._backward = false;
+  }
+
+  @onKeyboardEvent([68], KeyboardEventTypes.KEYDOWN)
+  private _toRightDown(): void {
+    this._toRight = true;
+  }
+
+  @onKeyboardEvent([68], KeyboardEventTypes.KEYUP)
+  private _toRightUp(): void {
+    this._toRight = false;
+  }
+
+  @onKeyboardEvent([65], KeyboardEventTypes.KEYDOWN)
+  private _toLeftDown(): void {
+    this._toLeft = true;
+  }
+
+  @onKeyboardEvent([65], KeyboardEventTypes.KEYUP)
+  private _toLeftUp(): void {
+    this._toLeft = false;
   }
 
   private _enterPointerLock(): void {

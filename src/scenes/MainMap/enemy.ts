@@ -245,22 +245,19 @@ export default class Player extends Mesh {
   @onKeyboardEvent([], KeyboardEventTypes.KEYDOWN)
   private _onKeyboardDown(info: KeyboardInfo): void {
     if (info.event.key === 'Shift') {
-      return this._shiftDown();
+      this._shiftDown();
+      return;
     }
 
     const key = info.event.keyCode;
 
     let action = this._actions[key];
-    if (!action) {
-      return;
-    }
+    if (!action) return;
 
     if (this._shift && action.shift) {
       action = this._actions[action.shift];
     }
-    if (!action) {
-      return;
-    }
+    if (!action) return;
 
     if (!action.running) {
       this._cancelAction(this._actions.idle);
@@ -271,22 +268,19 @@ export default class Player extends Mesh {
   @onKeyboardEvent([], KeyboardEventTypes.KEYUP)
   private _onKeyboardUp(info: KeyboardInfo): void {
     if (info.event.key === 'Shift') {
-      return this._shiftUp();
+      this._shiftUp();
+      return;
     }
 
     const key = info.event.keyCode;
 
     let action = this._actions[key];
-    if (!action) {
-      return;
-    }
+    if (!action) return;
 
     if (this._shift && action.shift) {
       action = this._actions[action.shift];
     }
-    if (!action) {
-      return;
-    }
+    if (!action) return;
 
     if (action.running) {
       this._cancelAction(action);
