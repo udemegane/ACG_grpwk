@@ -10,6 +10,7 @@ import {
   EasingFunction,
   KeyboardEventTypes,
   RayHelper,
+  MeshBuilder,
 } from '@babylonjs/core';
 
 import { TextBlock, AdvancedDynamicTexture } from '@babylonjs/gui';
@@ -44,6 +45,7 @@ export default class PlayerCamera extends FreeCamera {
   private _range: number;
 
   private _jumping = false;
+  private _hook = false;
   private _shift = false;
   private _shot = false;
   /**
@@ -73,7 +75,6 @@ export default class PlayerCamera extends FreeCamera {
     } else {
       this.speed = this._walkSpeed;
     }
-    // Nothing to do now...
   }
 
   @onKeyboardEvent([74], KeyboardEventTypes.KEYUP)
@@ -127,6 +128,24 @@ export default class PlayerCamera extends FreeCamera {
     }
   }
 
+  public makeHook() {
+    let forward = new Vector3(0, 0, 1);
+    const m = this.getWorldMatrix();
+    forward = Vector3.TransformCoordinates(forward, m);
+
+    let direction = forward.subtract(this.position);
+    direction = Vector3.Normalize(direction);
+
+    const ray = new Ray(this.position, direction, this._range);
+    const rayHelper = new RayHelper(ray);
+    rayHelper.show(this._scene);
+
+    const hit = this._scene.pickWithRay(ray);
+    const cone = MeshBuilder.CreateCylinder('hook', {});
+    cone.position = this.position.add(forward);
+    cone.rotation = direction;
+  }
+
   /**
    * Called on the user clicks on the canvas.
    * Used to request pointer lock and launch a new ball.
@@ -134,7 +153,7 @@ export default class PlayerCamera extends FreeCamera {
   @onPointerEvent(PointerEventTypes.POINTERDOWN, false)
   private _onPointerEvent(info: PointerInfo): void {
     this._enterPointerLock();
-    if (this._shot === false) {
+    if (!this._shot) {
       this._shot = true;
       let t = 10;
       const countdown = new TextBlock();
@@ -167,6 +186,14 @@ export default class PlayerCamera extends FreeCamera {
     const engine = this.getEngine();
     if (engine.isPointerLock) {
       engine.exitPointerlock();
+    }
+  }
+
+  @onKeyboardEvent([72], KeyboardEventTypes.KEYUP)
+  private _onHkey(): void {
+    if (!this._hook) {
+      this._hook = true;
+      this.makeHook();
     }
   }
 
