@@ -43,6 +43,18 @@
 	"materials": [
 		{
 			"bindedMeshes": [
+				"7fc13a8c-a7d5-4254-b6c1-b3f41ec715da"
+			],
+			"json": "PM3D_Cube3D1_2-8e6b6e3f-0374-482e-8c96-8e5512219f75.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "__GLTFLoader._default-b4add01d-606c-48d5-b43c-dd502b4a9eeb.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
 				"6cf7f09e-730c-46ac-aa9e-aa911ad23a11"
 			],
 			"json": "PM3D_Cube3D1_12-41cbb423-62ee-45e7-a902-c7f3bc0f594e.json",
@@ -50,7 +62,7 @@
 		},
 		{
 			"bindedMeshes": [],
-			"json": "__GLTFLoader._default-b4add01d-606c-48d5-b43c-dd502b4a9eeb.json",
+			"json": "__GLTFLoader._default-7135578f-c323-48e2-bc4f-9900d895ba6c.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -60,14 +72,9 @@
 		},
 		{
 			"bindedMeshes": [
-				"7fc13a8c-a7d5-4254-b6c1-b3f41ec715da"
+				"4148285b-4504-4e1c-9a51-2386eef5af2c"
 			],
-			"json": "PM3D_Cube3D1_2-8e6b6e3f-0374-482e-8c96-8e5512219f75.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
-			"json": "__GLTFLoader._default-7135578f-c323-48e2-bc4f-9900d895ba6c.json",
+			"json": "PM3D_Cylinder3D1_2-ae619054-4f2f-4e61-b60a-fc2f190a8c0e.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -82,13 +89,6 @@
 				"6afcad54-6247-4296-8d99-d99d3b9545db"
 			],
 			"json": "PM3D_SweepProfile3D1_1-0fdcfa78-ffd3-45d3-8483-f979e418f960.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"4148285b-4504-4e1c-9a51-2386eef5af2c"
-			],
-			"json": "PM3D_Cylinder3D1_2-ae619054-4f2f-4e61-b60a-fc2f190a8c0e.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -112,16 +112,16 @@
 		},
 		{
 			"bindedMeshes": [
-				"60027be9-7e4e-4d7f-bdb9-567f08694092"
+				"2103688e-fca6-480b-a089-940568af4473"
 			],
-			"json": "PM3D_Cube3D1_7-00ea75c9-c26d-4c13-a387-b08caf64de94.json",
+			"json": "sky-b2346078-7465-4c63-8877-44b542584898.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [
-				"2103688e-fca6-480b-a089-940568af4473"
+				"60027be9-7e4e-4d7f-bdb9-567f08694092"
 			],
-			"json": "sky-b2346078-7465-4c63-8877-44b542584898.json",
+			"json": "PM3D_Cube3D1_7-00ea75c9-c26d-4c13-a387-b08caf64de94.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -178,12 +178,17 @@
 		},
 		{
 			"bindedMeshes": [],
+			"json": "lambert2-6a51307e-8ced-4cd2-9c7a-42b239ac39c0.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
 			"json": "__GLTFLoader._default-cd1c3e2e-5bc7-4be5-b602-121260774bc6.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [],
-			"json": "lambert2-6a51307e-8ced-4cd2-9c7a-42b239ac39c0.json",
+			"json": "player-body-6b5386b6-d680-4a81-b656-537f1e2729f3.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -194,8 +199,10 @@
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [],
-			"json": "player-body-6b5386b6-d680-4a81-b656-537f1e2729f3.json",
+			"bindedMeshes": [
+				"afb2d1fa-9561-4909-a1f8-4c4f95ee7656"
+			],
+			"json": "PM3D_Cube3D1_5-f5be82be-b67c-4e17-8585-2685c97a0091.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -205,9 +212,14 @@
 		},
 		{
 			"bindedMeshes": [
-				"afb2d1fa-9561-4909-a1f8-4c4f95ee7656"
+				"b24ec9dc-3d2f-4471-a62e-b23dde971de8"
 			],
-			"json": "PM3D_Cube3D1_5-f5be82be-b67c-4e17-8585-2685c97a0091.json",
+			"json": "PM3D_Cube3D1_9-da2b2adb-8093-460a-870f-aaac54af55c8.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "lambert2-a58b2e94-384c-4a3e-a4bf-3dc0d52ea0c8.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -223,10 +235,8 @@
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [
-				"b24ec9dc-3d2f-4471-a62e-b23dde971de8"
-			],
-			"json": "PM3D_Cube3D1_9-da2b2adb-8093-460a-870f-aaac54af55c8.json",
+			"bindedMeshes": [],
+			"json": "__GLTFLoader._default-600861fa-21d8-42de-ac2d-c9350abe5a4d.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -235,20 +245,10 @@
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [],
-			"json": "lambert2-a58b2e94-384c-4a3e-a4bf-3dc0d52ea0c8.json",
-			"isMultiMaterial": false
-		},
-		{
 			"bindedMeshes": [
 				"2df81e10-3789-4525-855c-c83a8c9052f9"
 			],
 			"json": "PM3D_SweepProfile3D1-72626f48-2381-4284-ae7a-d19e5a576297.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
-			"json": "__GLTFLoader._default-600861fa-21d8-42de-ac2d-c9350abe5a4d.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -264,11 +264,6 @@
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [],
-			"json": "player-joints-8f94d4f0-92bf-49e1-89a8-a2fa57b1cfb2.json",
-			"isMultiMaterial": false
-		},
-		{
 			"bindedMeshes": [
 				"8f3f39b4-39b6-40cb-8ddc-a069334bb82b"
 			],
@@ -277,33 +272,17 @@
 		},
 		{
 			"bindedMeshes": [],
-			"json": "lambert2-3242911f-e531-4e0c-a77f-4eb88f54d1f6.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"dcbc8fd5-852f-4603-b8c7-51111f0f20d9"
-			],
-			"json": "PM3D_Cube3D1-94d7bb65-a9ed-4c44-85f3-1e997ef7d872.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"43f5e743-d9ce-493c-aa22-6326a273f98b"
-			],
-			"json": "PM3D_Cube3D1_13-1bd24805-23e7-4bbe-8843-b02be72b2846.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"1a2b6366-d2b4-4144-87ab-01b39a2cabc3"
-			],
-			"json": "PM3D_Cube3D2_9-d9ab38ba-154d-4d12-82a0-6dc646d04f6a.json",
+			"json": "player-joints-8f94d4f0-92bf-49e1-89a8-a2fa57b1cfb2.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [],
 			"json": "__GLTFLoader._default-efd9583a-7722-4f3b-b77e-674a8299460b.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "lambert2-3242911f-e531-4e0c-a77f-4eb88f54d1f6.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -315,16 +294,16 @@
 		},
 		{
 			"bindedMeshes": [
-				"ce738db6-b72e-4031-99b2-f84d1cb0f34e"
+				"dcbc8fd5-852f-4603-b8c7-51111f0f20d9"
 			],
-			"json": "PM3D_Cylinder3D1_5-845c5a51-04a5-40ef-9085-916a083ec87e.json",
+			"json": "PM3D_Cube3D1-94d7bb65-a9ed-4c44-85f3-1e997ef7d872.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [
-				"3a8698c7-b641-486d-81d9-b853707e6251"
+				"1a2b6366-d2b4-4144-87ab-01b39a2cabc3"
 			],
-			"json": "PM3D_Cube3D2_6-b31ab1a0-468d-4b52-8aa5-559dddd64070.json",
+			"json": "PM3D_Cube3D2_9-d9ab38ba-154d-4d12-82a0-6dc646d04f6a.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -336,9 +315,23 @@
 		},
 		{
 			"bindedMeshes": [
-				"4861bb31-d4f3-4208-af25-c52b1151d9bc"
+				"3a8698c7-b641-486d-81d9-b853707e6251"
 			],
-			"json": "wall_window-75106f6e-0e71-419f-8f49-e4bfb7dcee1b.json",
+			"json": "PM3D_Cube3D2_6-b31ab1a0-468d-4b52-8aa5-559dddd64070.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"43f5e743-d9ce-493c-aa22-6326a273f98b"
+			],
+			"json": "PM3D_Cube3D1_13-1bd24805-23e7-4bbe-8843-b02be72b2846.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"ce738db6-b72e-4031-99b2-f84d1cb0f34e"
+			],
+			"json": "PM3D_Cylinder3D1_5-845c5a51-04a5-40ef-9085-916a083ec87e.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -346,6 +339,13 @@
 				"cb9d7ae9-e520-48c2-bf28-b2056ff1ef78"
 			],
 			"json": "wall_window1-7eae6c03-990d-4bb5-8fc5-6773cabcad00.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"4861bb31-d4f3-4208-af25-c52b1151d9bc"
+			],
+			"json": "wall_window-75106f6e-0e71-419f-8f49-e4bfb7dcee1b.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -371,9 +371,9 @@
 		},
 		{
 			"bindedMeshes": [
-				"fb8da07f-48ae-4998-a880-0cd54147dbe6"
+				"2b9b7abe-8dc9-4098-90ad-a32f7e7e4645"
 			],
-			"json": "PM3D_Cube3D2.003-1f51f83f-29bc-4044-9198-ba1a7894b94e.json",
+			"json": "PM3D_Cube3D1_15.002-f78653b8-c6a6-4e48-8620-cd04c069934c.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -385,9 +385,16 @@
 		},
 		{
 			"bindedMeshes": [
-				"2b9b7abe-8dc9-4098-90ad-a32f7e7e4645"
+				"acd343c5-21a5-40bf-9d66-31d2dd103af4"
 			],
-			"json": "PM3D_Cube3D1_15.002-f78653b8-c6a6-4e48-8620-cd04c069934c.json",
+			"json": "PM3D_Cube3D1_14.001-32f6e78e-efd9-4ae0-a6ac-a3b70c6d0209.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"fb8da07f-48ae-4998-a880-0cd54147dbe6"
+			],
+			"json": "PM3D_Cube3D2.003-1f51f83f-29bc-4044-9198-ba1a7894b94e.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -399,9 +406,9 @@
 		},
 		{
 			"bindedMeshes": [
-				"acd343c5-21a5-40bf-9d66-31d2dd103af4"
+				"960d03fa-363e-451b-b870-949bdbe2c5f3"
 			],
-			"json": "PM3D_Cube3D1_14.001-32f6e78e-efd9-4ae0-a6ac-a3b70c6d0209.json",
+			"json": "PM3D_Cylinder3D1_4.002-b0657da4-db24-4303-b7bd-3751d6ee0fb2.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -420,13 +427,6 @@
 		},
 		{
 			"bindedMeshes": [
-				"ff5101ca-4489-4b71-914d-f1534b394e64"
-			],
-			"json": "PM3D_Circle3D1-2fb7b510-68b7-46c3-aab3-3dd67ff7a80b.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
 				"e8fe46c6-f48f-4ffb-addf-4d3ffb5e033e"
 			],
 			"json": "PolySphere1.001-50428328-d0ee-4276-9910-4f18ad34c910.json",
@@ -434,16 +434,9 @@
 		},
 		{
 			"bindedMeshes": [
-				"7cc57849-8f64-48ed-91e6-211920577a2d"
+				"ff5101ca-4489-4b71-914d-f1534b394e64"
 			],
-			"json": "M_room-1e88c352-8175-4dad-adb9-498f0fe5076a.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"960d03fa-363e-451b-b870-949bdbe2c5f3"
-			],
-			"json": "PM3D_Cylinder3D1_4.002-b0657da4-db24-4303-b7bd-3751d6ee0fb2.json",
+			"json": "PM3D_Circle3D1-2fb7b510-68b7-46c3-aab3-3dd67ff7a80b.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -455,9 +448,9 @@
 		},
 		{
 			"bindedMeshes": [
-				"02eb7bf5-a2f1-47b8-ac36-baa67856bfb1"
+				"7cc57849-8f64-48ed-91e6-211920577a2d"
 			],
-			"json": "PM3D_Cube3D1_16.001-29d3aa42-89bd-48ff-a9c7-f3ee9a8a303f.json",
+			"json": "M_room-1e88c352-8175-4dad-adb9-498f0fe5076a.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -472,6 +465,13 @@
 				"e6ffaaf7-2946-4861-b310-d45524b4e59f"
 			],
 			"json": "PM3D_Cylinder3D1_4.001-cad05947-efc8-495e-b54d-b36cbfee630f.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"02eb7bf5-a2f1-47b8-ac36-baa67856bfb1"
+			],
+			"json": "PM3D_Cube3D1_16.001-29d3aa42-89bd-48ff-a9c7-f3ee9a8a303f.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -504,6 +504,13 @@
 		},
 		{
 			"bindedMeshes": [
+				"18719a48-2d7d-4e36-ac7a-f1be25d23d79"
+			],
+			"json": "PM3D_Cube3D2_6.001-0c3c3a31-8d7f-4f03-93b7-3a46f42fe5ff.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
 				"6f149491-332e-4f2a-8248-2edff5a5339f"
 			],
 			"json": "PM3D_Cube3D2_6.002-68914daa-17ae-49d3-b97c-7bb4dbf5c4df.json",
@@ -518,13 +525,6 @@
 		},
 		{
 			"bindedMeshes": [
-				"18719a48-2d7d-4e36-ac7a-f1be25d23d79"
-			],
-			"json": "PM3D_Cube3D2_6.001-0c3c3a31-8d7f-4f03-93b7-3a46f42fe5ff.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
 				"b8b1e8c7-970a-4c1f-b64a-b0254b196c72"
 			],
 			"json": "wall_window.002-ce43bd9d-8d09-4fda-b377-a5ad9a0e0afb.json",
@@ -532,16 +532,16 @@
 		},
 		{
 			"bindedMeshes": [
-				"30b081f9-1af6-40c4-8429-7326a4e23310"
+				"37ca7ada-b8eb-410c-b77c-314f4713f32d"
 			],
-			"json": "Default_OBJ.001-bdf2b9e9-0faa-4459-a14d-a0ef0bcbf483.json",
+			"json": "PM3D_Cylinder3D1_5.001-5635d157-3be9-4700-92fa-ae857b703361.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [
-				"37ca7ada-b8eb-410c-b77c-314f4713f32d"
+				"30b081f9-1af6-40c4-8429-7326a4e23310"
 			],
-			"json": "PM3D_Cylinder3D1_5.001-5635d157-3be9-4700-92fa-ae857b703361.json",
+			"json": "Default_OBJ.001-bdf2b9e9-0faa-4459-a14d-a0ef0bcbf483.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -560,13 +560,6 @@
 		},
 		{
 			"bindedMeshes": [
-				"d83f52e1-1775-4289-a3ef-db351de84757"
-			],
-			"json": "M_road-cd1a427a-c6f7-4b6e-828c-2079bce9ac25.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
 				"0acb1126-8a1e-495a-8ef1-652d97144f22"
 			],
 			"json": "M_room-faeae40c-8ed7-4826-bd0e-65bc67ed11fc.json",
@@ -577,6 +570,13 @@
 				"78b11ae3-8839-4e30-9e18-e40f524bdf7c"
 			],
 			"json": "M_wall-4bc6de6d-6dc8-412f-ad4f-eec2d4818303.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"d83f52e1-1775-4289-a3ef-db351de84757"
+			],
+			"json": "M_road-cd1a427a-c6f7-4b6e-828c-2079bce9ac25.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -621,43 +621,43 @@
 		}
 	],
 	"textures": [
-		"scope.png-177.json",
-		"room_ao.png-2154.json",
-		"Default_OBJ.001 (Emissive).png-1200.json",
-		"Default_OBJ.001 (Base Color).png-1201.json",
 		"Default_OBJ.001 (Normal).png-1199.json",
+		"scope.png-177.json",
+		"Default_OBJ.001 (Emissive).png-1200.json",
+		"room_ao.png-2154.json",
+		"Default_OBJ.001 (Base Color).png-1201.json",
 		"room_BaseColor.png-2155.json",
-		"room_EmissiveColor.png-2156.json",
 		"room_Metalness.png-2157.json",
+		"room_EmissiveColor.png-2156.json",
 		"room_Normal.png-2158.json",
 		"room_Roughness.png-2159.json",
 		"M_room (Normal).png-2238.json",
 		"M_room (Emissive).png-2239.json",
 		"M_room (Base Color).png-2240.json",
-		"M_wall (Normal).png-2245.json",
 		"M_room (Metallic Roughness).png-2241.json",
-		"M_wall (Metallic Roughness).png-2247.json",
-		"M_road (Normal).png-2251.json",
+		"M_wall (Base Color).png-2246.json",
+		"M_wall (Normal).png-2245.json",
 		"M_road (Emissive).png-2252.json",
+		"M_road (Normal).png-2251.json",
+		"M_wall (Metallic Roughness).png-2247.json",
+		"M_road (Base Color).png-2253.json",
 		"M_road (Metallic Roughness).png-2254.json",
 		"M_wallFrame (Normal).png-2258.json",
-		"M_wall (Base Color).png-2246.json",
-		"M_road (Base Color).png-2253.json",
 		"M_wallFrame (Emissive).png-2259.json",
 		"M_wallFrame (Base Color).png-2260.json",
-		"M_bridge (Normal).png-2265.json",
 		"M_wallFrame (Metallic Roughness).png-2261.json",
+		"M_bridge (Normal).png-2265.json",
 		"M_bridge (Emissive).png-2266.json",
-		"M_bridge (Metallic Roughness).png-2268.json",
-		"M_circle (Normal).png-2272.json",
 		"M_bridge (Base Color).png-2267.json",
+		"M_circle (Normal).png-2272.json",
+		"M_bridge (Metallic Roughness).png-2268.json",
 		"M_circle (Metallic Roughness).png-2274.json",
-		"M_circle (Base Color).png-2273.json",
 		"ocean_env.jpg-2322.json",
-		"M_circle (Base Color).png-2326.json",
+		"M_circle (Base Color).png-2273.json",
 		"—Pngtree—abstract hexagon black background hexagon_3991447.png-2323.json",
+		"M_circle (Normal).png-2328.json",
 		"M_circle (Metallic Roughness).png-2327.json",
-		"M_circle (Normal).png-2328.json"
+		"M_circle (Base Color).png-2326.json"
 	],
 	"meshes": [
 		"__root__-df479701-7d74-4c59-aa4d-693040051dea.json",
@@ -668,36 +668,36 @@
 		"PM3D_Ring3D1-2805dbf7-259c-4ed9-9d5d-387b270435b9.json",
 		"PM3D_Cube3D1_7-60027be9-7e4e-4d7f-bdb9-567f08694092.json",
 		"Sky-2103688e-fca6-480b-a089-940568af4473.json",
-		"PM3D_Cube3D1_2-7fc13a8c-a7d5-4254-b6c1-b3f41ec715da.json",
 		"New Ground-e9a23fdd-bd0d-4071-aa29-ace52006842a.json",
+		"PM3D_Cube3D1_12-6cf7f09e-730c-46ac-aa9e-aa911ad23a11.json",
 		"boxCollider-04558f86-9582-488d-88c7-606948dadadf.json",
 		"New Cube-54d21ae1-2cb9-4122-bfc8-ca72b703132c.json",
-		"PM3D_Cube3D1_12-6cf7f09e-730c-46ac-aa9e-aa911ad23a11.json",
-		"PM3D_Cube3D1_8-c4a8cae6-9561-4322-bfe6-864fafcf736d.json",
+		"PM3D_Cube3D1_2-7fc13a8c-a7d5-4254-b6c1-b3f41ec715da.json",
 		"PM3D_SweepProfile3D1-2df81e10-3789-4525-855c-c83a8c9052f9.json",
-		"PM3D_Cube3D1_5-afb2d1fa-9561-4909-a1f8-4c4f95ee7656.json",
-		"PM3D_Cylinder3D1_2-4148285b-4504-4e1c-9a51-2386eef5af2c.json",
-		"PM3D_SweepProfile3D1_1-6afcad54-6247-4296-8d99-d99d3b9545db.json",
-		"cube-30b081f9-1af6-40c4-8429-7326a4e23310.json",
 		"PM3D_Cube3D1_9-b24ec9dc-3d2f-4471-a62e-b23dde971de8.json",
-		"wall_window-f93215c3-c796-4849-b98e-cc4cef6c6e25.json",
-		"wall_window.001-b1ce86ef-d0ea-4df1-9f3a-1b585eb187d2.json",
 		"PM3D_Cylinder3D1_1-46b15aea-d9e5-41f0-bf18-049859287b21.json",
-		"wall-78b11ae3-8839-4e30-9e18-e40f524bdf7c.json",
+		"PM3D_Cube3D1_5-afb2d1fa-9561-4909-a1f8-4c4f95ee7656.json",
+		"PM3D_Cube3D1_8-c4a8cae6-9561-4322-bfe6-864fafcf736d.json",
+		"cube-30b081f9-1af6-40c4-8429-7326a4e23310.json",
+		"wall_window.001-b1ce86ef-d0ea-4df1-9f3a-1b585eb187d2.json",
+		"wall_window-f93215c3-c796-4849-b98e-cc4cef6c6e25.json",
+		"PM3D_SweepProfile3D1_1-6afcad54-6247-4296-8d99-d99d3b9545db.json",
+		"PM3D_Cylinder3D1_2-4148285b-4504-4e1c-9a51-2386eef5af2c.json",
 		"room-0acb1126-8a1e-495a-8ef1-652d97144f22.json",
 		"bridge-f75e4db7-a2ac-4628-9c10-cc57dd66f138.json",
-		"circle-9d113fba-b2c4-436f-9e17-9ec04e7bd7ac.json",
+		"wall-78b11ae3-8839-4e30-9e18-e40f524bdf7c.json",
 		"wallframe.001-8514a1d1-b559-4196-8cbf-2e454c628885.json",
 		"Rifle!Gun_Lo-0cdfde5f-a821-4530-87f4-8ef6e7c6bb1b.json",
 		"road-d83f52e1-1775-4289-a3ef-db351de84757.json",
+		"circle-9d113fba-b2c4-436f-9e17-9ec04e7bd7ac.json",
 		"player-f2cbf360-c763-46fa-881a-2219a1e7e97a.json"
 	],
 	"transformNodes": [
+		"Camera-997d3f40-b47b-420c-ae45-0ffb615d7974.json",
+		"Light-dfde9162-abc5-482d-a502-785dd41e344f.json",
 		"Super_Rifle_Low-17891e45-9277-4622-93a9-af9d0097c771.json",
 		"player1-5d8e0d87-8811-4e82-b4de-c65f5913bae3.json",
-		"Camera-997d3f40-b47b-420c-ae45-0ffb615d7974.json",
-		"enemy-938988dd-09e4-4482-b919-1aa8328c39fd.json",
-		"Light-dfde9162-abc5-482d-a502-785dd41e344f.json"
+		"enemy-938988dd-09e4-4482-b919-1aa8328c39fd.json"
 	],
 	"particleSystems": [],
 	"lights": [
@@ -765,10 +765,10 @@
 			"vignetteStretch": 0,
 			"vignetteCentreX": 0,
 			"vignetteCentreY": 0,
-			"vignetteWeight": 1.5,
+			"vignetteWeight": 3,
 			"vignetteColor": [
-				0,
-				0,
+				0.1,
+				0.1,
 				0,
 				0
 			],
@@ -833,7 +833,7 @@
 						"smoothSteps": 5,
 						"name": "ssr",
 						"width": 1170,
-						"height": 586,
+						"height": 551,
 						"renderTargetSamplingMode": 1,
 						"autoClear": true,
 						"alphaMode": 0,
@@ -948,7 +948,7 @@
 			{
 				"tags": null,
 				"blurKernelSize": 16,
-				"intensity": 1,
+				"intensity": 0.7,
 				"options": {
 					"mainTextureRatio": 0.5,
 					"blurKernelSize": 32,
@@ -987,13 +987,13 @@
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": 44.916498307767064,
-			"beta": 1.97809538447627,
-			"radius": -16.86966285880324,
+			"alpha": 51.43606626311471,
+			"beta": 1.5787408090183819,
+			"radius": -3.8301369538430654,
 			"target": [
-				-29.03457077826104,
-				9.799345961267996,
-				-31.1683830311762
+				-21.03451808175365,
+				8.249284050835055,
+				-46.31554934145817
 			],
 			"inertialAlphaOffset": 0,
 			"inertialBetaOffset": 0,
@@ -1023,9 +1023,9 @@
 			],
 			"speed": 2,
 			"position": [
-				-38.24254842412461,
-				16.481938779372733,
-				-43.62396916232143
+				-22.526746269185306,
+				8.279712185698422,
+				-49.8429107137076
 			],
 			"upVector": [
 				0,
@@ -1088,7 +1088,7 @@
 					"pinchPrecision": 12,
 					"pinchDeltaPercentage": 0,
 					"useNaturalPinchZoom": false,
-					"panningSensibility": -59.27800741306229,
+					"panningSensibility": -261.0872697376068,
 					"multiTouchPanning": true,
 					"multiTouchPanAndZoom": true
 				}
@@ -1132,7 +1132,7 @@
 				"smoothSteps": 5,
 				"name": "ssr",
 				"width": 1170,
-				"height": 586,
+				"height": 551,
 				"renderTargetSamplingMode": 1,
 				"autoClear": true,
 				"alphaMode": 0,
