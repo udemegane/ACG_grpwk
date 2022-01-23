@@ -1,0 +1,435 @@
+{
+	"tags": null,
+	"directIntensity": 1,
+	"emissiveIntensity": 1,
+	"environmentIntensity": 1,
+	"specularIntensity": 1,
+	"disableBumpMap": false,
+	"albedoTexture": {
+		"tags": null,
+		"url": "files/M_room (Base Color).png",
+		"uOffset": 0,
+		"vOffset": 0,
+		"uScale": 1,
+		"vScale": 1,
+		"uAng": 0,
+		"vAng": 0,
+		"wAng": 0,
+		"uRotationCenter": 0.5,
+		"vRotationCenter": 0.5,
+		"wRotationCenter": 0.5,
+		"homogeneousRotationInUVTransform": false,
+		"isBlocking": true,
+		"name": "files/M_room (Base Color).png",
+		"metadata": {
+			"gltf": {
+				"pointers": [
+					"/materials/2/pbrMetallicRoughness/baseColorTexture"
+				],
+				"editorDone": true
+			},
+			"editorName": "M_room (Base Color).png",
+			"editorId": "15f085d8-4f83-43f8-9803-9de2bfe9fc61",
+			"ktx2CompressedTextures": {
+				"isUsingCompressedTexture": false
+			}
+		},
+		"hasAlpha": false,
+		"getAlphaFromRGB": false,
+		"level": 1,
+		"coordinatesIndex": 0,
+		"coordinatesMode": 0,
+		"wrapU": 1,
+		"wrapV": 1,
+		"wrapR": 1,
+		"anisotropicFilteringLevel": 4,
+		"isCube": false,
+		"is3D": false,
+		"is2DArray": false,
+		"gammaSpace": true,
+		"invertZ": false,
+		"lodLevelInAlpha": false,
+		"lodGenerationOffset": 0,
+		"lodGenerationScale": 0,
+		"linearSpecularLOD": false,
+		"isRenderTarget": false,
+		"animations": [],
+		"invertY": false,
+		"samplingMode": 3
+	},
+	"ambientTextureStrength": 1,
+	"ambientTextureImpactOnAnalyticalLights": 0,
+	"emissiveTexture": {
+		"tags": null,
+		"url": "files/M_room (Emissive).png",
+		"uOffset": 0,
+		"vOffset": 0,
+		"uScale": 1,
+		"vScale": 1,
+		"uAng": 0,
+		"vAng": 0,
+		"wAng": 0,
+		"uRotationCenter": 0.5,
+		"vRotationCenter": 0.5,
+		"wRotationCenter": 0.5,
+		"homogeneousRotationInUVTransform": false,
+		"isBlocking": true,
+		"name": "files/M_room (Emissive).png",
+		"metadata": {
+			"gltf": {
+				"pointers": [
+					"/materials/2/emissiveTexture"
+				],
+				"editorDone": true
+			},
+			"editorName": "M_room (Emissive).png",
+			"editorId": "64fe331a-17a5-4eb7-a46d-6bdb8efcd29e",
+			"ktx2CompressedTextures": {
+				"isUsingCompressedTexture": false
+			}
+		},
+		"hasAlpha": false,
+		"getAlphaFromRGB": false,
+		"level": 1,
+		"coordinatesIndex": 0,
+		"coordinatesMode": 0,
+		"wrapU": 1,
+		"wrapV": 1,
+		"wrapR": 1,
+		"anisotropicFilteringLevel": 4,
+		"isCube": false,
+		"is3D": false,
+		"is2DArray": false,
+		"gammaSpace": true,
+		"invertZ": false,
+		"lodLevelInAlpha": false,
+		"lodGenerationOffset": 0,
+		"lodGenerationScale": 0,
+		"linearSpecularLOD": false,
+		"isRenderTarget": false,
+		"animations": [],
+		"invertY": false,
+		"samplingMode": 3
+	},
+	"metallicTexture": {
+		"tags": null,
+		"url": "files/M_room (Metallic Roughness).png",
+		"uOffset": 0,
+		"vOffset": 0,
+		"uScale": 1,
+		"vScale": 1,
+		"uAng": 0,
+		"vAng": 0,
+		"wAng": 0,
+		"uRotationCenter": 0.5,
+		"vRotationCenter": 0.5,
+		"wRotationCenter": 0.5,
+		"homogeneousRotationInUVTransform": false,
+		"isBlocking": true,
+		"name": "files/M_room (Metallic Roughness).png",
+		"metadata": {
+			"gltf": {
+				"pointers": [
+					"/materials/2/pbrMetallicRoughness/metallicRoughnessTexture"
+				],
+				"editorDone": true
+			},
+			"editorName": "M_room (Metallic Roughness).png",
+			"editorId": "a17230f3-0b50-4760-ba69-da0d83fdc98e",
+			"ktx2CompressedTextures": {
+				"isUsingCompressedTexture": false
+			}
+		},
+		"hasAlpha": false,
+		"getAlphaFromRGB": false,
+		"level": 1,
+		"coordinatesIndex": 0,
+		"coordinatesMode": 0,
+		"wrapU": 1,
+		"wrapV": 1,
+		"wrapR": 1,
+		"anisotropicFilteringLevel": 4,
+		"isCube": false,
+		"is3D": false,
+		"is2DArray": false,
+		"gammaSpace": true,
+		"invertZ": false,
+		"lodLevelInAlpha": false,
+		"lodGenerationOffset": 0,
+		"lodGenerationScale": 0,
+		"linearSpecularLOD": false,
+		"isRenderTarget": false,
+		"animations": [],
+		"invertY": false,
+		"samplingMode": 3
+	},
+	"metallic": 1,
+	"roughness": 0.6666666865348816,
+	"metallicF0Factor": 1,
+	"metallicReflectanceColor": [
+		1,
+		1,
+		1
+	],
+	"bumpTexture": {
+		"tags": null,
+		"url": "files/M_room (Normal).png",
+		"uOffset": 0,
+		"vOffset": 0,
+		"uScale": 1,
+		"vScale": 1,
+		"uAng": 0,
+		"vAng": 0,
+		"wAng": 0,
+		"uRotationCenter": 0.5,
+		"vRotationCenter": 0.5,
+		"wRotationCenter": 0.5,
+		"homogeneousRotationInUVTransform": false,
+		"isBlocking": true,
+		"name": "files/M_room (Normal).png",
+		"metadata": {
+			"gltf": {
+				"pointers": [
+					"/materials/2/normalTexture"
+				],
+				"editorDone": true
+			},
+			"editorName": "M_room (Normal).png",
+			"editorId": "412823e3-3ff1-495e-978c-6a81b61cd503",
+			"ktx2CompressedTextures": {
+				"isUsingCompressedTexture": false
+			}
+		},
+		"hasAlpha": false,
+		"getAlphaFromRGB": false,
+		"level": 1,
+		"coordinatesIndex": 0,
+		"coordinatesMode": 0,
+		"wrapU": 1,
+		"wrapV": 1,
+		"wrapR": 1,
+		"anisotropicFilteringLevel": 4,
+		"isCube": false,
+		"is3D": false,
+		"is2DArray": false,
+		"gammaSpace": true,
+		"invertZ": false,
+		"lodLevelInAlpha": false,
+		"lodGenerationOffset": 0,
+		"lodGenerationScale": 0,
+		"linearSpecularLOD": false,
+		"isRenderTarget": false,
+		"animations": [],
+		"invertY": false,
+		"samplingMode": 3
+	},
+	"ambient": [
+		0,
+		0,
+		0
+	],
+	"albedo": [
+		1,
+		1,
+		1
+	],
+	"reflectivity": [
+		1,
+		1,
+		1
+	],
+	"reflection": [
+		1,
+		1,
+		1
+	],
+	"emissive": [
+		1,
+		1,
+		1
+	],
+	"microSurface": 1,
+	"useLightmapAsShadowmap": false,
+	"useAlphaFromAlbedoTexture": false,
+	"forceAlphaTest": false,
+	"alphaCutOff": 0.4,
+	"useSpecularOverAlpha": true,
+	"useMicroSurfaceFromReflectivityMapAlpha": false,
+	"useRoughnessFromMetallicTextureAlpha": false,
+	"useRoughnessFromMetallicTextureGreen": true,
+	"useMetallnessFromMetallicTextureBlue": true,
+	"useAmbientOcclusionFromMetallicTextureRed": false,
+	"useAmbientInGrayScale": false,
+	"useAutoMicroSurfaceFromReflectivityMap": false,
+	"usePhysicalLightFalloff": true,
+	"useGLTFLightFalloff": false,
+	"useRadianceOverAlpha": true,
+	"useObjectSpaceNormalMap": false,
+	"useParallax": false,
+	"useParallaxOcclusion": false,
+	"parallaxScaleBias": 0.05,
+	"disableLighting": false,
+	"forceIrradianceInFragment": true,
+	"maxSimultaneousLights": 4,
+	"invertNormalMapX": true,
+	"invertNormalMapY": false,
+	"twoSidedLighting": true,
+	"useAlphaFresnel": false,
+	"useLinearAlphaFresnel": false,
+	"forceNormalForward": false,
+	"enableSpecularAntiAliasing": true,
+	"useHorizonOcclusion": true,
+	"useRadianceOcclusion": true,
+	"unlit": false,
+	"_imageProcessingConfiguration": {
+		"tags": null,
+		"colorCurves": {
+			"tags": null,
+			"_globalHue": 200,
+			"_globalDensity": 80,
+			"_globalSaturation": 80,
+			"_globalExposure": 0,
+			"_highlightsHue": 20,
+			"_highlightsDensity": 80,
+			"_highlightsSaturation": -80,
+			"_highlightsExposure": 0,
+			"_midtonesHue": 30,
+			"_midtonesDensity": 0,
+			"_midtonesSaturation": 0,
+			"_midtonesExposure": 0
+		},
+		"_colorCurvesEnabled": false,
+		"_colorGradingEnabled": false,
+		"_colorGradingWithGreenDepth": true,
+		"_colorGradingBGR": true,
+		"_exposure": 1,
+		"_toneMappingEnabled": false,
+		"_toneMappingType": 0,
+		"_contrast": 1,
+		"vignetteStretch": 0,
+		"vignetteCentreX": 0,
+		"vignetteCentreY": 0,
+		"vignetteWeight": 1.5,
+		"vignetteColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"vignetteCameraFov": 0.5,
+		"_vignetteBlendMode": 0,
+		"_vignetteEnabled": false,
+		"_applyByPostProcess": false,
+		"_isEnabled": true
+	},
+	"useLogarithmicDepth": false,
+	"id": "faeae40c-8ed7-4826-bd0e-65bc67ed11fc",
+	"name": "M_room",
+	"checkReadyOnEveryCall": false,
+	"checkReadyOnlyOnce": false,
+	"state": "",
+	"alpha": 1,
+	"backFaceCulling": false,
+	"sideOrientation": 1,
+	"alphaMode": 2,
+	"_needDepthPrePass": false,
+	"disableDepthWrite": false,
+	"disableColorWrite": false,
+	"forceDepthWrite": false,
+	"depthFunction": 0,
+	"separateCullingPass": false,
+	"fogEnabled": true,
+	"pointSize": 1,
+	"zOffset": 0,
+	"pointsCloud": false,
+	"fillMode": 0,
+	"transparencyMode": 0,
+	"customType": "BABYLON.PBRMaterial",
+	"clearCoat": {
+		"tags": null,
+		"isEnabled": false,
+		"intensity": 1,
+		"roughness": 0,
+		"indexOfRefraction": 1.5,
+		"useRoughnessFromMainTexture": true,
+		"remapF0OnInterfaceChange": true,
+		"isTintEnabled": false,
+		"tintColor": [
+			1,
+			1,
+			1
+		],
+		"tintColorAtDistance": 1,
+		"tintThickness": 1
+	},
+	"anisotropy": {
+		"tags": null,
+		"isEnabled": false,
+		"intensity": 1,
+		"direction": [
+			1,
+			0
+		]
+	},
+	"brdf": {
+		"tags": null,
+		"useEnergyConservation": true,
+		"useSmithVisibilityHeightCorrelated": true,
+		"useSphericalHarmonics": true,
+		"useSpecularGlossinessInputEnergyConservation": true
+	},
+	"sheen": {
+		"tags": null,
+		"isEnabled": false,
+		"linkSheenWithAlbedo": false,
+		"intensity": 1,
+		"color": [
+			1,
+			1,
+			1
+		],
+		"useRoughnessFromMainTexture": true,
+		"albedoScaling": false
+	},
+	"subSurface": {
+		"tags": null,
+		"isRefractionEnabled": false,
+		"isTranslucencyEnabled": false,
+		"isScatteringEnabled": false,
+		"_scatteringDiffusionProfileIndex": 0,
+		"refractionIntensity": 1,
+		"translucencyIntensity": 1,
+		"useAlbedoToTintRefraction": false,
+		"indexOfRefraction": 1.5,
+		"_volumeIndexOfRefraction": -1,
+		"invertRefractionY": false,
+		"linkRefractionWithTransparency": false,
+		"minimumThickness": 0,
+		"maximumThickness": 1,
+		"tintColor": [
+			1,
+			1,
+			1
+		],
+		"tintColorAtDistance": 1,
+		"diffusionDistance": [
+			1,
+			1,
+			1
+		],
+		"useMaskFromThicknessTexture": false,
+		"useMaskFromThicknessTextureGltf": false
+	},
+	"metadata": {
+		"gltf": {
+			"pointers": [
+				"/materials/2"
+			]
+		},
+		"originalSourceFile": {
+			"id": "M_room",
+			"name": "M_room",
+			"sceneFileName": "acg_warzone_all.glb"
+		}
+	}
+}

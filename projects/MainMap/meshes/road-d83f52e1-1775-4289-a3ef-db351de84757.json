@@ -1,0 +1,155 @@
+{
+	"materials": [],
+	"meshes": [
+		{
+			"name": "road",
+			"id": "d83f52e1-1775-4289-a3ef-db351de84757",
+			"uniqueId": 2248,
+			"type": "Mesh",
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotationQuaternion": [
+				0.7071068286895752,
+				0,
+				0,
+				0.7071067094802856
+			],
+			"scaling": [
+				1,
+				1,
+				1
+			],
+			"localMatrix": {
+				"0": 1,
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 1,
+				"6": 0,
+				"7": 0,
+				"8": 0,
+				"9": 0,
+				"10": 1,
+				"11": 0,
+				"12": 0,
+				"13": 0,
+				"14": 0,
+				"15": 1
+			},
+			"isEnabled": true,
+			"isVisible": true,
+			"infiniteDistance": false,
+			"pickable": true,
+			"receiveShadows": false,
+			"billboardMode": 0,
+			"visibility": 1,
+			"checkCollisions": false,
+			"isBlocker": false,
+			"overrideMaterialSideOrientation": 0,
+			"parentId": "1bd2630b-04da-4b70-b66a-96332efac60a",
+			"isUnIndexed": false,
+			"geometryId": "978c51fe-e541-4792-9877-cc9df9b4c37e",
+			"subMeshes": null,
+			"materialId": "cd1a427a-c6f7-4b6e-828c-2079bce9ac25",
+			"metadata": {
+				"gltf": {
+					"pointers": [
+						"/meshes/4/primitives/0",
+						"/nodes/4"
+					]
+				},
+				"basePoseMatrix": {
+					"0": -1,
+					"1": 0,
+					"2": 0,
+					"3": 0,
+					"4": 0,
+					"5": -1.3435887069590535e-7,
+					"6": -1,
+					"7": 0,
+					"8": 0,
+					"9": 1,
+					"10": -1.3435887069590535e-7,
+					"11": 0,
+					"12": 0,
+					"13": 0,
+					"14": 0,
+					"15": 1
+				},
+				"originalSourceFile": {
+					"id": "road",
+					"name": "road",
+					"sceneFileName": "acg_warzone_all.glb"
+				},
+				"isPickable": true
+			},
+			"instances": [],
+			"animations": [],
+			"ranges": [],
+			"layerMask": 268435455,
+			"alphaIndex": 1.7976931348623157e+308,
+			"hasVertexAlpha": false,
+			"overlayAlpha": 0.3,
+			"overlayColor": [
+				1,
+				0,
+				0
+			],
+			"applyFog": true,
+			"delayLoadingFile": "geometries/978c51fe-e541-4792-9877-cc9df9b4c37e.babylonbinarymeshdata",
+			"boundingBoxMaximum": [
+				54.59531021118164,
+				54.092628479003906,
+				1.0000590085983276
+			],
+			"boundingBoxMinimum": [
+				-54.59531021118164,
+				-54.092628479003906,
+				-1.4667580127716064
+			],
+			"_binaryInfo": {
+				"positionsAttrDesc": {
+					"count": 7212,
+					"stride": 3,
+					"offset": 0,
+					"dataType": 1
+				},
+				"normalsAttrDesc": {
+					"count": 7212,
+					"stride": 3,
+					"offset": 28848,
+					"dataType": 1
+				},
+				"uvsAttrDesc": {
+					"count": 4808,
+					"stride": 2,
+					"offset": 57696,
+					"dataType": 1
+				},
+				"indicesAttrDesc": {
+					"count": 4806,
+					"stride": 1,
+					"offset": 76928,
+					"dataType": 0
+				},
+				"subMeshesAttrDesc": {
+					"count": 1,
+					"stride": 5,
+					"offset": 96152,
+					"dataType": 0
+				}
+			},
+			"positions": null,
+			"normals": null,
+			"uvs": null,
+			"hasUVs": true,
+			"indices": null
+		}
+	],
+	"multiMaterials": [],
+	"lods": []
+}

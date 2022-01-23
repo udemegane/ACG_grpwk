@@ -1,0 +1,194 @@
+{
+	"materials": [],
+	"meshes": [
+		{
+			"name": "wallframe.001",
+			"id": "8514a1d1-b559-4196-8cbf-2e454c628885",
+			"uniqueId": 2255,
+			"type": "Mesh",
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotationQuaternion": [
+				0.7071068286895752,
+				0,
+				0,
+				0.7071067094802856
+			],
+			"scaling": [
+				1,
+				1,
+				1
+			],
+			"localMatrix": {
+				"0": 1,
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 1,
+				"6": 0,
+				"7": 0,
+				"8": 0,
+				"9": 0,
+				"10": 1,
+				"11": 0,
+				"12": 0,
+				"13": 0,
+				"14": 0,
+				"15": 1
+			},
+			"isEnabled": true,
+			"isVisible": true,
+			"infiniteDistance": false,
+			"pickable": true,
+			"receiveShadows": false,
+			"billboardMode": 0,
+			"visibility": 1,
+			"checkCollisions": false,
+			"isBlocker": false,
+			"overrideMaterialSideOrientation": 0,
+			"parentId": "1bd2630b-04da-4b70-b66a-96332efac60a",
+			"isUnIndexed": false,
+			"geometryId": "57cf8e61-d8a5-43f5-95bf-0c58535c7bed",
+			"subMeshes": null,
+			"materialId": "00208f5f-a61b-4f25-b849-f40a4b3f75a6",
+			"metadata": {
+				"gltf": {
+					"pointers": [
+						"/meshes/5/primitives/0",
+						"/nodes/5"
+					]
+				},
+				"basePoseMatrix": {
+					"0": -1,
+					"1": 0,
+					"2": 0,
+					"3": 0,
+					"4": 0,
+					"5": -1.3435887069590535e-7,
+					"6": -1,
+					"7": 0,
+					"8": 0,
+					"9": 1,
+					"10": -1.3435887069590535e-7,
+					"11": 0,
+					"12": 0,
+					"13": 0,
+					"14": 0,
+					"15": 1
+				},
+				"originalSourceFile": {
+					"id": "wallframe.001",
+					"name": "wallframe.001",
+					"sceneFileName": "acg_warzone_all.glb"
+				},
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
+			},
+			"instances": [
+				{
+					"name": "wallframe.001 (Mesh Instance)",
+					"id": "b254203c-c2e1-4fd0-b138-78eb9ead1992",
+					"isEnabled": true,
+					"isVisible": true,
+					"isPickable": true,
+					"checkCollisions": false,
+					"position": [
+						0,
+						0,
+						0
+					],
+					"scaling": [
+						1.0000000203475805,
+						0.9999999008559659,
+						0.9999999403953606
+					],
+					"parentId": "1bd2630b-04da-4b70-b66a-96332efac60a",
+					"rotationQuaternion": [
+						4.329780281177466e-17,
+						0.7071067811865476,
+						-0.7071067811865475,
+						4.329780281177467e-17
+					],
+					"metadata": {
+						"isPickable": true,
+						"script": {
+							"name": "None"
+						},
+						"renderingGroupId": 0
+					},
+					"animations": [],
+					"ranges": []
+				}
+			],
+			"animations": [],
+			"ranges": [],
+			"layerMask": 268435455,
+			"alphaIndex": 1.7976931348623157e+308,
+			"hasVertexAlpha": false,
+			"overlayAlpha": 0.3,
+			"overlayColor": [
+				1,
+				0,
+				0
+			],
+			"applyFog": true,
+			"delayLoadingFile": "geometries/57cf8e61-d8a5-43f5-95bf-0c58535c7bed.babylonbinarymeshdata",
+			"boundingBoxMaximum": [
+				6.155785083770752,
+				6.14286994934082,
+				1.1230429410934448
+			],
+			"boundingBoxMinimum": [
+				-55.78498077392578,
+				-55.821685791015625,
+				-49.09147262573242
+			],
+			"_binaryInfo": {
+				"positionsAttrDesc": {
+					"count": 10722,
+					"stride": 3,
+					"offset": 0,
+					"dataType": 1
+				},
+				"normalsAttrDesc": {
+					"count": 10722,
+					"stride": 3,
+					"offset": 42888,
+					"dataType": 1
+				},
+				"uvsAttrDesc": {
+					"count": 7148,
+					"stride": 2,
+					"offset": 85776,
+					"dataType": 1
+				},
+				"indicesAttrDesc": {
+					"count": 7920,
+					"stride": 1,
+					"offset": 114368,
+					"dataType": 0
+				},
+				"subMeshesAttrDesc": {
+					"count": 1,
+					"stride": 5,
+					"offset": 146048,
+					"dataType": 0
+				}
+			},
+			"positions": null,
+			"normals": null,
+			"uvs": null,
+			"hasUVs": true,
+			"indices": null
+		}
+	],
+	"multiMaterials": [],
+	"lods": []
+}

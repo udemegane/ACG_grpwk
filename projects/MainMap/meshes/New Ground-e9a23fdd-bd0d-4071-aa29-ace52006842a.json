@@ -1,4 +1,5 @@
 {
+	"materials": [],
 	"meshes": [
 		{
 			"name": "New Ground",
@@ -16,9 +17,9 @@
 				0
 			],
 			"scaling": [
-				0.4,
+				0.3,
 				0.5,
-				0.4
+				0.3
 			],
 			"localMatrix": {
 				"0": 1,
@@ -51,6 +52,7 @@
 			"isUnIndexed": false,
 			"geometryId": "d57d61f5-352e-40c3-ad1c-a94244a43d7a",
 			"subMeshes": null,
+			"materialId": "239e68e9-ed6d-4b3c-8180-f15d22e3ad76",
 			"metadata": {
 				"isPickable": true,
 				"script": {
@@ -130,7 +132,6 @@
 			"indices": null
 		}
 	],
-	"materials": [],
 	"multiMaterials": [],
 	"lods": []
 }

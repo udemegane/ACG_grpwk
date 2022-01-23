@@ -74,7 +74,11 @@
 					"name": "__root__",
 					"sceneFileName": "cube.glb"
 				},
-				"isPickable": true
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],
