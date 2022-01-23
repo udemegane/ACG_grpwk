@@ -118,9 +118,12 @@ export default class Player extends Mesh {
     if (isNewShot) {
       const cooldownTime = 10; //
       // TODO: put the enemy gun down
+      this._scene.getMeshByName('enemyGun').addRotation(0, 5, 0);
+      // console.log('hit');
       //       and play the 'files/Rifle.mp3' from the enemy's location
       setTimeout(() => {
         // TODO: reaim the enemy gun
+        this._scene.getMeshByName('enemyGun').addRotation(0, -5, 0);
       }, cooldownTime * 1000);
     }
 
@@ -294,5 +297,8 @@ export default class Player extends Mesh {
     resulttext.shadowColor = 'white';
     resulttext.color = 'white';
     AdvancedDynamicTexture.CreateFullscreenUI('UI').addControl(resulttext);
+    setTimeout(() => {
+      Env.switchScene('../../scenes/welcomescreen');
+    }, 5 * 1000);
   }
 }
