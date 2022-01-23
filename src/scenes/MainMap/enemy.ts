@@ -8,6 +8,7 @@ import {
   KeyboardInfo,
   KeyboardEventTypes,
 } from '@babylonjs/core';
+import { TextBlock, AdvancedDynamicTexture } from '@babylonjs/gui';
 
 import { visibleInInspector, onKeyboardEvent } from '../tools';
 import { Env } from '../GameScripts/environment';
@@ -108,14 +109,14 @@ export default class Player extends Mesh {
     if (!Env.gameStarted) return;
     this.hp = Env.getOpHp();
     if (this.hp <= 0) {
-      // win!!
+      this.youWin();
     }
 
     this._updateStatusFromPeer();
 
     const isNewShot = Env.peekNextShot();
     if (isNewShot) {
-      const cooldownTime = 10; // s
+      const cooldownTime = 10; //
       // TODO: put the enemy gun down
       //       and play the 'files/Rifle.mp3' from the enemy's location
       setTimeout(() => {
@@ -283,5 +284,15 @@ export default class Player extends Mesh {
       this._cancelAction(action);
       this._doAction(sa);
     });
+  }
+
+  public youWin(): void {
+    const resulttext = new TextBlock();
+    resulttext.text = 'YOU WIN';
+    resulttext.fontSizeInPixels = 80;
+    resulttext.shadowBlur = 30;
+    resulttext.shadowColor = 'white';
+    resulttext.color = 'white';
+    AdvancedDynamicTexture.CreateFullscreenUI('UI').addControl(resulttext);
   }
 }

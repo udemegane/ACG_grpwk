@@ -82,6 +82,22 @@
 				"_range": {
 					"type": "number",
 					"value": 100
+				},
+				"_jumpForce": {
+					"type": "number",
+					"value": 10
+				},
+				"_shotMoveSpeed": {
+					"type": "number",
+					"value": 0.9
+				},
+				"_shotRange": {
+					"type": "number",
+					"value": 100
+				},
+				"_hookRange": {
+					"type": "number",
+					"value": 100
 				}
 			}
 		},

@@ -6,14 +6,12 @@ import {
   Ray,
   Vector3,
   Animation,
-  CircleEase,
-  EasingFunction,
   KeyboardEventTypes,
   PowerEase,
   PickingInfo,
 } from '@babylonjs/core';
 
-import { TextBlock, AdvancedDynamicTexture } from '@babylonjs/gui';
+import { TextBlock, AdvancedDynamicTexture, Image } from '@babylonjs/gui';
 import { visibleInInspector, onPointerEvent, onKeyboardEvent } from '../tools';
 import { Env } from '../GameScripts/environment';
 
@@ -71,6 +69,7 @@ export default class PlayerCamera extends FreeCamera {
       // this.keysRight = [this._strafeRightKey];
       // this.keysUpward = [74];
     });
+    this.displayScope();
   }
 
   public onUpdate(): void {
@@ -192,9 +191,9 @@ export default class PlayerCamera extends FreeCamera {
     // const ray = new Ray(this.globalPosition, direction, this._shotRange);
     // const hit = this._scene.pickWithRay(ray, (mesh) => mesh.isPickable && mesh.isEnabled());
     // console.log('shot:', hit);
-    // if (hit !== null && hit.hit && hit.pickedMesh.name === 'EnemyNode') {
-    //   console.log('You shot enemy!!');
-    //   // Env.hit = true?
+    // if (hit !== null && hit.hit && hit.pickedMesh.name === 'player') {
+    //   //   console.log('You shot enemy!!');
+    //   //   // Env.hit = true?
     // }
   }
 
@@ -233,6 +232,14 @@ export default class PlayerCamera extends FreeCamera {
       new PowerEase(1),
       callback
     );
+  }
+
+  public displayScope() {
+    const scope = new Image('scope', '../../../scenes/MainMap/files/scope.png');
+    const advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI('UI');
+    scope.height = '70px';
+    scope.width = '70px';
+    advancedTexture.addControl(scope);
   }
 
   @onPointerEvent(PointerEventTypes.POINTERDOWN, false)
