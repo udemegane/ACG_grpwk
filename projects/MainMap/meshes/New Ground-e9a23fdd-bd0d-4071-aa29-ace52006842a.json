@@ -3,12 +3,12 @@
 		{
 			"name": "New Ground",
 			"id": "e9a23fdd-bd0d-4071-aa29-ace52006842a",
-			"uniqueId": 17,
+			"uniqueId": 12,
 			"type": "GroundMesh",
 			"position": [
-				-11.968788146972656,
 				0,
-				7.383433818817139
+				0,
+				0
 			],
 			"rotation": [
 				0,
@@ -16,9 +16,9 @@
 				0
 			],
 			"scaling": [
-				0.1,
-				0.1,
-				0.2734766900539398
+				0.4,
+				0.5,
+				0.4
 			],
 			"localMatrix": {
 				"0": 1,
