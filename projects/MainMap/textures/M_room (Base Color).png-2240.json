@@ -1,0 +1,52 @@
+{
+	"tags": null,
+	"url": "files/M_room (Base Color).png",
+	"uOffset": 0,
+	"vOffset": 0,
+	"uScale": 1,
+	"vScale": 1,
+	"uAng": 0,
+	"vAng": 0,
+	"wAng": 0,
+	"uRotationCenter": 0.5,
+	"vRotationCenter": 0.5,
+	"wRotationCenter": 0.5,
+	"homogeneousRotationInUVTransform": false,
+	"isBlocking": true,
+	"name": "files/M_room (Base Color).png",
+	"metadata": {
+		"gltf": {
+			"pointers": [
+				"/materials/2/pbrMetallicRoughness/baseColorTexture"
+			],
+			"editorDone": true
+		},
+		"editorName": "M_room (Base Color).png",
+		"editorId": "15f085d8-4f83-43f8-9803-9de2bfe9fc61",
+		"ktx2CompressedTextures": {
+			"isUsingCompressedTexture": false
+		}
+	},
+	"hasAlpha": false,
+	"getAlphaFromRGB": false,
+	"level": 1,
+	"coordinatesIndex": 0,
+	"coordinatesMode": 0,
+	"wrapU": 1,
+	"wrapV": 1,
+	"wrapR": 1,
+	"anisotropicFilteringLevel": 4,
+	"isCube": false,
+	"is3D": false,
+	"is2DArray": false,
+	"gammaSpace": true,
+	"invertZ": false,
+	"lodLevelInAlpha": false,
+	"lodGenerationOffset": 0,
+	"lodGenerationScale": 0,
+	"linearSpecularLOD": false,
+	"isRenderTarget": false,
+	"animations": [],
+	"invertY": false,
+	"samplingMode": 3
+}

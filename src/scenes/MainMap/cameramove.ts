@@ -93,11 +93,11 @@ export default class PlayerCamera extends FreeCamera {
       if (!nextShot) break;
       const pick = this._scene.pickWithRay(nextShot, (mesh) => mesh.isEnabled());
       if (pick !== null && pick.hit && pick.pickedPoint !== null) {
-        if (pick.pickedMesh.name === 'PlayerCamera' /* TODO: is me */) {
+        if (pick.pickedMesh.name === 'playerCollision' /* TODO: is me */) {
           this.hp -= 100; // according to where it hit
           Env.updateHp(this.hp);
           if (this.hp <= 0) {
-            // end game
+            this.youLose();
           }
         }
       }
@@ -291,5 +291,19 @@ export default class PlayerCamera extends FreeCamera {
     if (!engine.isPointerLock) {
       engine.enterPointerlock();
     }
+  }
+
+  public youLose(): void {
+    const losetext = new TextBlock();
+    losetext.text = 'YOU LOSE';
+    losetext.fontSizeInPixels = 80;
+    losetext.shadowBlur = 30;
+    losetext.shadowColor = 'black';
+    losetext.color = 'white';
+    const advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI('UI');
+    advancedTexture.addControl(losetext);
+    setTimeout(() => {
+      Env.switchScene('../../scenes/welcomescreen');
+    }, 5 * 1000);
   }
 }

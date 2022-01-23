@@ -1,0 +1,160 @@
+{
+	"materials": [],
+	"meshes": [
+		{
+			"name": "EnemyGun",
+			"id": "dbb09336-c81d-4013-a01d-e0e5063a2885",
+			"uniqueId": 4866,
+			"type": "Mesh",
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotationQuaternion": [
+				0,
+				0,
+				0,
+				1
+			],
+			"scaling": [
+				1,
+				1,
+				1
+			],
+			"localMatrix": {
+				"0": 1,
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 1,
+				"6": 0,
+				"7": 0,
+				"8": 0,
+				"9": 0,
+				"10": 1,
+				"11": 0,
+				"12": 0,
+				"13": 0,
+				"14": 0,
+				"15": 1
+			},
+			"isEnabled": true,
+			"isVisible": true,
+			"infiniteDistance": false,
+			"pickable": true,
+			"receiveShadows": false,
+			"billboardMode": 0,
+			"visibility": 1,
+			"checkCollisions": false,
+			"isBlocker": false,
+			"overrideMaterialSideOrientation": 0,
+			"parentId": "3ea81ac7-ce73-446c-8e12-ec2e92cc8c3e",
+			"isUnIndexed": false,
+			"geometryId": "a7785707-1fa2-4637-857d-bf9b5bd2c0cb",
+			"subMeshes": null,
+			"materialId": "7cac9cd9-75c8-49cd-a3f8-f71615780ea2",
+			"metadata": {
+				"gltf": {
+					"pointers": [
+						"/meshes/0/primitives/0",
+						"/nodes/2"
+					]
+				},
+				"basePoseMatrix": {
+					"0": -100,
+					"1": 0,
+					"2": 0,
+					"3": 0,
+					"4": 0,
+					"5": -0.000013435885193757713,
+					"6": -99.99999237060547,
+					"7": 0,
+					"8": 0,
+					"9": 99.99999237060547,
+					"10": -0.000013435885193757713,
+					"11": 0,
+					"12": 10.379500389099121,
+					"13": -0.00000197228041542985,
+					"14": -14.679198265075684,
+					"15": 1
+				},
+				"originalSourceFile": {
+					"id": "Rifle:Gun_Lo",
+					"name": "Rifle:Gun_Lo",
+					"sceneFileName": "gun.glb"
+				},
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0,
+				"doNotExport": false
+			},
+			"instances": [],
+			"animations": [],
+			"ranges": [],
+			"layerMask": 268435455,
+			"alphaIndex": 1.7976931348623157e+308,
+			"hasVertexAlpha": false,
+			"overlayAlpha": 0.3,
+			"overlayColor": [
+				1,
+				0,
+				0
+			],
+			"applyFog": true,
+			"delayLoadingFile": "geometries/a7785707-1fa2-4637-857d-bf9b5bd2c0cb.babylonbinarymeshdata",
+			"boundingBoxMaximum": [
+				44.112144470214844,
+				1.599323034286499,
+				-10.818805694580078
+			],
+			"boundingBoxMinimum": [
+				-23.489425659179688,
+				-1.5993239879608154,
+				-24.60259437561035
+			],
+			"_binaryInfo": {
+				"positionsAttrDesc": {
+					"count": 36621,
+					"stride": 3,
+					"offset": 0,
+					"dataType": 1
+				},
+				"normalsAttrDesc": {
+					"count": 36621,
+					"stride": 3,
+					"offset": 146484,
+					"dataType": 1
+				},
+				"uvsAttrDesc": {
+					"count": 24414,
+					"stride": 2,
+					"offset": 292968,
+					"dataType": 1
+				},
+				"indicesAttrDesc": {
+					"count": 59121,
+					"stride": 1,
+					"offset": 390624,
+					"dataType": 0
+				},
+				"subMeshesAttrDesc": {
+					"count": 1,
+					"stride": 5,
+					"offset": 627108,
+					"dataType": 0
+				}
+			},
+			"positions": null,
+			"normals": null,
+			"uvs": null,
+			"hasUVs": true,
+			"indices": null
+		}
+	],
+	"multiMaterials": [],
+	"lods": []
+}

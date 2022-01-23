@@ -1,5 +1,6 @@
+import { Mesh, Scene, Texture, VolumetricLightScatteringPostProcess } from '@babylonjs/core';
 import SceneScriptBase from '../GameScripts/sceneScriptBase';
-import { visibleInInspector } from '../decorators';
+import { fromScene, visibleInInspector } from '../decorators';
 import { Env } from '../GameScripts/environment';
 /**
  * This represents a script that is attached to a node in the editor.
@@ -23,6 +24,11 @@ import { Env } from '../GameScripts/environment';
 export default class MainMapScript extends SceneScriptBase {
   @visibleInInspector('string', 'In sceneScript', 'Hello world!')
   private _testLocalString: string;
+
+  @fromScene('ScattalingLight')
+  private _vlsMesh: Mesh;
+  private _vlsPostProcess: VolumetricLightScatteringPostProcess;
+  // private _scene: Scene;
 
   /**
    * Override constructor.
@@ -53,6 +59,20 @@ export default class MainMapScript extends SceneScriptBase {
         Env.gameStarted = true;
       });
     });
+    this._vlsPostProcess = new VolumetricLightScatteringPostProcess(
+      'vlspp',
+      '1.0',
+      this._scene.activeCamera,
+      this._vlsMesh,
+      100,
+      Texture.BILINEAR_SAMPLINGMODE,
+      this._scene.getEngine(),
+      false
+    );
+    this._scene = Env.currentScene;
+
+    // this._scene.createDefaultEnvironment();
+    // super._scene;
     // ...
   }
 
