@@ -92,6 +92,8 @@ export default class PlayerCamera extends FreeCamera {
       .add(Vector3.Right().scale(+this._toRight - +this._toLeft))
       .rotateByQuaternionToRef(this.absoluteRotation, moveVec);
     if (moveVec.length()) this.position.addInPlace(moveVec.normalize().scale(this.speed));
+
+    Env.sendMyStatus(this.globalPosition, this.absoluteRotation);
   }
 
   private _applyGravity(deltaTime?: number) {
@@ -164,7 +166,6 @@ export default class PlayerCamera extends FreeCamera {
     console.log('shot:', hit);
     if (hit !== null && hit.hit && hit.pickedMesh.name === 'EnemyNode') {
       console.log('You shot enemy!!');
-      // Env.hit = true?
     }
   }
 
