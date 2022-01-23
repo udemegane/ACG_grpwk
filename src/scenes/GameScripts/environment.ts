@@ -1,5 +1,6 @@
 import { Observable, Vector3, Quaternion } from '@babylonjs/core';
 import { Connection } from './connection';
+import { MoveKeys } from './protobuf';
 
 export class Env {
   public static username = 'Anonymous';
@@ -131,6 +132,11 @@ export class Env {
     this.con.sendHp(hp);
   }
 
+  public static sendMoveKeys(w: boolean, a: boolean, s: boolean, d: boolean, shift: boolean) {
+    if (!Env.gameStarted) return;
+    this.con.sendMoveKeys(w, a, s, d, shift);
+  }
+
   public static getOpAbsPos() {
     return this.con.opponent.pos;
   }
@@ -149,6 +155,15 @@ export class Env {
   public static getNewShot() {
     if (this.con.opponent.shots.length === 0) return undefined;
     return this.con.opponent.shots.shift();
+  }
+
+  public static peekNextShot() {
+    if (this.con.opponent.shots.length === 0) return undefined;
+    return this.con.opponent.shots[0];
+  }
+
+  public static getOpKeys(): MoveKeys {
+    return this.con.opponent.keys;
   }
 
   public static async switchScene(sceneRootUrl: string) {

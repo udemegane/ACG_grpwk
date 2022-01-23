@@ -10,6 +10,7 @@ import {
 } from '@babylonjs/core';
 
 import { visibleInInspector, onKeyboardEvent } from '../tools';
+import { Env } from '../GameScripts/environment';
 
 export interface IAction {
   range: AnimationRange;
@@ -30,24 +31,6 @@ export interface IPlayerActions {
 }
 
 export default class Player extends Mesh {
-  @visibleInInspector('KeyMap', 'Forward Key', 'z'.charCodeAt(0))
-  private _forwardKey: number;
-
-  @visibleInInspector('KeyMap', 'Backward Key', 's'.charCodeAt(0))
-  private _backwardKey: number;
-
-  @visibleInInspector('KeyMap', 'Left Key', 'q'.charCodeAt(0))
-  private _leftKey: number;
-
-  @visibleInInspector('KeyMap', 'Right Key', 'd'.charCodeAt(0))
-  private _rightKey: number;
-
-  @visibleInInspector('number', 'Walk Speed', 1)
-  private _walkSpeed: number;
-
-  @visibleInInspector('number', 'Run Speed', 2)
-  private _runSpeed: number;
-
   @visibleInInspector('number', 'Transition Speed', 1)
   private _transitionSpeed: number;
 
@@ -58,11 +41,7 @@ export default class Player extends Mesh {
   private _shift = false;
   private _targetBone: Bone = null;
 
-  private _jumping = false;
-  private _jumpValue = 0;
-
-  private _moveAxis: Vector3 = Vector3.Zero();
-  private _moveDirection: Vector3 = Vector3.Zero();
+  public hp = 100;
 
   // @ts-ignore ignoring the super call as we don't want to re-init
   private constructor() {}
@@ -84,24 +63,24 @@ export default class Player extends Mesh {
         range: this.skeleton.getAnimationRange('YBot_Walk'),
         direction: new Vector3(0, 0, 1),
       },
-      [this._forwardKey]: {
+      87: {
         name: 'run',
         range: this.skeleton.getAnimationRange('YBot_Run'),
         direction: new Vector3(0, 0, 1),
         shift: 'walk',
       },
-      [this._backwardKey]: {
+      83: {
         name: 'back',
         range: this.skeleton.getAnimationRange('YBot_Walk'),
         direction: new Vector3(0, 0, -1),
         invert: true,
       },
-      [this._leftKey]: {
+      65: {
         name: 'left',
         range: this.skeleton.getAnimationRange('YBot_LeftStrafeWalk'),
         direction: new Vector3(-1, 0, 0),
       },
-      [this._rightKey]: {
+      68: {
         name: 'right',
         range: this.skeleton.getAnimationRange('YBot_RightStrafeWalk'),
         direction: new Vector3(1, 0, 0),
@@ -112,45 +91,75 @@ export default class Player extends Mesh {
     this._targetBone = this.skeleton.bones[boneIndex];
 
     this._doAction(this._actions.idle);
+
+    new Promise((resolve) => {
+      const interval = setInterval(() => {
+        if (Env.gameStarted) {
+          clearInterval(interval);
+          resolve();
+        }
+      }, 1000);
+    }).then(() => {
+      this._updateStatusFromPeer();
+    });
   }
 
   public onUpdate(): void {
-    let actionsCount = 0;
-    let speed = 0;
-
-    this._moveAxis.set(0, 0, 0);
-
-    for (const key in this._actions) {
-      const a = this._actions[key];
-      if (!a.action || !a.direction.length()) {
-        continue;
-      }
-
-      const { weight } = a.action;
-
-      this._moveAxis = this._moveAxis.addInPlace(a.direction.multiplyByFloats(weight, weight, weight));
-      speed += weight * (!this._shift && a.name === 'run' ? this._runSpeed : this._walkSpeed);
-
-      if (weight > 0.5) {
-        actionsCount += 1;
-      }
+    if (!Env.gameStarted) return;
+    this.hp = Env.getOpHp();
+    if (this.hp <= 0) {
+      // win!!
     }
 
-    speed *= this._scene.getAnimationRatio();
+    this._updateStatusFromPeer();
 
-    if (actionsCount > 0) {
-      speed /= actionsCount;
-
-      this._moveAxis.divideInPlace(new Vector3(actionsCount, actionsCount, actionsCount));
-      this.getDirectionToRef(this._moveAxis, this._moveDirection);
-    } else {
-      this._moveDirection.set(0, 0, 0);
+    const isNewShot = Env.peekNextShot();
+    if (isNewShot) {
+      const cooldownTime = 10; // s
+      // TODO: put the enemy gun down
+      //       and play the 'files/Rifle.mp3' from the enemy's location
+      setTimeout(() => {
+        // TODO: reaim the enemy gun
+      }, cooldownTime * 1000);
     }
 
-    this._moveDirection.x *= speed;
-    this._moveDirection.z *= speed;
-    this._moveDirection.y = this._scene.gravity.y + this._jumpValue;
-    this.moveWithCollisions(this._moveDirection);
+    const keys = Env.getOpKeys();
+    if (keys.shift) this._shiftDown();
+    else this._shiftUp();
+
+    Object.entries(Env.getOpKeys()).forEach(([key, value]) => {
+      if (key === 'shift') {
+        if (value) this._shiftDown();
+        else this._shiftUp();
+      } else if (value) this._onKeyboardDown(key.charCodeAt(0));
+      else this._onKeyboardUp(key.charCodeAt(0));
+    });
+    // old code - should be useless
+
+    // let actionsCount = 0;
+    // let speed = 0;
+    // this._moveAxis.set(0, 0, 0);
+    // for (const key in this._actions) {
+    //   const a = this._actions[key];
+    //   if (!a.action || !a.direction.length()) continue;
+    //   const { weight } = a.action;
+    //   this._moveAxis = this._moveAxis.addInPlace(a.direction.multiplyByFloats(weight, weight, weight));
+    //   speed += weight * (!this._shift && a.name === 'run' ? this._runSpeed : this._walkSpeed);
+    //   if (weight > 0.5) actionsCount += 1;
+    // }
+
+    // speed *= this._scene.getAnimationRatio();
+    // if (actionsCount > 0) {
+    //   speed /= actionsCount;
+    //   this._moveAxis.divideInPlace(new Vector3(actionsCount, actionsCount, actionsCount));
+    //   this.getDirectionToRef(this._moveAxis, this._moveDirection);
+    // } else {
+    //   this._moveDirection.set(0, 0, 0);
+    // }
+    // this._moveDirection.x *= speed;
+    // this._moveDirection.z *= speed;
+    // this._moveDirection.y = this._scene.gravity.y + this._jumpValue;
+    // this.moveWithCollisions(this._moveDirection);
   }
 
   private _doAction(playerAction: IAction): void {
@@ -167,6 +176,11 @@ export default class Player extends Mesh {
 
     playerAction.running = true;
     this._interpolateAction(playerAction, 1);
+  }
+
+  private _updateStatusFromPeer() {
+    this.setAbsolutePosition(Env.getOpAbsPos());
+    this.rotationQuaternion.copyFrom(Env.getOpAbsDir());
   }
 
   private _cancelAction(playerAction: IAction): void {
@@ -206,52 +220,8 @@ export default class Player extends Mesh {
     );
   }
 
-  private _syncRotation(targetRotation: number): void {
-    const distance = this.rotation.y - targetRotation;
-    const currentRotation =
-      (distance * 0.1 - this.getEngine().getDeltaTime() * 0.001) * this._scene.getAnimationRatio();
-    const amount = distance > 0 ? Math.max(currentRotation, 0) : Math.min(currentRotation, 0);
-
-    this.rotate(new Vector3(0, 1, 0), -amount);
-    this.rotation.y -= amount;
-  }
-
-  @onKeyboardEvent([32], KeyboardEventTypes.KEYUP)
-  private _jump(): void {
-    if (this._jumping) {
-      return;
-    }
-
-    const a = new Animation(
-      'jump',
-      '_jumpValue',
-      60,
-      Animation.ANIMATIONTYPE_FLOAT,
-      Animation.ANIMATIONLOOPMODE_RELATIVE,
-      false
-    );
-    a.setKeys([
-      { frame: 0, value: -this._scene.gravity.y },
-      { frame: 25, value: -this._scene.gravity.y + 5 },
-      { frame: 50, value: 0 },
-    ]);
-
-    this._jumping = true;
-    this._scene.beginDirectAnimation(this, [a], 0, 120, false, 1.0, () => {
-      this._jumping = false;
-    });
-  }
-
-  @onKeyboardEvent([], KeyboardEventTypes.KEYDOWN)
-  private _onKeyboardDown(info: KeyboardInfo): void {
-    if (info.event.key === 'Shift') {
-      this._shiftDown();
-      return;
-    }
-
-    const key = info.event.keyCode;
-
-    let action = this._actions[key];
+  private _onKeyboardDown(keyCode: number): void {
+    let action = this._actions[keyCode];
     if (!action) return;
 
     if (this._shift && action.shift) {
@@ -265,16 +235,8 @@ export default class Player extends Mesh {
     }
   }
 
-  @onKeyboardEvent([], KeyboardEventTypes.KEYUP)
-  private _onKeyboardUp(info: KeyboardInfo): void {
-    if (info.event.key === 'Shift') {
-      this._shiftUp();
-      return;
-    }
-
-    const key = info.event.keyCode;
-
-    let action = this._actions[key];
+  private _onKeyboardUp(keyCode: number): void {
+    let action = this._actions[keyCode];
     if (!action) return;
 
     if (this._shift && action.shift) {
@@ -285,7 +247,6 @@ export default class Player extends Mesh {
     if (action.running) {
       this._cancelAction(action);
     }
-
     const runningActions = Object.values(this._actions).find((a) => a.running);
     if (!runningActions) {
       this._doAction(this._actions.idle);

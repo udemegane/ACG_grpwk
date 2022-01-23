@@ -12,6 +12,7 @@ import {
   RequestBattle,
   WsWrapper,
   PingTime,
+  MoveKeys,
 } from './protobuf';
 
 const secureConnection = process.env.ACG_PRODUCTION_STAGE === 'production';
@@ -46,6 +47,7 @@ interface OpCon {
   dir: Quaternion;
   shots: Array<Ray>;
   hp: number;
+  keys: MoveKeys;
 }
 
 export class Connection {
@@ -58,6 +60,7 @@ export class Connection {
     dir: Quaternion.Zero(),
     shots: [],
     hp: 100,
+    keys: {} as MoveKeys,
   };
 
   public token: string = undefined;
@@ -92,6 +95,9 @@ export class Connection {
               break;
             case 'ishit':
               this.opponent.hp = preq.ishit.remain;
+              break;
+            case 'keys':
+              this.opponent.keys = preq.keys;
               break;
             default:
               console.log('Wrong Protobuf Data');
@@ -250,5 +256,9 @@ export class Connection {
 
   public sendHp(hp: number) {
     this.pcon.send(WsWrapper.encode({ e: { $case: 'ishit', ishit: { remain: hp } } }).finish());
+  }
+
+  public sendMoveKeys(w: boolean, a: boolean, s: boolean, d: boolean, shift: boolean) {
+    this.pcon.send(WsWrapper.encode({ e: { $case: 'keys', keys: { w, a, s, d, shift } } }).finish());
   }
 }

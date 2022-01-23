@@ -46,6 +46,8 @@ export default class PlayerCamera extends FreeCamera {
   private _shift = false;
   private _shot = false;
 
+  private hp = 100;
+
   // @ts-ignore ignoring the super call as we don't want to re-init
   private constructor() {}
 
@@ -72,7 +74,7 @@ export default class PlayerCamera extends FreeCamera {
   }
 
   public onUpdate(): void {
-    const deltaTime = this.getEngine().getDeltaTime();
+    const deltaFrames = this._scene.getAnimationRatio();
     if (this._shift) {
       this.speed = this._runSpeed;
     } else {
@@ -80,29 +82,49 @@ export default class PlayerCamera extends FreeCamera {
     }
     if (!this._isGrounded() && !this._hook) {
       this._jumping = true;
-      this._vy -= 9.8 * 0.001 * deltaTime;
+      this._vy -= (9.8 * deltaFrames) / 60;
     } else {
       this._jumping = this._hook;
       this._vy = 0;
     }
-    this._applyGravity(deltaTime);
+    this._applyGravity(deltaFrames);
     const moveVec = Vector3.Zero();
     Vector3.Zero()
       .add(Vector3.Forward().scale(+this._forward - +this._backward))
       .add(Vector3.Right().scale(+this._toRight - +this._toLeft))
       .rotateByQuaternionToRef(this.absoluteRotation, moveVec);
+    moveVec.y = 0;
     if (moveVec.length()) this.position.addInPlace(moveVec.normalize().scale(this.speed));
 
+    // connection
     Env.sendMyStatus(this.globalPosition, this.absoluteRotation);
+
+    while (true) {
+      const nextShot = Env.getNewShot();
+      if (!nextShot) break;
+      const pick = this._scene.pickWithRay(nextShot, (mesh) => mesh.isEnabled());
+      if (pick !== null && pick.hit && pick.pickedPoint !== null) {
+        if (pick.pickedMesh.name === 'PlayerCamera' /* TODO: is me */) {
+          this.hp -= 100; // according to where it hit
+          Env.updateHp(this.hp);
+          if (this.hp <= 0) {
+            // end game
+          }
+        }
+      }
+    }
+
+    Env.sendMoveKeys(this._forward, this._toLeft, this._backward, this._toRight, this._shift);
   }
 
-  private _applyGravity(deltaTime?: number) {
-    const d = deltaTime || this.getEngine().getDeltaTime();
-    this.position.addInPlace(Vector3.Up().scale(this._vy * d * 0.001));
+  private _applyGravity(deltaFrames?: number) {
+    const d = deltaFrames || this._scene.getAnimationRatio();
+    let scale = (this._vy * d) / 60;
+    if (this.position.y + scale < 0) scale = -this.position.y;
+    this.position.addInPlace(Vector3.Up().scale(scale));
   }
 
   private _isGrounded(): boolean {
-    // console.log(this.position);
     if (this._floorRaycast(0, 0, 0.6).equals(Vector3.Zero())) return false;
     return true;
   }
@@ -124,49 +146,56 @@ export default class PlayerCamera extends FreeCamera {
     // }
     this._jumping = true;
     this._vy = this._jumpForce;
-    this._applyGravity(200 / this._vy);
+    this._applyGravity(10 / this._vy);
   }
 
-  public cameraJump(): void {
-    const cam = this._scene.activeCamera;
-    cam.animations = [];
-    const a = new Animation('a', 'position.y', 50, Animation.ANIMATIONTYPE_FLOAT, Animation.ANIMATIONLOOPMODE_CYCLE);
+  // public cameraJump(): void {
+  //   const cam = this._scene.activeCamera;
+  //   cam.animations = [];
+  //   const a = new Animation('a', 'position.y', 50, Animation.ANIMATIONTYPE_FLOAT, Animation.ANIMATIONLOOPMODE_CYCLE);
 
-    const keys = [];
-    keys.push({ frame: 0, value: cam.position.y });
-    keys.push({ frame: 25, value: cam.position.y + this._jumpForce });
-    keys.push({ frame: 50, value: cam.position.y + this._jumpForce });
-    a.setKeys(keys);
+  //   const keys = [];
+  //   keys.push({ frame: 0, value: cam.position.y });
+  //   keys.push({ frame: 25, value: cam.position.y + this._jumpForce });
+  //   keys.push({ frame: 50, value: cam.position.y + this._jumpForce });
+  //   a.setKeys(keys);
 
-    const easingFunction = new CircleEase();
-    easingFunction.setEasingMode(EasingFunction.EASINGMODE_EASEINOUT);
-    a.setEasingFunction(easingFunction);
+  //   const easingFunction = new CircleEase();
+  //   easingFunction.setEasingMode(EasingFunction.EASINGMODE_EASEINOUT);
+  //   a.setEasingFunction(easingFunction);
 
-    cam.animations.push(a);
-    console.log(this.globalPosition);
-    this._scene.beginAnimation(cam, 0, 50, false, 1, () => {
-      this._jumping = false;
-      console.log(this.globalPosition);
-    });
-  }
+  //   cam.animations.push(a);
+  //   console.log(this.globalPosition);
+  //   this._scene.beginAnimation(cam, 0, 50, false, 1, () => {
+  //     this._jumping = false;
+  //     console.log(this.globalPosition);
+  //   });
+  // }
 
   public Shot(): void {
     const shotSE = this._scene.getSoundByName('files/Rifle.mp3');
     shotSE.setVolume(0.5);
     shotSE.play();
-    let forward = new Vector3(0, 0, 1);
-    const m = this.getWorldMatrix();
-    forward = Vector3.TransformCoordinates(forward, m);
 
-    let direction = forward.subtract(this.globalPosition);
-    direction = Vector3.Normalize(direction);
+    const ray = this.getForwardRay(this._shotRange);
+    Env.sendShot(ray.origin, ray.direction, ray.length);
 
-    const ray = new Ray(this.globalPosition, direction, this._shotRange);
-    const hit = this._scene.pickWithRay(ray, (mesh) => mesh.isPickable && mesh.isEnabled());
-    console.log('shot:', hit);
-    if (hit !== null && hit.hit && hit.pickedMesh.name === 'EnemyNode') {
-      console.log('You shot enemy!!');
-    }
+    // hit detection is done in enemy
+
+    // let forward = new Vector3(0, 0, 1);
+    // const m = this.getWorldMatrix();
+    // forward = Vector3.TransformCoordinates(forward, m);
+
+    // let direction = forward.subtract(this.globalPosition);
+    // direction = Vector3.Normalize(direction);
+
+    // const ray = new Ray(this.globalPosition, direction, this._shotRange);
+    // const hit = this._scene.pickWithRay(ray, (mesh) => mesh.isPickable && mesh.isEnabled());
+    // console.log('shot:', hit);
+    // if (hit !== null && hit.hit && hit.pickedMesh.name === 'EnemyNode') {
+    //   console.log('You shot enemy!!');
+    //   // Env.hit = true?
+    // }
   }
 
   public makeHook() {
