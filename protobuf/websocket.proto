@@ -28,6 +28,14 @@ message WsRay {
   required float length = 3;
 }
 
+message MoveKeys {
+  required bool w = 1;
+  required bool a = 2;
+  required bool s = 3;
+  required bool d = 4;
+  required bool shift = 5;
+}
+
 message GotHit {
   required float remain = 1;
 }
@@ -40,6 +48,7 @@ message WsWrapper {
     WsDirection absDir = 4;
     WsRay newShot = 5;
     GotHit ishit = 6;
+    MoveKeys keys = 7;
   }
 }
 
