@@ -53,12 +53,6 @@ export default class MainMapScript extends SceneScriptBase {
   public onStart(): void {
     super.onStart();
     if (process.env.ACG_PRODUCTION_STAGE !== 'production') console.log('main map onstart');
-    Env.requestMultiMatch().then((res) => {
-      console.log(res);
-      Env.createConnection(res).then(() => {
-        Env.gameStarted = true;
-      });
-    });
     this._vlsPostProcess = new VolumetricLightScatteringPostProcess(
       'vlspp',
       '1.0',

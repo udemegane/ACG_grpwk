@@ -39,6 +39,7 @@ export default class MyScript extends Mesh {
   inputpassword = new InputText();
   welcome = new TextBlock();
   waiting = new TextBlock();
+  isWaiting = false;
   errortext = new TextBlock();
   enterbutton = Button.CreateSimpleButton('Enter', 'OK');
   returnbutton = Button.CreateSimpleButton('Return', 'Return');
@@ -68,7 +69,7 @@ export default class MyScript extends Mesh {
     this.createenterbuttonGUI();
     this.welcomecommentGUI();
     this.createloadingGUI();
-    this.waitinganimation();
+    // this.waitinganimation();
     this.createreturnbuttonGUI();
     // ...
   }
@@ -104,6 +105,7 @@ export default class MyScript extends Mesh {
         }
         break;
       case 2:
+      case 4:
         if (this.selectup === false) this.nowscene = 3;
         else Env.switchScene('./scenes/MainMap/');
         break;
@@ -159,14 +161,17 @@ export default class MyScript extends Mesh {
     }
     if (this.nowscene === 3) {
       this.waiting.isVisible = true;
+      this.startWaiting();
     } else {
       this.waiting.isVisible = false;
     }
     if (this.nowscene === 4) {
       this.returnbutton.isVisible = true;
+      this.singleplay.isVisible = true;
       this.errortext.isVisible = true;
     } else {
       this.returnbutton.isVisible = false;
+      this.singleplay.isVisible = this.nowscene === 2;
       this.errortext.isVisible = false;
     }
     this.selectbutton();
@@ -304,36 +309,62 @@ export default class MyScript extends Mesh {
     this.advancedTexture.addControl(this.waiting);
   }
 
-  public waitinganimation(): void {
+  public startWaiting() {
+    if (this.isWaiting) return false;
+    this.isWaiting = true;
     let t = 0;
     this.waiting.text = 'Waiting';
-    const handle = setInterval(() => {
-      t += 1;
-      switch (t % 4) {
-        case 0:
-          this.waiting.text = 'Waiting';
-          break;
-        case 1:
-          this.waiting.text = 'Waiting.';
-          break;
-        case 2:
-          this.waiting.text = 'Waiting..';
-          break;
-        case 3:
-          this.waiting.text = 'Waiting...';
-          break;
-        default:
-          break;
-      }
-      // if (matching is success){
-      //   clearInterval(handle);
-      //   Env.switchScene('./scenes/scene/');
-      // }
-      if (t === 1000) {
-        clearInterval(handle);
-        this.nowscene = 2;
-      }
-    }, 1000);
+    return new Promise((resolve, reject) => {
+      const handle = setInterval(() => {
+        t += 1;
+        switch (t % 4) {
+          case 0:
+            this.waiting.text = 'Waiting';
+            break;
+          case 1:
+            this.waiting.text = 'Waiting.';
+            break;
+          case 2:
+            this.waiting.text = 'Waiting..';
+            break;
+          case 3:
+            this.waiting.text = 'Waiting...';
+            break;
+          default:
+            break;
+        }
+        if (Env.gameStarted) {
+          clearInterval(handle);
+          Env.switchScene('./scenes/MainMap/');
+          resolve(Env.gameStarted);
+        }
+        if (t === 1000) {
+          clearInterval(handle);
+          this.nowscene = 2;
+          reject();
+        }
+      }, 1000);
+      Env.requestMultiMatch()
+        .then((res) => {
+          Env.createConnection(res)
+            .then(() => {
+              Env.gameStarted = true;
+            })
+            .catch((e) => {
+              clearInterval(handle);
+              if (process.env.ACG_PRODUCTION_STAGE !== 'production') console.log(e);
+              reject();
+            });
+        })
+        .catch((e) => {
+          clearInterval(handle);
+          if (process.env.ACG_PRODUCTION_STAGE !== 'production') console.log(e);
+          reject();
+        });
+    }).then((res: boolean) => {
+      this.isWaiting = res;
+      return res;
+    });
   }
 
   public playSound(name): void {
