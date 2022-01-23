@@ -358,5 +358,8 @@ export default class PlayerCamera extends FreeCamera {
     losetext.color = 'white';
     const advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI('UI');
     advancedTexture.addControl(losetext);
+    setTimeout(() => {
+      Env.switchScene('../../scenes/welcomescreen');
+    }, 5 * 1000);
   }
 }

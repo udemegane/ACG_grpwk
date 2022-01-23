@@ -297,5 +297,8 @@ export default class Player extends Mesh {
     resulttext.shadowColor = 'white';
     resulttext.color = 'white';
     AdvancedDynamicTexture.CreateFullscreenUI('UI').addControl(resulttext);
+    setTimeout(() => {
+      Env.switchScene('../../scenes/welcomescreen');
+    }, 5 * 1000);
   }
 }
