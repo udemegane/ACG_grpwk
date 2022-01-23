@@ -4,7 +4,7 @@
 		{
 			"name": "wall_window.001",
 			"id": "b1ce86ef-d0ea-4df1-9f3a-1b585eb187d2",
-			"uniqueId": 2232,
+			"uniqueId": 21,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -47,7 +47,7 @@
 			"receiveShadows": false,
 			"billboardMode": 0,
 			"visibility": 1,
-			"checkCollisions": false,
+			"checkCollisions": true,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": 0,
 			"parentId": "1bd2630b-04da-4b70-b66a-96332efac60a",
@@ -85,7 +85,11 @@
 					"name": "wall_window.001",
 					"sceneFileName": "acg_warzone_all.glb"
 				},
-				"isPickable": true
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],

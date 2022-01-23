@@ -4,7 +4,7 @@
 		{
 			"name": "room",
 			"id": "0acb1126-8a1e-495a-8ef1-652d97144f22",
-			"uniqueId": 2235,
+			"uniqueId": 35,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -47,7 +47,7 @@
 			"receiveShadows": false,
 			"billboardMode": 0,
 			"visibility": 1,
-			"checkCollisions": false,
+			"checkCollisions": true,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": 0,
 			"parentId": "1bd2630b-04da-4b70-b66a-96332efac60a",
@@ -98,7 +98,7 @@
 					"isEnabled": true,
 					"isVisible": true,
 					"isPickable": true,
-					"checkCollisions": false,
+					"checkCollisions": true,
 					"position": [
 						5.245894432067871,
 						4.25045108795166,

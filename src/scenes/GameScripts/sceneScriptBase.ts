@@ -28,7 +28,7 @@ export default class SceneScriptBase extends Scene {
   private _isVisibleDebugMenu: boolean;
   // private _vlsPostProcess: VolumetricLightScatteringPostProcess;
   public static pane: Pane;
-  protected _scene: Scene;
+  // protected _scene: Scene;
   /**
    * Override constructor.
    * @warn do not fill.
@@ -56,7 +56,7 @@ export default class SceneScriptBase extends Scene {
    */
   public onInitialize(): void {
     Env.onInitialize();
-    this._scene = Env.currentScene;
+    // this._scene = Env.currentScene;
   }
 
   /**

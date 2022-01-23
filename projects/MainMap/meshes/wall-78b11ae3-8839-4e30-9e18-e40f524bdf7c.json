@@ -4,7 +4,7 @@
 		{
 			"name": "wall",
 			"id": "78b11ae3-8839-4e30-9e18-e40f524bdf7c",
-			"uniqueId": 2242,
+			"uniqueId": 32,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -47,7 +47,7 @@
 			"receiveShadows": false,
 			"billboardMode": 0,
 			"visibility": 1,
-			"checkCollisions": false,
+			"checkCollisions": true,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": 0,
 			"parentId": "1bd2630b-04da-4b70-b66a-96332efac60a",
@@ -98,7 +98,7 @@
 					"isEnabled": true,
 					"isVisible": true,
 					"isPickable": true,
-					"checkCollisions": false,
+					"checkCollisions": true,
 					"position": [
 						0,
 						0,
