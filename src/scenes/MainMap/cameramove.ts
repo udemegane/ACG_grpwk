@@ -34,6 +34,9 @@ export default class PlayerCamera extends FreeCamera {
   @visibleInInspector('number', 'Hook Range', 100)
   private _hookRange: number;
 
+  @visibleInInspector('boolean', 'Jump Forever', true)
+  private _devJump: boolean;
+
   private _forward = false;
   private _backward = false;
   private _toRight = false;
@@ -50,43 +53,12 @@ export default class PlayerCamera extends FreeCamera {
   private constructor() {}
 
   public onStart(): void {
-    this.keysUp = [];
-    this.keysDown = [];
-    this.keysLeft = [];
-    this.keysRight = [];
-    new Promise((resolve) => {
-      // disable move with keys until game is started
-      const interval = setInterval(() => {
-        if (Env.gameStarted || process.env.ACG_PRODUCTION_STAGE !== 'production') {
-          clearInterval(interval);
-          resolve();
-        }
-      }, 1000);
-    }).then(() => {
-      // this.keysUp = [this._forwardKey];
-      // this.keysDown = [this._backwardKey];
-      // this.keysLeft = [this._strafeLeftKey];
-      // this.keysRight = [this._strafeRightKey];
-      // this.keysUpward = [74];
-    });
     this.displayScope();
   }
 
   public onUpdate(): void {
     const deltaFrames = this._scene.getAnimationRatio();
-    if (this._shift) {
-      this.speed = this._runSpeed;
-    } else {
-      this.speed = this._walkSpeed;
-    }
-    if (!this._isGrounded() && !this._hook) {
-      this._jumping = true;
-      this._vy -= (9.8 * deltaFrames) / 60;
-    } else {
-      this._jumping = this._hook;
-      this._vy = 0;
-    }
-    this._applyGravity(deltaFrames);
+    this.speed = this._shift ? this._runSpeed : this._walkSpeed;
     const moveVec = Vector3.Zero();
     Vector3.Zero()
       .add(Vector3.Forward().scale(+this._forward - +this._backward))
@@ -94,6 +66,24 @@ export default class PlayerCamera extends FreeCamera {
       .rotateByQuaternionToRef(this.absoluteRotation, moveVec);
     moveVec.y = 0;
     if (moveVec.length()) this.position.addInPlace(moveVec.normalize().scale(this.speed));
+
+    // const detectGround = this._floorRaycast(moveVec.x, moveVec.z, 0.6);
+    // if (detectGround.length() === 0) {
+    //   this._jumping = true;
+    //   if (!this._hook) this._vy -= (9.8 * deltaFrames) / 60;
+    //   this._applyGravity(deltaFrames);
+    // } else {
+    //   this._jumping = this._hook;
+    //   this._vy = 0;
+    //   this.position.y = detectGround.y;
+    // }
+    // if (!this._isGrounded() && !this._hook) {
+    //   this._jumping = true;
+    //   this._vy -= (9.8 * deltaFrames) / 60;
+    // } else {
+    //   this._jumping = this._hook;
+    //   this._vy = 0;
+    // }
 
     // connection
     Env.sendMyStatus(this.globalPosition, this.absoluteRotation);
@@ -103,11 +93,11 @@ export default class PlayerCamera extends FreeCamera {
       if (!nextShot) break;
       const pick = this._scene.pickWithRay(nextShot, (mesh) => mesh.isEnabled());
       if (pick !== null && pick.hit && pick.pickedPoint !== null) {
-        if (pick.pickedMesh.name === 'PlayerCamera' /* TODO: is me */) {
+        if (pick.pickedMesh.name === 'playerCollision' /* TODO: is me */) {
           this.hp -= 100; // according to where it hit
           Env.updateHp(this.hp);
           if (this.hp <= 0) {
-            // end game
+            this.youLose();
           }
         }
       }
@@ -140,36 +130,11 @@ export default class PlayerCamera extends FreeCamera {
 
   @onKeyboardEvent([74], KeyboardEventTypes.KEYDOWN) // j
   private _jump(): void {
-    // if (this._jumping) {
-    //   return;
-    // }
+    if (this._jumping && !(process.env.ACG_PRODUCTION_STAGE !== 'production' && this._devJump)) return;
     this._jumping = true;
     this._vy = this._jumpForce;
     this._applyGravity(10 / this._vy);
   }
-
-  // public cameraJump(): void {
-  //   const cam = this._scene.activeCamera;
-  //   cam.animations = [];
-  //   const a = new Animation('a', 'position.y', 50, Animation.ANIMATIONTYPE_FLOAT, Animation.ANIMATIONLOOPMODE_CYCLE);
-
-  //   const keys = [];
-  //   keys.push({ frame: 0, value: cam.position.y });
-  //   keys.push({ frame: 25, value: cam.position.y + this._jumpForce });
-  //   keys.push({ frame: 50, value: cam.position.y + this._jumpForce });
-  //   a.setKeys(keys);
-
-  //   const easingFunction = new CircleEase();
-  //   easingFunction.setEasingMode(EasingFunction.EASINGMODE_EASEINOUT);
-  //   a.setEasingFunction(easingFunction);
-
-  //   cam.animations.push(a);
-  //   console.log(this.globalPosition);
-  //   this._scene.beginAnimation(cam, 0, 50, false, 1, () => {
-  //     this._jumping = false;
-  //     console.log(this.globalPosition);
-  //   });
-  // }
 
   public Shot(): void {
     const shotSE = this._scene.getSoundByName('files/Rifle.mp3');
@@ -178,23 +143,6 @@ export default class PlayerCamera extends FreeCamera {
 
     const ray = this.getForwardRay(this._shotRange);
     Env.sendShot(ray.origin, ray.direction, ray.length);
-
-    // hit detection is done in enemy
-
-    // let forward = new Vector3(0, 0, 1);
-    // const m = this.getWorldMatrix();
-    // forward = Vector3.TransformCoordinates(forward, m);
-
-    // let direction = forward.subtract(this.globalPosition);
-    // direction = Vector3.Normalize(direction);
-
-    // const ray = new Ray(this.globalPosition, direction, this._shotRange);
-    // const hit = this._scene.pickWithRay(ray, (mesh) => mesh.isPickable && mesh.isEnabled());
-    // console.log('shot:', hit);
-    // if (hit !== null && hit.hit && hit.pickedMesh.name === 'player') {
-    //   //   console.log('You shot enemy!!');
-    //   //   // Env.hit = true?
-    // }
   }
 
   public makeHook() {
@@ -217,6 +165,8 @@ export default class PlayerCamera extends FreeCamera {
       callback();
       return;
     }
+    this._hook = true;
+    this._jumping = true;
     const moveSE = this._scene.getSoundByName('files/move.mp3');
     moveSE.setVolume(0.5);
     moveSE.play();
@@ -225,9 +175,9 @@ export default class PlayerCamera extends FreeCamera {
       this,
       'position',
       15,
-      Math.floor(dest.distance / this._shotMoveSpeed / 2),
+      Math.max(5, dest.distance / 2) * this._shotMoveSpeed,
       this.position,
-      this.position.add(dest.pickedPoint.subtract(this.globalPosition).scale(0.9)),
+      dest.pickedPoint,
       Animation.ANIMATIONLOOPMODE_CONSTANT,
       new PowerEase(1),
       callback
@@ -341,5 +291,19 @@ export default class PlayerCamera extends FreeCamera {
     if (!engine.isPointerLock) {
       engine.enterPointerlock();
     }
+  }
+
+  public youLose(): void {
+    const losetext = new TextBlock();
+    losetext.text = 'YOU LOSE';
+    losetext.fontSizeInPixels = 80;
+    losetext.shadowBlur = 30;
+    losetext.shadowColor = 'black';
+    losetext.color = 'white';
+    const advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI('UI');
+    advancedTexture.addControl(losetext);
+    setTimeout(() => {
+      Env.switchScene('../../scenes/welcomescreen');
+    }, 5 * 1000);
   }
 }

@@ -1,17 +1,9 @@
-import {
-  Mesh,
-  AnimationRange,
-  Animatable,
-  Animation,
-  Vector3,
-  Bone,
-  KeyboardInfo,
-  KeyboardEventTypes,
-} from '@babylonjs/core';
+import { Mesh, AnimationRange, Animatable, Animation, Vector3, Bone } from '@babylonjs/core';
 import { TextBlock, AdvancedDynamicTexture } from '@babylonjs/gui';
 
-import { visibleInInspector, onKeyboardEvent } from '../tools';
+import { visibleInInspector } from '../tools';
 import { Env } from '../GameScripts/environment';
+import { MoveKeys } from '../GameScripts/protobuf';
 
 export interface IAction {
   range: AnimationRange;
@@ -39,6 +31,7 @@ export default class Player extends Mesh {
   private _animationSpeed: number;
 
   private _actions: IPlayerActions = {};
+  private _prevKeys = {} as MoveKeys;
   private _shift = false;
   private _targetBone: Bone = null;
 
@@ -59,16 +52,16 @@ export default class Player extends Mesh {
         range: this.skeleton.getAnimationRange('YBot_Idle'),
         direction: Vector3.Zero(),
       },
-      walk: {
+      87: {
         name: 'walk',
         range: this.skeleton.getAnimationRange('YBot_Walk'),
         direction: new Vector3(0, 0, 1),
+        shift: 'run',
       },
-      87: {
+      run: {
         name: 'run',
         range: this.skeleton.getAnimationRange('YBot_Run'),
         direction: new Vector3(0, 0, 1),
-        shift: 'walk',
       },
       83: {
         name: 'back',
@@ -118,23 +111,25 @@ export default class Player extends Mesh {
     if (isNewShot) {
       const cooldownTime = 10; //
       // TODO: put the enemy gun down
+      this._scene.getMeshByName('enemyGun').addRotation(0, 5, 0);
+      // console.log('hit');
       //       and play the 'files/Rifle.mp3' from the enemy's location
       setTimeout(() => {
         // TODO: reaim the enemy gun
+        this._scene.getMeshByName('enemyGun').addRotation(0, -5, 0);
       }, cooldownTime * 1000);
     }
 
     const keys = Env.getOpKeys();
-    if (keys.shift) this._shiftDown();
-    else this._shiftUp();
-
+    if (keys.shift && !this._prevKeys.shift) this._shiftDown();
+    else if (!keys.shift && this._prevKeys.shift) this._shiftUp();
     Object.entries(Env.getOpKeys()).forEach(([key, value]) => {
-      if (key === 'shift') {
-        if (value) this._shiftDown();
-        else this._shiftUp();
-      } else if (value) this._onKeyboardDown(key.charCodeAt(0));
-      else this._onKeyboardUp(key.charCodeAt(0));
+      if (key === 'shift') return;
+      if (value && !this._prevKeys[key]) this._onKeyboardDown(key.toUpperCase().charCodeAt(0));
+      else if (!value && this._prevKeys[key]) this._onKeyboardUp(key.toUpperCase().charCodeAt(0));
     });
+    this._prevKeys = keys;
+
     // old code - should be useless
 
     // let actionsCount = 0;
@@ -180,7 +175,7 @@ export default class Player extends Mesh {
   }
 
   private _updateStatusFromPeer() {
-    this.setAbsolutePosition(Env.getOpAbsPos());
+    this.setAbsolutePosition(Env.getOpAbsPos().add(Vector3.Up().scale(-3)));
     this.rotationQuaternion.copyFrom(Env.getOpAbsDir());
   }
 
@@ -294,5 +289,8 @@ export default class Player extends Mesh {
     resulttext.shadowColor = 'white';
     resulttext.color = 'white';
     AdvancedDynamicTexture.CreateFullscreenUI('UI').addControl(resulttext);
+    setTimeout(() => {
+      Env.switchScene('../../scenes/welcomescreen');
+    }, 5 * 1000);
   }
 }

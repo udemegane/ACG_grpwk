@@ -28,7 +28,8 @@ export default class MainMapScript extends SceneScriptBase {
   @fromScene('ScattalingLight')
   private _vlsMesh: Mesh;
   private _vlsPostProcess: VolumetricLightScatteringPostProcess;
-  private _scene: Scene;
+  // private _scene: Scene;
+
   /**
    * Override constructor.
    * @warn do not fill.
@@ -70,7 +71,7 @@ export default class MainMapScript extends SceneScriptBase {
       false
     );
 
-    this._scene.createDefaultEnvironment();
+    // this._scene.createDefaultEnvironment();
     // super._scene;
     // ...
   }

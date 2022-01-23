@@ -76,7 +76,7 @@ export default class MyScript extends Mesh {
   @onKeyboardEvent([32], KeyboardEventTypes.KEYUP)
   private _onSpaceKey(): void {
     let size = 30;
-    let t = 200;
+    let t = 100;
     switch (this.nowscene) {
       case 0:
         if (this.ispressed === false) {
