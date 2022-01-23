@@ -1,24 +1,25 @@
 {
+	"materials": [],
 	"meshes": [
 		{
 			"name": "New Cube",
 			"id": "f08173f8-1a21-42c7-8a06-5bfd2140b040",
-			"uniqueId": 4318,
+			"uniqueId": 47,
 			"type": "Mesh",
 			"position": [
-				0,
-				48.39595413208008,
-				0
+				-13.965572357177734,
+				9.546067237854004,
+				-14.437257766723633
 			],
 			"rotation": [
 				0,
-				0,
-				0
+				-0.7853981563084852,
+				-1.5707963267948966
 			],
 			"scaling": [
-				40,
+				20,
 				1,
-				5
+				7
 			],
 			"localMatrix": {
 				"0": 1,
@@ -51,6 +52,7 @@
 			"isUnIndexed": false,
 			"geometryId": "e3e82017-dff2-436b-9882-6dd1320d0062",
 			"subMeshes": null,
+			"materialId": "fa50d60b-d596-4aa3-b9aa-de8e095c476b",
 			"metadata": {
 				"isPickable": true,
 				"script": {
@@ -121,7 +123,6 @@
 			"indices": null
 		}
 	],
-	"materials": [],
 	"multiMaterials": [],
 	"lods": []
 }

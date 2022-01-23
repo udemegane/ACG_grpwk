@@ -222,6 +222,7 @@
 			"id": "lambert2",
 			"name": "lambert2",
 			"sceneFileName": "gun.glb"
-		}
+		},
+		"isLocked": false
 	}
 }

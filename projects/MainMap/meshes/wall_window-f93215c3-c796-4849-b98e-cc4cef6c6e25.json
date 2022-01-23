@@ -4,7 +4,7 @@
 		{
 			"name": "wall_window",
 			"id": "f93215c3-c796-4849-b98e-cc4cef6c6e25",
-			"uniqueId": 2229,
+			"uniqueId": 44,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -47,7 +47,7 @@
 			"receiveShadows": false,
 			"billboardMode": 0,
 			"visibility": 1,
-			"checkCollisions": false,
+			"checkCollisions": true,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": 0,
 			"parentId": "1bd2630b-04da-4b70-b66a-96332efac60a",

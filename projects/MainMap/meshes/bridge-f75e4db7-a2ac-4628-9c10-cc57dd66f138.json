@@ -4,7 +4,7 @@
 		{
 			"name": "bridge",
 			"id": "f75e4db7-a2ac-4628-9c10-cc57dd66f138",
-			"uniqueId": 2262,
+			"uniqueId": 46,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -47,7 +47,7 @@
 			"receiveShadows": false,
 			"billboardMode": 0,
 			"visibility": 1,
-			"checkCollisions": false,
+			"checkCollisions": true,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": 0,
 			"parentId": "1bd2630b-04da-4b70-b66a-96332efac60a",

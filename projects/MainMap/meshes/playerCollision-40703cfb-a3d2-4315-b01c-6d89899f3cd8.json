@@ -3,7 +3,7 @@
 		{
 			"name": "playerCollision",
 			"id": "40703cfb-a3d2-4315-b01c-6d89899f3cd8",
-			"uniqueId": 4948,
+			"uniqueId": 45,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -66,7 +66,7 @@
 			"layerMask": 268435455,
 			"alphaIndex": 1.7976931348623157e+308,
 			"hasVertexAlpha": false,
-			"overlayAlpha": 0.5,
+			"overlayAlpha": 0.3,
 			"overlayColor": [
 				1,
 				0,
