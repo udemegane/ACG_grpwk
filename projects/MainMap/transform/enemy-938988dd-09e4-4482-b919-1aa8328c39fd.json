@@ -25,7 +25,41 @@
 	"state": "",
 	"metadata": {
 		"script": {
-			"name": "None"
+			"name": "None",
+			"properties": {
+				"_forwardKey": {
+					"type": "KeyMap",
+					"value": 122
+				},
+				"_backwardKey": {
+					"type": "KeyMap",
+					"value": 115
+				},
+				"_leftKey": {
+					"type": "KeyMap",
+					"value": 113
+				},
+				"_rightKey": {
+					"type": "KeyMap",
+					"value": 100
+				},
+				"_walkSpeed": {
+					"type": "number",
+					"value": 1
+				},
+				"_runSpeed": {
+					"type": "number",
+					"value": 2
+				},
+				"_transitionSpeed": {
+					"type": "number",
+					"value": 1
+				},
+				"_animationSpeed": {
+					"type": "number",
+					"value": 1
+				}
+			}
 		}
 	},
 	"type": "TransformNode",

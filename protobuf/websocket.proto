@@ -1,18 +1,54 @@
 syntax = "proto2";
 package protobuf;
 
-message CloseWs {
+message CloseCon {
 }
 
-message WsReqWrapper {
-  oneof content {
-    CloseWs closews = 1;
-  }
+message PingTime {
+  optional string ping = 1;
+  optional string pong = 2;
 }
 
-message WsRespWrapper {
-  oneof content {
-    CloseWs closews = 1;
+message WsPosition {
+  required float x = 1;
+  required float y = 2;
+  required float z = 3;
+}
+
+message WsDirection {
+  required float x = 1;
+  required float y = 2;
+  required float z = 3;
+  required float w = 4;
+}
+
+message WsRay {
+  required WsPosition origin = 1;
+  required WsPosition direction = 2;
+  required float length = 3;
+}
+
+message MoveKeys {
+  required bool w = 1;
+  required bool a = 2;
+  required bool s = 3;
+  required bool d = 4;
+  required bool shift = 5;
+}
+
+message GotHit {
+  required float remain = 1;
+}
+
+message WsWrapper {
+  oneof e {
+    CloseCon close = 1;
+    PingTime ping = 2;
+    WsPosition absPos = 3;
+    WsDirection absDir = 4;
+    WsRay newShot = 5;
+    GotHit ishit = 6;
+    MoveKeys keys = 7;
   }
 }
 

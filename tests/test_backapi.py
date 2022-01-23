@@ -67,7 +67,7 @@ def test_login_with_token(api: API):
 
 
 defaultGameToken = secrets.token_hex()
-enemyToken = None
+oppeer = None
 
 
 def test_add_enemy(api: API):
@@ -77,8 +77,8 @@ def test_add_enemy(api: API):
     })
     assert presp.success
     assert isinstance(presp.token, str)
-    global enemyToken
-    enemyToken = presp.token
+    global oppeer
+    oppeer = presp.token
 
 
 # message CreateBattleLog {
@@ -88,8 +88,8 @@ def test_add_enemy(api: API):
 #     bool meWinner = 3;
 #     bool isDraw = 4;
 #   }
-#   required string myToken = 5;
-#   optional string enemyToken = 6;
+#   required string mypeer = 5;
+#   optional string oppeer = 6;
 #   required int32 elapsedms = 7;
 # }
 
@@ -98,7 +98,7 @@ def test_create_single_battle_log(api: API):
     preq = CreateBattleLog()
     preq.battleToken = defaultGameToken
     preq.isSingleMode = True
-    preq.myToken = test_user['token']
+    preq.mypeer = test_user['token']
     preq.elapsedms = random.randint(100, int(1e5))
     presp = RespSuccess()
     presp.ParseFromString(post(api, '/api/createbattlelog', preq).content)
@@ -109,7 +109,7 @@ def test_create_single_battle_log_with_already_registered_battleToken_should_fai
     preq = CreateBattleLog()
     preq.battleToken = defaultGameToken
     preq.isSingleMode = True
-    preq.myToken = test_user['token']
+    preq.mypeer = test_user['token']
     preq.elapsedms = random.randint(100, int(1e5))
     presp = RespSuccess()
     presp.ParseFromString(post(api, '/api/createbattlelog', preq).content)
@@ -120,7 +120,7 @@ def test_create_single_battle_log_with_non_existing_user(api: API):
     preq = CreateBattleLog()
     preq.battleToken = secrets.token_hex()
     preq.isSingleMode = True
-    preq.myToken = 'random_invalid_token'
+    preq.mypeer = 'random_invalid_token'
     preq.elapsedms = random.randint(100, int(1e5))
     presp = RespSuccess()
     presp.ParseFromString(post(api, '/api/createbattlelog', preq).content)
@@ -131,9 +131,9 @@ def test_create_multi_battle_log_me_winner(api: API):
     preq = CreateBattleLog()
     preq.battleToken = secrets.token_hex()
     preq.meWinner = True
-    preq.myToken = test_user['token']
-    assert enemyToken is not None
-    preq.enemyToken = enemyToken
+    preq.mypeer = test_user['token']
+    assert oppeer is not None
+    preq.oppeer = oppeer
     preq.elapsedms = random.randint(100, int(1e5))
     presp = RespSuccess()
     presp.ParseFromString(post(api, '/api/createbattlelog', preq).content)
@@ -144,9 +144,9 @@ def test_create_multi_battle_log_me_loser(api: API):
     preq = CreateBattleLog()
     preq.battleToken = secrets.token_hex()
     preq.meWinner = False
-    preq.myToken = test_user['token']
-    assert enemyToken is not None
-    preq.enemyToken = enemyToken
+    preq.mypeer = test_user['token']
+    assert oppeer is not None
+    preq.oppeer = oppeer
     preq.elapsedms = random.randint(100, int(1e5))
     presp = RespSuccess()
     presp.ParseFromString(post(api, '/api/createbattlelog', preq).content)
@@ -157,9 +157,9 @@ def test_create_multi_battle_log_draw(api: API):
     preq = CreateBattleLog()
     preq.battleToken = secrets.token_hex()
     preq.isDraw = True
-    preq.myToken = test_user['token']
-    assert enemyToken is not None
-    preq.enemyToken = enemyToken
+    preq.mypeer = test_user['token']
+    assert oppeer is not None
+    preq.oppeer = oppeer
     preq.elapsedms = random.randint(100, int(1e5))
     presp = RespSuccess()
     presp.ParseFromString(post(api, '/api/createbattlelog', preq).content)
@@ -170,8 +170,8 @@ def test_create_multi_battle_log_two_players_same_token_should_fail(api: API):
     preq = CreateBattleLog()
     preq.battleToken = secrets.token_hex()
     preq.meWinner = True
-    preq.myToken = test_user['token']
-    preq.enemyToken = test_user['token']
+    preq.mypeer = test_user['token']
+    preq.oppeer = test_user['token']
     preq.elapsedms = random.randint(100, int(1e5))
     presp = RespSuccess()
     presp.ParseFromString(post(api, '/api/createbattlelog', preq).content)
