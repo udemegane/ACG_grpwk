@@ -58,6 +58,7 @@ export default class MainMapScript extends SceneScriptBase {
         Env.gameStarted = true;
       });
     });
+    this._scene = Env.currentScene;
     this._vlsPostProcess = new VolumetricLightScatteringPostProcess(
       'vlspp',
       '1.0',
@@ -68,7 +69,6 @@ export default class MainMapScript extends SceneScriptBase {
       this._scene.getEngine(),
       false
     );
-    this._scene = Env.currentScene;
 
     this._scene.createDefaultEnvironment();
     // super._scene;
