@@ -103,12 +103,6 @@ export default class PlayerCamera extends FreeCamera {
       if (!nextShot) break;
       const pick = this._scene.pickWithRay(nextShot, (mesh) => mesh.isEnabled());
       if (pick !== null && pick.hit && pick.pickedPoint !== null) {
-        /*
-          transform (0, 1.6, -1);
-          rotation (0, 0, 0);
-          scale (1, 3, 1);
-          name: 'PlayerCollision'
-        */
         if (pick.pickedMesh.name === 'playerCollision' /* TODO: is me */) {
           this.hp -= 100; // according to where it hit
           Env.updateHp(this.hp);
