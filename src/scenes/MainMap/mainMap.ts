@@ -29,6 +29,7 @@ export default class MainMapScript extends SceneScriptBase {
   private _vlsMesh: Mesh;
   private _vlsPostProcess: VolumetricLightScatteringPostProcess;
   // private _scene: Scene;
+
   /**
    * Override constructor.
    * @warn do not fill.

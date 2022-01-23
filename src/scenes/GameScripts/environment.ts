@@ -1,4 +1,4 @@
-import { Observable, Vector3, Quaternion } from '@babylonjs/core';
+import { Observable, Vector3, Quaternion, Scene } from '@babylonjs/core';
 import { Connection } from './connection';
 import { MoveKeys } from './protobuf';
 
@@ -10,6 +10,8 @@ export class Env {
 
   public static readonly con = new Connection();
   public static gameStarted = false;
+
+  private static _scene: Scene;
 
   public static async onInitialize() {
     if (process.env.ACG_PRODUCTION_STAGE !== 'production') console.log('env init');
@@ -168,5 +170,19 @@ export class Env {
 
   public static async switchScene(sceneRootUrl: string) {
     Env.onSwitchSceneObservable.notifyObservers(sceneRootUrl);
+  }
+
+  static get currentScene() {
+    if (Env._scene) {
+      return Env._scene;
+    } else {
+      throw new Error('Scene not found');
+    }
+  }
+  static set currentScene(scene: Scene) {
+    if (!scene) {
+      throw new Error('Invalied value');
+    }
+    this._scene = scene;
   }
 }

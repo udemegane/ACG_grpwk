@@ -1,4 +1,4 @@
-import { Scene } from '@babylonjs/core';
+import { Scene, Texture, VolumetricLightScatteringPostProcess } from '@babylonjs/core';
 import { Pane } from 'tweakpane';
 import { visibleInInspector } from '../decorators';
 import { Env } from './environment';
@@ -26,8 +26,9 @@ export default class SceneScriptBase extends Scene {
 
   @visibleInInspector('boolean', 'Show Debug menu', true)
   private _isVisibleDebugMenu: boolean;
-
+  // private _vlsPostProcess: VolumetricLightScatteringPostProcess;
   public static pane: Pane;
+  protected _scene: Scene;
   /**
    * Override constructor.
    * @warn do not fill.
@@ -55,6 +56,7 @@ export default class SceneScriptBase extends Scene {
    */
   public onInitialize(): void {
     Env.onInitialize();
+    this._scene = Env.currentScene;
   }
 
   /**
@@ -64,6 +66,7 @@ export default class SceneScriptBase extends Scene {
     if (this._isVisibleDebugMenu) {
       SceneScriptBase.setDebugMenu();
     }
+
     // ...
   }
 
