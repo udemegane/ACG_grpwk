@@ -35,19 +35,13 @@
 		"M_circle (Metallic Roughness).png",
 		"M_circle (Normal).png",
 		"ocean_env.jpg",
-		"—Pngtree—abstract hexagon black background hexagon_3991447.png"
+		"—Pngtree—abstract hexagon black background hexagon_3991447.png",
+		"environment.env"
 	],
 	"cameras": [
 		"PlayerCamera-a34b79f0-f744-4f43-b3fc-9057868cd6f3.json"
 	],
 	"materials": [
-		{
-			"bindedMeshes": [
-				"7fc13a8c-a7d5-4254-b6c1-b3f41ec715da"
-			],
-			"json": "PM3D_Cube3D1_2-8e6b6e3f-0374-482e-8c96-8e5512219f75.json",
-			"isMultiMaterial": false
-		},
 		{
 			"bindedMeshes": [],
 			"json": "__GLTFLoader._default-b4add01d-606c-48d5-b43c-dd502b4a9eeb.json",
@@ -61,13 +55,20 @@
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [],
-			"json": "__GLTFLoader._default-7135578f-c323-48e2-bc4f-9900d895ba6c.json",
+			"bindedMeshes": [
+				"7fc13a8c-a7d5-4254-b6c1-b3f41ec715da"
+			],
+			"json": "PM3D_Cube3D1_2-8e6b6e3f-0374-482e-8c96-8e5512219f75.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [],
 			"json": "ground-44ce4d7a-5718-4025-a141-272ee6387673.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "__GLTFLoader._default-7135578f-c323-48e2-bc4f-9900d895ba6c.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -105,23 +106,21 @@
 		},
 		{
 			"bindedMeshes": [
+				"60027be9-7e4e-4d7f-bdb9-567f08694092"
+			],
+			"json": "PM3D_Cube3D1_7-00ea75c9-c26d-4c13-a387-b08caf64de94.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
 				"2805dbf7-259c-4ed9-9d5d-387b270435b9"
 			],
 			"json": "PM3D_Ring3D1-4c6b0518-68bb-4aa0-a242-65422a9495db.json",
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [
-				"2103688e-fca6-480b-a089-940568af4473"
-			],
+			"bindedMeshes": [],
 			"json": "sky-b2346078-7465-4c63-8877-44b542584898.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"60027be9-7e4e-4d7f-bdb9-567f08694092"
-			],
-			"json": "PM3D_Cube3D1_7-00ea75c9-c26d-4c13-a387-b08caf64de94.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -178,24 +177,7 @@
 		},
 		{
 			"bindedMeshes": [],
-			"json": "lambert2-6a51307e-8ced-4cd2-9c7a-42b239ac39c0.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
 			"json": "__GLTFLoader._default-cd1c3e2e-5bc7-4be5-b602-121260774bc6.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
-			"json": "player-body-6b5386b6-d680-4a81-b656-537f1e2729f3.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"46b15aea-d9e5-41f0-bf18-049859287b21"
-			],
-			"json": "PM3D_Cylinder3D1_1-7d1e9997-4de0-462d-8368-171a17ad7622.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -207,19 +189,19 @@
 		},
 		{
 			"bindedMeshes": [],
-			"json": "__GLTFLoader._default-94219f24-20f5-468b-986a-8273e1470b5f.json",
+			"json": "lambert2-6a51307e-8ced-4cd2-9c7a-42b239ac39c0.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [
-				"b24ec9dc-3d2f-4471-a62e-b23dde971de8"
+				"46b15aea-d9e5-41f0-bf18-049859287b21"
 			],
-			"json": "PM3D_Cube3D1_9-da2b2adb-8093-460a-870f-aaac54af55c8.json",
+			"json": "PM3D_Cylinder3D1_1-7d1e9997-4de0-462d-8368-171a17ad7622.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [],
-			"json": "lambert2-a58b2e94-384c-4a3e-a4bf-3dc0d52ea0c8.json",
+			"json": "__GLTFLoader._default-94219f24-20f5-468b-986a-8273e1470b5f.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -236,7 +218,19 @@
 		},
 		{
 			"bindedMeshes": [],
-			"json": "__GLTFLoader._default-600861fa-21d8-42de-ac2d-c9350abe5a4d.json",
+			"json": "player-body-6b5386b6-d680-4a81-b656-537f1e2729f3.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"2df81e10-3789-4525-855c-c83a8c9052f9"
+			],
+			"json": "PM3D_SweepProfile3D1-72626f48-2381-4284-ae7a-d19e5a576297.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "lambert2-a58b2e94-384c-4a3e-a4bf-3dc0d52ea0c8.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -246,9 +240,9 @@
 		},
 		{
 			"bindedMeshes": [
-				"2df81e10-3789-4525-855c-c83a8c9052f9"
+				"b24ec9dc-3d2f-4471-a62e-b23dde971de8"
 			],
-			"json": "PM3D_SweepProfile3D1-72626f48-2381-4284-ae7a-d19e5a576297.json",
+			"json": "PM3D_Cube3D1_9-da2b2adb-8093-460a-870f-aaac54af55c8.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -260,7 +254,17 @@
 		},
 		{
 			"bindedMeshes": [],
-			"json": "cube-03bdd37e-fe54-4095-a392-0de62b0de089.json",
+			"json": "__GLTFLoader._default-600861fa-21d8-42de-ac2d-c9350abe5a4d.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "player-joints-8f94d4f0-92bf-49e1-89a8-a2fa57b1cfb2.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "lambert2-3242911f-e531-4e0c-a77f-4eb88f54d1f6.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -271,28 +275,6 @@
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [],
-			"json": "player-joints-8f94d4f0-92bf-49e1-89a8-a2fa57b1cfb2.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
-			"json": "__GLTFLoader._default-efd9583a-7722-4f3b-b77e-674a8299460b.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [],
-			"json": "lambert2-3242911f-e531-4e0c-a77f-4eb88f54d1f6.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"a8f6fb90-3491-4824-b480-b5789cb8ac8e"
-			],
-			"json": "PM3D_Circle3D1-c99fcdd6-862a-4025-a01c-e19cae708336.json",
-			"isMultiMaterial": false
-		},
-		{
 			"bindedMeshes": [
 				"dcbc8fd5-852f-4603-b8c7-51111f0f20d9"
 			],
@@ -300,24 +282,13 @@
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [
-				"1a2b6366-d2b4-4144-87ab-01b39a2cabc3"
-			],
-			"json": "PM3D_Cube3D2_9-d9ab38ba-154d-4d12-82a0-6dc646d04f6a.json",
+			"bindedMeshes": [],
+			"json": "cube-03bdd37e-fe54-4095-a392-0de62b0de089.json",
 			"isMultiMaterial": false
 		},
 		{
-			"bindedMeshes": [
-				"398722ce-871a-4cbc-835b-c8a5218bf21e"
-			],
-			"json": "PM3D_Cube3D1_14-ed6cbb78-446a-4522-9471-65ce8d2e3c63.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"3a8698c7-b641-486d-81d9-b853707e6251"
-			],
-			"json": "PM3D_Cube3D2_6-b31ab1a0-468d-4b52-8aa5-559dddd64070.json",
+			"bindedMeshes": [],
+			"json": "__GLTFLoader._default-efd9583a-7722-4f3b-b77e-674a8299460b.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -329,9 +300,30 @@
 		},
 		{
 			"bindedMeshes": [
+				"1a2b6366-d2b4-4144-87ab-01b39a2cabc3"
+			],
+			"json": "PM3D_Cube3D2_9-d9ab38ba-154d-4d12-82a0-6dc646d04f6a.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
 				"ce738db6-b72e-4031-99b2-f84d1cb0f34e"
 			],
 			"json": "PM3D_Cylinder3D1_5-845c5a51-04a5-40ef-9085-916a083ec87e.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"398722ce-871a-4cbc-835b-c8a5218bf21e"
+			],
+			"json": "PM3D_Cube3D1_14-ed6cbb78-446a-4522-9471-65ce8d2e3c63.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"a8f6fb90-3491-4824-b480-b5789cb8ac8e"
+			],
+			"json": "PM3D_Circle3D1-c99fcdd6-862a-4025-a01c-e19cae708336.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -350,6 +342,13 @@
 		},
 		{
 			"bindedMeshes": [
+				"3a8698c7-b641-486d-81d9-b853707e6251"
+			],
+			"json": "PM3D_Cube3D2_6-b31ab1a0-468d-4b52-8aa5-559dddd64070.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
 				"970ed33d-b89e-4571-bab2-9e7d22ae0912"
 			],
 			"json": "PolySphere1.001-9d9c4e51-b02a-4a7c-83b0-da025a95abd1.json",
@@ -364,6 +363,13 @@
 		},
 		{
 			"bindedMeshes": [
+				"2b9b7abe-8dc9-4098-90ad-a32f7e7e4645"
+			],
+			"json": "PM3D_Cube3D1_15.002-f78653b8-c6a6-4e48-8620-cd04c069934c.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
 				"dd9c28d7-359b-4bee-80e8-c9ace8b80acf"
 			],
 			"json": "PM3D_Cube3D1_16.001-9d992a48-c4cc-4680-9abd-65b955b8c28b.json",
@@ -371,9 +377,9 @@
 		},
 		{
 			"bindedMeshes": [
-				"2b9b7abe-8dc9-4098-90ad-a32f7e7e4645"
+				"fb8da07f-48ae-4998-a880-0cd54147dbe6"
 			],
-			"json": "PM3D_Cube3D1_15.002-f78653b8-c6a6-4e48-8620-cd04c069934c.json",
+			"json": "PM3D_Cube3D2.003-1f51f83f-29bc-4044-9198-ba1a7894b94e.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -392,9 +398,9 @@
 		},
 		{
 			"bindedMeshes": [
-				"fb8da07f-48ae-4998-a880-0cd54147dbe6"
+				"960d03fa-363e-451b-b870-949bdbe2c5f3"
 			],
-			"json": "PM3D_Cube3D2.003-1f51f83f-29bc-4044-9198-ba1a7894b94e.json",
+			"json": "PM3D_Cylinder3D1_4.002-b0657da4-db24-4303-b7bd-3751d6ee0fb2.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -406,30 +412,9 @@
 		},
 		{
 			"bindedMeshes": [
-				"960d03fa-363e-451b-b870-949bdbe2c5f3"
-			],
-			"json": "PM3D_Cylinder3D1_4.002-b0657da4-db24-4303-b7bd-3751d6ee0fb2.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"2f2070ff-27f9-404c-b0d1-033fb3693cc8"
-			],
-			"json": "PM3D_Cube3D1_13-a469729a-3941-4493-8692-9e45381cde28.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
 				"04c4ed07-0cff-405f-9126-7adbfeaddd2e"
 			],
 			"json": "PM3D_Cube3D1_14-f46eb17e-89b2-4790-aa0a-209114664d9c.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"e8fe46c6-f48f-4ffb-addf-4d3ffb5e033e"
-			],
-			"json": "PolySphere1.001-50428328-d0ee-4276-9910-4f18ad34c910.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -441,9 +426,9 @@
 		},
 		{
 			"bindedMeshes": [
-				"f96f932e-894c-4fb7-a748-b838b0aa64db"
+				"2f2070ff-27f9-404c-b0d1-033fb3693cc8"
 			],
-			"json": "ground_road.007-ee5cef72-97f0-4c7e-a723-b06dd7f823bc.json",
+			"json": "PM3D_Cube3D1_13-a469729a-3941-4493-8692-9e45381cde28.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -455,9 +440,30 @@
 		},
 		{
 			"bindedMeshes": [
+				"02eb7bf5-a2f1-47b8-ac36-baa67856bfb1"
+			],
+			"json": "PM3D_Cube3D1_16.001-29d3aa42-89bd-48ff-a9c7-f3ee9a8a303f.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"f96f932e-894c-4fb7-a748-b838b0aa64db"
+			],
+			"json": "ground_road.007-ee5cef72-97f0-4c7e-a723-b06dd7f823bc.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
 				"4557f6f6-5bda-4f97-a54d-87db13b14d88"
 			],
 			"json": "PM3D_Cube3D2.003-b6436fdb-fb49-4db0-8cff-63b73809efc8.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"e8fe46c6-f48f-4ffb-addf-4d3ffb5e033e"
+			],
+			"json": "PolySphere1.001-50428328-d0ee-4276-9910-4f18ad34c910.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -469,23 +475,9 @@
 		},
 		{
 			"bindedMeshes": [
-				"02eb7bf5-a2f1-47b8-ac36-baa67856bfb1"
-			],
-			"json": "PM3D_Cube3D1_16.001-29d3aa42-89bd-48ff-a9c7-f3ee9a8a303f.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
 				"c5653378-d9bc-4045-b1d8-6f9a365a3760"
 			],
 			"json": "PM3D_Cube3D1_15.003-e7ebcd37-f1a8-460e-8ddc-3afa70f8b41e.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"4bb7c7d9-c721-4e0c-8f75-c05c0c3bffaa"
-			],
-			"json": "PM3D_Cube3D1_14.001-c934fe7d-30fb-490d-b00a-d5be1d8ce084.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -504,6 +496,13 @@
 		},
 		{
 			"bindedMeshes": [
+				"4bb7c7d9-c721-4e0c-8f75-c05c0c3bffaa"
+			],
+			"json": "PM3D_Cube3D1_14.001-c934fe7d-30fb-490d-b00a-d5be1d8ce084.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
 				"18719a48-2d7d-4e36-ac7a-f1be25d23d79"
 			],
 			"json": "PM3D_Cube3D2_6.001-0c3c3a31-8d7f-4f03-93b7-3a46f42fe5ff.json",
@@ -514,6 +513,13 @@
 				"6f149491-332e-4f2a-8248-2edff5a5339f"
 			],
 			"json": "PM3D_Cube3D2_6.002-68914daa-17ae-49d3-b97c-7bb4dbf5c4df.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"37ca7ada-b8eb-410c-b77c-314f4713f32d"
+			],
+			"json": "PM3D_Cylinder3D1_5.001-5635d157-3be9-4700-92fa-ae857b703361.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -532,9 +538,9 @@
 		},
 		{
 			"bindedMeshes": [
-				"37ca7ada-b8eb-410c-b77c-314f4713f32d"
+				"f93215c3-c796-4849-b98e-cc4cef6c6e25"
 			],
-			"json": "PM3D_Cylinder3D1_5.001-5635d157-3be9-4700-92fa-ae857b703361.json",
+			"json": "wall_window.001-c39c5900-cb93-4f3d-8d06-6b1403650bb9.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -542,13 +548,6 @@
 				"30b081f9-1af6-40c4-8429-7326a4e23310"
 			],
 			"json": "Default_OBJ.001-bdf2b9e9-0faa-4459-a14d-a0ef0bcbf483.json",
-			"isMultiMaterial": false
-		},
-		{
-			"bindedMeshes": [
-				"f93215c3-c796-4849-b98e-cc4cef6c6e25"
-			],
-			"json": "wall_window.001-c39c5900-cb93-4f3d-8d06-6b1403650bb9.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -614,6 +613,34 @@
 		},
 		{
 			"bindedMeshes": [
+				"b589b546-bee3-4018-8b4d-c965e4945314"
+			],
+			"json": "M_Unlit-e01b0043-c75e-4c35-84d4-70d96fdb8e48.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"54ec2bc9-a391-4cf9-9149-59bd1c6e7652"
+			],
+			"json": "defaultMat-02dc73f9-1746-4415-951a-4abf8f98b9ec.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"2103688e-fca6-480b-a089-940568af4473"
+			],
+			"json": "M_sky-79330c09-6ec4-4ea4-a27a-cdace44ef2ca.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"dbb09336-c81d-4013-a01d-e0e5063a2885"
+			],
+			"json": "lambert2-7cac9cd9-75c8-49cd-a3f8-f71615780ea2.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
 				"f2cbf360-c763-46fa-881a-2219a1e7e97a"
 			],
 			"json": "player-joints-776615dc-7b05-4116-861d-6868e9bd01d7.json",
@@ -621,88 +648,99 @@
 		}
 	],
 	"textures": [
+		"Default_OBJ.001 (Base Color).png-1201.json",
+		"Default_OBJ.001 (Emissive).png-1200.json",
 		"Default_OBJ.001 (Normal).png-1199.json",
 		"scope.png-177.json",
-		"Default_OBJ.001 (Emissive).png-1200.json",
 		"room_ao.png-2154.json",
-		"Default_OBJ.001 (Base Color).png-1201.json",
-		"room_BaseColor.png-2155.json",
-		"room_Metalness.png-2157.json",
 		"room_EmissiveColor.png-2156.json",
 		"room_Normal.png-2158.json",
+		"room_Metalness.png-2157.json",
 		"room_Roughness.png-2159.json",
-		"M_room (Normal).png-2238.json",
+		"room_BaseColor.png-2155.json",
 		"M_room (Emissive).png-2239.json",
+		"M_room (Normal).png-2238.json",
 		"M_room (Base Color).png-2240.json",
 		"M_room (Metallic Roughness).png-2241.json",
-		"M_wall (Base Color).png-2246.json",
 		"M_wall (Normal).png-2245.json",
+		"M_wall (Metallic Roughness).png-2247.json",
 		"M_road (Emissive).png-2252.json",
 		"M_road (Normal).png-2251.json",
-		"M_wall (Metallic Roughness).png-2247.json",
-		"M_road (Base Color).png-2253.json",
 		"M_road (Metallic Roughness).png-2254.json",
-		"M_wallFrame (Normal).png-2258.json",
+		"M_road (Base Color).png-2253.json",
 		"M_wallFrame (Emissive).png-2259.json",
+		"M_wall (Base Color).png-2246.json",
 		"M_wallFrame (Base Color).png-2260.json",
+		"M_wallFrame (Normal).png-2258.json",
 		"M_wallFrame (Metallic Roughness).png-2261.json",
 		"M_bridge (Normal).png-2265.json",
-		"M_bridge (Emissive).png-2266.json",
 		"M_bridge (Base Color).png-2267.json",
-		"M_circle (Normal).png-2272.json",
+		"M_bridge (Emissive).png-2266.json",
 		"M_bridge (Metallic Roughness).png-2268.json",
+		"M_circle (Normal).png-2272.json",
+		"M_circle (Base Color).png-2273.json",
 		"M_circle (Metallic Roughness).png-2274.json",
 		"ocean_env.jpg-2322.json",
-		"M_circle (Base Color).png-2273.json",
 		"—Pngtree—abstract hexagon black background hexagon_3991447.png-2323.json",
-		"M_circle (Normal).png-2328.json",
 		"M_circle (Metallic Roughness).png-2327.json",
-		"M_circle (Base Color).png-2326.json"
+		"M_circle (Base Color).png-2326.json",
+		"M_circle (Normal).png-2328.json",
+		"environment.env-4688.json"
 	],
 	"meshes": [
 		"__root__-df479701-7d74-4c59-aa4d-693040051dea.json",
-		"__root__-b93de967-ff15-4f21-900e-4ad96d4fe03d.json",
-		"__root__-1bd2630b-04da-4b70-b66a-96332efac60a.json",
-		"Cube-eaa8afea-7737-4ba1-873b-cf3a6dfa58e3.json",
-		"PM3D_Cube3D1_11-9e6bd45e-1f53-4272-86d7-108315fad75c.json",
-		"PM3D_Ring3D1-2805dbf7-259c-4ed9-9d5d-387b270435b9.json",
-		"PM3D_Cube3D1_7-60027be9-7e4e-4d7f-bdb9-567f08694092.json",
-		"Sky-2103688e-fca6-480b-a089-940568af4473.json",
-		"New Ground-e9a23fdd-bd0d-4071-aa29-ace52006842a.json",
+		"cubes-b93de967-ff15-4f21-900e-4ad96d4fe03d.json",
+		"__root__-8ad1ebe3-1b39-4741-a60a-7d282ccc1dd1.json",
+		"Main-1bd2630b-04da-4b70-b66a-96332efac60a.json",
 		"PM3D_Cube3D1_12-6cf7f09e-730c-46ac-aa9e-aa911ad23a11.json",
-		"boxCollider-04558f86-9582-488d-88c7-606948dadadf.json",
-		"New Cube-54d21ae1-2cb9-4122-bfc8-ca72b703132c.json",
+		"PM3D_Cube3D1_7-60027be9-7e4e-4d7f-bdb9-567f08694092.json",
+		"PM3D_Cube3D1_11-9e6bd45e-1f53-4272-86d7-108315fad75c.json",
+		"Cube-eaa8afea-7737-4ba1-873b-cf3a6dfa58e3.json",
+		"PM3D_Ring3D1-2805dbf7-259c-4ed9-9d5d-387b270435b9.json",
+		"Sky-2103688e-fca6-480b-a089-940568af4473.json",
 		"PM3D_Cube3D1_2-7fc13a8c-a7d5-4254-b6c1-b3f41ec715da.json",
+		"boxCollider-04558f86-9582-488d-88c7-606948dadadf.json",
+		"New Ground-e9a23fdd-bd0d-4071-aa29-ace52006842a.json",
+		"PM3D_Cube3D1_8-c4a8cae6-9561-4322-bfe6-864fafcf736d.json",
+		"New Cube-54d21ae1-2cb9-4122-bfc8-ca72b703132c.json",
 		"PM3D_SweepProfile3D1-2df81e10-3789-4525-855c-c83a8c9052f9.json",
 		"PM3D_Cube3D1_9-b24ec9dc-3d2f-4471-a62e-b23dde971de8.json",
 		"PM3D_Cylinder3D1_1-46b15aea-d9e5-41f0-bf18-049859287b21.json",
-		"PM3D_Cube3D1_5-afb2d1fa-9561-4909-a1f8-4c4f95ee7656.json",
-		"PM3D_Cube3D1_8-c4a8cae6-9561-4322-bfe6-864fafcf736d.json",
-		"cube-30b081f9-1af6-40c4-8429-7326a4e23310.json",
-		"wall_window.001-b1ce86ef-d0ea-4df1-9f3a-1b585eb187d2.json",
 		"wall_window-f93215c3-c796-4849-b98e-cc4cef6c6e25.json",
 		"PM3D_SweepProfile3D1_1-6afcad54-6247-4296-8d99-d99d3b9545db.json",
-		"PM3D_Cylinder3D1_2-4148285b-4504-4e1c-9a51-2386eef5af2c.json",
-		"room-0acb1126-8a1e-495a-8ef1-652d97144f22.json",
-		"bridge-f75e4db7-a2ac-4628-9c10-cc57dd66f138.json",
+		"PM3D_Cube3D1_5-afb2d1fa-9561-4909-a1f8-4c4f95ee7656.json",
+		"wall_window.001-b1ce86ef-d0ea-4df1-9f3a-1b585eb187d2.json",
 		"wall-78b11ae3-8839-4e30-9e18-e40f524bdf7c.json",
-		"wallframe.001-8514a1d1-b559-4196-8cbf-2e454c628885.json",
+		"cube-30b081f9-1af6-40c4-8429-7326a4e23310.json",
+		"PM3D_Cylinder3D1_2-4148285b-4504-4e1c-9a51-2386eef5af2c.json",
 		"Rifle!Gun_Lo-0cdfde5f-a821-4530-87f4-8ef6e7c6bb1b.json",
+		"room-0acb1126-8a1e-495a-8ef1-652d97144f22.json",
 		"road-d83f52e1-1775-4289-a3ef-db351de84757.json",
+		"bridge-f75e4db7-a2ac-4628-9c10-cc57dd66f138.json",
+		"wallframe.001-8514a1d1-b559-4196-8cbf-2e454c628885.json",
 		"circle-9d113fba-b2c4-436f-9e17-9ec04e7bd7ac.json",
-		"player-f2cbf360-c763-46fa-881a-2219a1e7e97a.json"
+		"New Cube-f08173f8-1a21-42c7-8a06-5bfd2140b040.json",
+		"playerCollision-40703cfb-a3d2-4315-b01c-6d89899f3cd8.json",
+		"roof-54ec2bc9-a391-4cf9-9149-59bd1c6e7652.json",
+		"EnemyGun-dbb09336-c81d-4013-a01d-e0e5063a2885.json",
+		"ScattalingLight-b589b546-bee3-4018-8b4d-c965e4945314.json",
+		"EnemyNode-f2cbf360-c763-46fa-881a-2219a1e7e97a.json"
 	],
 	"transformNodes": [
-		"Camera-997d3f40-b47b-420c-ae45-0ffb615d7974.json",
 		"Light-dfde9162-abc5-482d-a502-785dd41e344f.json",
 		"Super_Rifle_Low-17891e45-9277-4622-93a9-af9d0097c771.json",
-		"player1-5d8e0d87-8811-4e82-b4de-c65f5913bae3.json",
-		"enemy-938988dd-09e4-4482-b919-1aa8328c39fd.json"
+		"enemy-938988dd-09e4-4482-b919-1aa8328c39fd.json",
+		"player-5d8e0d87-8811-4e82-b4de-c65f5913bae3.json",
+		"Super_Rifle_Low-3ea81ac7-ce73-446c-8e12-ec2e92cc8c3e.json",
+		"Camera-997d3f40-b47b-420c-ae45-0ffb615d7974.json"
 	],
 	"particleSystems": [],
 	"lights": [
 		{
 			"json": "New Directional Light-45e24757-a7bb-4e96-b2c1-c04339f3563c.json"
+		},
+		{
+			"json": "ConstAmbient-f03bc0b6-7eb4-4af8-91e3-1300ce5d3780.json"
 		}
 	],
 	"sounds": [
@@ -759,7 +797,7 @@
 			"_colorGradingWithGreenDepth": true,
 			"_colorGradingBGR": true,
 			"_exposure": 1,
-			"_toneMappingEnabled": false,
+			"_toneMappingEnabled": true,
 			"_toneMappingType": 0,
 			"_contrast": 1,
 			"vignetteStretch": 0,
@@ -832,8 +870,8 @@
 						"reflectionSamples": 64,
 						"smoothSteps": 5,
 						"name": "ssr",
-						"width": 1170,
-						"height": 551,
+						"width": 1501,
+						"height": 577,
 						"renderTargetSamplingMode": 1,
 						"autoClear": true,
 						"alphaMode": 0,
@@ -879,6 +917,55 @@
 					"enabled": false
 				}
 			}
+		},
+		"environmentTexture": {
+			"tags": null,
+			"url": "files/environment.env",
+			"rotationY": 0,
+			"files": [],
+			"textureMatrix": {
+				"0": 1,
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 1,
+				"6": 0,
+				"7": 0,
+				"8": 0,
+				"9": 0,
+				"10": 1,
+				"11": 0,
+				"12": 0,
+				"13": 0,
+				"14": 0,
+				"15": 1
+			},
+			"name": "files/environment.env",
+			"metadata": {
+				"editorName": "environment.env",
+				"editorId": "702b66c8-3bda-4580-b64e-875143dbf665"
+			},
+			"hasAlpha": false,
+			"getAlphaFromRGB": false,
+			"level": 1,
+			"coordinatesIndex": 0,
+			"coordinatesMode": 3,
+			"wrapU": 0,
+			"wrapV": 0,
+			"wrapR": 1,
+			"anisotropicFilteringLevel": 1,
+			"isCube": true,
+			"is3D": false,
+			"is2DArray": false,
+			"gammaSpace": false,
+			"invertZ": false,
+			"lodLevelInAlpha": false,
+			"lodGenerationOffset": 0,
+			"lodGenerationScale": 0.8,
+			"linearSpecularLOD": false,
+			"isRenderTarget": false,
+			"animations": []
 		},
 		"environmentIntensity": 1,
 		"sounds": [
@@ -969,6 +1056,106 @@
 				"customType": "BABYLON.GlowLayer",
 				"includedMeshes": [],
 				"excludedMeshes": []
+			},
+			{
+				"tags": null,
+				"blurKernelSize": 16,
+				"intensity": 1,
+				"options": {
+					"mainTextureRatio": 0.5,
+					"blurKernelSize": 32,
+					"camera": null,
+					"mainTextureSamples": 1,
+					"renderingGroupId": -1
+				},
+				"name": "",
+				"neutralColor": [
+					0,
+					0,
+					0,
+					1
+				],
+				"isEnabled": true,
+				"renderingGroupId": -1,
+				"disableBoundingBoxesFromEffectLayer": false,
+				"customType": "BABYLON.GlowLayer",
+				"includedMeshes": [],
+				"excludedMeshes": []
+			},
+			{
+				"tags": null,
+				"blurKernelSize": 16,
+				"intensity": 1,
+				"options": {
+					"mainTextureRatio": 0.5,
+					"blurKernelSize": 32,
+					"camera": null,
+					"mainTextureSamples": 1,
+					"renderingGroupId": -1
+				},
+				"name": "",
+				"neutralColor": [
+					0,
+					0,
+					0,
+					1
+				],
+				"isEnabled": true,
+				"renderingGroupId": -1,
+				"disableBoundingBoxesFromEffectLayer": false,
+				"customType": "BABYLON.GlowLayer",
+				"includedMeshes": [],
+				"excludedMeshes": []
+			},
+			{
+				"tags": null,
+				"blurKernelSize": 16,
+				"intensity": 1,
+				"options": {
+					"mainTextureRatio": 0.5,
+					"blurKernelSize": 32,
+					"camera": null,
+					"mainTextureSamples": 1,
+					"renderingGroupId": -1
+				},
+				"name": "",
+				"neutralColor": [
+					0,
+					0,
+					0,
+					1
+				],
+				"isEnabled": true,
+				"renderingGroupId": -1,
+				"disableBoundingBoxesFromEffectLayer": false,
+				"customType": "BABYLON.GlowLayer",
+				"includedMeshes": [],
+				"excludedMeshes": []
+			},
+			{
+				"tags": null,
+				"blurKernelSize": 16,
+				"intensity": 1,
+				"options": {
+					"mainTextureRatio": 0.5,
+					"blurKernelSize": 32,
+					"camera": null,
+					"mainTextureSamples": 1,
+					"renderingGroupId": -1
+				},
+				"name": "",
+				"neutralColor": [
+					0,
+					0,
+					0,
+					1
+				],
+				"isEnabled": true,
+				"renderingGroupId": -1,
+				"disableBoundingBoxesFromEffectLayer": false,
+				"customType": "BABYLON.GlowLayer",
+				"includedMeshes": [],
+				"excludedMeshes": []
 			}
 		]
 	},
@@ -979,7 +1166,8 @@
 			"gun.glb",
 			"player.babylon",
 			"cube.glb",
-			"acg_warzone_all.glb"
+			"acg_warzone_all.glb",
+			"roof.glb"
 		],
 		"prefabs": [],
 		"graphs": []
@@ -987,13 +1175,13 @@
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": 51.43606626311471,
-			"beta": 1.5787408090183819,
-			"radius": -3.8301369538430654,
+			"alpha": 70.63699626352026,
+			"beta": 2.2980968153538845,
+			"radius": -6.979732310708761,
 			"target": [
-				-21.03451808175365,
-				8.249284050835055,
-				-46.31554934145817
+				-25.288423405586368,
+				49.06494662377431,
+				-62.08052286126816
 			],
 			"inertialAlphaOffset": 0,
 			"inertialBetaOffset": 0,
@@ -1023,9 +1211,9 @@
 			],
 			"speed": 2,
 			"position": [
-				-22.526746269185306,
-				8.279712185698422,
-				-49.8429107137076
+				-25.54294942114339,
+				53.7054607423789,
+				-67.28797025433782
 			],
 			"upVector": [
 				0,
@@ -1088,7 +1276,7 @@
 					"pinchPrecision": 12,
 					"pinchDeltaPercentage": 0,
 					"useNaturalPinchZoom": false,
-					"panningSensibility": -261.0872697376068,
+					"panningSensibility": -143.2719702538928,
 					"multiTouchPanning": true,
 					"multiTouchPanAndZoom": true
 				}
@@ -1131,8 +1319,8 @@
 				"reflectionSamples": 64,
 				"smoothSteps": 5,
 				"name": "ssr",
-				"width": 1170,
-				"height": 551,
+				"width": 1501,
+				"height": 577,
 				"renderTargetSamplingMode": 1,
 				"autoClear": true,
 				"alphaMode": 0,

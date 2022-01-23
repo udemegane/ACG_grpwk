@@ -187,7 +187,7 @@
 		"_colorGradingWithGreenDepth": true,
 		"_colorGradingBGR": true,
 		"_exposure": 1,
-		"_toneMappingEnabled": false,
+		"_toneMappingEnabled": true,
 		"_toneMappingType": 0,
 		"_contrast": 1,
 		"vignetteStretch": 0,

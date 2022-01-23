@@ -43,6 +43,22 @@
 		}
 	},
 	"type": 1,
+	"excludedMeshesIds": [
+		"54ec2bc9-a391-4cf9-9149-59bd1c6e7652",
+		"1616008e-6180-43d4-8b16-4e81c5dab0ff",
+		"9b96782a-460e-48b6-98eb-2be1b798d160",
+		"90ae80d9-17d9-49ea-a56c-3e184571d8d2",
+		"9d113fba-b2c4-436f-9e17-9ec04e7bd7ac",
+		"f75e4db7-a2ac-4628-9c10-cc57dd66f138",
+		"8514a1d1-b559-4196-8cbf-2e454c628885",
+		"d83f52e1-1775-4289-a3ef-db351de84757",
+		"78b11ae3-8839-4e30-9e18-e40f524bdf7c",
+		"0acb1126-8a1e-495a-8ef1-652d97144f22",
+		"b1ce86ef-d0ea-4df1-9f3a-1b585eb187d2",
+		"f93215c3-c796-4849-b98e-cc4cef6c6e25",
+		"e9a23fdd-bd0d-4071-aa29-ace52006842a",
+		"b93de967-ff15-4f21-900e-4ad96d4fe03d"
+	],
 	"animations": [],
 	"ranges": []
 }

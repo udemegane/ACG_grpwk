@@ -22,13 +22,16 @@ export class Game {
     console.log(process.env.ACG_BACKSERVER_URL);
     this.engine = new Engine(document.getElementById('renderCanvas') as HTMLCanvasElement, true);
     this.scene = new Scene(this.engine);
-
+    Env.currentScene = this.scene;
+    this.scene.createDefaultEnvironment({});
     this._bindEvents();
     this._load('./scenes/welcomescene/');
+
     Env.onSwitchSceneObservable.add((rootUrl: string) => {
       this.engine.stopRenderLoop();
       this.scene.dispose();
       this.scene = new Scene(this.engine);
+      Env.currentScene = this.scene;
       this._load(rootUrl);
     });
   }
