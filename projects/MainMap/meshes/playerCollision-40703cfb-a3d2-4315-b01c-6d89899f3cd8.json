@@ -3,7 +3,7 @@
 		{
 			"name": "playerCollision",
 			"id": "40703cfb-a3d2-4315-b01c-6d89899f3cd8",
-			"uniqueId": 45,
+			"uniqueId": 40,
 			"type": "Mesh",
 			"position": [
 				0,

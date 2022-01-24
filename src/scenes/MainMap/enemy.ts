@@ -4,6 +4,7 @@ import { TextBlock, AdvancedDynamicTexture } from '@babylonjs/gui';
 import { visibleInInspector } from '../tools';
 import { Env } from '../GameScripts/environment';
 import { MoveKeys } from '../GameScripts/protobuf';
+import { fromScene } from '../decorators';
 
 export interface IAction {
   range: AnimationRange;
@@ -29,6 +30,9 @@ export default class Player extends Mesh {
 
   @visibleInInspector('number', 'Animation Speed', 1)
   private _animationSpeed: number;
+
+  @fromScene('EnemyGun')
+  private _enemyGun: Mesh;
 
   private _actions: IPlayerActions = {};
   private _prevKeys = {} as MoveKeys;
@@ -111,12 +115,13 @@ export default class Player extends Mesh {
     if (isNewShot) {
       const cooldownTime = 10; //
       // TODO: put the enemy gun down
-      this._scene.getMeshByName('enemyGun').addRotation(0, 5, 0);
+      console.log(this);
+      this._enemyGun.addRotation(0, 90, 0);
       // console.log('hit');
       //       and play the 'files/Rifle.mp3' from the enemy's location
       setTimeout(() => {
         // TODO: reaim the enemy gun
-        this._scene.getMeshByName('enemyGun').addRotation(0, -5, 0);
+        this._enemyGun.addRotation(0, -90, 0);
       }, cooldownTime * 1000);
     }
 

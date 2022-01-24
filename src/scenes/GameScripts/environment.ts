@@ -10,6 +10,8 @@ export class Env {
 
   public static readonly con = new Connection();
   public static gameStarted = false;
+  public static isMulti = false;
+  public static isHost = false;
 
   private static _scene: Scene;
 
@@ -102,12 +104,14 @@ export class Env {
       console.log('Not Logged In');
       return undefined;
     }
+    Env.isMulti = true;
     const resp = await this.con.multiQueue(60);
     if (!resp.success) return undefined;
     return new Promise((resolve) => {
       setTimeout(async () => {
         const check = await this.con.checkMulti();
         if (check.success) {
+          Env.isHost = resp.isHost;
           resolve(resp.oppeer);
         } else resolve(await this.requestMultiMatch(maxTry, currentCount + 1));
       }, 5000);
@@ -175,9 +179,8 @@ export class Env {
   static get currentScene() {
     if (Env._scene) {
       return Env._scene;
-    } else {
-      throw new Error('Scene not found');
     }
+    throw new Error('Scene not found');
   }
   static set currentScene(scene: Scene) {
     if (!scene) {

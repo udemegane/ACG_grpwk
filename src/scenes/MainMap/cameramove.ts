@@ -9,6 +9,7 @@ import {
   KeyboardEventTypes,
   PowerEase,
   PickingInfo,
+  TransformNode,
 } from '@babylonjs/core';
 
 import { TextBlock, AdvancedDynamicTexture, Image } from '@babylonjs/gui';
@@ -54,6 +55,25 @@ export default class PlayerCamera extends FreeCamera {
 
   public onStart(): void {
     this.displayScope();
+    console.log(Env.isMulti);
+    if (Env.isMulti) {
+      new Promise((resolve) => {
+        const interval = setInterval(() => {
+          if (Env.gameStarted) {
+            clearInterval(interval);
+            resolve(Env.isHost);
+          }
+        }, 1000);
+      }).then((isHost) => {
+        const { parent } = this;
+        const sign = (b) => (b ? 1 : -1);
+        if (parent) {
+          // @ts-ignore
+          parent.position.set(39.6 * sign(isHost), 15.34, 52.3 * sign(isHost));
+          this.position.set(0, 3, 0);
+        }
+      });
+    }
   }
 
   public onUpdate(): void {
@@ -65,7 +85,7 @@ export default class PlayerCamera extends FreeCamera {
       .add(Vector3.Right().scale(+this._toRight - +this._toLeft))
       .rotateByQuaternionToRef(this.absoluteRotation, moveVec);
     moveVec.y = 0;
-    if (moveVec.length()) this.position.addInPlace(moveVec.normalize().scale(this.speed));
+    if (moveVec.length()) this.position.addInPlace(moveVec.normalize().scale((this.speed * deltaFrames) / 60));
 
     // const detectGround = this._floorRaycast(moveVec.x, moveVec.z, 0.6);
     // if (detectGround.length() === 0) {

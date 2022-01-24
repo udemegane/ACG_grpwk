@@ -1,6 +1,7 @@
 import { Mesh, Scene, Texture, VolumetricLightScatteringPostProcess } from '@babylonjs/core';
 import SceneScriptBase from '../GameScripts/sceneScriptBase';
 import { fromScene, visibleInInspector } from '../decorators';
+import { Env } from '../GameScripts/environment';
 /**
  * This represents a script that is attached to a node in the editor.
  * Available nodes are:
@@ -42,7 +43,16 @@ export default class MainMapScript extends SceneScriptBase {
    */
   public onInitialize(): void {
     super.onInitialize();
-    if (process.env.ACG_PRODUCTION_STAGE !== 'production') console.log('main map oninit');
+    this._scene = Env.currentScene;
+    if (process.env.ACG_PRODUCTION_STAGE !== 'production') {
+      console.log('create multi match');
+      Env.isMulti = true;
+      Env.requestMultiMatch().then((res) => {
+        Env.createConnection(res).then(() => {
+          Env.gameStarted = true;
+        });
+      });
+    }
     // ...
   }
 
