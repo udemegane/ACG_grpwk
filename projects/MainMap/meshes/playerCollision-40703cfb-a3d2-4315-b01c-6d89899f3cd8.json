@@ -3,7 +3,7 @@
 		{
 			"name": "playerCollision",
 			"id": "40703cfb-a3d2-4315-b01c-6d89899f3cd8",
-			"uniqueId": 31,
+			"uniqueId": 27,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -48,7 +48,7 @@
 			"checkCollisions": false,
 			"isBlocker": false,
 			"overrideMaterialSideOrientation": null,
-			"parentId": "5d8e0d87-8811-4e82-b4de-c65f5913bae3",
+			"parentId": "a34b79f0-f744-4f43-b3fc-9057868cd6f3",
 			"isUnIndexed": false,
 			"geometryId": "c01ff70d-c6e0-4316-b7da-a1700185d8e1",
 			"subMeshes": null,

@@ -11,7 +11,7 @@
 		0
 	],
 	"checkCollisions": true,
-	"applyGravity": true,
+	"applyGravity": false,
 	"rotation": [
 		0,
 		0,
@@ -98,6 +98,10 @@
 				"_hookRange": {
 					"type": "number",
 					"value": 100
+				},
+				"_devJump": {
+					"type": "boolean",
+					"value": true
 				}
 			}
 		},
