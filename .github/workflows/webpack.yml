@@ -35,6 +35,10 @@ jobs:
       run: export NODE_OPTIONS="--max-old-space-size=6144"
     - name: Install packages
       run: npm install
+    - name: Install Protoc
+      run: |
+        sudo apt update
+        sudo apt install -y protobuf-compiler
     - name: Generate Proto Files
       run: |
         CWD=$(pwd)
