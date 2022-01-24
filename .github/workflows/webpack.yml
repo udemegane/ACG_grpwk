@@ -39,7 +39,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -y protobuf-compiler
-    - name: Generate Proto Files
+    - name: Generate proto files
       run: |
         CWD=$(pwd)
         PROTO_DIR="$CWD"/protobuf
@@ -59,6 +59,11 @@ jobs:
           F="${f%.*}" && echo "export * from './${F}_pb2';" >> "$AUTOGEN_TS"/$pb2.ts
         done
         cd "$CWD"
+    - name: Set Environment variable
+      run: |
+        sed -i -e "s@127.0.0.1:5042@dashboard.heroku.com/apps/acggameserver@g" .env
+        sed -i -e "s/dev/production/g" .env
+        cat .env
     - name: Compile
       run: |
         npm run compile
