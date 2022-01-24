@@ -13,3 +13,4 @@ class Response(Resp):
     def __init__(self, req, *, formats):
         super().__init__(req, formats=formats)
         self.content: Optional[Union[bytes, str]]
+        self.mimetype = 'application/x-protobuf'

@@ -1,6 +1,7 @@
-import { Scene } from '@babylonjs/core';
+import { Scene, Texture, VolumetricLightScatteringPostProcess } from '@babylonjs/core';
 import { Pane } from 'tweakpane';
 import { visibleInInspector } from '../decorators';
+import { Env } from './environment';
 /**
  * This represents a script that is attached to a node in the editor.
  * Available nodes are:
@@ -25,8 +26,9 @@ export default class SceneScriptBase extends Scene {
 
   @visibleInInspector('boolean', 'Show Debug menu', true)
   private _isVisibleDebugMenu: boolean;
-
+  // private _vlsPostProcess: VolumetricLightScatteringPostProcess;
   public static pane: Pane;
+  // protected _scene: Scene;
   /**
    * Override constructor.
    * @warn do not fill.
@@ -38,12 +40,12 @@ export default class SceneScriptBase extends Scene {
     if (!this.pane) {
       this.pane = new Pane();
       const PARAMS = {
-        prodStage: process.env.ACG_PRODUCTION_STAGE,
-        serverURL: process.env.ACG_BACKSERVER_URL,
+        // prodStage: process.env.ACG_PRODUCTION_STAGE,
+        // serverURL: process.env.ACG_BACKSERVER_URL,
       };
       // this.pane.addInput(PARAMS, 'factor');
-      this.pane.addInput(PARAMS, 'prodStage');
-      this.pane.addInput(PARAMS, 'serverURL');
+      // this.pane.addInput(PARAMS, 'prodStage');
+      // this.pane.addInput(PARAMS, 'serverURL');
       // this.pane.addInput(PARAMS, 'color');
     }
   }
@@ -53,7 +55,8 @@ export default class SceneScriptBase extends Scene {
    * This function is called immediatly after the constructor has been called.
    */
   public onInitialize(): void {
-    // ...
+    Env.onInitialize();
+    // this._scene = Env.currentScene;
   }
 
   /**
@@ -63,6 +66,7 @@ export default class SceneScriptBase extends Scene {
     if (this._isVisibleDebugMenu) {
       SceneScriptBase.setDebugMenu();
     }
+
     // ...
   }
 

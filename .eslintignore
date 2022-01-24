@@ -3,3 +3,5 @@ src/scenes/tools.ts
 src/scenes/scripts-map.ts
 src/scenes/decorators.ts
 src/scenes/*/index.ts
+protobuf/*.ts
+generateUtilityFiles.ts

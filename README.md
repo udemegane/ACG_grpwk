@@ -2,10 +2,11 @@
 
 [![Game Client by Babylon.js](https://github.com/udemegane/ACG_grpwk/actions/workflows/webpack.yml/badge.svg?branch=main)](https://github.com/udemegane/ACG_grpwk/actions/workflows/webpack.yml)
 [![Server Deploy to Azure App Servise](https://github.com/udemegane/ACG_grpwk/actions/workflows/server.yml/badge.svg?branch=main)](https://github.com/udemegane/ACG_grpwk/actions/workflows/server.yml)
-  
+
 ## Documentation
 
 - [HackMD](https://hackmd.io/@udemegane/SyovqFy5F/edit)
+- [Initial Report](https://hackmd.io/HJvDXrveRyewOOHZOYNmEQ)
 
 ## 環境構築
 
@@ -78,7 +79,7 @@ SceneScriptBase.addInput(PARAMS, KEY);
 
 ### シーンの切り替え
 
-シーンをランタイム中に切り替える switchScene()を src/GameScript/gameManager.ts に書いた。サンプル実装としてデフォルトの FPS のシーンで０キーを押すと MainMap に切り替わる。詳しくは src/scenes/scene/camera.ts の\_onZeroKey()を見よう。
+シーンをランタイム中に切り替える`switchScene()`を`src/GameScript/environment.ts`に書いた。サンプル実装としてデフォルトの FPS のシーンで０キーを押すと MainMap に切り替わる。詳しくは`src/scenes/scene/camera.ts`の`_onZeroKey()`を見よう。
 
 ### `bash run-backserver.sh`
 

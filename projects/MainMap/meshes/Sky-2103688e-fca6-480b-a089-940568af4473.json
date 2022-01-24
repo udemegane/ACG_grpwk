@@ -4,7 +4,7 @@
 		{
 			"name": "Sky",
 			"id": "2103688e-fca6-480b-a089-940568af4473",
-			"uniqueId": 8,
+			"uniqueId": 16,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -52,7 +52,7 @@
 			"isUnIndexed": false,
 			"geometryId": "295d1c87-05cc-485a-a403-d91cc47858c1",
 			"subMeshes": null,
-			"materialId": "8769b46a-8c06-4f37-86cb-ddcf03e6816e",
+			"materialId": "79330c09-6ec4-4ea4-a27a-cdace44ef2ca",
 			"metadata": {
 				"isPickable": true,
 				"script": {

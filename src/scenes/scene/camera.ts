@@ -8,13 +8,8 @@ import {
   KeyboardEventTypes,
 } from '@babylonjs/core';
 
-import {
-  fromChildren,
-  visibleInInspector,
-  onPointerEvent,
-  onKeyboardEvent,
-} from '../tools';
-import { GameManager } from '../GameScripts/gameManager';
+import { fromChildren, visibleInInspector, onPointerEvent, onKeyboardEvent } from '../tools';
+import { Env } from '../GameScripts/environment';
 
 export default class PlayerCamera extends FreeCamera {
   @fromChildren('ball')
@@ -85,7 +80,7 @@ export default class PlayerCamera extends FreeCamera {
   // キー0をシーン切り替えデバッグ用にした
   @onKeyboardEvent([48], KeyboardEventTypes.KEYUP)
   private _onZeroKey(): void {
-    GameManager.switchScene('./scenes/MainMap/');
+    Env.switchScene('./scenes/MainMap/');
   }
 
   /**
@@ -107,11 +102,11 @@ export default class PlayerCamera extends FreeCamera {
     ballInstance.position.copyFrom(this._ball.getAbsolutePosition());
 
     // Create physics impostor for the ball instance
-    ballInstance.physicsImpostor = new PhysicsImpostor(
-      ballInstance,
-      PhysicsImpostor.SphereImpostor,
-      { mass: 1, friction: 0.2, restitution: 0.2 }
-    );
+    ballInstance.physicsImpostor = new PhysicsImpostor(ballInstance, PhysicsImpostor.SphereImpostor, {
+      mass: 1,
+      friction: 0.2,
+      restitution: 0.2,
+    });
 
     // Apply impulse on ball
     const force = this.getDirection(new Vector3(0, 0, 1)).multiplyByFloats(

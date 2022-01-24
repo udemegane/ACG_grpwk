@@ -1,3 +1,4 @@
+from __future__ import annotations
 import responder
 from responderd import Request, Response
 
@@ -11,6 +12,8 @@ api = responder.API(
     cors=True,
     cors_params={
         'allow_origins': ['*'],
+        'allow_methods': ['*'],
+        'allow_headers': ['*'],
     }
 )
 
@@ -50,80 +53,61 @@ async def checktoken(req: Request, resp: Response):
     resp.content = presp.SerializeToString()
 
 
+@api.route('/api/getuserdata')
+async def getuserdata(req: Request, resp: Response):
+    preq = CheckToken()
+    preq.ParseFromString(await req.content)
+    presp = UserData()
+    userData = backuser.getUserData(backuser.getUserId(preq.token))
+    if userData is not None and 'userName' in userData:
+        presp.success = True
+        presp.username = userData['userName']
+    else:
+        presp.success = False
+    resp.content = presp.SerializeToString()
+
+
 @api.route('/api/createbattlelog')
 async def createbattlelog(req: Request, resp: Response):
     preq = CreateBattleLog()
     preq.ParseFromString(await req.content)
     presp = RespSuccess()
     if preq.isSingleMode:
-        presp.success = backbattle.createSingleBattleLog(preq.battleToken, preq.myToken, preq.elapsedms)
+        presp.success = backbattle.createSingleBattleLog(
+            preq.battleToken, preq.mypeer, preq.elapsedms)
     else:  # preq.HasField('meWinner') or preq.HasField('isDraw'): # multi battle
         # preq.meWinner will be None (hence False) if preq.HasField('isDraw')
-        winner = preq.myToken if preq.meWinner else preq.enemyToken
-        loser = preq.myToken if not preq.meWinner else preq.enemyToken
+        winner = preq.mypeer if preq.meWinner else preq.oppeer
+        loser = preq.mypeer if not preq.meWinner else preq.oppeer
         presp.success = backbattle.createMultiBattleLog(
             preq.battleToken, winner, loser,
             preq.elapsedms, isDraw=bool(preq.isDraw))
     resp.content = presp.SerializeToString()
 
-# capp_manager = backapp.CappControl()
+globalMatchQueue = backbattle.MatchQueue()
 
-# @api.route('/ws/cappgroup', websocket=True)
-# async def cappgroup(ws):
-#     player = backapp.Capp(capp_manager, ws)
-#     async def login(data):
-#         if not player.set_gameID(data['gameID']):
-#             return {'name':'login', 'success':0, 'msg':'unknown gameID'}
-#         else:
-#             return None
-#     async def createPlayer(data):
-#         return await player.create(data['player'])
-#     async def updatePlayer(data):
-#         await player.update(data['player'])
-#         return None
-#     async def newBullet(data):
-#         await player.addBullet(data['bullet'])
-#         return None
-#     async def newWall(data):
-#         await player.addWall(data['wall'])
-#         return None
-#     async def dead(data):
-#         player.dead()
-#         return None
-#     async def call_functions(data):
-#         name = data.pop('name')
-#         if name == 'login':
-#             return await login(data)
-#         elif name == 'createPlayer':
-#             return await createPlayer(data)
-#         elif name == 'updatePlayer':
-#             return await updatePlayer(data)
-#         elif name == 'newBullet':
-#             return await newBullet(data)
-#         elif name == 'newWall':
-#             return await newWall(data)
-#         elif name == 'dead':
-#             return await dead(data)
-#         return None
-#     await ws.accept()
-#     try:
-#         while True:
-#             data = await ws.receive_json()
-#             if data['name'] == 'generateGameID':
-#                 await ws.send_json({
-#                     'name':'newGameID',
-#                     'id':capp_manager.generateGameID()
-#                 })
-#                 break
-#             resp_media = await call_functions(data)
-#             if resp_media is not None and not player.isClosed:
-#                 await ws.send_json(resp_media)
-#     except Exception as e:
-#         print('websocket error', e.with_traceback(None))
-#     finally:
-#         if player.game_id is not None:
-#             player.close()
-#         await ws.close()
+
+@api.route('/api/requestmatch')
+async def requestmatch(req: Request, resp: Response):
+    preq = RequestBattle()
+    preq.ParseFromString(await req.content)
+    presp = MultiGameID(success=False)
+    if backuser.getUserId(preq.token) is None:
+        resp.content = presp.SerializeToString()
+        return
+    presp = await globalMatchQueue.set_or_match(preq.token, preq.mypeer) or presp
+    resp.content = presp.SerializeToString()
+    print(presp, end='', flush=True)
+
+
+@api.route('/api/checkmatch')
+async def checkmatch(req: Request, resp: Response):
+    preq = CheckToken()
+    preq.ParseFromString(await req.content)
+    presp = RespSuccess()
+    presp.success = not await globalMatchQueue.failed_match(preq.token)
+    resp.content = presp.SerializeToString()
+    print(presp, end='', flush=True)
 
 if __name__ == "__main__":
     api.run()

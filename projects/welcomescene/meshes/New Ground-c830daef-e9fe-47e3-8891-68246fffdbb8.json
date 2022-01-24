@@ -1,0 +1,151 @@
+{
+	"materials": [],
+	"meshes": [
+		{
+			"name": "New Ground",
+			"id": "c830daef-e9fe-47e3-8891-68246fffdbb8",
+			"uniqueId": 30,
+			"type": "Mesh",
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotationQuaternion": [
+				0,
+				1,
+				0,
+				0
+			],
+			"scaling": [
+				1,
+				1,
+				1
+			],
+			"localMatrix": {
+				"0": 1,
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 1,
+				"6": 0,
+				"7": 0,
+				"8": 0,
+				"9": 0,
+				"10": 1,
+				"11": 0,
+				"12": 0,
+				"13": 0,
+				"14": 0,
+				"15": 1
+			},
+			"isEnabled": true,
+			"isVisible": true,
+			"infiniteDistance": false,
+			"pickable": true,
+			"receiveShadows": false,
+			"billboardMode": 0,
+			"visibility": 1,
+			"checkCollisions": false,
+			"isBlocker": false,
+			"overrideMaterialSideOrientation": 0,
+			"parentId": "f66363ef-a8f6-45e8-83e4-a7ebc0df7d33",
+			"isUnIndexed": false,
+			"geometryId": "f8cfdfb1-9deb-4732-baf9-3221e07bbd50",
+			"subMeshes": null,
+			"materialId": "9115fd1b-ed71-4114-99b2-ae2fb663421b",
+			"metadata": {
+				"gltf": {
+					"pointers": [
+						"/meshes/22/primitives/0",
+						"/nodes/25"
+					]
+				},
+				"basePoseMatrix": {
+					"0": 1,
+					"1": 0,
+					"2": 0,
+					"3": 0,
+					"4": 0,
+					"5": 1,
+					"6": 0,
+					"7": 0,
+					"8": 0,
+					"9": 0,
+					"10": -1,
+					"11": 0,
+					"12": 0,
+					"13": 0,
+					"14": 0,
+					"15": 1
+				},
+				"originalSourceFile": {
+					"id": "New Ground",
+					"name": "New Ground",
+					"sceneFileName": "testfield.glb"
+				},
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
+			},
+			"instances": [],
+			"animations": [],
+			"ranges": [],
+			"layerMask": 268435455,
+			"alphaIndex": 1.7976931348623157e+308,
+			"hasVertexAlpha": false,
+			"overlayAlpha": 0.3,
+			"overlayColor": [
+				1,
+				0,
+				0
+			],
+			"applyFog": true,
+			"delayLoadingFile": "geometries/f8cfdfb1-9deb-4732-baf9-3221e07bbd50.babylonbinarymeshdata",
+			"boundingBoxMaximum": [
+				256,
+				0,
+				256
+			],
+			"boundingBoxMinimum": [
+				-256,
+				0,
+				-256
+			],
+			"_binaryInfo": {
+				"positionsAttrDesc": {
+					"count": 3267,
+					"stride": 3,
+					"offset": 0,
+					"dataType": 1
+				},
+				"normalsAttrDesc": {
+					"count": 3267,
+					"stride": 3,
+					"offset": 13068,
+					"dataType": 1
+				},
+				"indicesAttrDesc": {
+					"count": 6144,
+					"stride": 1,
+					"offset": 26136,
+					"dataType": 0
+				},
+				"subMeshesAttrDesc": {
+					"count": 1,
+					"stride": 5,
+					"offset": 50712,
+					"dataType": 0
+				}
+			},
+			"positions": null,
+			"normals": null,
+			"indices": null
+		}
+	],
+	"multiMaterials": [],
+	"lods": []
+}

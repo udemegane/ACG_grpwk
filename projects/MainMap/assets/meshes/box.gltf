@@ -1,0 +1,579 @@
+{
+  "asset": {
+    "generator": "BabylonJS",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "byteLength": 2989856,
+      "uri": "box.bin"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "PlayerRoot",
+      "translation": [
+        -12.890427589416504,
+        -7.014388084411621,
+        0
+      ],
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "children": [
+        2
+      ]
+    },
+    {
+      "name": "Sky",
+      "mesh": 0,
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "YBot",
+      "translation": [
+        0,
+        1,
+        0
+      ],
+      "children": [
+        4
+      ]
+    },
+    {
+      "name": "New Ground",
+      "mesh": 1,
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "mixamorig:Skin",
+      "mesh": 2,
+      "skin": 0
+    },
+    {
+      "name": "New Cube",
+      "mesh": 3,
+      "rotation": [
+        0,
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5
+          },
+          "indices": 6,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 7,
+            "NORMAL": 8,
+            "JOINTS_0": 9,
+            "WEIGHTS_0": 10
+          },
+          "indices": 11,
+          "material": 3
+        },
+        {
+          "attributes": {
+            "POSITION": 12,
+            "NORMAL": 13,
+            "JOINTS_0": 14,
+            "WEIGHTS_0": 15
+          },
+          "indices": 16,
+          "material": 4
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 17,
+            "NORMAL": 18
+          },
+          "indices": 19,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "nodes": [
+        0,
+        1,
+        3,
+        5
+      ]
+    }
+  ],
+  "scene": 0,
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "name": "position - Sky",
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "byteOffset": 288,
+      "name": "normal - Sky",
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteLength": 192,
+      "byteOffset": 576,
+      "name": "uv - Sky",
+      "byteStride": 8
+    },
+    {
+      "buffer": 0,
+      "byteLength": 144,
+      "byteOffset": 768,
+      "name": "Indices - Sky"
+    },
+    {
+      "buffer": 0,
+      "byteLength": 13068,
+      "byteOffset": 912,
+      "name": "position - New Ground",
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteLength": 13068,
+      "byteOffset": 13980,
+      "name": "normal - New Ground",
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteLength": 8712,
+      "byteOffset": 27048,
+      "name": "uv - New Ground",
+      "byteStride": 8
+    },
+    {
+      "buffer": 0,
+      "byteLength": 24576,
+      "byteOffset": 35760,
+      "name": "Indices - New Ground"
+    },
+    {
+      "buffer": 0,
+      "byteLength": 424644,
+      "byteOffset": 60336,
+      "name": "position - mixamorig:Skin",
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteLength": 424644,
+      "byteOffset": 484980,
+      "name": "normal - mixamorig:Skin",
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteLength": 283096,
+      "byteOffset": 909624,
+      "name": "uv - mixamorig:Skin",
+      "byteStride": 8
+    },
+    {
+      "buffer": 0,
+      "byteLength": 283096,
+      "byteOffset": 1192720,
+      "name": "uv2 - mixamorig:Skin",
+      "byteStride": 8
+    },
+    {
+      "buffer": 0,
+      "byteLength": 283096,
+      "byteOffset": 1475816,
+      "name": "matricesIndices - mixamorig:Skin",
+      "byteStride": 8
+    },
+    {
+      "buffer": 0,
+      "byteLength": 566192,
+      "byteOffset": 1758912,
+      "name": "matricesWeights - mixamorig:Skin",
+      "byteStride": 16
+    },
+    {
+      "buffer": 0,
+      "byteLength": 663840,
+      "byteOffset": 2325104,
+      "name": "Indices - mixamorig:Skin"
+    },
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "byteOffset": 2988944,
+      "name": "position - New Cube",
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteLength": 288,
+      "byteOffset": 2989232,
+      "name": "normal - New Cube",
+      "byteStride": 12
+    },
+    {
+      "buffer": 0,
+      "byteLength": 192,
+      "byteOffset": 2989520,
+      "name": "uv - New Cube",
+      "byteStride": 8
+    },
+    {
+      "buffer": 0,
+      "byteLength": 144,
+      "byteOffset": 2989712,
+      "name": "Indices - New Cube"
+    },
+    {
+      "buffer": 0,
+      "byteLength": 0,
+      "byteOffset": 2989856,
+      "name": "InverseBindMatrices - mixamorig:Skin",
+      "byteStride": 64
+    }
+  ],
+  "accessors": [
+    {
+      "name": "position - Sky",
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "min": [
+        -2500,
+        -2500,
+        -2500
+      ],
+      "max": [
+        2500,
+        2500,
+        2500
+      ],
+      "byteOffset": 0
+    },
+    {
+      "name": "normal - Sky",
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "byteOffset": 0
+    },
+    {
+      "name": "uv - Sky",
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC2",
+      "byteOffset": 0
+    },
+    {
+      "name": "indices - Sky",
+      "bufferView": 3,
+      "componentType": 5125,
+      "count": 36,
+      "type": "SCALAR",
+      "byteOffset": 0
+    },
+    {
+      "name": "position - New Ground",
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 1089,
+      "type": "VEC3",
+      "min": [
+        -256,
+        0,
+        -256
+      ],
+      "max": [
+        256,
+        0,
+        256
+      ],
+      "byteOffset": 0
+    },
+    {
+      "name": "normal - New Ground",
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 1089,
+      "type": "VEC3",
+      "byteOffset": 0
+    },
+    {
+      "name": "indices - New Ground",
+      "bufferView": 7,
+      "componentType": 5125,
+      "count": 6144,
+      "type": "SCALAR",
+      "byteOffset": 0
+    },
+    {
+      "name": "position - mixamorig:Skin",
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 35387,
+      "type": "VEC3",
+      "min": [
+        -0.9734235405921936,
+        -0.0001022443175315857,
+        -0.20375758409500122
+      ],
+      "max": [
+        0.9734262824058533,
+        1.8046320676803589,
+        0.16051094233989716
+      ],
+      "byteOffset": 0
+    },
+    {
+      "name": "normal - mixamorig:Skin",
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 35387,
+      "type": "VEC3",
+      "byteOffset": 0
+    },
+    {
+      "name": "matricesIndices - mixamorig:Skin",
+      "bufferView": 12,
+      "componentType": 5123,
+      "count": 35387,
+      "type": "VEC4",
+      "byteOffset": 0
+    },
+    {
+      "name": "matricesWeights - mixamorig:Skin",
+      "bufferView": 13,
+      "componentType": 5126,
+      "count": 35387,
+      "type": "VEC4",
+      "byteOffset": 0
+    },
+    {
+      "name": "indices - mixamorig:Skin",
+      "bufferView": 14,
+      "componentType": 5125,
+      "count": 103440,
+      "type": "SCALAR",
+      "byteOffset": 0
+    },
+    {
+      "name": "position - mixamorig:Skin",
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 35387,
+      "type": "VEC3",
+      "min": [
+        -0.9734235405921936,
+        -0.0001022443175315857,
+        -0.20375758409500122
+      ],
+      "max": [
+        0.9734262824058533,
+        1.8046320676803589,
+        0.16051094233989716
+      ],
+      "byteOffset": 0
+    },
+    {
+      "name": "normal - mixamorig:Skin",
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 35387,
+      "type": "VEC3",
+      "byteOffset": 0
+    },
+    {
+      "name": "matricesIndices - mixamorig:Skin",
+      "bufferView": 12,
+      "componentType": 5123,
+      "count": 35387,
+      "type": "VEC4",
+      "byteOffset": 0
+    },
+    {
+      "name": "matricesWeights - mixamorig:Skin",
+      "bufferView": 13,
+      "componentType": 5126,
+      "count": 35387,
+      "type": "VEC4",
+      "byteOffset": 0
+    },
+    {
+      "name": "indices - mixamorig:Skin",
+      "bufferView": 14,
+      "componentType": 5125,
+      "count": 62520,
+      "type": "SCALAR",
+      "byteOffset": 413760
+    },
+    {
+      "name": "position - New Cube",
+      "bufferView": 15,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "min": [
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "byteOffset": 0
+    },
+    {
+      "name": "normal - New Cube",
+      "bufferView": 16,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "byteOffset": 0
+    },
+    {
+      "name": "indices - New Cube",
+      "bufferView": 18,
+      "componentType": 5125,
+      "count": 36,
+      "type": "SCALAR",
+      "byteOffset": 0
+    },
+    {
+      "name": "InverseBindMatrices - mixamorig:Skin",
+      "bufferView": 19,
+      "componentType": 5126,
+      "count": 0,
+      "type": "MAT4"
+    }
+  ],
+  "materials": [
+    {
+      "name": "default material",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.5,
+          0.5,
+          0.5,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.3288090062081349
+      }
+    },
+    {
+      "name": "ground",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.5,
+          0.5,
+          0.5,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.3288090062081349
+      }
+    },
+    {
+      "name": "cube",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.5,
+          0.5,
+          0.5,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.3288090062081349
+      }
+    },
+    {
+      "name": "Alpha_Surface_MAT",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.0029216151801191156,
+          0.07478184912805803,
+          0.11963137955963873,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.3288090062081349
+      }
+    },
+    {
+      "name": "Alpha_Joints_MAT",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.008104554650783137,
+          0.01663140588365225,
+          0.018275978378384346,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.3288090062081349
+      }
+    }
+  ],
+  "skins": [
+    {
+      "joints": [],
+      "inverseBindMatrices": 20
+    }
+  ]
+}

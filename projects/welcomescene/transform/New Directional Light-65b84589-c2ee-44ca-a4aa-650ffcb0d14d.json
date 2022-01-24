@@ -1,0 +1,64 @@
+{
+	"tags": null,
+	"position": [
+		-25.446041107177734,
+		50.89208221435547,
+		25.446041107177734
+	],
+	"rotation": [
+		0,
+		0,
+		0
+	],
+	"rotationQuaternion": [
+		-0.4247082002778669,
+		-0.3398511429799873,
+		-0.17591989660616114,
+		0.8204732385702833
+	],
+	"scaling": [
+		1,
+		1,
+		1
+	],
+	"billboardMode": 0,
+	"scalingDeterminant": 1,
+	"infiniteDistance": false,
+	"ignoreNonUniformScaling": false,
+	"reIntegrateRotationIntoRotationQuaternion": false,
+	"name": "New Directional Light",
+	"id": "65b84589-c2ee-44ca-a4aa-650ffcb0d14d",
+	"state": "",
+	"metadata": {
+		"gltf": {
+			"pointers": [
+				"/nodes/27"
+			],
+			"editorDone": true
+		},
+		"script": {
+			"name": "None"
+		}
+	},
+	"type": "TransformNode",
+	"parentId": "f66363ef-a8f6-45e8-83e4-a7ebc0df7d33",
+	"localMatrix": {
+		"0": 1,
+		"1": 0,
+		"2": 0,
+		"3": 0,
+		"4": 0,
+		"5": 1,
+		"6": 0,
+		"7": 0,
+		"8": 0,
+		"9": 0,
+		"10": 1,
+		"11": 0,
+		"12": 0,
+		"13": 0,
+		"14": 0,
+		"15": 1
+	},
+	"isEnabled": true
+}

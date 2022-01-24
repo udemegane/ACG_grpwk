@@ -16,6 +16,8 @@ class UsersTyping:
 
 
 class Users(Base, UsersTyping):
+    privacy_settings = {}
+
     def get_dict(self, privacy_level: int = -1, delete: List[str] = []) -> Dict[str, Any]:
         data = DBtoDict(self, delete)
         data = DBJsonDecode(data, [])
@@ -34,6 +36,8 @@ class TokenTable(Base):
     id = Column('id', Integer, primary_key=True, autoincrement=True)
     token = Column('token', String(65))
     userId = Column('userId', Integer)
+
+    privacy_settings = {}
 
     def get_dict(self, privacy_level: int = -1, delete: List[str] = []) -> Dict[str, Any]:
         data = DBtoDict(self, delete)
@@ -55,6 +59,8 @@ class BattleLog(Base):
     battleTime = Column('battleTime', Integer)  # milliseconds
     isSingleMode = Column('isSingleMode', Boolean)
 
+    privacy_settings = {}
+
     def get_dict(self, privacy_level: int = -1, delete: List[str] = []) -> Dict[str, Any]:
         data = DBtoDict(self, delete)
         data = DBJsonDecode(data, [])
@@ -69,6 +75,8 @@ class AccessLog(Base):
     id = Column('id', Integer, primary_key=True, autoincrement=True)
     userId = Column('userId', Integer)
     createdAt = Column('createdAt', String(20))
+
+    privacy_settings = {}
 
     def get_dict(self, privacy_level: int = -1, delete: List[str] = []) -> Dict[str, Any]:
         data = DBtoDict(self, delete)

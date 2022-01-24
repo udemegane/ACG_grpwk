@@ -1,0 +1,114 @@
+{
+	"tags": null,
+	"alpha": 0,
+	"beta": 0,
+	"radius": 10,
+	"target": [
+		0,
+		0,
+		0
+	],
+	"inertialAlphaOffset": 0,
+	"inertialBetaOffset": 0,
+	"inertialRadiusOffset": 0,
+	"lowerBetaLimit": 0.01,
+	"upperBetaLimit": 3.1315926535897933,
+	"inertialPanningX": 0,
+	"inertialPanningY": 0,
+	"pinchToPanMaxDistance": 20,
+	"panningOriginTarget": [
+		0,
+		0,
+		0
+	],
+	"panningInertia": 0.9,
+	"zoomOnFactor": 1,
+	"targetScreenOffset": {
+		"x": 0,
+		"y": 0
+	},
+	"allowUpsideDown": true,
+	"useInputToRestoreState": true,
+	"rotation": [
+		0,
+		0,
+		0
+	],
+	"speed": 2,
+	"position": [
+		0.001,
+		10,
+		0
+	],
+	"upVector": [
+		0,
+		1,
+		0
+	],
+	"fov": 0.8,
+	"minZ": 1,
+	"maxZ": 10000,
+	"inertia": 0,
+	"mode": 0,
+	"layerMask": 268435455,
+	"fovMode": 0,
+	"cameraRigMode": 0,
+	"name": "playerCamera",
+	"id": "7647b714-242b-4e04-a3a1-e9b01e57f7a4",
+	"state": "",
+	"metadata": {
+		"script": {
+			"name": "src/scenes/ScrapBox/playerCamera.ts"
+		},
+		"doNotExport": false
+	},
+	"type": "ArcRotateCamera",
+	"parentId": "d74144b8-2df6-4091-bd61-60dd3e51945d",
+	"inputsmgr": {
+		"ArcRotateCameraKeyboardMoveInput": {
+			"tags": null,
+			"keysUp": [
+				38
+			],
+			"keysDown": [
+				40
+			],
+			"keysLeft": [
+				37
+			],
+			"keysRight": [
+				39
+			],
+			"keysReset": [
+				220
+			],
+			"panningSensibility": 50,
+			"zoomingSensibility": 25,
+			"useAltToZoom": true,
+			"angularSpeed": 0.01
+		},
+		"ArcRotateCameraMouseWheelInput": {
+			"tags": null,
+			"wheelPrecision": 3,
+			"wheelDeltaPercentage": 0
+		},
+		"ArcRotateCameraPointersInput": {
+			"tags": null,
+			"buttons": [
+				0,
+				1,
+				2
+			],
+			"angularSensibilityX": 1000,
+			"angularSensibilityY": 1000,
+			"pinchPrecision": 12,
+			"pinchDeltaPercentage": 0,
+			"useNaturalPinchZoom": false,
+			"panningSensibility": 1000,
+			"multiTouchPanning": true,
+			"multiTouchPanAndZoom": true
+		}
+	},
+	"animations": [],
+	"ranges": []
+}

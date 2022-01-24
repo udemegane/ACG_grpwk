@@ -28,6 +28,7 @@ rules:
   guard-for-in: 'off'
   no-underscore-dangle: 'off'
   no-restricted-syntax: 'off'
+  no-param-reassign: 'warn'
   class-methods-use-this: 'off'
   lines-between-class-members: 'off'
   no-continue: 'off'
@@ -40,7 +41,7 @@ rules:
     - SwitchCase: 1
   max-len:
     - error
-    - code: 256
+    - code: 120
   no-plusplus:
     - error
     - allowForLoopAfterthoughts: true

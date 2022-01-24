@@ -1,0 +1,357 @@
+{
+	"meshes": [
+		{
+			"name": "YBot",
+			"id": "48adc4d1-5b41-4e80-a0ee-25d701cd3a95",
+			"uniqueId": 449,
+			"type": "Mesh",
+			"position": [
+				0,
+				1,
+				0
+			],
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"scaling": [
+				1,
+				1,
+				1
+			],
+			"localMatrix": {
+				"0": 1,
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 1,
+				"6": 0,
+				"7": 0,
+				"8": 0,
+				"9": 0,
+				"10": 1,
+				"11": 0,
+				"12": 0,
+				"13": 0,
+				"14": 0,
+				"15": 1
+			},
+			"isEnabled": true,
+			"isVisible": false,
+			"infiniteDistance": false,
+			"pickable": true,
+			"receiveShadows": false,
+			"billboardMode": 0,
+			"visibility": 0,
+			"checkCollisions": false,
+			"isBlocker": false,
+			"parentId": "d74144b8-2df6-4091-bd61-60dd3e51945d",
+			"isUnIndexed": false,
+			"metadata": {
+				"api": true,
+				"type": "Game",
+				"prefab": false,
+				"state": {},
+				"objectName": "YBot",
+				"objectId": "562337b9-6e77-42f2-9a95-443bc13df88b",
+				"tagName": "Untagged",
+				"layerIndex": 0,
+				"layerName": "Default",
+				"areaIndex": -1,
+				"navAgent": null,
+				"meshLink": null,
+				"meshObstacle": null,
+				"socketList": [],
+				"animationClips": [],
+				"animationEvents": [],
+				"collisionEvent": null,
+				"components": [
+					{
+						"order": 0,
+						"name": "UnityEditor.AnimationState",
+						"klass": "BABYLON.AnimationState",
+						"update": true,
+						"properties": {
+							"controlType": 2,
+							"bakeSettings": 0,
+							"enableEvents": true,
+							"automaticPlay": false,
+							"framesPerSecond": 30,
+							"enableStateMachine": false,
+							"stateMachineName": "YBot"
+						},
+						"instance": null,
+						"tag": null
+					}
+				],
+				"properties": {
+					"stateMachineInfo": {
+						"active": false,
+						"speed": 1,
+						"entry": "YBot_Idle",
+						"states": [
+							{
+								"tag": "",
+								"time": 0,
+								"name": "YBot_Idle",
+								"type": 0,
+								"motion": "YBot_Idle",
+								"rate": 30,
+								"length": 3.00000024,
+								"layer": "Base Layer",
+								"index": 0,
+								"played": 0,
+								"machine": "Base Layer",
+								"interrupted": false,
+								"apparentSpeed": 0,
+								"averageAngularSpeed": 0,
+								"averageDuration": 0,
+								"averageSpeed": [
+									0,
+									0,
+									0
+								],
+								"cycleOffset": 0,
+								"cycleOffsetParameter": "",
+								"cycleOffsetParameterActive": false,
+								"iKOnFeet": false,
+								"mirror": false,
+								"mirrorParameter": "",
+								"mirrorParameterActive": false,
+								"speed": 1,
+								"speedParameter": "",
+								"speedParameterActive": false,
+								"blendtree": null,
+								"animations": null,
+								"transitions": []
+							},
+							{
+								"tag": "",
+								"time": 0,
+								"name": "YBot_Walk",
+								"type": 0,
+								"motion": "YBot_Walk",
+								"rate": 30,
+								"length": 1.16666675,
+								"layer": "Base Layer",
+								"index": 0,
+								"played": 0,
+								"machine": "Base Layer",
+								"interrupted": false,
+								"apparentSpeed": 0,
+								"averageAngularSpeed": 0,
+								"averageDuration": 0,
+								"averageSpeed": [
+									0,
+									0,
+									0
+								],
+								"cycleOffset": 0,
+								"cycleOffsetParameter": "",
+								"cycleOffsetParameterActive": false,
+								"iKOnFeet": false,
+								"mirror": false,
+								"mirrorParameter": "",
+								"mirrorParameterActive": false,
+								"speed": 1,
+								"speedParameter": "",
+								"speedParameterActive": false,
+								"blendtree": null,
+								"animations": null,
+								"transitions": []
+							},
+							{
+								"tag": "",
+								"time": 0,
+								"name": "YBot_Run",
+								"type": 0,
+								"motion": "YBot_Run",
+								"rate": 30,
+								"length": 0.700000048,
+								"layer": "Base Layer",
+								"index": 0,
+								"played": 0,
+								"machine": "Base Layer",
+								"interrupted": false,
+								"apparentSpeed": 0,
+								"averageAngularSpeed": 0,
+								"averageDuration": 0,
+								"averageSpeed": [
+									0,
+									0,
+									0
+								],
+								"cycleOffset": 0,
+								"cycleOffsetParameter": "",
+								"cycleOffsetParameterActive": false,
+								"iKOnFeet": false,
+								"mirror": false,
+								"mirrorParameter": "",
+								"mirrorParameterActive": false,
+								"speed": 1,
+								"speedParameter": "",
+								"speedParameterActive": false,
+								"blendtree": null,
+								"animations": null,
+								"transitions": []
+							},
+							{
+								"tag": "",
+								"time": 0,
+								"name": "YBot_LeftStrafeWalk",
+								"type": 0,
+								"motion": "YBot_LeftStrafeWalk",
+								"rate": 30,
+								"length": 1.03333342,
+								"layer": "Base Layer",
+								"index": 0,
+								"played": 0,
+								"machine": "Base Layer",
+								"interrupted": false,
+								"apparentSpeed": 0,
+								"averageAngularSpeed": 0,
+								"averageDuration": 0,
+								"averageSpeed": [
+									0,
+									0,
+									0
+								],
+								"cycleOffset": 0,
+								"cycleOffsetParameter": "",
+								"cycleOffsetParameterActive": false,
+								"iKOnFeet": false,
+								"mirror": false,
+								"mirrorParameter": "",
+								"mirrorParameterActive": false,
+								"speed": 1,
+								"speedParameter": "",
+								"speedParameterActive": false,
+								"blendtree": null,
+								"animations": null,
+								"transitions": []
+							},
+							{
+								"tag": "",
+								"time": 0,
+								"name": "YBot_RightStrafeWalk",
+								"type": 0,
+								"motion": "YBot_RightStrafeWalk",
+								"rate": 30,
+								"length": 1.03333342,
+								"layer": "Base Layer",
+								"index": 0,
+								"played": 0,
+								"machine": "Base Layer",
+								"interrupted": false,
+								"apparentSpeed": 0,
+								"averageAngularSpeed": 0,
+								"averageDuration": 0,
+								"averageSpeed": [
+									0,
+									0,
+									0
+								],
+								"cycleOffset": 0,
+								"cycleOffsetParameter": "",
+								"cycleOffsetParameterActive": false,
+								"iKOnFeet": false,
+								"mirror": false,
+								"mirrorParameter": "",
+								"mirrorParameterActive": false,
+								"speed": 1,
+								"speedParameter": "",
+								"speedParameterActive": false,
+								"blendtree": null,
+								"animations": null,
+								"transitions": []
+							}
+						],
+						"entries": [],
+						"parameters": [],
+						"transitions": []
+					}
+				},
+				"basePoseMatrix": {
+					"0": 1,
+					"1": 0,
+					"2": 0,
+					"3": 0,
+					"4": 0,
+					"5": 1,
+					"6": 0,
+					"7": 0,
+					"8": 0,
+					"9": 0,
+					"10": 1,
+					"11": 0,
+					"12": 0,
+					"13": 0,
+					"14": 0,
+					"15": 1
+				},
+				"originalSourceFile": {
+					"id": "562337b9-6e77-42f2-9a95-443bc13df88b",
+					"name": "YBot",
+					"sceneFileName": "dummy3.babylon"
+				},
+				"isPickable": true,
+				"script": {
+					"name": "src/scenes/ScrapBox/player.ts",
+					"properties": {
+						"_forwardKey": {
+							"type": "KeyMap",
+							"value": 122
+						},
+						"_backwardKey": {
+							"type": "KeyMap",
+							"value": 115
+						},
+						"_leftKey": {
+							"type": "KeyMap",
+							"value": 113
+						},
+						"_rightKey": {
+							"type": "KeyMap",
+							"value": 100
+						},
+						"_walkSpeed": {
+							"type": "number",
+							"value": 1
+						},
+						"_runSpeed": {
+							"type": "number",
+							"value": 2
+						},
+						"_transitionSpeed": {
+							"type": "number",
+							"value": 1
+						},
+						"_animationSpeed": {
+							"type": "number",
+							"value": 1
+						}
+					}
+				},
+				"renderingGroupId": 0
+			},
+			"instances": [],
+			"animations": [],
+			"ranges": [],
+			"layerMask": 268435455,
+			"alphaIndex": 0,
+			"hasVertexAlpha": false,
+			"overlayAlpha": 0.5,
+			"overlayColor": [
+				1,
+				0,
+				0
+			],
+			"applyFog": false
+		}
+	],
+	"materials": [],
+	"multiMaterials": [],
+	"lods": []
+}

@@ -1,12 +1,57 @@
 {
-	"filesList": [],
+	"filesList": [
+		"Rifle.mp3",
+		"move.mp3",
+		"scope.png",
+		"Default_OBJ.001 (Base Color).png",
+		"Default_OBJ.001 (Emissive).png",
+		"Default_OBJ.001 (Normal).png",
+		"room_ao.png",
+		"room_BaseColor.png",
+		"room_EmissiveColor.png",
+		"room_Metalness.png",
+		"room_Normal.png",
+		"room_Roughness.png",
+		"M_room (Base Color).png",
+		"M_room (Emissive).png",
+		"M_room (Metallic Roughness).png",
+		"M_room (Normal).png",
+		"M_wall (Base Color).png",
+		"M_wall (Metallic Roughness).png",
+		"M_wall (Normal).png",
+		"M_road (Base Color).png",
+		"M_road (Emissive).png",
+		"M_road (Metallic Roughness).png",
+		"M_road (Normal).png",
+		"M_wallFrame (Base Color).png",
+		"M_wallFrame (Emissive).png",
+		"M_wallFrame (Metallic Roughness).png",
+		"M_wallFrame (Normal).png",
+		"M_bridge (Base Color).png",
+		"M_bridge (Emissive).png",
+		"M_bridge (Metallic Roughness).png",
+		"M_bridge (Normal).png",
+		"M_circle (Base Color).png",
+		"M_circle (Metallic Roughness).png",
+		"M_circle (Normal).png",
+		"ocean_env.jpg",
+		"—Pngtree—abstract hexagon black background hexagon_3991447.png",
+		"environment.env"
+	],
 	"cameras": [
-		"New Free Camera-24348433-1a93-41ea-b0a4-8a3e398fd82d.json"
+		"PlayerCamera-a34b79f0-f744-4f43-b3fc-9057868cd6f3.json"
 	],
 	"materials": [
 		{
+			"bindedMeshes": [
+				"7fc13a8c-a7d5-4254-b6c1-b3f41ec715da"
+			],
+			"json": "PM3D_Cube3D1_2-8e6b6e3f-0374-482e-8c96-8e5512219f75.json",
+			"isMultiMaterial": false
+		},
+		{
 			"bindedMeshes": [],
-			"json": "sky-b2346078-7465-4c63-8877-44b542584898.json",
+			"json": "__GLTFLoader._default-b4add01d-606c-48d5-b43c-dd502b4a9eeb.json",
 			"isMultiMaterial": false
 		},
 		{
@@ -16,25 +61,610 @@
 		},
 		{
 			"bindedMeshes": [
-				"2103688e-fca6-480b-a089-940568af4473"
+				"6cf7f09e-730c-46ac-aa9e-aa911ad23a11"
 			],
+			"json": "PM3D_Cube3D1_12-41cbb423-62ee-45e7-a902-c7f3bc0f594e.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"6afcad54-6247-4296-8d99-d99d3b9545db"
+			],
+			"json": "PM3D_SweepProfile3D1_1-0fdcfa78-ffd3-45d3-8483-f979e418f960.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "__GLTFLoader._default-7135578f-c323-48e2-bc4f-9900d895ba6c.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cylinder3D1-dad5704e-b4d4-45df-a215-af8042dd2807.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"c4a8cae6-9561-4322-bfe6-864fafcf736d"
+			],
+			"json": "PM3D_Cube3D1_8-851bc2d4-62ed-4d17-a919-babef3988448.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"2805dbf7-259c-4ed9-9d5d-387b270435b9"
+			],
+			"json": "PM3D_Ring3D1-4c6b0518-68bb-4aa0-a242-65422a9495db.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "sky-b2346078-7465-4c63-8877-44b542584898.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"4148285b-4504-4e1c-9a51-2386eef5af2c"
+			],
+			"json": "PM3D_Cylinder3D1_2-ae619054-4f2f-4e61-b60a-fc2f190a8c0e.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"60027be9-7e4e-4d7f-bdb9-567f08694092"
+			],
+			"json": "PM3D_Cube3D1_7-00ea75c9-c26d-4c13-a387-b08caf64de94.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "__GLTFLoader._default-60ce57b2-391d-4aca-bd1a-380f6d113799.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_6-3591b9f1-2f13-495a-99d4-bc4a51174c9c.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"0cdfde5f-a821-4530-87f4-8ef6e7c6bb1b"
+			],
+			"json": "lambert2-fe449c77-d956-4376-b545-1d5f6632a883.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_10-7def620f-8a75-4c8d-bddb-d86535b52d17.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "__GLTFLoader._default-cd1c3e2e-5bc7-4be5-b602-121260774bc6.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"9e6bd45e-1f53-4272-86d7-108315fad75c"
+			],
+			"json": "PM3D_Cube3D1_11-934bea4d-b52f-4153-9089-f55a5d628bf7.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"afb2d1fa-9561-4909-a1f8-4c4f95ee7656"
+			],
+			"json": "PM3D_Cube3D1_5-f5be82be-b67c-4e17-8585-2685c97a0091.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "__GLTFLoader._default-1cdd297d-3b2c-40ab-aaee-07994641aab0.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "__GLTFLoader._default-63f7e851-1858-4719-81af-841e1722d761.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"46b15aea-d9e5-41f0-bf18-049859287b21"
+			],
+			"json": "PM3D_Cylinder3D1_1-7d1e9997-4de0-462d-8368-171a17ad7622.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "lambert2-6a51307e-8ced-4cd2-9c7a-42b239ac39c0.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "__GLTFLoader._default-94219f24-20f5-468b-986a-8273e1470b5f.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "__GLTFLoader._default-56e8b812-2078-42d8-9b5f-918d58ead461.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "player-body-6b5386b6-d680-4a81-b656-537f1e2729f3.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cone3D1-6f20b673-7645-4362-8873-7d9dad16c775.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
 			"json": "sky-8769b46a-8c06-4f37-86cb-ddcf03e6816e.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "lambert2-a58b2e94-384c-4a3e-a4bf-3dc0d52ea0c8.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"b24ec9dc-3d2f-4471-a62e-b23dde971de8"
+			],
+			"json": "PM3D_Cube3D1_9-da2b2adb-8093-460a-870f-aaac54af55c8.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_4-3db85d78-35bf-4a12-9c96-a6b66c5977a4.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"eaa8afea-7737-4ba1-873b-cf3a6dfa58e3"
+			],
+			"json": "Material-1c85e014-e2f1-4921-a0f3-152ab871662e.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "__GLTFLoader._default-600861fa-21d8-42de-ac2d-c9350abe5a4d.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "player-joints-8f94d4f0-92bf-49e1-89a8-a2fa57b1cfb2.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "__GLTFLoader._default-efd9583a-7722-4f3b-b77e-674a8299460b.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_1-4df156d3-fa41-4043-9f7b-ff8c96ead285.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "lambert2-3242911f-e531-4e0c-a77f-4eb88f54d1f6.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"2df81e10-3789-4525-855c-c83a8c9052f9"
+			],
+			"json": "PM3D_SweepProfile3D1-72626f48-2381-4284-ae7a-d19e5a576297.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1-94d7bb65-a9ed-4c44-85f3-1e997ef7d872.json",
 			"isMultiMaterial": false
 		},
 		{
 			"bindedMeshes": [],
 			"json": "cube-03bdd37e-fe54-4095-a392-0de62b0de089.json",
 			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_13-1bd24805-23e7-4bbe-8843-b02be72b2846.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D2_9-d9ab38ba-154d-4d12-82a0-6dc646d04f6a.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Circle3D1-c99fcdd6-862a-4025-a01c-e19cae708336.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "wall_window-75106f6e-0e71-419f-8f49-e4bfb7dcee1b.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cylinder3D1_5-845c5a51-04a5-40ef-9085-916a083ec87e.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D2_6-b31ab1a0-468d-4b52-8aa5-559dddd64070.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "wall_window1-7eae6c03-990d-4bb5-8fc5-6773cabcad00.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_14-ed6cbb78-446a-4522-9471-65ce8d2e3c63.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PolySphere1.001-9d9c4e51-b02a-4a7c-83b0-da025a95abd1.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cylinder3D1_4.001-4a8c272b-2e2a-411e-9b03-ae14bcad47c7.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "ground_road.007-04302f83-6e8a-4ae0-8455-6057d73fb6c0.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_15.002-f78653b8-c6a6-4e48-8620-cd04c069934c.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_16.001-9d992a48-c4cc-4680-9abd-65b955b8c28b.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D2.003-1f51f83f-29bc-4044-9198-ba1a7894b94e.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_14-f46eb17e-89b2-4790-aa0a-209114664d9c.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_15.003-fd75bd41-b93d-4015-b51d-fbb76af5cba7.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_14.001-32f6e78e-efd9-4ae0-a6ac-a3b70c6d0209.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Circle3D1-2fb7b510-68b7-46c3-aab3-3dd67ff7a80b.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "M_room-1e88c352-8175-4dad-adb9-498f0fe5076a.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_16.001-29d3aa42-89bd-48ff-a9c7-f3ee9a8a303f.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "ground_road.007-ee5cef72-97f0-4c7e-a723-b06dd7f823bc.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PolySphere1.001-50428328-d0ee-4276-9910-4f18ad34c910.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_13-a469729a-3941-4493-8692-9e45381cde28.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D2.003-b6436fdb-fb49-4db0-8cff-63b73809efc8.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cylinder3D1_4.001-cad05947-efc8-495e-b54d-b36cbfee630f.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_15.003-e7ebcd37-f1a8-460e-8ddc-3afa70f8b41e.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D2_6.002-68914daa-17ae-49d3-b97c-7bb4dbf5c4df.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_14.001-c934fe7d-30fb-490d-b00a-d5be1d8ce084.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_16.002-f4a1a2ed-189f-42bc-a675-06e8beba6fc7.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "wall_window.001-5f59be2a-9400-4a14-b4f7-143f47ab4e3c.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D2_6.001-0c3c3a31-8d7f-4f03-93b7-3a46f42fe5ff.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cylinder3D1_5.001-5635d157-3be9-4700-92fa-ae857b703361.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"b1ce86ef-d0ea-4df1-9f3a-1b585eb187d2"
+			],
+			"json": "wall_window.002-6bf479d1-6e53-4482-b2e2-496dd5a92497.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cylinder3D1_4.002-b0657da4-db24-4303-b7bd-3751d6ee0fb2.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"30b081f9-1af6-40c4-8429-7326a4e23310"
+			],
+			"json": "Default_OBJ.001-bdf2b9e9-0faa-4459-a14d-a0ef0bcbf483.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"78b11ae3-8839-4e30-9e18-e40f524bdf7c"
+			],
+			"json": "M_wall-4bc6de6d-6dc8-412f-ad4f-eec2d4818303.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cylinder3D1_4.002-88770854-aaeb-4b01-8615-975cce140ef4.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"0acb1126-8a1e-495a-8ef1-652d97144f22"
+			],
+			"json": "M_room-faeae40c-8ed7-4826-bd0e-65bc67ed11fc.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"9d113fba-b2c4-436f-9e17-9ec04e7bd7ac"
+			],
+			"json": "M_circle-a63049fa-1fc1-49ad-ad74-b7217a7c5823.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"f93215c3-c796-4849-b98e-cc4cef6c6e25"
+			],
+			"json": "wall_window.001-c39c5900-cb93-4f3d-8d06-6b1403650bb9.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "M_ground-e06ebecb-5e4b-489b-9751-c7a0e5ff5b93.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"d83f52e1-1775-4289-a3ef-db351de84757"
+			],
+			"json": "M_road-cd1a427a-c6f7-4b6e-828c-2079bce9ac25.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"f75e4db7-a2ac-4628-9c10-cc57dd66f138"
+			],
+			"json": "M_bridge-ffa8e829-e58a-41cc-a2b2-10b7a12fc5d5.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"b589b546-bee3-4018-8b4d-c965e4945314"
+			],
+			"json": "M_Unlit-e01b0043-c75e-4c35-84d4-70d96fdb8e48.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"e9a23fdd-bd0d-4071-aa29-ace52006842a"
+			],
+			"json": "M_test-239e68e9-ed6d-4b3c-8180-f15d22e3ad76.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"2103688e-fca6-480b-a089-940568af4473"
+			],
+			"json": "M_sky-79330c09-6ec4-4ea4-a27a-cdace44ef2ca.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"8514a1d1-b559-4196-8cbf-2e454c628885"
+			],
+			"json": "M_wallFrame-00208f5f-a61b-4f25-b849-f40a4b3f75a6.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"54ec2bc9-a391-4cf9-9149-59bd1c6e7652"
+			],
+			"json": "defaultMat-02dc73f9-1746-4415-951a-4abf8f98b9ec.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "wall_window.002-ce43bd9d-8d09-4fda-b377-a5ad9a0e0afb.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [],
+			"json": "PM3D_Cube3D1_3-aae2d669-089a-454d-9742-d7e81fd04ebc.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"f08173f8-1a21-42c7-8a06-5bfd2140b040"
+			],
+			"json": "M_reflect-fa50d60b-d596-4aa3-b9aa-de8e095c476b.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"dbb09336-c81d-4013-a01d-e0e5063a2885"
+			],
+			"json": "lambert2-7cac9cd9-75c8-49cd-a3f8-f71615780ea2.json",
+			"isMultiMaterial": false
+		},
+		{
+			"bindedMeshes": [
+				"f2cbf360-c763-46fa-881a-2219a1e7e97a"
+			],
+			"json": "player-joints-776615dc-7b05-4116-861d-6868e9bd01d7.json",
+			"isMultiMaterial": true
 		}
 	],
-	"textures": [],
-	"meshes": [
-		"Sky-2103688e-fca6-480b-a089-940568af4473.json"
+	"textures": [
+		"environment.env-6.json",
+		"M_wall (Base Color).png-244.json",
+		"M_wall (Metallic Roughness).png-245.json",
+		"room_EmissiveColor.png-226.json",
+		"room_BaseColor.png-225.json",
+		"Default_OBJ.001 (Base Color).png-248.json",
+		"M_wall (Normal).png-246.json",
+		"Default_OBJ.001 (Emissive).png-249.json",
+		"Default_OBJ.001 (Normal).png-250.json",
+		"M_room (Base Color).png-253.json",
+		"M_room (Emissive).png-254.json",
+		"M_room (Metallic Roughness).png-255.json",
+		"M_room (Normal).png-256.json",
+		"M_circle (Base Color).png-258.json",
+		"M_bridge (Base Color).png-262.json",
+		"M_circle (Normal).png-260.json",
+		"M_bridge (Emissive).png-263.json",
+		"M_circle (Metallic Roughness).png-259.json",
+		"—Pngtree—abstract hexagon black background hexagon_3991447.png-268.json",
+		"M_bridge (Metallic Roughness).png-264.json",
+		"M_bridge (Normal).png-265.json",
+		"M_road (Base Color).png-271.json",
+		"M_road (Emissive).png-272.json",
+		"M_road (Normal).png-274.json",
+		"M_road (Metallic Roughness).png-273.json",
+		"ocean_env.jpg-277.json",
+		"M_wallFrame (Metallic Roughness).png-282.json",
+		"M_wallFrame (Emissive).png-281.json",
+		"M_wallFrame (Normal).png-283.json",
+		"room_ao.png-289.json",
+		"scope.png-290.json",
+		"room_Metalness.png-293.json",
+		"M_wallFrame (Base Color).png-280.json",
+		"room_Normal.png-292.json",
+		"room_Roughness.png-291.json"
 	],
-	"transformNodes": [],
+	"meshes": [
+		"__root__-8ad1ebe3-1b39-4741-a60a-7d282ccc1dd1.json",
+		"Main-1bd2630b-04da-4b70-b66a-96332efac60a.json",
+		"__root__-df479701-7d74-4c59-aa4d-693040051dea.json",
+		"cubes-b93de967-ff15-4f21-900e-4ad96d4fe03d.json",
+		"New Cube-54d21ae1-2cb9-4122-bfc8-ca72b703132c.json",
+		"PM3D_Ring3D1-2805dbf7-259c-4ed9-9d5d-387b270435b9.json",
+		"PM3D_Cube3D1_7-60027be9-7e4e-4d7f-bdb9-567f08694092.json",
+		"Sky-2103688e-fca6-480b-a089-940568af4473.json",
+		"Cube-eaa8afea-7737-4ba1-873b-cf3a6dfa58e3.json",
+		"boxCollider-04558f86-9582-488d-88c7-606948dadadf.json",
+		"PM3D_Cube3D1_12-6cf7f09e-730c-46ac-aa9e-aa911ad23a11.json",
+		"playerCollision-40703cfb-a3d2-4315-b01c-6d89899f3cd8.json",
+		"New Cube-f08173f8-1a21-42c7-8a06-5bfd2140b040.json",
+		"wall_window.001-b1ce86ef-d0ea-4df1-9f3a-1b585eb187d2.json",
+		"PM3D_Cube3D1_5-afb2d1fa-9561-4909-a1f8-4c4f95ee7656.json",
+		"PM3D_Cube3D1_8-c4a8cae6-9561-4322-bfe6-864fafcf736d.json",
+		"wall-78b11ae3-8839-4e30-9e18-e40f524bdf7c.json",
+		"cube-30b081f9-1af6-40c4-8429-7326a4e23310.json",
+		"New Ground-e9a23fdd-bd0d-4071-aa29-ace52006842a.json",
+		"PM3D_Cylinder3D1_2-4148285b-4504-4e1c-9a51-2386eef5af2c.json",
+		"road-d83f52e1-1775-4289-a3ef-db351de84757.json",
+		"wall_window-f93215c3-c796-4849-b98e-cc4cef6c6e25.json",
+		"circle-9d113fba-b2c4-436f-9e17-9ec04e7bd7ac.json",
+		"PM3D_Cube3D1_9-b24ec9dc-3d2f-4471-a62e-b23dde971de8.json",
+		"PM3D_SweepProfile3D1-2df81e10-3789-4525-855c-c83a8c9052f9.json",
+		"PM3D_SweepProfile3D1_1-6afcad54-6247-4296-8d99-d99d3b9545db.json",
+		"PM3D_Cube3D1_2-7fc13a8c-a7d5-4254-b6c1-b3f41ec715da.json",
+		"room-0acb1126-8a1e-495a-8ef1-652d97144f22.json",
+		"roof-54ec2bc9-a391-4cf9-9149-59bd1c6e7652.json",
+		"PM3D_Cube3D1_11-9e6bd45e-1f53-4272-86d7-108315fad75c.json",
+		"wallframe.001-8514a1d1-b559-4196-8cbf-2e454c628885.json",
+		"ScattalingLight-b589b546-bee3-4018-8b4d-c965e4945314.json",
+		"EnemyGun-dbb09336-c81d-4013-a01d-e0e5063a2885.json",
+		"bridge-f75e4db7-a2ac-4628-9c10-cc57dd66f138.json",
+		"PM3D_Cylinder3D1_1-46b15aea-d9e5-41f0-bf18-049859287b21.json",
+		"Rifle!Gun_Lo-0cdfde5f-a821-4530-87f4-8ef6e7c6bb1b.json",
+		"EnemyNode-f2cbf360-c763-46fa-881a-2219a1e7e97a.json"
+	],
+	"transformNodes": [
+		"player-5d8e0d87-8811-4e82-b4de-c65f5913bae3.json",
+		"Super_Rifle_Low-17891e45-9277-4622-93a9-af9d0097c771.json",
+		"Super_Rifle_Low-3ea81ac7-ce73-446c-8e12-ec2e92cc8c3e.json",
+		"Camera-997d3f40-b47b-420c-ae45-0ffb615d7974.json",
+		"enemy-938988dd-09e4-4482-b919-1aa8328c39fd.json",
+		"Light-dfde9162-abc5-482d-a502-785dd41e344f.json"
+	],
 	"particleSystems": [],
-	"lights": [],
-	"sounds": [],
+	"lights": [
+		{
+			"json": "ConstAmbient-f03bc0b6-7eb4-4af8-91e3-1300ce5d3780.json"
+		},
+		{
+			"json": "New Directional Light-45e24757-a7bb-4e96-b2c1-c04339f3563c.json"
+		}
+	],
+	"sounds": [
+		"files!Rifle.mp3.json",
+		"files!move.mp3.json"
+	],
 	"morphTargetManagers": [],
 	"scene": {
 		"autoClear": false,
@@ -85,22 +715,22 @@
 			"_colorGradingWithGreenDepth": true,
 			"_colorGradingBGR": true,
 			"_exposure": 1,
-			"_toneMappingEnabled": false,
+			"_toneMappingEnabled": true,
 			"_toneMappingType": 0,
 			"_contrast": 1,
 			"vignetteStretch": 0,
 			"vignetteCentreX": 0,
 			"vignetteCentreY": 0,
-			"vignetteWeight": 1.5,
+			"vignetteWeight": 5,
 			"vignetteColor": [
-				0,
-				0,
+				0.1,
+				0.1,
 				0,
 				0
 			],
 			"vignetteCameraFov": 0.5,
 			"_vignetteBlendMode": 0,
-			"_vignetteEnabled": false,
+			"_vignetteEnabled": true,
 			"_applyByPostProcess": true,
 			"_isEnabled": true
 		},
@@ -126,7 +756,7 @@
 			},
 			"postProcesses": {
 				"ssao": {
-					"enabled": true,
+					"enabled": false,
 					"json": {
 						"tags": null,
 						"totalStrength": 2,
@@ -146,13 +776,41 @@
 					}
 				},
 				"screenSpaceReflections": {
-					"enabled": false
+					"enabled": true,
+					"json": {
+						"tags": null,
+						"threshold": 1.2,
+						"strength": 1,
+						"reflectionSpecularFalloffExponent": 3,
+						"step": 1,
+						"roughnessFactor": 0.2,
+						"enableSmoothReflections": false,
+						"reflectionSamples": 64,
+						"smoothSteps": 5,
+						"name": "ssr",
+						"width": 1262,
+						"height": 476,
+						"renderTargetSamplingMode": 1,
+						"autoClear": true,
+						"alphaMode": 0,
+						"enablePixelPerfectMode": false,
+						"forceFullscreenViewport": true,
+						"scaleMode": 1,
+						"alwaysForcePOT": false,
+						"samples": 1,
+						"adaptScaleToCurrentViewport": false,
+						"customType": "BABYLON.ScreenSpaceReflectionPostProcess",
+						"cameraId": "f3684fb1-6ae4-4cc0-8e94-ba283d86ec04",
+						"reusable": false,
+						"options": 1,
+						"textureType": 0
+					}
 				},
 				"default": {
 					"enabled": true,
 					"json": {
 						"tags": null,
-						"sharpenEnabled": false,
+						"sharpenEnabled": true,
 						"bloomKernel": 64,
 						"_bloomWeight": 0.15,
 						"_bloomThreshold": 0.9,
@@ -160,13 +818,13 @@
 						"bloomWeight": 0.15,
 						"bloomThreshold": 0.9,
 						"bloomScale": 0.5,
-						"bloomEnabled": false,
+						"bloomEnabled": true,
 						"depthOfFieldEnabled": false,
 						"depthOfFieldBlurLevel": 0,
 						"fxaaEnabled": true,
 						"samples": 4,
 						"imageProcessingEnabled": true,
-						"glowLayerEnabled": false,
+						"glowLayerEnabled": true,
 						"chromaticAberrationEnabled": false,
 						"grainEnabled": false,
 						"_name": "default",
@@ -178,24 +836,145 @@
 				}
 			}
 		},
+		"environmentTexture": {
+			"tags": null,
+			"url": "files/environment.env",
+			"rotationY": 0,
+			"files": [],
+			"textureMatrix": {
+				"0": 1,
+				"1": 0,
+				"2": 0,
+				"3": 0,
+				"4": 0,
+				"5": 1,
+				"6": 0,
+				"7": 0,
+				"8": 0,
+				"9": 0,
+				"10": 1,
+				"11": 0,
+				"12": 0,
+				"13": 0,
+				"14": 0,
+				"15": 1
+			},
+			"name": "files/environment.env",
+			"metadata": {
+				"editorName": "environment.env",
+				"editorId": "702b66c8-3bda-4580-b64e-875143dbf665"
+			},
+			"hasAlpha": false,
+			"getAlphaFromRGB": false,
+			"level": 1,
+			"coordinatesIndex": 0,
+			"coordinatesMode": 3,
+			"wrapU": 0,
+			"wrapV": 0,
+			"wrapR": 1,
+			"anisotropicFilteringLevel": 1,
+			"isCube": true,
+			"is3D": false,
+			"is2DArray": false,
+			"gammaSpace": false,
+			"invertZ": false,
+			"lodLevelInAlpha": false,
+			"lodGenerationOffset": 0,
+			"lodGenerationScale": 0.8,
+			"linearSpecularLOD": false,
+			"isRenderTarget": false,
+			"animations": []
+		},
 		"environmentIntensity": 1,
-		"sounds": []
+		"sounds": [
+			{
+				"name": "files/Rifle.mp3",
+				"url": "files/Rifle.mp3",
+				"autoplay": false,
+				"loop": false,
+				"volume": 1,
+				"spatialSound": false,
+				"maxDistance": 100,
+				"rolloffFactor": 1,
+				"refDistance": 1,
+				"distanceModel": "linear",
+				"playbackRate": 1,
+				"panningModel": "equalpower",
+				"soundTrackId": -1,
+				"metadata": {
+					"id": "3746152a-09ec-48b2-ae51-7b77e9ebd4a9"
+				}
+			},
+			{
+				"name": "files/move.mp3",
+				"url": "files/move.mp3",
+				"autoplay": false,
+				"loop": false,
+				"volume": 1,
+				"spatialSound": false,
+				"maxDistance": 100,
+				"rolloffFactor": 1,
+				"refDistance": 1,
+				"distanceModel": "linear",
+				"playbackRate": 1,
+				"panningModel": "equalpower",
+				"soundTrackId": -1,
+				"metadata": {
+					"id": "e16b8b50-33ed-4ea8-ae9d-30779943683d"
+				}
+			}
+		],
+		"effectLayers": [
+			{
+				"tags": null,
+				"blurKernelSize": 16,
+				"intensity": 1,
+				"options": {
+					"mainTextureRatio": 0.5,
+					"blurKernelSize": 32,
+					"camera": null,
+					"mainTextureSamples": 1,
+					"renderingGroupId": -1
+				},
+				"name": "",
+				"neutralColor": [
+					0,
+					0,
+					0,
+					1
+				],
+				"isEnabled": true,
+				"renderingGroupId": -1,
+				"disableBoundingBoxesFromEffectLayer": false,
+				"customType": "BABYLON.GlowLayer",
+				"includedMeshes": [],
+				"excludedMeshes": []
+			}
+		]
 	},
 	"assets": {
-		"meshes": [],
+		"meshes": [
+			"scene.glb",
+			"prototype.glb",
+			"gun.glb",
+			"player.babylon",
+			"cube.glb",
+			"acg_warzone_all.glb",
+			"roof.glb"
+		],
 		"prefabs": [],
 		"graphs": []
 	},
 	"project": {
 		"camera": {
 			"tags": "modified",
-			"alpha": -4.624582244495226,
-			"beta": 1.5668991730003372,
-			"radius": 21.790280885183368,
+			"alpha": 68.55360675395907,
+			"beta": 1.5900357454036331,
+			"radius": 19.74833609713041,
 			"target": [
-				0,
-				0.5194425582885742,
-				0
+				-16.643678743257425,
+				5.077335993209011,
+				7.1476127429640215
 			],
 			"inertialAlphaOffset": 0,
 			"inertialBetaOffset": 0,
@@ -225,9 +1004,9 @@
 			],
 			"speed": 2,
 			"position": [
-				-1.9108612345281988,
-				0.6043624191666483,
-				21.706168225064353
+				0.07007118085212838,
+				4.697412927640705,
+				-3.364427998195657
 			],
 			"upVector": [
 				0,
@@ -236,7 +1015,7 @@
 			],
 			"fov": 0.8,
 			"minZ": 1,
-			"maxZ": 15000,
+			"maxZ": 14778918.800354004,
 			"inertia": 0.9,
 			"mode": 0,
 			"layerMask": 268435455,
@@ -290,7 +1069,7 @@
 					"pinchPrecision": 12,
 					"pinchDeltaPercentage": 0,
 					"useNaturalPinchZoom": false,
-					"panningSensibility": 45.8920197159994,
+					"panningSensibility": 50.63717748581907,
 					"multiTouchPanning": true,
 					"multiTouchPanAndZoom": true
 				}
@@ -301,7 +1080,7 @@
 	},
 	"postProcesses": {
 		"ssao": {
-			"enabled": true,
+			"enabled": false,
 			"json": {
 				"tags": null,
 				"totalStrength": 2,
@@ -321,13 +1100,41 @@
 			}
 		},
 		"screenSpaceReflections": {
-			"enabled": false
+			"enabled": true,
+			"json": {
+				"tags": null,
+				"threshold": 1.2,
+				"strength": 1,
+				"reflectionSpecularFalloffExponent": 3,
+				"step": 1,
+				"roughnessFactor": 0.2,
+				"enableSmoothReflections": false,
+				"reflectionSamples": 64,
+				"smoothSteps": 5,
+				"name": "ssr",
+				"width": 1262,
+				"height": 476,
+				"renderTargetSamplingMode": 1,
+				"autoClear": true,
+				"alphaMode": 0,
+				"enablePixelPerfectMode": false,
+				"forceFullscreenViewport": true,
+				"scaleMode": 1,
+				"alwaysForcePOT": false,
+				"samples": 1,
+				"adaptScaleToCurrentViewport": false,
+				"customType": "BABYLON.ScreenSpaceReflectionPostProcess",
+				"cameraId": "f3684fb1-6ae4-4cc0-8e94-ba283d86ec04",
+				"reusable": false,
+				"options": 1,
+				"textureType": 0
+			}
 		},
 		"default": {
 			"enabled": true,
 			"json": {
 				"tags": null,
-				"sharpenEnabled": false,
+				"sharpenEnabled": true,
 				"bloomKernel": 64,
 				"_bloomWeight": 0.15,
 				"_bloomThreshold": 0.9,
@@ -335,13 +1142,13 @@
 				"bloomWeight": 0.15,
 				"bloomThreshold": 0.9,
 				"bloomScale": 0.5,
-				"bloomEnabled": false,
+				"bloomEnabled": true,
 				"depthOfFieldEnabled": false,
 				"depthOfFieldBlurLevel": 0,
 				"fxaaEnabled": true,
 				"samples": 4,
 				"imageProcessingEnabled": true,
-				"glowLayerEnabled": false,
+				"glowLayerEnabled": true,
 				"chromaticAberrationEnabled": false,
 				"grainEnabled": false,
 				"_name": "default",

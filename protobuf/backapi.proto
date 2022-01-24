@@ -15,6 +15,16 @@ message CheckToken {
   required string token = 1;
 }
 
+message RequestBattle {
+  required string token = 1;
+  required string mypeer = 2;
+}
+
+message UserData {
+  optional string username = 1;
+  required bool success = 2;
+}
+
 message RespToken {
   optional string token = 1;
   required bool success = 2;
@@ -31,7 +41,14 @@ message CreateBattleLog {
     bool meWinner = 3;
     bool isDraw = 4;
   }
-  required string myToken = 5;
-  optional string enemyToken = 6;
+  required string mypeer = 5;
+  optional string oppeer = 6;
   required int32 elapsedms = 7;
+}
+
+message MultiGameID {
+  required bool success = 1;
+  optional string oppeer = 3;
+  optional bool isHost = 2;
+  optional string token = 4;
 }
