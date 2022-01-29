@@ -178,11 +178,6 @@ if [[ x"$ACG_PRODUCTION_STAGE" != x'production' ]]; then
     exit
   fi
   source ./.venv/bin/activate
-else
-  ls -a
-  cd /app # exception to run script in heroku
-  ls -a
-  # source ./.venv/bin/activate
 fi
 
 function build_protobuf() {
@@ -227,9 +222,8 @@ function build_protobuf() {
 }
 
 if [[ x$rebuild = xtrue ]]; then
-  if [[ x"$ACG_PRODUCTION_STAGE" != x'production' ]]; then
-    build_protobuf
-  fi
+  build_protobuf
+
   # Generate sample database
   info 'Generating database for local development'
   if [ -f sample_db.sqlite3 ]; then
