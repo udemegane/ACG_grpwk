@@ -86,17 +86,17 @@ export default class PlayerCamera extends FreeCamera {
       .rotateByQuaternionToRef(this.absoluteRotation, moveVec);
     moveVec.y = 0;
     if (moveVec.length()) this.position.addInPlace(moveVec.normalize().scale((this.speed * deltaFrames) / 60));
-
-    // const detectGround = this._floorRaycast(moveVec.x, moveVec.z, 0.6);
-    // if (detectGround.length() === 0) {
-    //   this._jumping = true;
-    //   if (!this._hook) this._vy -= (9.8 * deltaFrames) / 60;
-    //   this._applyGravity(deltaFrames);
-    // } else {
-    //   this._jumping = this._hook;
-    //   this._vy = 0;
-    //   this.position.y = detectGround.y;
-    // }
+    moveVec.copyFrom(moveVec.normalize().scale(0.1));
+    const detectGround = this._floorRaycast(moveVec.x, moveVec.z, 0.6);
+    if (detectGround.length() === 0) {
+      this._jumping = true;
+      if (!this._hook) this._vy -= (9.8 * deltaFrames) / 60;
+      this._applyGravity(deltaFrames);
+    } else {
+      this._jumping = this._hook;
+      this._vy = 0;
+      this.position.y = detectGround.y;
+    }
     // if (!this._isGrounded() && !this._hook) {
     //   this._jumping = true;
     //   this._vy -= (9.8 * deltaFrames) / 60;
