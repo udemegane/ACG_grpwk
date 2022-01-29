@@ -184,9 +184,9 @@ function build_protobuf() {
   CWD=$(pwd)
   PROTO_DIR="$CWD"/protobuf
   pb2=compiled_pb2
-  # Compile protobuf (python)
   cd "$PROTO_DIR"
   protofiles=$(command ls -a | grep '.proto')
+  # Compile protobuf (python)
   AUTOGEN_PY=../protobuf
   info 'Compiling protobuf for python to' "$PROTO_DIR/$AUTOGEN_PY/$pb2.py"
   mkdir -p "$AUTOGEN_PY"
