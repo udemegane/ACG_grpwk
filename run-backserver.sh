@@ -145,14 +145,14 @@ if [[ x$initialize = xtrue ]]; then
   if ! command -v protoc &>/dev/null; then
     warning 'You do not have `protoc` (protobuf compiler) installed.'
     if [[ x"$ACG_PRODUCTION_STAGE" != x'production' ]]; then
+      info 'Go to the following page and follow the instructions.'
+      info 'https://grpc.io/docs/protoc-installation/'
+      exit
+    else
       PB_REL="https://github.com/protocolbuffers/protobuf/releases"
       curl -LO $PB_REL/download/v3.15.8/protoc-3.15.8-linux-x86_64.zip
       unzip protoc-3.15.8-linux-x86_64.zip -d $HOME/.local
       export PATH="$PATH:$HOME/.local/bin"
-    else
-      info 'Go to the following page and follow the instructions.'
-      info 'https://grpc.io/docs/protoc-installation/'
-      exit
     fi
   fi
   # install packages to compile protobuf for js/ts
