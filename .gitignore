@@ -46,6 +46,7 @@ declaration
 *.sqlite3
 .Python
 [Bb]in
+!/bin/
 [Ii]nclude
 [Ll]ib
 [Ll]ib64

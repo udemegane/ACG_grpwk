@@ -1,0 +1,14 @@
+#!/bin/sh
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "-----> Found ./run-backserver.sh"
+
+if [ ! -s $1/run-backserver.sh ]; then
+  echo "run-backserver.sh was empty" | indent
+  exit 1
+fi
+
+bash run-backserver.sh --init -rnb

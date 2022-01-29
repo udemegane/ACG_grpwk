@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -f $1/run-backserver.sh ]; then
+  echo "$ACG_APP_NAME Buildpack"
+  exit 0
+else
+  exit 1
+fi
