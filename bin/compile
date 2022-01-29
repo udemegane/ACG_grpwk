@@ -11,4 +11,4 @@ if [ ! -s $1/run-backserver.sh ]; then
   exit 1
 fi
 
-bash run-backserver.sh --init -rnb
+ACG_PRODUCTION_STAGE='production' bash run-backserver.sh --init -rnb
