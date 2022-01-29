@@ -172,7 +172,10 @@ if [[ x"$ACG_PRODUCTION_STAGE" != x'production' ]]; then
   fi
   source ./.venv/bin/activate
 else
+  ls -a
   cd /app # exception to run script in heroku
+  ls -a
+  # source ./.venv/bin/activate
 fi
 
 function build_protobuf() {
