@@ -219,9 +219,6 @@ function build_protobuf() {
   #     -v $PWD/docs:/out \
   #     -v $PWD/protobuf:/protos/protobuf \
   #     pseudomuto/protoc-gen-doc --doc_opt=markdown,protobuf.md protobuf/*.proto
-  ls -a
-  ls -a "$PROTO_DIR"
-  ls -a "$AUTOGEN_PY"
 }
 
 if [[ x$rebuild = xtrue ]]; then
