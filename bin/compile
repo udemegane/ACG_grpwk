@@ -6,7 +6,9 @@ indent() {
 
 echo "-----> Found ./run-backserver.sh"
 
-if [ ! -s $1/run-backserver.sh ]; then
+cd "$1"
+
+if [ ! -s ./run-backserver.sh ]; then
   echo "run-backserver.sh was empty" | indent
   exit 1
 fi
