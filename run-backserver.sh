@@ -252,3 +252,4 @@ if [[ x$startup = xtrue ]]; then
   python run.py
 fi
 
+exit 0
