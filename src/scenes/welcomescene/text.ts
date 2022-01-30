@@ -271,6 +271,7 @@ export default class MyScript extends Mesh {
       const a = await Env.login(this.inputusername.text, this.inputpassword.text);
       if (!a.success) {
         this.nowscene = 4;
+        alert('w: up\n s: down\n z: return to the previous scene\n space: select');
       } else {
         this.nowscene = 2;
         this.welcome.text = `Welcome ${this.inputusername.text} !`;
