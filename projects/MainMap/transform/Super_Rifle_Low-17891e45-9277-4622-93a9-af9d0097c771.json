@@ -38,7 +38,8 @@
 		},
 		"script": {
 			"name": "None"
-		}
+		},
+		"doNotExport": false
 	},
 	"type": "TransformNode",
 	"parentId": "a34b79f0-f744-4f43-b3fc-9057868cd6f3",

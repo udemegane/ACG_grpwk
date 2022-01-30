@@ -133,21 +133,22 @@ export default class PlayerCamera extends FreeCamera {
     if (!this._moved) return;
     this.applyGravity = false;
     const d = deltaFrames || this._scene.getAnimationRatio();
-    const scale = (this._vy * d) / 10;
+    let scale = (this._vy * d) / 10;
+    const floorDist = this._floorRaycast(0, 0, 3.0 - scale).length();
+    if (floorDist) scale = 3.0 - floorDist;
     this.position.addInPlace(Vector3.Up().scale(scale));
   }
 
   private _isGrounded(): boolean {
-    if (this._floorRaycast(0, 0, 7).equals(Vector3.Zero())) return false;
-    return true;
+    return !!this._floorRaycast(0, 0, 3.5).length();
   }
 
   private _floorRaycast(offsetx: number, offsetz: number, raycastlen: number): Vector3 {
-    const raycastFloorPos = new Vector3(this.position.x + offsetx, this.position.y + 0.5, this.position.z + offsetz);
+    const raycastFloorPos = new Vector3(this.position.x + offsetx, this.position.y - 3.0, this.position.z + offsetz);
     const ray = new Ray(raycastFloorPos, Vector3.Up().scale(-1), raycastlen);
     const pick = this._scene.pickWithRay(ray, (mesh) => mesh.isPickable && mesh.isEnabled());
     if (pick !== null && pick.hit && pick.pickedPoint !== null) {
-      return pick.pickedPoint;
+      return pick.pickedPoint.add(raycastFloorPos.scale(-1));
     }
     return Vector3.Zero();
   }
@@ -155,10 +156,9 @@ export default class PlayerCamera extends FreeCamera {
   @onKeyboardEvent([74], KeyboardEventTypes.KEYDOWN) // j
   private _jump(): void {
     if (this._jumping && !(process.env.ACG_PRODUCTION_STAGE !== 'production' && this._devJump)) return;
-    if (this._jumping) return;
     this._jumping = true;
     this._vy = this._jumpForce;
-    this._applyGravity(5 / this._vy);
+    this._applyGravity(6 / this._vy);
   }
 
   public Shot(): void {
