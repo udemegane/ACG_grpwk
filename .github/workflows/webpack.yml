@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "src/**"
+      - "index.html"
       - ".github/workflows/webpack.yml"
   pull_request:
     branches:
