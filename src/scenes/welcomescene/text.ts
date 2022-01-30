@@ -338,7 +338,7 @@ export default class MyScript extends Mesh {
             break;
         }
         if (Env.gameStarted) {
-          clearInterval(handle);
+          alert('w: go straight\n s: go back\na: go left\nd: go right\n j: jump\n h:hook');
           Env.switchScene('./scenes/MainMap/');
           resolve(Env.gameStarted);
         }
