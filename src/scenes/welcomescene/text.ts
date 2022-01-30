@@ -93,6 +93,7 @@ export default class MyScript extends Mesh {
             if (t === 0) {
               clearInterval(handle);
               this.button.dispose();
+              alert('w: up\n s: down\n z: return to the previous scene\n space: select');
               if (await Env.checkToken()) {
                 this.nowscene = 2;
                 this.welcome.text = `Welcome ${Env.getUsername()} !`;
@@ -107,7 +108,10 @@ export default class MyScript extends Mesh {
       case 2:
       case 4:
         if (this.selectup === false) this.nowscene = 3;
-        else Env.switchScene('./scenes/MainMap/');
+        else {
+          alert('w: go straight\n s: go back\na: go left\nd: go right\n j: jump\n h:hook');
+          Env.switchScene('./scenes/MainMap/');
+        }
         break;
       default:
         break;
@@ -271,7 +275,6 @@ export default class MyScript extends Mesh {
       const a = await Env.login(this.inputusername.text, this.inputpassword.text);
       if (!a.success) {
         this.nowscene = 4;
-        alert('w: up\n s: down\n z: return to the previous scene\n space: select');
       } else {
         this.nowscene = 2;
         this.welcome.text = `Welcome ${this.inputusername.text} !`;
