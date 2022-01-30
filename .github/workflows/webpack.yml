@@ -63,7 +63,7 @@ jobs:
     - name: Set Environment variable
       run: |
         sed -i -e "s@127.0.0.1:5042@acggameserver.herokuapp.com@g" .env
-        sed -i -e "s/dev/dev/g" .env
+        sed -i -e "s/dev/production/g" .env
         cat .env
     - name: Compile
       run: |
