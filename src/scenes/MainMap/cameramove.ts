@@ -211,7 +211,7 @@ export default class PlayerCamera extends FreeCamera {
   }
 
   public displayScope() {
-    const scope = new Image('scope', '../../../scenes/MainMap/files/scope.png');
+    const scope = new Image('scope', 'scenes/MainMap/files/scope.png');
     const advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI('UI');
     scope.height = '70px';
     scope.width = '70px';
