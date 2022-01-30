@@ -4,7 +4,7 @@
 		{
 			"name": "wall_window.001",
 			"id": "b1ce86ef-d0ea-4df1-9f3a-1b585eb187d2",
-			"uniqueId": 28,
+			"uniqueId": 47,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -89,7 +89,8 @@
 				"script": {
 					"name": "None"
 				},
-				"renderingGroupId": 0
+				"renderingGroupId": 0,
+				"doNotExport": false
 			},
 			"instances": [],
 			"animations": [],

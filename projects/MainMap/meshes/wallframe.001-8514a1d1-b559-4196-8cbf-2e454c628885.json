@@ -4,7 +4,7 @@
 		{
 			"name": "wallframe.001",
 			"id": "8514a1d1-b559-4196-8cbf-2e454c628885",
-			"uniqueId": 47,
+			"uniqueId": 48,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -105,23 +105,24 @@
 						0
 					],
 					"scaling": [
-						1.0000000203475805,
-						0.9999999008559659,
-						0.9999999403953606
+						1,
+						0.9999998807907104,
+						0.9999999403953552
 					],
 					"parentId": "1bd2630b-04da-4b70-b66a-96332efac60a",
 					"rotationQuaternion": [
-						4.329780281177466e-17,
+						4.3297804701086715e-17,
 						0.7071067811865476,
 						-0.7071067811865475,
-						4.329780281177467e-17
+						4.329780470108673e-17
 					],
 					"metadata": {
 						"isPickable": true,
 						"script": {
 							"name": "None"
 						},
-						"renderingGroupId": 0
+						"renderingGroupId": 0,
+						"doNotExport": false
 					},
 					"animations": [],
 					"ranges": []

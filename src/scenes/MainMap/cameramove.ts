@@ -9,7 +9,6 @@ import {
   KeyboardEventTypes,
   PowerEase,
   PickingInfo,
-  TransformNode,
 } from '@babylonjs/core';
 
 import { TextBlock, AdvancedDynamicTexture, Image } from '@babylonjs/gui';
@@ -47,6 +46,8 @@ export default class PlayerCamera extends FreeCamera {
   private _hook = false;
   private _shift = false;
   private _shot = false;
+  private _moved = false;
+  private _keyArchive = new Array(4);
 
   private hp = 100;
 
@@ -54,8 +55,8 @@ export default class PlayerCamera extends FreeCamera {
   private constructor() {}
 
   public onStart(): void {
+    this._keyArchive = [this.keysUp, this.keysDown, this.keysRight, this.keysLeft];
     this.displayScope();
-    console.log(Env.isMulti);
     if (Env.isMulti) {
       new Promise((resolve) => {
         const interval = setInterval(() => {
@@ -64,14 +65,11 @@ export default class PlayerCamera extends FreeCamera {
             resolve(Env.isHost);
           }
         }, 1000);
-      }).then((isHost) => {
-        const { parent } = this;
-        const sign = (b) => (b ? 1 : -1);
-        if (parent) {
-          // @ts-ignore
-          parent.position.set(39.6 * sign(isHost), 15.34, 52.3 * sign(isHost));
-          this.position.set(0, 3, 0);
-        }
+      }).then((isHost?: boolean) => {
+        console.log('isHost: ', isHost);
+        const sign = (b?: boolean) => (b ? 1 : -1);
+        this.position.set(39.6 * sign(isHost), 18.34, 52.3 * sign(isHost));
+        this.setTarget(Vector3.Zero());
       });
     }
   }
@@ -79,31 +77,36 @@ export default class PlayerCamera extends FreeCamera {
   public onUpdate(): void {
     const deltaFrames = this._scene.getAnimationRatio();
     this.speed = this._shift ? this._runSpeed : this._walkSpeed;
-    const moveVec = Vector3.Zero();
-    Vector3.Zero()
-      .add(Vector3.Forward().scale(+this._forward - +this._backward))
-      .add(Vector3.Right().scale(+this._toRight - +this._toLeft))
-      .rotateByQuaternionToRef(this.absoluteRotation, moveVec);
-    moveVec.y = 0;
-    if (moveVec.length()) this.position.addInPlace(moveVec.normalize().scale((this.speed * deltaFrames) / 60));
 
-    // const detectGround = this._floorRaycast(moveVec.x, moveVec.z, 0.6);
-    // if (detectGround.length() === 0) {
+    // const moveVec = Vector3.Zero();
+    // Vector3.Zero()
+    //   .add(Vector3.Forward().scale(+this._forward - +this._backward))
+    //   .add(Vector3.Right().scale(+this._toRight - +this._toLeft))
+    //   .rotateByQuaternionToRef(this.absoluteRotation, moveVec);
+    // moveVec.y = 0;
+    // if (moveVec.length()) this.position.addInPlace(moveVec.normalize().scale((this.speed * deltaFrames * 100) / 60));
+    // moveVec.normalize();
+    // const detectGround = this._floorRaycast(moveVec.x, moveVec.z, 7);
+    // if (detectGround.length() === 0 && !this._hook) {
     //   this._jumping = true;
-    //   if (!this._hook) this._vy -= (9.8 * deltaFrames) / 60;
+    //   this._vy -= (9.8 * deltaFrames) / 60;
     //   this._applyGravity(deltaFrames);
     // } else {
     //   this._jumping = this._hook;
+    //   this.applyGravity = !this._jumping
     //   this._vy = 0;
     //   this.position.y = detectGround.y;
     // }
-    // if (!this._isGrounded() && !this._hook) {
-    //   this._jumping = true;
-    //   this._vy -= (9.8 * deltaFrames) / 60;
-    // } else {
-    //   this._jumping = this._hook;
-    //   this._vy = 0;
-    // }
+
+    if (!this._isGrounded() && !this._hook) {
+      this._jumping = true;
+      this._vy -= (9.8 * deltaFrames) / 60;
+      this._applyGravity(deltaFrames);
+    } else {
+      this._jumping = this._hook;
+      this.applyGravity = !this._jumping;
+      this._vy = 0;
+    }
 
     // connection
     Env.sendMyStatus(this.globalPosition, this.absoluteRotation);
@@ -127,14 +130,15 @@ export default class PlayerCamera extends FreeCamera {
   }
 
   private _applyGravity(deltaFrames?: number) {
+    if (!this._moved) return;
+    this.applyGravity = false;
     const d = deltaFrames || this._scene.getAnimationRatio();
-    let scale = (this._vy * d) / 60;
-    if (this.position.y + scale < 0) scale = -this.position.y;
+    const scale = (this._vy * d) / 10;
     this.position.addInPlace(Vector3.Up().scale(scale));
   }
 
   private _isGrounded(): boolean {
-    if (this._floorRaycast(0, 0, 0.6).equals(Vector3.Zero())) return false;
+    if (this._floorRaycast(0, 0, 7).equals(Vector3.Zero())) return false;
     return true;
   }
 
@@ -151,9 +155,10 @@ export default class PlayerCamera extends FreeCamera {
   @onKeyboardEvent([74], KeyboardEventTypes.KEYDOWN) // j
   private _jump(): void {
     if (this._jumping && !(process.env.ACG_PRODUCTION_STAGE !== 'production' && this._devJump)) return;
+    if (this._jumping) return;
     this._jumping = true;
     this._vy = this._jumpForce;
-    this._applyGravity(10 / this._vy);
+    this._applyGravity(5 / this._vy);
   }
 
   public Shot(): void {
@@ -168,11 +173,12 @@ export default class PlayerCamera extends FreeCamera {
   public makeHook() {
     const ray = this.getForwardRay(this._hookRange);
     const hit = this._scene.pickWithRay(ray);
-    console.log('hook:', hit);
     if (hit !== null && hit.hit && hit.pickedMesh.name !== 'EnemyNode') {
+      this._detachKeys();
       this.moveToMesh(hit, () => {
         this._hook = false;
         this._jumping = false;
+        this._attachKeys();
       });
     } else {
       this._hook = false;
@@ -197,7 +203,7 @@ export default class PlayerCamera extends FreeCamera {
       15,
       Math.max(5, dest.distance / 2) * this._shotMoveSpeed,
       this.position,
-      dest.pickedPoint,
+      dest.pickedPoint.scale(1 - 10.0 / dest.distance).add(this.position.scale(10.0 / dest.distance)),
       Animation.ANIMATIONLOOPMODE_CONSTANT,
       new PowerEase(1),
       callback
@@ -210,6 +216,14 @@ export default class PlayerCamera extends FreeCamera {
     scope.height = '70px';
     scope.width = '70px';
     advancedTexture.addControl(scope);
+  }
+
+  private _detachKeys() {
+    [this.keysUp, this.keysDown, this.keysRight, this.keysLeft] = Array(4).fill([]);
+  }
+
+  private _attachKeys() {
+    [this.keysUp, this.keysDown, this.keysRight, this.keysLeft] = this._keyArchive;
   }
 
   @onPointerEvent(PointerEventTypes.POINTERDOWN, false)
@@ -269,6 +283,7 @@ export default class PlayerCamera extends FreeCamera {
   @onKeyboardEvent([87], KeyboardEventTypes.KEYDOWN)
   private _forwardDown(): void {
     this._forward = true;
+    this._moved = true;
   }
 
   @onKeyboardEvent([87], KeyboardEventTypes.KEYUP)
@@ -279,6 +294,7 @@ export default class PlayerCamera extends FreeCamera {
   @onKeyboardEvent([83], KeyboardEventTypes.KEYDOWN)
   private _backwardDown(): void {
     this._backward = true;
+    this._moved = true;
   }
 
   @onKeyboardEvent([83], KeyboardEventTypes.KEYUP)
@@ -289,6 +305,7 @@ export default class PlayerCamera extends FreeCamera {
   @onKeyboardEvent([68], KeyboardEventTypes.KEYDOWN)
   private _toRightDown(): void {
     this._toRight = true;
+    this._moved = true;
   }
 
   @onKeyboardEvent([68], KeyboardEventTypes.KEYUP)
@@ -299,6 +316,7 @@ export default class PlayerCamera extends FreeCamera {
   @onKeyboardEvent([65], KeyboardEventTypes.KEYDOWN)
   private _toLeftDown(): void {
     this._toLeft = true;
+    this._moved = true;
   }
 
   @onKeyboardEvent([65], KeyboardEventTypes.KEYUP)
@@ -323,7 +341,7 @@ export default class PlayerCamera extends FreeCamera {
     const advancedTexture = AdvancedDynamicTexture.CreateFullscreenUI('UI');
     advancedTexture.addControl(losetext);
     setTimeout(() => {
-      Env.switchScene('../../scenes/welcomescreen');
+      Env.switchScene('./scenes/welcomescreen/');
     }, 5 * 1000);
   }
 }

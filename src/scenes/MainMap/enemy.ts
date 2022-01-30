@@ -114,14 +114,9 @@ export default class Player extends Mesh {
     const isNewShot = Env.peekNextShot();
     if (isNewShot) {
       const cooldownTime = 10; //
-      // TODO: put the enemy gun down
-      console.log(this);
-      this._enemyGun.addRotation(0, 90, 0);
-      // console.log('hit');
-      //       and play the 'files/Rifle.mp3' from the enemy's location
+      this._enemyGun.addRotation(0, 45, 0);
       setTimeout(() => {
-        // TODO: reaim the enemy gun
-        this._enemyGun.addRotation(0, -90, 0);
+        this._enemyGun.addRotation(0, -45, 0);
       }, cooldownTime * 1000);
     }
 
@@ -180,7 +175,7 @@ export default class Player extends Mesh {
   }
 
   private _updateStatusFromPeer() {
-    this.setAbsolutePosition(Env.getOpAbsPos().add(Vector3.Up().scale(-3)));
+    this.setAbsolutePosition(Env.getOpAbsPos().add(Vector3.Up().scale(-6)));
     this.rotationQuaternion.copyFrom(Env.getOpAbsDir());
   }
 
@@ -295,7 +290,7 @@ export default class Player extends Mesh {
     resulttext.color = 'white';
     AdvancedDynamicTexture.CreateFullscreenUI('UI').addControl(resulttext);
     setTimeout(() => {
-      Env.switchScene('../../scenes/welcomescreen');
+      Env.switchScene('./scenes/welcomescreen/');
     }, 5 * 1000);
   }
 }

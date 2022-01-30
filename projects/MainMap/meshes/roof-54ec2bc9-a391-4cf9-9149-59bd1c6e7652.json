@@ -4,7 +4,7 @@
 		{
 			"name": "roof",
 			"id": "54ec2bc9-a391-4cf9-9149-59bd1c6e7652",
-			"uniqueId": 43,
+			"uniqueId": 56,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -85,7 +85,11 @@
 					"name": "roof",
 					"sceneFileName": "roof.glb"
 				},
-				"isPickable": true
+				"isPickable": true,
+				"script": {
+					"name": "None"
+				},
+				"renderingGroupId": 0
 			},
 			"instances": [],
 			"animations": [],

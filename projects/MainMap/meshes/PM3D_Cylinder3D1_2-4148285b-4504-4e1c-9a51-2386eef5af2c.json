@@ -4,12 +4,12 @@
 		{
 			"name": "PM3D_Cylinder3D1_2",
 			"id": "4148285b-4504-4e1c-9a51-2386eef5af2c",
-			"uniqueId": 38,
+			"uniqueId": 55,
 			"type": "Mesh",
 			"position": [
-				3.5150716304779053,
-				10.0631103515625,
-				-31.248098373413086
+				24.122146606445312,
+				10.064335823059082,
+				-42.365631103515625
 			],
 			"rotationQuaternion": [
 				0,
@@ -89,7 +89,8 @@
 				"script": {
 					"name": "None"
 				},
-				"renderingGroupId": 0
+				"renderingGroupId": 0,
+				"doNotExport": false
 			},
 			"instances": [],
 			"animations": [],

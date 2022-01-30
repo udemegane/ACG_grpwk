@@ -4,18 +4,18 @@
 		{
 			"name": "cube",
 			"id": "30b081f9-1af6-40c4-8429-7326a4e23310",
-			"uniqueId": 31,
+			"uniqueId": 50,
 			"type": "Mesh",
 			"position": [
-				26.064327239990234,
-				2,
-				49.26530075073242
+				28.76917839050293,
+				10,
+				45.015106201171875
 			],
 			"rotationQuaternion": [
-				0.7071068286974396,
+				0.7071068286985701,
 				0,
 				0,
-				0.7071067336756587
+				0.7071067336745281
 			],
 			"scaling": [
 				2,
@@ -223,7 +223,8 @@
 						"script": {
 							"name": "None"
 						},
-						"renderingGroupId": 0
+						"renderingGroupId": 0,
+						"doNotExport": false
 					},
 					"animations": [],
 					"ranges": []

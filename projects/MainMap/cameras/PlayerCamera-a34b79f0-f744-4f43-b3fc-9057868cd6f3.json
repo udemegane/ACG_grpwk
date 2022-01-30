@@ -2,7 +2,7 @@
 	"tags": null,
 	"ellipsoid": [
 		0.5,
-		1,
+		3,
 		0.5
 	],
 	"ellipsoidOffset": [
@@ -11,7 +11,7 @@
 		0
 	],
 	"checkCollisions": true,
-	"applyGravity": false,
+	"applyGravity": true,
 	"rotation": [
 		0,
 		0,
@@ -19,9 +19,9 @@
 	],
 	"speed": 1.5,
 	"position": [
-		0,
-		0,
-		0
+		-15,
+		6.029999999999999,
+		-43.7174430821067
 	],
 	"upVector": [
 		0,
@@ -73,11 +73,11 @@
 				},
 				"_runSpeed": {
 					"type": "number",
-					"value": 0.5
+					"value": 0.6
 				},
 				"_walkSpeed": {
 					"type": "number",
-					"value": 0.1
+					"value": 0.3
 				},
 				"_range": {
 					"type": "number",
@@ -85,7 +85,7 @@
 				},
 				"_jumpForce": {
 					"type": "number",
-					"value": 10
+					"value": 5
 				},
 				"_shotMoveSpeed": {
 					"type": "number",
@@ -108,7 +108,6 @@
 		"doNotExport": false
 	},
 	"type": "UniversalCamera",
-	"parentId": "5d8e0d87-8811-4e82-b4de-c65f5913bae3",
 	"inputsmgr": {
 		"FreeCameraKeyboardMoveInput": {
 			"tags": null,
@@ -119,16 +118,16 @@
 				33
 			],
 			"keysDown": [
-				40
+				83
 			],
 			"keysDownward": [
 				34
 			],
 			"keysLeft": [
-				37
+				65
 			],
 			"keysRight": [
-				39
+				68
 			]
 		},
 		"FreeCameraMouseInput": {

@@ -4,7 +4,7 @@
 		{
 			"name": "room",
 			"id": "0acb1126-8a1e-495a-8ef1-652d97144f22",
-			"uniqueId": 49,
+			"uniqueId": 27,
 			"type": "Mesh",
 			"position": [
 				0,
@@ -100,9 +100,9 @@
 					"isPickable": true,
 					"checkCollisions": true,
 					"position": [
-						5.245894432067871,
-						4.25045108795166,
-						-8.526512829121202e-14
+						0,
+						0,
+						0
 					],
 					"scaling": [
 						1,
